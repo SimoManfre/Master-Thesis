@@ -3,8 +3,9 @@
 ## ToDo list:
 
 1. Rileggere paper e cercare articoli che lo citano
-2. Cercare caratteristiche tipiche di un manipolatore installato su qualche piattaforma spaziale
-3. Studiare strategia per disaccoppiare i giunti (espansione modale, vedere appunti quaderno)
+2. Confrontare equazioni della dinamica del paper sulla minimizzazione dei tempi e quelli standard, per capire se è possibile implementare quel controllo al posto del PD.
+3. Cercare caratteristiche tipiche di un manipolatore installato su qualche piattaforma spaziale
+4. Studiare strategia per disaccoppiare i giunti (espansione modale, vedere appunti quaderno)
 
 ## Note:
 
@@ -40,6 +41,7 @@ Previous aknowledgments and assumptions:
 - At the contact point between the end-effector and the target there are forces but no moments
 
 The paper distinguish between rigid, plastic and elastic impact, introducing two parameters, energy loss and friction impulse, to switch from plastic to elastic impact, allowing to merge the two to have a more realistic simulation.
+There is no computation on post post-impact dynamics.
 
 ### 2006 - Angular momentum control approach
 In this paper, they focus on minimizing the base attitude reactions during the approaching, impact and post-impact phases. The proposed capturing sequence is based on the utiliza- tion of three control strategies, namely: 
@@ -48,7 +50,7 @@ In this paper, they focus on minimizing the base attitude reactions during the a
 3. distributed momentum control during the post-impact phase, that manages the momentum in the system in such a way that no base attitude change occurs.
 
 ### 2007 - Impact dynamics and control of dual robot
-Here, the dynamic model and the control algorithm developed in the first two papers is adpated to a dual-two arms robot, taking into consideration the elastic matrix on the dynamics and without using the orthonormal complement of velocities.
+Here, the dynamic model and the control algorithm developed in the first two papers is adpated to a dual-two arms robot, taking into consideration the elastic matrix on the dynamics and without using the quaternion's notation. Furthermore, the post-impact dynamics is retrived as well.
 However, only the plastic impact is considered, while on the 1997 paper a mix of plastic and elsatic impact is calculated.
 
 ### 2009 - Optimal Control
