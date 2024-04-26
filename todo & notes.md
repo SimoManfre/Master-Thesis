@@ -27,7 +27,7 @@ Approximations:
 - Displacement due to bending considered with modal shapes 
 - Potential energy due to gravity equal to zero
 - Inertia and dynamic properties of payload assumed to be known
-- The flexibility of the links are taken in consideration as known disturbances, withous controlling them
+- The flexibility of the links are taken in consideration as known disturbances, without controlling them
 - No impact
 
 Control: feedback linearization
@@ -43,11 +43,10 @@ Previous aknowledgments and assumptions:
 The paper distinguish between rigid, plastic and elastic impact, introducing two parameters, energy loss and friction impulse, to switch from plastic to elastic impact, allowing to merge the two to have a more realistic simulation.
 There is no computation on post post-impact dynamics.
 
-### 2006 - Angular momentum control approach
-In this paper, they focus on minimizing the base attitude reactions during the approaching, impact and post-impact phases. The proposed capturing sequence is based on the utiliza- tion of three control strategies, namely: 
-1. bias momentum approach to be used during the approaching phase, in order to obtain a favorable pre-impact angular momentum distribution; 
-2. impedance control during the impact, to guarantee that the target satellite will not be pushed away during the contact; 
-3. distributed momentum control during the post-impact phase, that manages the momentum in the system in such a way that no base attitude change occurs.
+### 1999 - Distributed momentum approach
+The authors find a pre-impact configuration such that the momentum transfered by the satellite to the base is minimum and the one transfered to the manipulator's links is maximized.
+They focus on a non-redundant manipulator, howevere a redundant one would minimzied the effort withstanded by each link.
+A decoupled control algorithm is evaluated to find the torque to be sent to the links such that the base attitude doesn't change -> angulat momentum null space.
 
 ### 2007 - Impact dynamics and control of dual robot
 Here, the dynamic model and the control algorithm developed in the first two papers is adpated to a dual-two arms robot, taking into consideration the elastic matrix on the dynamics and without using the quaternion's notation. Furthermore, the post-impact dynamics is retrived as well.
@@ -55,4 +54,4 @@ However, only the plastic impact is considered, while on the 1997 paper a mix of
 
 ### 2009 - Optimal Control
 An optimal control path for is evaluated so as to bring the tumbling non-cooperative satellite to rest in minimum time while ensuring that the magnitude of the interaction torque between the manipulator and target remains below a prescribed value.
-Then a complex dynamc model and control law is applied to follow the optimal trajectory.
+Then a complex dynamc model and control law is applied to follow the optimal trajectory. Active control of base.
