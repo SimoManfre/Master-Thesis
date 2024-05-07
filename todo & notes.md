@@ -55,3 +55,12 @@ However, only the plastic impact is considered, while on the 1997 paper a mix of
 ### 2009 - Optimal Control
 An optimal control path for is evaluated so as to bring the tumbling non-cooperative satellite to rest in minimum time while ensuring that the magnitude of the interaction torque between the manipulator and target remains below a prescribed value.
 Then a complex dynamc model and control law is applied to follow the optimal trajectory. Active control of base.
+
+### 2018 - Bio Inspired Vibration Suppressions
+The aim of the paper is to find a way to suppress vibrations due to impact and normal behaviour of the base.
+The main concept is taken by the kangaroos' legs movement, which meanso to use a n-llayers bio-inspired quadrilateral shape structure between the base and the chaser to model the mass-stiffnes-damper behaviour.
+Due to the non-linearity of the model, the stiffness and the dampming are non-linear.
+
+## Thesis notes
+
+For the aforementioned missions, the on-orbit capture operation plays a fundamental role. In the capture process shown in Fig. 1, the chasing satellite is expected to approach the target in a manner that at the time of collision the relative velocity between the end-effector, i.e. capture mechanism, and the target vanishes. In practice, however, there always exists an impact which results in undesirable vibration and drifting motions for the satellite platform [9], especially for capturing an uncooperative target that lacks partial state information. If the target is a satellite, its moving parts turn out to be vibra- tion sources for the whole system after capture [2018 paper].
