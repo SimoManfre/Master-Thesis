@@ -6,6 +6,8 @@
 2. Confrontare equazioni della dinamica del paper sulla minimizzazione dei tempi e quelli standard, per capire se è possibile implementare quel controllo al posto del PD.
 3. Cercare caratteristiche tipiche di un manipolatore installato su qualche piattaforma spaziale
 4. Studiare strategia per disaccoppiare i giunti (espansione modale, vedere appunti quaderno)
+5. Implementare su Mathematica un manipolatore, impatto plastico, corplo rigido
+6. Finire di leggere paper su manipolatori nello spazio
 
 ## Note:
 
