@@ -1,4 +1,4 @@
-# Appunti:
+# Appunti
 
 ## ToDo list:
 
@@ -14,6 +14,14 @@
 Ci sono due scenari studiabili:
 - Impatto di micrometeoriti su satelliti/braccio robotico e in base alla risposta dinamica ricostruire le caratteristiche dinamiche (quantità di moto, energia cinetica, ecc.)
 - Il braccio acchiappa qualcossa (come un satellite) per portarlo a bordo o lanciarlo nell'atmosfera (docking), se ci sono differenze di velocità tra satellite e braccio -> dinamica in catena chiusa, ricavare info dinamiche.
+
+## Organizzazione lavoro
+
+- Stato dell'arte di mannipolatori spaziali
+- Corpi rigidi, impatto plastico, manipolatore semplice
+- Corpi elastici, impatto plastico, mamipolatore semplice
+- Corpi elastici, impatto elastico, manipolatore semplice
+- Corpi elastici, impatto elastico, manipolatore reale
 
 ## Papers
 
@@ -62,11 +70,3 @@ Then a complex dynamc model and control law is applied to follow the optimal tra
 The aim of the paper is to find a way to suppress vibrations due to impact and normal behaviour of the base.
 The main concept is taken by the kangaroos' legs movement, which meanso to use a n-llayers bio-inspired quadrilateral shape structure between the base and the chaser to model the mass-stiffnes-damper behaviour.
 Due to the non-linearity of the model, the stiffness and the dampming are non-linear.
-
-## Thesis notes
-
-For the aforementioned missions, the on-orbit capture operation plays a fundamental role. In the capture process shown in Fig. 1, the chasing satellite is expected to approach the target in a manner that at the time of collision the relative velocity between the end-effector, i.e. capture mechanism, and the target vanishes. In practice, however, there always exists an impact which results in undesirable vibration and drifting motions for the satellite platform [9], especially for capturing an uncooperative target that lacks partial state information. If the target is a satellite, its moving parts turn out to be vibra- tion sources for the whole system after capture [2018 paper].
-
-### References
-
-- 
