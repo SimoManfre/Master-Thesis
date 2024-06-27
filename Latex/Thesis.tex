@@ -1,0 +1,160 @@
+\documentclass[a4paper,12pt,oneside]{report}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage{layaureo}
+\usepackage[english]{varioref}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{appendix}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[autostyle,italian=guillemets]{csquotes}
+\usepackage{listings,xcolor}
+\newlength{\mylen}
+\setbox1=\hbox{$\bullet$}\setbox2=\hbox{\tiny$\bullet$}
+\setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
+\renewcommand\labelitemi{\raisebox{\mylen}{\tiny$\bullet$}}
+\onehalfspacing
+%\usepackage[backend=biber,style=numeric-comp]{biblatex}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norma}{\lVert}{\rVert}
+%\addbibresource{Bibliografia.bib}
+\graphicspath{{./Images/}}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+%\pagestyle{headings}
+\begin{document}
+\begin{titlepage}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.25]{sigillo2}
+\end{figure}
+
+\begin{center}
+\LARGE{\textbf{Università degli Studi di Trento\\ Department of Industrial Engineering}}\\
+\vspace{10mm}
+\Large{Master Degree in\\ Mechatronics Engineering}\\
+\vspace{7mm}
+\uppercase{Final Dissertation}
+\vspace{7mm}\\
+\huge{Titolo}
+\end{center}
+
+\vspace{8mm}
+\begin{flushleft}
+\large{\textbf{Supervisor:}\\ Daniele Bortoluzzi}\\
+\vspace{5mm}
+\large{\textbf{Co-supervisor:}\\ Edoardo Dalla Ricca}\\
+\vspace{5mm}
+\large{\textbf{Student:}\\ Simone Manfredi 239337}\\
+\end{flushleft}
+
+\vspace{15mm}
+\begin{center}
+\Large{Academic Year 2023/2024}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+
+\begin{abstract}
+
+
+\end{abstract}
+
+\newpage
+
+\pagenumbering{roman}
+\addcontentsline{toc}{chapter}{Contents}
+
+\tableofcontents
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduzione}
+We live in a society overwhelmed by such technology, autonomous systems, industrial manipulators, AI and, very soon, services' humanoid robots that we forget to look up in the sky. Most of the major progress in robotics and the scientific field is done in space, where human curiosity is pushing our abilities beyond any imaginable scenario.\\
+This thesis was born due to my curiosity in the field of robotics merged with the need to face space and modern problems, such as the berthing and docking of external objects by a manipulator or the tumbling of a spinning satellite. This dissertation aims to analyse the dynamic of a space manipulator after the impact with an external satellite/meteorite to retrieve its kinetic properties before the impact.\\
+\clearpage
+\pagenumbering{arabic}
+\chapter{Space Manipulators: an Overview}
+Space Robotics is important to human's overall ability to explore or operate in space. Autonomous systems can reduce the cognitive load on humans and improve human and systems' safety.\\
+Space robots can be split into two main categories: orbital robots and planetary robots. The formers can be used for repairing satellites, assembling large space telescopes, capturing and returning asteroids, etc; the latter play a key role in surveying, observations, extraction, working on planetary surfaces for subsequential human arrival, etc.\\
+Furthermore, spacecraft are classified as space robots when two attributes are satisfied: locomotion and autonomy. Depending on its application, a space robot is designed to possess locomotion to manipulate, grip, rove, drill and/or sample; at the same time, it is expected to possess varying levels of autonomy, ranging from teleoperation by humans to fully autonomous operation by the robot itself [3].\\
+Another classification of robotic devices in space could be represented by mobile robots, flying robots, and manipulators. Manipulators are used on board spacecraft (Space Shuttle) or space stations [5].
+According to [1], a very loose definition calls every unmanned space probe a robotic spacecraft, referring to the challenges of largely autonomous operation in a complex mission. But even discarding this and focussing on space robotics elements in a more narrow sense (systems involving arms for manipulation or some kind of locomotion device for mobility and having the flexibility to perform varying tasks), there is a wide array of uses in the scope of space missions, giving rise to challenging problems and ingenious solution.\\
+There are quite a number of on-orbit applications requiring advanced robotics capabilities, which
+are envisaged to take place in the 2025-2035 timeframe. The operators for these missions may
+range from space administrations to national governments to businesses. The following mission
+foci are envisaged: space debris removal, rescue mission, planned orbit raising,
+inspection/support to deployment, deployment/assembly aid, repair, refuelling and orbit
+maintenance, mission evolution/adaptation, lifetime extension, and re/de-orbiting. The
+International Space Station (ISS) continues to represent an excellent opportunity for scientific
+experiments to be conducted in space amid the unique characteristics, constraints and pressures that the environment brings [3].\\
+But what is so special about a space robot? In many ways, robot systems for space applications are very different from the more familiar terrestrial robots, be they industrial robots in production automation or the newer kind of "service robots". One of the main and simplest differences is the high development and manufacturing costs and the missing "economy of scale" due to the experimental prototype nature of these developments.\\
+This thesis will investigate space manipulators' dynamics, whose tasks involve berthing and docking satellites or managing tumbling meteorites; thus, a historical summary of their evolution and the actual state-of-art of this field will be briefly exposed.
+\section{Historical background}
+Robots and manipulators in space are designed to perform the following operations:
+\begin{itemize}
+\item capture
+\item maneuvring
+\item berthing/unberthing
+\item support of Extra-Vehicular-Activities (EVA)
+\item positioning and release
+\end{itemize}
+One of the most important features of all robots deployed in space is their flexibility. Robots and manipulators used in space are built out of light materials, and very often, their links deflect.\\
+The first robot used in space was the Remote Manipulator System (RMS), also called \textit{Canadarm}, developed by the Canadian Space Agency and mounted on the Space Shuttle. This robot was used for the first time on 12th November 1981 in the Columbia Shuttle and it was retired in July 2011. It is 15 meters long and has three hinged joints for pitch and three others for yaw and roll, which makes a total of six degrees of freedom (DOF).\\
+There were numerous problems related to the use of the RMS in space. One of the most important was related to its positioning: since it is built out of light materials to minimise the launch cost, its links deflect substantially. When the arm is accelerated and stopped, large vibrations occur.\\
+There are two main methods of improving the positioning accuracy of the RMS: passive and active. The passive methods focus on redesigning the manipulator and applying different materials. The active ones refer to a preshape input and to the usage of position, velocity or force feedback.\\
+Eventually, some lessons have been learnt during the RMS' lifetime: the speed of manipulation should be drastically improved; the positioning accuracy is one of the most important issues in day-to-day operations; the new manipulators should be designed to include passive vibration control capabilities; active vibration control should be added in order to improve the positioning accuracy and shorten the settling time; the force loop could add significantly to the capabilities of the manipulator [5].\\
+It is interesting to note that the actuators are not powerful enough to lift even the weight of the arm itself when on Earth. The Canadarm has been used for over 100 operations and is normally used for repairing, retrieving, and deploying satellites; assisting humans during extravehicular activi- ties; and for remote inspection tasks [6].\\
+Another early mission including a robotic arm in space was the MIR space sta- tion. This Soviet Union/Russian space station was the first modular space station and was in operation from 1986 to 2001. MIR was a microgravity research labora- tory which conducted research in biology, astronomy, meteorology, and physics, to name a few. Four of the modules were equipped with the Lyappa robotic arm used for assembling the modules of the space station.\\
+In 1997 the National Space Development Agency of Japan (NASDA) launched the Engineering Test Satellite No. 7 (ETS-VII), the first ever satellite to be equipped with a robotic arm. The ETS-VII performed several successful docking operations using the manipulator arm. The main objectives of the project were performance evaluation of a satellite-mounted robotic system; coordinated control of the satellite attitude and robot arm; teleoperation of the robot arm; demonstration of in-orbit satellite servicing.\\
+The project demonstrated the successful execution of experiments which gained insight into operations such as docking, fuel transfer, assembling, and berthing. Several successful docking operations were performed with the chaser and target satellite.\\
+The Japanese also developed a robotic arm which was mounted on the Japanese Experiment Module at the International Space Station (ISS), the JEMRMS, in March 2008. The Small Fine Arm (SFA) was added in July 2009 (see Section~\ref{state_of_art}).\\
+A larger and more advanced version of the SRMS arm is the MSS arm (Mobile Servicing System), which is mounted on the International Space Station. The MMS arm consists of a mobile base, a more advanced version of the Canadarm, called the \textit{Canadarm2}, or SSRMS, and dexterous manipulator hand [6]. It has seven DOF, unlike the RMS, making it a redundant manipulator to avoid singularities in some specific but important positions. Its properties will be discussed in the next Section. The SSRMS is a part of a larger system called \textit{Mobile Servicing Centre} (MSC). [5]\\
+In March 2008 the last part of the Mobile Servicing System was added to the International Space Station. The Canada Hand, or the Special Purpose Dexterous Manipulator (SPDM), is a two-armed robot but is often referred to as a hand be- cause it can be attached to the Canadarm2 robotic arm and taken to any location on the space station [6].\\
+The last manipulator in space was launched in July 2021: the Europian Robotic Arm (ERA) serves as main manipulator on the Russian part of the Space Station.\\
+Clearly, the usage of manipulator in space involves recent activities, hence a lot of research and experiments are still in development. This research field offers numerous starting points in analysis and technologic progress.
+\section{Main characteristics}
+Orbiting robotic systems consist of a free-floating base, typically a satellite or a space station, with a robotic manipulator attached to it.\\
+The main difference between space manipulators and Earth-based robots is the lack of a fixed base on which the robot is mounted.\\
+Depending on whether or not actuation is utilized to control the spacecraft position and orientation, we can divide these systems into \textit{free-flying} and \textit{free-floating} space manipulators. \\
+In a free-flying robotic system the position and orientation of the base, in this case the spacecraft, is actively controlled by the spacecraft’s actuators. This allows to completely control both the base configuration and the manipulator arm.\\ 
+Due to the dynamic coupling between the manipulator and the spacecraft, the motion of the manipulator arm will constantly affect the motion of the base. The main concern with these systems is therefore the excessive fuel consumption required to compensate for the dynamic coupling between the manipulator and the base while maintaining a constant base attitude [6].\\
+This mode is employed during the final approach of a manipulator to its target, so that the target is within the manipulator workspace [2].\\
+A free-floating robotic system, on the other hand, does not use spacecraft actuation to compensate for the manipulator motion. The spacecraft motion is therefore not controlled directly, but arises as a result of the dynamic coupling between the manipulator and the base. In this case one can either choose not to control the spacecraft motion at all, or to use the manipulator arm to obtain the required motion also for the spacecraft. In many cases it is necessary to generate a manipulator motion which guarantees that the spacecraft orientation remains almost constant so that antennas and other instruments point in the right direction [6].\\
+In this mode, the spacecraft attitude is controlled actively with momentum control devices (MCD), such as reaction wheels or momentum gyros, while the system CoM does not translate. The free-floating or the partial free-floating modes are preferred during grasping, since they eliminate sudden motions due to thrusters, and conserve propellant and power [2].\\
+Even though space exploration is challenging compared to Earth-based systems, space manipulator design also benefits from the free-fall environment in some areas. It is, for example, possible to construct robots with extremely high redundancy and with several joints. This type of robots, are able to support their own weight in space due to the small gravitational forces. On Earth, however, such robots would collapse due to their own weight when the number of joints becomes too large. This allows for more redundant robots in space than on Earth, and also more fault tolerant robots because the robots can continue operation even after several joint failures. Similarly, the free-fall environment allows for effective control with very small actuators. In fact, most space manipulators are able to handle very high payloads in space, while they cannot even withstand the weight of the manipulator arm itself if they were to be placed in the Earth’s gravity field [6].\\
+\textcolor{red}{WHICH ONES ARE CONSIDERED IN THIS WORK?}\\
+
+To execute on-orbit tasks being inaccessible to, or too dangerous for humans, robotic on-orbit servicing (OOS) can be employed, with tasks to be performed by space manipulator systems (SMSs), also called chasers or servicers in the literature. An SMS consists of a satellite base equipped with one or more robotic manipulators (arms) with grappling devices on them and driven by a vision system which allows them to capture a target (client) satellite, or another object. An SMS also can be a large servicing manipulator mounted on a space facility.\\
+Targets for capture may be cooperative, i.e., a stable and safe target due to its operational Attitude and Orbit Control Subsystem (AOCS), or non-cooperative i.e., an unknown or tumbling target with a varying axis of rotation. They can also be collaborative, i.e., designed for capture or servicing, equipped with visual markers and grapple fixtures, or non-collaborative, as most of today’s satellites. In many cases in the literature, the term cooperative stands for collaborative, too.
+As often revealed by ground observations, many on-orbit objects are tumbling in an uncontrolled way (non-cooperative targets), making the robotic capture a very challenging task. This is the case analysed in this thesis.\\
+Clearly, only after a manipulator has successfully captured and stabilized a tumbling target, can a service operation be started. Therefore, a common robotic capture task for on-orbit servicing consists of four operational phases: 
+\begin{enumerate}
+  \item observation and planning phase;
+  \item final approach phase;
+  \item impact and grasping/capture phase;
+  \item post-capture stabilization phase.
+\end{enumerate}
+\textcolor{red}{WHICH ONES ARE CONSIDERED IN THIS WORK?}\\
+With a target locally stationary, the approach phase can be achieved by point-to-point planning and depending on the actuation mode, by simple on-off thruster control, and attitude fine-tuning using momentum exchange devices. Capturing a tumbling, non-cooperative target is more challenging, as here velocity matching between the SMS end-effector and the capture point is required.\\
+In fact, to avoid impacts during the grasping phase, the difference between the velocities of the target and the end-effector should be zero. In practise, this never happens, thus small impacts and vibrations have to be taken into account. Research on this topic is still going on, some focusing on bio-inspired isolation systems ([2018], [2020]).\\
+In deploying a SMS for target capture, a manipulator trajectory is needed to achieve the goal. Several secondary optimization goals, such as obstacle and singularities avoidance, fuel consumption, and base disturbance minimization [1999] can be sought, too. E.g. [2009] focuses on the optimal time needed to reach the target [2].\\
+
+
+\section{State-of-art}\label{state_of_art}
+The Low Earth Orbit (LEO), a whole band of orbits between 300 and 700 km altitude, is the main of today's manned space missions. This class belongs to the US Skylab, the Space Shuttle, the Russian Space Station Mir, and the International Space Station (ISS). The orbits are just high enough to be practically free of destabilising dynamic disturbances but as low as possible to minimise launch costs.\\
+Apart from human physiology interest (to investigate the effects of weightlessness on astronauts), the main application field has always been a microgravity research. The term "microgravity" refers to the typical level of "weightlessness" on such manned missions: due to various disturbances (remaining atmospheric drag, moving machinery, but most of all man motion), some 10e-6 g acceleration will continue to act on every mass [1].\\
+
+\end{document}
