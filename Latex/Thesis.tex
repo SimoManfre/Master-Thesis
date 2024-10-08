@@ -92,6 +92,15 @@ Space robots can be split into two main categories: orbital robots and planetary
 Furthermore, spacecraft are classified as space robots when two attributes are satisfied: locomotion and autonomy. Depending on its application, a space robot is designed to possess locomotion to manipulate, grip, rove, drill and/or sample; at the same time, it is expected to possess varying levels of autonomy, ranging from teleoperation by humans to fully autonomous operation by the robot itself [3].\\
 Another classification of robotic devices in space could be represented by mobile robots, flying robots, and manipulators. Manipulators are used on board spacecraft (Space Shuttle) or space stations [5].
 According to [1], a very loose definition calls every unmanned space probe a robotic spacecraft, referring to the challenges of largely autonomous operation in a complex mission. But even discarding this and focussing on space robotics elements in a more narrow sense (systems involving arms for manipulation or some kind of locomotion device for mobility and having the flexibility to perform varying tasks), there is a wide array of uses in the scope of space missions, giving rise to challenging problems and ingenious solution.\\
+Robots and manipulators in space are designed to perform the following operations:
+\begin{itemize}
+\item capture
+\item maneuvring
+\item berthing/unberthing
+\item support of Extra-Vehicular-Activities (EVA)
+\item positioning and release
+\end{itemize}
+One of the most important features of all robots deployed in space is their flexibility. Robots and manipulators used in space are built out of light materials, and very often, their links deflect.\\
 There are quite a number of on-orbit applications requiring advanced robotics capabilities, which
 are envisaged to take place in the 2025-2035 timeframe. The operators for these missions may
 range from space administrations to national governments to businesses. The following mission
@@ -103,25 +112,16 @@ experiments to be conducted in space amid the unique characteristics, constraint
 But what is so special about a space robot? In many ways, robot systems for space applications are very different from the more familiar terrestrial robots, be they industrial robots in production automation or the newer kind of "service robots". One of the main and simplest differences is the high development and manufacturing costs and the missing "economy of scale" due to the experimental prototype nature of these developments.\\
 This thesis will investigate space manipulators' dynamics, whose tasks involve berthing and docking satellites or managing tumbling meteorites; thus, a historical summary of their evolution and the actual state-of-art of this field will be briefly exposed.
 \section{Historical background}
-Robots and manipulators in space are designed to perform the following operations:
-\begin{itemize}
-\item capture
-\item maneuvring
-\item berthing/unberthing
-\item support of Extra-Vehicular-Activities (EVA)
-\item positioning and release
-\end{itemize}
-One of the most important features of all robots deployed in space is their flexibility. Robots and manipulators used in space are built out of light materials, and very often, their links deflect.\\
 The first robot used in space was the Remote Manipulator System (RMS), also called \textit{Canadarm}, developed by the Canadian Space Agency and mounted on the Space Shuttle. This robot was used for the first time on 12th November 1981 in the Columbia Shuttle and it was retired in July 2011. It is 15 meters long and has three hinged joints for pitch and three others for yaw and roll, which makes a total of six degrees of freedom (DOF).\\
 There were numerous problems related to the use of the RMS in space. One of the most important was related to its positioning: since it is built out of light materials to minimise the launch cost, its links deflect substantially. When the arm is accelerated and stopped, large vibrations occur.\\
 There are two main methods of improving the positioning accuracy of the RMS: passive and active. The passive methods focus on redesigning the manipulator and applying different materials. The active ones refer to a preshape input and to the usage of position, velocity or force feedback.\\
 Eventually, some lessons have been learnt during the RMS' lifetime: the speed of manipulation should be drastically improved; the positioning accuracy is one of the most important issues in day-to-day operations; the new manipulators should be designed to include passive vibration control capabilities; active vibration control should be added in order to improve the positioning accuracy and shorten the settling time; the force loop could add significantly to the capabilities of the manipulator [5].\\
 It is interesting to note that the actuators are not powerful enough to lift even the weight of the arm itself when on Earth. The Canadarm has been used for over 100 operations and is normally used for repairing, retrieving, and deploying satellites; assisting humans during extravehicular activi- ties; and for remote inspection tasks [6].\\
-Another early mission including a robotic arm in space was the MIR space sta- tion. This Soviet Union/Russian space station was the first modular space station and was in operation from 1986 to 2001. MIR was a microgravity research labora- tory which conducted research in biology, astronomy, meteorology, and physics, to name a few. Four of the modules were equipped with the Lyappa robotic arm used for assembling the modules of the space station.\\
+Another early mission including a robotic arm in space was the MIR space station. This Soviet Union/Russian space station was the first modular space station and was in operation from 1986 to 2001. MIR was a microgravity research laboratory which conducted research in biology, astronomy, meteorology, and physics, to name a few. Four of the modules were equipped with the Lyappa robotic arm used for assembling the modules of the space station.\\
 In 1997 the National Space Development Agency of Japan (NASDA) launched the Engineering Test Satellite No. 7 (ETS-VII), the first ever satellite to be equipped with a robotic arm. The ETS-VII performed several successful docking operations using the manipulator arm. The main objectives of the project were performance evaluation of a satellite-mounted robotic system; coordinated control of the satellite attitude and robot arm; teleoperation of the robot arm; demonstration of in-orbit satellite servicing.\\
 The project demonstrated the successful execution of experiments which gained insight into operations such as docking, fuel transfer, assembling, and berthing. Several successful docking operations were performed with the chaser and target satellite.\\
 The Japanese also developed a robotic arm which was mounted on the Japanese Experiment Module at the International Space Station (ISS), the JEMRMS, in March 2008. The Small Fine Arm (SFA) was added in July 2009 (see Section~\ref{state_of_art}).\\
-A larger and more advanced version of the SRMS arm is the MSS arm (Mobile Servicing System), which is mounted on the International Space Station. The MMS arm consists of a mobile base, a more advanced version of the Canadarm, called the \textit{Canadarm2}, or SSRMS, and dexterous manipulator hand [6]. It has seven DOF, unlike the RMS, making it a redundant manipulator to avoid singularities in some specific but important positions. Its properties will be discussed in the next Section. [5]\\
+A larger and more advanced version of the SRMS arm is the MSS arm (Mobile Servicing System), which is mounted on the International Space Station. The MSS arm consists of a mobile base, a more advanced version of the Canadarm, called the \textit{Canadarm2}, or SSRMS, and dexterous manipulator hand [6]. It has seven DOF, unlike the RMS, making it a redundant manipulator to avoid singularities in some specific but important positions. Its properties will be discussed in the next Section. [5]\\
 In March 2008 the last part of the Mobile Servicing System was added to the International Space Station. The Canada Hand, or the Special Purpose Dexterous Manipulator (SPDM), is a two-armed robot but is often referred to as a hand be- cause it can be attached to the Canadarm2 robotic arm and taken to any location on the space station [6].\\
 The last manipulator in space was launched in July 2021: the Europian Robotic Arm (ERA) serves as main manipulator on the Russian part of the Space Station.\\
 Clearly, the usage of manipulator in space involves recent activities, hence a lot of research and experiments are still in development. This research field offers numerous starting points in analysis and technologic progress.
@@ -154,5 +154,88 @@ In deploying a SMS for target capture, a manipulator trajectory is needed to ach
 \section{State-of-art}\label{state_of_art}
 The Low Earth Orbit (LEO), a whole band of orbits between 300 and 700 km altitude, is the main of today's manned space missions. This class belongs to the US Skylab, the Space Shuttle, the Russian Space Station Mir, and the International Space Station (ISS). The orbits are just high enough to be practically free of destabilising dynamic disturbances but as low as possible to minimise launch costs.\\
 Apart from human physiology interest (to investigate the effects of weightlessness on astronauts), the main application field has always been a microgravity research. The term "microgravity" refers to the typical level of "weightlessness" on such manned missions: due to various disturbances (remaining atmospheric drag, moving machinery, but most of all man motion), some 10e-6 g acceleration will continue to act on every mass [1].\\
-
+Nowadays, as already mentioned, on the ISS there are three main SMSs:
+\begin{enumerate}
+  \item SSRMS: Space Station Remote Manipulator System
+  \item SPDM: Special Purpose Dexterous Manipulator
+  \item JEMRMS: Japanese Experiment Module Remote Manipulator System
+  \item ERA: European Robotic Arm
+\end{enumerate}
+The ISS assembly, maintenance and scientific research tasks depend on the three robotic manipulators carrying out their intended operations. Each manipulator has a specific purpose and each has been designed to successfully complete its assigned mission.\\
+All three ISS robotic manipulators are designed to resemble the human arm. They are mechanically and electrically connected to the ISS at the shoulder, which is comprised of a set of revolute mechanical joints. A boom segment and then an elbow joint follow the shoulder. After the elbow there is another boom segment followed by a set of wrist joints and an end effector through which the operational grappling is carried out.[2]
+\subsection{SSRMS}
+The SSRMS, or Canadarm2, is primarily used for ISS assembly. This involves acquiring an assembly payload, either directly from the Shuttle Payload Bay or handed off from the Shuttle Remote Manipulator System (SRMS). The SSRMS is also used to manoeuvre astronauts and whatever they are holding from point to point as they complete their tasks during the EVA.\\
+The 16.9m SSRMS has 7 offset joints and is symmetric about the elbow with identical 3DOF shoulder and wrist clusters (Figure \ref{SSRMS_dim}). The shoulder/wrist clusters contain three mechanical joints with perpendicular rotation axes: pitch, yaw and roll. One joint cluster acts as the shoulder while the other acts as the wrist of the manipulator. All of the SSRMS joints are functionally identical with the same performance capabilities and angular range of $\pm 270$ degrees. \\
+The three pitch and two roll joints are identical and interchangeable. The two yaw joints are identical and interchangeable (the difference between the yaw and pitch/roll joints being that the yaw joints have a 5.25 inch extension non one end). Each of the joints is an ORU and each contains two identical joint electronics units and motor modules.\\
+Attached to the roll joint on each cluster is a Latching End Effector (LEE) which provides a mechanical and electrical connection to a payload, SPDM or the ISS when grappling an SSRMS grapple fixture. In this way, it is possible for the robotic arm to move around the station's exterior. Each LEE also includes a Force Moment Sensor (FMS) and two identical LEE Electronics Units (LEUs). This symmetric configuration allows either end of the SSRMS to be attached to a Power and Data Grapple Fixture (PDGF) and to function as the base of the arm.\\
+\begin{figure}[t]
+  \centering
+  \includegraphics[scale=0.3]{SSRMS_dimensions.png}
+  \caption{SSRMS Dimensions [4].}
+  \label{SSRMS_dim}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4]{SSRMS_orbit.png}
+  \caption{The SSRMS on orbit [7].}
+  \label{SSRMS_orbit}
+\end{figure}
+\subsection{SPDM}
+The SPD is a highly dexterous dual-armed robot, with two shoulders that provide support for the arms.\\
+Each arm has seven joints, terminating with an Orbit Replacement Unit/Tool Changeout Mechanism (OTCM), the mechanism through which the SPDM arm interfaces with payloads and tools. The SPDM is also equipped with lights, video equipment, a tool platform and four tool holders.\\
+The SPDM's primary role is to carry out delicate maintenance and servicing tasks on the International Space Station. Tasks include installing and removing small payloads such as batteries, power supplies and computers; operate robotic tools such as specialized wrenches and socket extensions; provide power and data connectivity to payloads; manipulate, install, remove and inspect scientific payloads.\\
+It works near the Canadarm2 and can be grapped by it to be moved around.\\
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{SPDM.png}
+  \caption{The SPDM on orbit.}
+  \label{SPDM_orbit}
+\end{figure}
+\subsection{JEMRMS}
+The JEMRMS system is used primarily for experiment payload handling. It consists of three major subsystems, the
+Console, Main Arm (MA), and Small Fine Arm (SFA).\\
+The Main Arm (MA) is a 10m, six-degree-of-freedom robot arm. It consists of three booms, six joints, an end effector on the tip, and two vision systems (one on the shoulder, the other on the tip).\\
+The Small Fine Arm (SFA) is also asix-degree-of-freedom robot arm. It can perform more dexterous tasks than the MA. During operation, the SFA is grappled by the MA and receives power and data from the MA. The 2m SFA consists of two booms, six joints, and an end effector on the tip called the “tool,” and a camera on the tool. The tool has a force and torque sensor inside it for compliance operation [8].\\
+\begin{figure}[h]
+  \centering
+  \subfloat[][\emph{Main Arm (MA).}]
+  {\includegraphics[scale=0.35]{MA.png}\label{unitary}} \quad
+\subfloat[][\emph{Small Fine Arm (SFA).}]
+  {\includegraphics[scale=0.35]{SFA.png}\label{normal}} 
+  \caption{The JEMRMS components. [8]}
+  \label{JEMRMS_components}
+\end{figure}
+The JEM RMS end effector was designed based on the Shuttle RMS (SRMS) end effector. The grapple fixtures compatible with the JEMRMS MA can also be grappled by the SSRMS [4].\\
+\subsection{ERA}
+The ERA is used on the Russian segment (RS) of the ISS. Specific tasks for the ERA include: installing, removing or replacing experiment payloads
+and large Station elements; transferring small payloads in and out of the Station through the Russian airlock; transporting crew members from one external working site
+to another; freeing cosmonauts to do other work during spacewalks; using its cameras to inspect the outside of the Space Station.
+The ERA manipulator arm spans 11.3m and has 7 inline joints in a symmetric configuration with respect to the elbowjoint (Figure 2). It has a shoulder with 3 DOFs, an elbow with 1 DOF and a wrist with 3 DOFs. Both the shoulder andwrist contain three functionally identical joints with mutually perpendicular rotation axes.\\
+The ERA has two end effectors (EE) which can act as a base, enabling either end of the ERA to be used as the shoulder. Thus the wrist and shoulder are operationally interchangeable, just as in the SSRMS design. The identical EE’s are able to grapple and ungrapple an ERA grapple fixture, transferring power or data to an external device/load. The EE also has an Integrated Service Tool (IST) which is a built-in motorized "screwdriver" that can provide mechanical torque
+actuation.\\
+The ERA is equipped with four Camera and Lighting Units (CLU) one on each EE and one on either side of the elbow. The CLU will be used to provide video images of operational tasks and, if necessary, to illuminate the scene and to act as an optical sensor to enable proximity control of a target during approach of a basepoint or grapple fixture in closed loop. The proximity control function enables ERA to approach grapple fixtures automatically and smoothly [4].
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.45]{ERA.png}
+  \caption{ERA's components.}
+  \label{ERA}
+\end{figure}
+\subsection{RMSs Comparison}
+To conlcude, The 7DOF design of the European and Canadian arms provide an extra degree of freedom that will enable both manipulators to access tight workspaces and avoid ISS structure during operations. This is particularly important when working in areas that have exposed station structure. The 7th DOF also allows for Arm Pitch Plane Change manoeuvres to avoid structure without changing the end effector position.\\
+The maximum handling payloads the manipulators can capacity also dictates the type of grasp. The SSRMS is capable of handling payloads that have an equivalent mass to the Orbiter. The ERA is designed for slightly smaller payloads such as solar panels.\\
+The ERA and the JEMRMS provide much finer position accuracy than the SSRMS – smaller payloads require more precise alignment. Also, the force moment sensor is always used for ERA and JEM operations and is optional for SSRMS operations. This FMS capability facilitates “peg in the hole” type of operations [4].\\
+In the Table \ref{SRMs_comparison} the specifications of the SSRMS, ERA and JEMRMS are reported.
+\begin{table}[h]
+  \caption{Rod's properties.}
+  \begin{center}
+  \begin{tabular}{c|c|c|c}
+  \toprule
+  L & r & $\rho$ & E\\
+  \midrule
+  \SI{1}{\metre} & \SI{1}{\centi \metre} & \SI{2750}{\kilo / \metre^3} & \SI{70}{\giga \pascal}\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+  \label{properties}
+  \end{table}
 \end{document}
