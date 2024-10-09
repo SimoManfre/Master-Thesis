@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc} 
 \usepackage[english]{babel}
 \usepackage{url}
+\usepackage{ctable}
 \usepackage{layaureo}
 \usepackage[english]{varioref}
 \usepackage{mathtools}
@@ -32,6 +33,7 @@
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 %\pagestyle{headings}
+\newcommand{\Hline}{\specialrule{.1em}{0em}{0em}}
 \begin{document}
 \begin{titlepage}
 
@@ -217,25 +219,40 @@ The ERA is equipped with four Camera and Lighting Units (CLU) one on each EE and
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.45]{ERA.png}
-  \caption{ERA's components.}
-  \label{ERA}
+  \caption{ERA's components.} \label{ERA}
 \end{figure}
 \subsection{RMSs Comparison}
 To conlcude, The 7DOF design of the European and Canadian arms provide an extra degree of freedom that will enable both manipulators to access tight workspaces and avoid ISS structure during operations. This is particularly important when working in areas that have exposed station structure. The 7th DOF also allows for Arm Pitch Plane Change manoeuvres to avoid structure without changing the end effector position.\\
 The maximum handling payloads the manipulators can capacity also dictates the type of grasp. The SSRMS is capable of handling payloads that have an equivalent mass to the Orbiter. The ERA is designed for slightly smaller payloads such as solar panels.\\
-The ERA and the JEMRMS provide much finer position accuracy than the SSRMS – smaller payloads require more precise alignment. Also, the force moment sensor is always used for ERA and JEM operations and is optional for SSRMS operations. This FMS capability facilitates “peg in the hole” type of operations [4].
-In the Table \ref{SRMs_comparison} the specifications of the SSRMS, ERA and JEMRMS are reported.
+The ERA and the JEMRMS provide much finer position accuracy than the SSRMS: smaller payloads require more precise alignment. Also, the force moment sensor is always used for ERA and JEM operations and is optional for SSRMS operations. This FMS capability facilitates “peg in the hole” type of operations.
+In the Table \ref{SRMs_comparison} the specifications of the SSRMS, ERA and JEMRMS are reported [4].
 \begin{table}[h]
-  \caption{Rod's properties.}
+  \caption{SSRMS, ERA and JEMRMS specifications [4].}
+  \label{SRMs_comparison}
   \begin{center}
-  \begin{tabular}{c|c|c|c}
-  \toprule
-  L & r & $\rho$ & E\\
-  \midrule
-  \SI{1}{\metre} & \SI{1}{\centi \metre} & \SI{2750}{\kilo / \metre^3} & \SI{70}{\giga \pascal}\\
-  \bottomrule
+  \begin{tabular}{|l|c|c|c|}
+  \hline
+  & \textbf{SSRMS} & \textbf{ERA} & \textbf{JEMRMS (MA)}\\
+  \hline
+  Span&\SI{14.22}{\metre}&\SI{11.3}{\metre}&\SI{9.91}{\metre}\\
+  \hline
+  Boom Span&\SI{7.11}{\metre}&\SI{7.77}{\metre}&\SI{3.93}{\metre}\\
+  \hline
+  DOFs&7&7&6\\
+  \hline
+  Joints&Offset&Inline&Offset\\
+  \hline
+  Base&Relocatable&Relocatable&Fixed\\
+  \hline
+  Positioning Accuracy&\SI{65}{\milli\metre}, \SI{0.71}{\degree}&\SI{40}{\milli\metre}, \SI{1}{\degree}&\SI{50}{\milli\metre}, \SI{1.8}{\degree}\\
+  \hline
+  Mass&\SI{1336}{\kilogram}&\SI{630}{\kilogram}&\SI{757}{\kilogram}\\
+  \hline
+  Max Handling Capacity&\SI{116}{\mega\gram}&\SI{8}{\mega\gram}&\SI{7}{\mega\gram}\\\hline
+
+  Power Consumption&\SI{1360}{\watt} (average)&>\SI{800}{\watt}&\SI{2.3}{\kilo\watt}\\
+  \hline
   \end{tabular}
   \end{center}
-  \label{properties}
   \end{table}
 \end{document}
