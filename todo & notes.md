@@ -70,3 +70,8 @@ Then a complex dynamc model and control law is applied to follow the optimal tra
 The aim of the paper is to find a way to suppress vibrations due to impact and normal behaviour of the base.
 The main concept is taken by the kangaroos' legs movement, which meanso to use a n-llayers bio-inspired quadrilateral shape structure between the base and the chaser to model the mass-stiffnes-damper behaviour.
 Due to the non-linearity of the model, the stiffness and the dampming are non-linear.
+
+
+## Thesis images
+- end defector
+- points for rotational matrix

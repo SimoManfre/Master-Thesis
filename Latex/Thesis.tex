@@ -13,7 +13,7 @@
 \usepackage{amsmath}
 \usepackage{microtype}
 \usepackage{booktabs}
-\usepackage{caption}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subfig}
 \usepackage{appendix}
 \usepackage{graphicx}
@@ -255,4 +255,77 @@ In the Table \ref{SRMs_comparison} the specifications of the SSRMS, ERA and JEMR
   \end{tabular}
   \end{center}
   \end{table}
+
+\chapter{Kinematics}
+What is a robot, then? In the previous chapter we have seen an overview of the actual reality of the space robotics field, but a proper definition of a what a robot is has not been given. A robot is a re-programmable machine for manipulation, positioning, orientation, machining of bodies able to interact with the environment, with a certain level of autonomy.\\
+A robot is not just an automated machine, it is something more: takes decisions autonomously, can do different things at different times, is flexible.\\
+According to [11] there are two main families of robots:
+\begin{itemize}
+  \item serial robots: a set of bodies rigidally connected by joints in an open kinematic chain.
+  \item parallel robots: a set of bodies connected in a closed kinematic chain. They can withstand/produce a larger force.
+\end{itemize}
+A kinematic chain is therefore the concatenation of single degree of freedom (i.e. the minimum amount of indipendent coordinates that define the configuration of the robot) links. The joints can be revolute, prismatic or spherical, depending on the movement allowed by them (plane rotational, translational or 3D rotatonal respectively).\\
+Grubler equation for palanar mechanisms gives the overall DoFs:
+\begin{equation}
+  n = 3(m-1)-2c_1-c_2
+  \label{grubler}
+\end{equation}
+where $m$ is the number of rigid bodies attached to the base, $c_1$ and $c_2$ are class 1 and class 2 joints respectively, depending on how many DoFs do they allow (one or two). Revolute joints allows one DoF, i.e. rotation around their axes.\\
+Whenever $n<n_j$, where $n_J$ is the number of joints, a redundancy occurs, meaning that the system has more joints than the dimension of the task space [11].\\
+A very important definition for serial robots is the end defector (EE), i.e the point of the chain dedicated to the programmed task, as shown in Figure \ref{end_defector}.\\
+Studying the kinematics of a mechanical system (such as a robot) refers to the calculation of the position and orientation of its end-eﬀector frame from its joint coordinates [11].\\
+
+We will now analyze the forward kinematics of a manipulator mounted on top of a mobile base, to form a vehicle-manipulator system (VMS) that can be controlled as a whole.\\
+Starting from a simple model of the BMS, it will be possible to analyze its behaviour before and after the impact with an external object (i.e. meteorite or satellite).\\
+
+\section{Fundamental of Kinematics}
+In this thesis, the kinematics chain have been evaluated by means of the "Homogeneous Matrix Approach" shown in [9,10]. For such approach, a briefly summary of notation is here presented.\\
+\subsection{Rototranslation Matrix}
+Given two vectors in an $xy$ plane, only rotated without distortion, as in Figure \ref{rotation_points}, the relationship between them can be found in the following way:
+\begin{equation}
+  v_2=\begin{bmatrix}
+    v_{x_2}\\
+    v_{y_2}
+  \end{bmatrix}=\begin{bmatrix}
+    v_{x_1}\cos{\theta}-v_{y_1}\sin{\theta}\\
+    v_{x_1}\sin{\theta}+v_{y_1}\cos{\theta}
+  \end{bmatrix}=\begin{bmatrix}
+    \cos{\theta} & -\sin{\theta}\\
+    \sin{\theta} & \cos{\theta}
+  \end{bmatrix}\begin{bmatrix}
+    v_{x_1}\\
+    v_{y_1}
+  \end{bmatrix}=R(\theta)v_1
+  \label{rotation_matrix}
+\end{equation}
+where $R_{\theta}$ is the rotation matrix.\\
+We can use the same matrix to describe another transformation, i.e. to find the coordinated of a point initially defined with respect to a mobile frame, with respect to another frame, such as a fixed one (Figure \ref{rotation_frame}):
+\begin{equation}
+  \prescript{f}{}{p}=\prescript{f}{m}{R(\theta)}\prescript{m}{}{p}
+\end{equation}
+An important property of the rotation matrix is that it is orthogonal, hence its inverse is equal to its transpose.\\
+We can concatenate the rotational matrices such that we can describe a point in a given reference frame to another one if we know all the relative rotational matrices of the frames between the two we are interested in:
+\begin{equation}
+  \prescript{0}{}{p}=\prescript{0}{1}{R(\theta)}\prescript{1}{2}{R(\theta)}\prescript{2}{}{p}
+\end{equation}
+This concept can be expanded easily in the 3D case, noticing that the columns of $R(\theta)$ in (\ref{rotation_matrix}) are the unit vectors of the moving (new) frame written in the fixed (old) frame. In this way, rotation matrices along the x, y and z axis are found [6]:
+\begin{equation}
+  \begin{array}{c}
+  R_x(\phi)=\begin{bmatrix}
+    1&0&0\\
+    0&\cos{\phi}&-\sin{\phi}\\
+    0&\sin{\phi}&\cos{\phi}
+  \end{bmatrix} \quad R_y(\psi)=\begin{bmatrix}
+    \cos{\psi}&0&\sin{\psi}\\
+    0&1&0\\
+    -\sin{\psi}&0&\cos{\psi}
+  \end{bmatrix} \\
+  R_z(\theta)=\begin{bmatrix}
+    \cos{\theta}&-\sin{\theta}&0\\
+    \sin{\theta}&\cos{\theta}&0\\
+    0&0&1
+  \end{bmatrix} 
+\end{array}
+\end{equation}
+
 \end{document}

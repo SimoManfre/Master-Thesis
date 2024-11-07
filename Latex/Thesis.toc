@@ -10,3 +10,6 @@
 \contentsline {subsection}{\numberline {1.3.3}JEMRMS}{9}{subsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.3.4}ERA}{10}{subsection.1.3.4}%
 \contentsline {subsection}{\numberline {1.3.5}RMSs Comparison}{11}{subsection.1.3.5}%
+\contentsline {chapter}{\numberline {2}Kinematics}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Fundamental of Kinematics}{14}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Rototranslation Matrix}{14}{subsection.2.1.1}%
