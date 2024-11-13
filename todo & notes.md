@@ -73,5 +73,8 @@ Due to the non-linearity of the model, the stiffness and the dampming are non-li
 
 
 ## Thesis images
-- end defector
-- points for rotational matrix
+- end defector (page 14)
+- points for rotational matrix (page 14)
+- translation (page 15)
+- rival's theorem (page 16)
+- DH method (page 17)

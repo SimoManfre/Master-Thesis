@@ -16,10 +16,16 @@
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subfig}
 \usepackage{appendix}
+\usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[autostyle,italian=guillemets]{csquotes}
 \usepackage{listings,xcolor}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\fancyhead[L]{\scshape{\chaptername} \thechapter\ --\ \leftmark}
 \newlength{\mylen}
 \setbox1=\hbox{$\bullet$}\setbox2=\hbox{\tiny$\bullet$}
 \setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
@@ -113,6 +119,7 @@ International Space Station (ISS) continues to represent an excellent opportunit
 experiments to be conducted in space amid the unique characteristics, constraints and pressures that the environment brings [3].\\
 But what is so special about a space robot? In many ways, robot systems for space applications are very different from the more familiar terrestrial robots, be they industrial robots in production automation or the newer kind of "service robots". One of the main and simplest differences is the high development and manufacturing costs and the missing "economy of scale" due to the experimental prototype nature of these developments.\\
 This thesis will investigate space manipulators' dynamics, whose tasks involve berthing and docking satellites or managing tumbling meteorites; thus, a historical summary of their evolution and the actual state-of-art of this field will be briefly exposed.
+\newpage
 \section{Historical background}
 The first robot used in space was the Remote Manipulator System (RMS), also called \textit{Canadarm}, developed by the Canadian Space Agency and mounted on the Space Shuttle. This robot was used for the first time on 12th November 1981 in the Columbia Shuttle and it was retired in July 2011. It is 15 meters long and has three hinged joints for pitch and three others for yaw and roll, which makes a total of six degrees of freedom (DOF).\\
 There were numerous problems related to the use of the RMS in space. One of the most important was related to its positioning: since it is built out of light materials to minimise the launch cost, its links deflect substantially. When the arm is accelerated and stopped, large vibrations occur.\\
@@ -127,6 +134,7 @@ A larger and more advanced version of the SRMS arm is the MSS arm (Mobile Servic
 In March 2008 the last part of the Mobile Servicing System was added to the International Space Station. The Canada Hand, or the Special Purpose Dexterous Manipulator (SPDM), is a two-armed robot but is often referred to as a hand be- cause it can be attached to the Canadarm2 robotic arm and taken to any location on the space station [6].\\
 The last manipulator in space was launched in July 2021: the Europian Robotic Arm (ERA) serves as main manipulator on the Russian part of the Space Station.\\
 Clearly, the usage of manipulator in space involves recent activities, hence a lot of research and experiments are still in development. This research field offers numerous starting points in analysis and technologic progress.
+\newpage
 \section{Main characteristics}
 Orbiting robotic systems consist of a free-floating base, typically a satellite or a space station, with a robotic manipulator attached to it.\\
 The main difference between space manipulators and Earth-based robots is the lack of a fixed base on which the robot is mounted.\\
@@ -153,6 +161,7 @@ Clearly, only after a manipulator has successfully captured and stabilized a tum
 With a target locally stationary, the approach phase can be achieved by point-to-point planning and depending on the actuation mode, by simple on-off thruster control, and attitude fine-tuning using momentum exchange devices. Capturing a tumbling, non-cooperative target is more challenging, as here velocity matching between the SMS end-effector and the capture point is required.\\
 In fact, to avoid impacts during the grasping phase, the difference between the velocities of the target and the end-effector should be zero. In practise, this never happens, thus small impacts and vibrations have to be taken into account. Research on this topic is still going on, some focusing on bio-inspired isolation systems ([2018], [2020]).\\
 In deploying a SMS for target capture, a manipulator trajectory is needed to achieve the goal. Several secondary optimization goals, such as obstacle and singularities avoidance, fuel consumption, and base disturbance minimization [1999] can be sought, too. E.g. [2009] focuses on the optimal time needed to reach the target [2].
+\newpage
 \section{State-of-art}\label{state_of_art}
 The Low Earth Orbit (LEO), a whole band of orbits between 300 and 700 km altitude, is the main of today's manned space missions. This class belongs to the US Skylab, the Space Shuttle, the Russian Space Station Mir, and the International Space Station (ISS). The orbits are just high enough to be practically free of destabilising dynamic disturbances but as low as possible to minimise launch costs.\\
 Apart from human physiology interest (to investigate the effects of weightlessness on astronauts), the main application field has always been a microgravity research. The term "microgravity" refers to the typical level of "weightlessness" on such manned missions: due to various disturbances (remaining atmospheric drag, moving machinery, but most of all man motion), some 10e-6 g acceleration will continue to act on every mass [1].\\
@@ -276,12 +285,12 @@ A very important definition for serial robots is the end defector (EE), i.e the 
 Studying the kinematics of a mechanical system (such as a robot) refers to the calculation of the position and orientation of its end-eﬀector frame from its joint coordinates [11].\\
 
 We will now analyze the forward kinematics of a manipulator mounted on top of a mobile base, to form a vehicle-manipulator system (VMS) that can be controlled as a whole.\\
-Starting from a simple model of the BMS, it will be possible to analyze its behaviour before and after the impact with an external object (i.e. meteorite or satellite).\\
-
+Starting from a simple model of the BMS, it will be possible to analyze its behaviour before and after the impact with an external object (i.e. meteorite or satellite).
+\newpage
 \section{Fundamental of Kinematics}
-In this thesis, the kinematics chain have been evaluated by means of the "Homogeneous Matrix Approach" shown in [9,10]. For such approach, a briefly summary of notation is here presented.\\
-\subsection{Rototranslation Matrix}
-Given two vectors in an $xy$ plane, only rotated without distortion, as in Figure \ref{rotation_points}, the relationship between them can be found in the following way:
+In this thesis, the kinematics chain have been evaluated by means of the "Homogeneous Matrix Approach" shown in [9,10]. For such approach, a briefly summary of notation is here presented.
+\subsection{Roto-Translation Matrix}
+Given two vectors in an $xy$ plane, only rotated without distortion, as in Figure~\ref{rotation_points}, the relationship between them can be found in the following way:
 \begin{equation}
   v_2=\begin{bmatrix}
     v_{x_2}\\
@@ -299,7 +308,7 @@ Given two vectors in an $xy$ plane, only rotated without distortion, as in Figur
   \label{rotation_matrix}
 \end{equation}
 where $R_{\theta}$ is the rotation matrix.\\
-We can use the same matrix to describe another transformation, i.e. to find the coordinated of a point initially defined with respect to a mobile frame, with respect to another frame, such as a fixed one (Figure \ref{rotation_frame}):
+We can use the same matrix to describe another transformation, i.e. to find the coordinated of a point initially defined with respect to a mobile frame, with respect to another frame, such as a fixed one (Figure~\ref{rotation_frame}):
 \begin{equation}
   \prescript{f}{}{p}=\prescript{f}{m}{R(\theta)}\prescript{m}{}{p}
 \end{equation}
@@ -307,6 +316,7 @@ An important property of the rotation matrix is that it is orthogonal, hence its
 We can concatenate the rotational matrices such that we can describe a point in a given reference frame to another one if we know all the relative rotational matrices of the frames between the two we are interested in:
 \begin{equation}
   \prescript{0}{}{p}=\prescript{0}{1}{R(\theta)}\prescript{1}{2}{R(\theta)}\prescript{2}{}{p}
+  \label{concatenate}
 \end{equation}
 This concept can be expanded easily in the 3D case, noticing that the columns of $R(\theta)$ in (\ref{rotation_matrix}) are the unit vectors of the moving (new) frame written in the fixed (old) frame. In this way, rotation matrices along the x, y and z axis are found [6]:
 \begin{equation}
@@ -327,5 +337,128 @@ This concept can be expanded easily in the 3D case, noticing that the columns of
   \end{bmatrix} 
 \end{array}
 \end{equation}
-
+When a translation occurs, as shown in Figure~\ref{translation}, the transformation becomes:
+\begin{equation}
+  \prescript{f}{}{\{O_fP\}}=\prescript{f}{}{\{O_fO_m\}}+\prescript{f}{}{\{O_mP\}}=\prescript{f}{}{\{O_fO_m\}}+\prescript{m}{f}{R}\prescript{m}{}{\{O_mP\}}
+\end{equation}
+which can be written as follows:
+\begin{equation}
+  \prescript{f}{}{\begin{bmatrix}
+    O_fP_x\\
+    O_fP_y\\
+    O_fP_z\\
+    1
+  \end{bmatrix}}=\begin{bmatrix}
+    \prescript{f}{m}{R}&\prescript{f}{}{\begin{bmatrix}
+      O_fO_mx\\
+      O_fO_my\\
+      O_fO_mz\\
+    \end{bmatrix}}\\
+    \mathbf{0}&1
+  \end{bmatrix}\prescript{m}{}{\begin{bmatrix}
+      O_mP_x\\
+      O_mP_y\\
+      O_mP_z\\
+      1
+    \end{bmatrix}}=\prescript{f}{m}{M}\prescript{m}{}{\begin{bmatrix}
+      O_mP_x\\
+      O_mP_y\\
+      O_mP_z\\
+      1
+    \end{bmatrix}}
+\label{roto_translation}
+\end{equation}
+where $\mathbf{0} \in \mathbb{R}^{3\times1}$ and $\prescript{m}{f}{M} \in \mathbb{R}^{4\times4}$ is called the \textit{Roto-Translational Matrix} or \textit{Homogeneous Transformation Matrix}, for which the same properties seen in equation~(\ref{concatenate}) apply.
+\subsection{Velocity Matrix}
+Given the same point in Figure~\ref{rotation_frame} is is possible to find the velocity of the point with respect to the fixed frame. By derivation of equation (\ref{roto_translation}) one get get:
+\begin{equation}
+  \prescript{f}{}{\{\dot{O_fP}\}}=\prescript{f}{m}{\dot{M}}\prescript{m}{}{\{O_mP\}}+\prescript{f}{m}{M}\prescript{m}{}{\{\dot{O_mP}\}}
+\end{equation}
+and since $\prescript{m}{}{\{\dot{O_mP}\}}=0$, assuming the point fixed, and $\prescript{m}{}{\{O_mP\}}=\prescript{m}{f}{M}\prescript{f}{}{\{O_fP\}}$:
+\begin{equation}
+  \prescript{f}{}{\{\dot{O_fP}\}}=\prescript{m}{f}{\dot{M}}\prescript{f}{m}{M}\prescript{f}{}{\{O_fP\}}=\prescript{f}{}{W}\prescript{f}{}{\{O_fP\}}
+\end{equation}
+with $\prescript{f}{}{W}$ the \textit{Velocity Matrix}.\\
+The Velocity Matrix can be generalized as follows [9]:
+\begin{equation}
+  W=\begin{bmatrix}
+    0&-\omega_z&\omega_y&v_x\\
+    \omega_z&0&-\omega_x&v_y\\
+    -\omega_y&\omega_x&0&v_z\\
+    0&0&0&0
+  \end{bmatrix}
+\end{equation}
+where $\omega$ indicates the angular velocity of the body and $v$ is the velocity of the point, considered belonging to the body that in a considered instant is passing through the origin of the reference frame.\\
+The composition of the Velocity Matrix follows the Rival's Theorem (see Figure~\ref{rival}):
+\begin{equation}
+  \prescript{n}{}{W_{02}}=\prescript{n}{}{W_{01}}+\prescript{n}{}{W_{12}}
+\end{equation}
+which is true only when all the matrices are projected in the same frame $n$.\\
+Some attention must be given also to the matrix representing a "boolean" interpretation of the rotation: the $L$ matrix. For the aim of this thesis, and as it is introduced in [10], this matrix can be easily obtained from its Velocity Matrix dividing it by the module of its angular (or linear, when there is translation) velocity:
+\begin{equation}
+  L=\frac{W}{|\omega|}
+  \label{L_matrix}
+\end{equation}
+where $|\omega|=\sqrt{\omega_x^2+\omega_y^2+\omega_z^2}$.\\
+Given the robotic focus of this work, these calculations will be quite straightforward once defined the axis of rotation of a link. For a revolute joint, for example, the Velocity Matrix with respect of the joint frame will be:
+\begin{equation}
+  W=\begin{bmatrix}
+    0&-\dot{\alpha}&0&0\\
+    \dot{\alpha}&0&0&0\\
+    0&0&0&0\\
+    0&0&0&0
+  \end{bmatrix}
+\end{equation}
+with $\dot{\alpha}=\omega_z$, and the "logic" of the rotation is thus given by $L$:
+\begin{equation}
+  L=\frac{W}{\dot{\alpha}}=\begin{bmatrix}
+    0&1&0&0\\
+    1&0&0&0\\
+    0&0&0&0\\
+    0&0&0&0
+  \end{bmatrix}
+\end{equation}
+\subsection{Danavit-Hartenberg Method}
+To define the reference frames fixed to the links of a serial manipulator, one can follow the Danavit-Hartenberg algorithm, which guarantees a coherent and functional mehod through all the calculations. It has been thought for robots with revolute joints.\\
+It follows this ordered procedures:
+\begin{enumerate}
+  \item $z_i$ axis: axis of the revolute joint which connects the link to the following.
+  \item $x_i$ axis: line of minimum distance between $z_{i-1}$ and $z_i$, oriented from $z_{i-1}$ to $z_i$.
+  \item $y_i$ axis: obtained by the vectorial product of the other two axes.
+\end{enumerate}
+In the bottom example, a DH convention for a planar serial manipulator has been used.
+\subsection{Jacobian Matrix}
+Another important matrix in the analysis if a manipulator is the so called \textit{Jacobian Matrix}.\\
+To study the direct kinematics of a manipulator, as already said, means to find the relationship between the end-defector position and orientation and its joints. When writing the position of the EE (denoted by S), we obtain a function of the robot's joints:
+\begin{equation}
+  S=f(q_1,q_2,\dots,q_n)
+  \label{EE_position}
+\end{equation}
+where $q_i$ are the manipulators DoFs.\\
+By derivation of (\ref{EE_position}) one can obtain:
+\begin{equation}
+  \dot{S}=J_a\dot{Q}
+\end{equation}
+where $J_a$ is the \textit{Analytical Jacobian Matrix}.\\
+Its dimension are very important, since Kinematic singularities, which are configurations in which the end-eﬀector frame loses the ability to move or rotate in one or more directions, correspond to those configurations at which the Jacobian matrix fails to have maximal rank [11], where the rank is defined as the number of indipendent rows or couloumn of the matrix.\\
+Singularities, happen if the open-chain robot is kinematically redundant, meaning, as already mentioned, that it has more joints than the dimension of the task space; then the inverse of the jacobian doesn't exist anymore, since the inversion requires a squared full rank matrix. When this occurs, the pseudoinverse or \textit{Moore-Penrose Inverse} matrix, denoted by $J^+$, must be used:
+\begin{equation}
+  \begin{cases}
+    J^+=(J^TJ)^{-1}J^T \quad \text{when J has linearly indipendent comlumns}\\
+    J^+=J^T(JJ^T)^{-1} \quad \text{when J has linearly indipendent rows}
+  \end{cases}
+\end{equation}
+\newpage
+\section{Planar Vehicle-Manipulator System}
+It will be now presented a simple case of Vehicle-Manipulator System, consisting in a base approximated with a disk and a planar serial manipulator whose revolute joints move around their z axis, orthoginal to the plane (as the one shown in Figure~\ref{DH}).\\
+Since the aim of this work is to study the dynamics of the system after the catching of a tumbling object, its kinematics will be analyzed too, by considering it as a disk.\\
+Firstly, let's define the DoFs of the VMS, which will be:
+\begin{equation}
+  p=\{x_b,y_b,\theta_b,q_1,q_2\}
+\end{equation}
+It is already clear that, being in the 2D case, the number of DoFs is greater than the dimension of the task space (i.e. $5>2$). This means that a redundancy occurs and the pseudoinverse jacobian must be used instead of the inverse one, when needed.\\
+The generalized coordinate of the tumblinh object are the following:
+\begin{equation}
+  \psi=\{x_o,y_o,\theta_o\}
+\end{equation}
 \end{document}
