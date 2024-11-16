@@ -1,0 +1,62 @@
+\begin{tikzpicture}
+
+  \def\lone{4} 
+  \def\ltwo{3.5}
+
+  \def\thetazero{30}
+  \def\thetaone{30}
+  \def\thetatwo{45} 
+
+  \coordinate (O) at (0,0);
+  \coordinate (Ob) at (3,3);
+  \coordinate (Ob0) at ({-0.7+3+2*cos(\thetazero)},{-0.4+3+2*sin(\thetazero)});
+  \coordinate (Ob01) at ({-0.8+3+2*cos(\thetazero)},{-0.2+3+2*sin(\thetazero)});
+  \coordinate (A) at ({3+\lone*cos(\thetaone+\thetazero)},{3+\lone*sin(\thetaone+\thetazero)});
+  \coordinate (C) at ({3+2*\lone*cos(\thetaone+\thetazero)},{3+2*\lone*sin(\thetaone+\thetazero)});
+  \coordinate (C0) at ({3+1.5*\lone*cos(\thetaone+\thetazero)},{3+1.5*\lone*sin(\thetaone+\thetazero)});
+  \coordinate (C01) at ({3-0.8+1.5*\lone*cos(\thetaone+\thetazero)},{3+0.5+1.5*\lone*sin(\thetaone+\thetazero)});
+  \coordinate (B) at ({3+\lone*cos(\thetaone+\thetazero) + \ltwo*cos(\thetaone + \thetatwo+\thetazero)}, 
+                      {3+\lone*sin(\thetaone+\thetazero) + \ltwo*sin(\thetaone + \thetatwo+\thetazero)});
+  \coordinate (B0) at ({3+1.5*\lone*cos(\thetaone+\thetazero) + 1.5*\ltwo*cos(\thetaone + \thetatwo+\thetazero)}, 
+                      {3+1.5*\lone*sin(\thetaone+\thetazero) + 1.5*\ltwo*sin(\thetaone + \thetatwo+\thetazero)});
+
+  \draw[thick,fill=green!50] (3,3) circle (1);
+
+  \draw[thick, black] (Ob) -- (A);
+  \draw[thick, black, dashed] (Ob) -- (C);
+  \draw[thick, black] (A) -- (B);
+
+  \draw[thick,black,->] (O) -- (0,10) node[anchor=east]{$y_f$};
+  \draw[thick,black,->] (O) -- (7,0) node[anchor=west]{$x_f$};
+
+  \draw[thick,black,->] (Ob) -- (3,5) node[anchor=east]{$y_b$};
+  \draw[thick,black,->] (Ob) -- (5,3) node[anchor=west]{$x_b$};
+
+  \draw[thick,blue,->] (Ob) -- ({3-2*sin(\thetazero)},{3+2*cos(\thetazero)}) node[anchor=east]{$y_0$};
+  \draw[thick,blue,->] (Ob) -- ({3+2*cos(\thetazero)},{3+2*sin(\thetazero)}) node[anchor=west]{$x_0$};
+  
+
+  \draw[thick,red,->] (A) -- ({3+\lone*cos(\thetaone+\thetazero)-sin(\thetaone+\thetazero)},{3+\lone*sin(\thetaone+\thetazero)+cos(\thetaone+\thetazero)}) node[anchor=east]{$y_1$};
+  \draw[thick,red,->] (A) -- ({3+\lone*cos(\thetaone+\thetazero)+cos(\thetaone+\thetazero)},{3+\lone*sin(\thetaone+\thetazero)+sin(\thetaone+\thetazero)}) node[anchor=west]{$x_1$};
+
+  \draw[thick,red,->] (B) -- ({3+\lone*cos(\thetaone+\thetazero)+ \ltwo*cos(\thetaone + \thetatwo+\thetazero)-sin(\thetaone+ \thetatwo+\thetazero)},{3+\lone*sin(\thetaone+\thetazero)+ \ltwo*sin(\thetaone + \thetatwo+\thetazero)+cos(\thetaone+ \thetatwo+\thetazero)}) node[anchor=east]{$y_2$};
+  \draw[thick,red,->] (B) -- ({3+\lone*cos(\thetaone+\thetazero)+ \ltwo*cos(\thetaone + \thetatwo+\thetazero)+cos(\thetaone+ \thetatwo+\thetazero)},{3+\lone*sin(\thetaone+\thetazero)+ \ltwo*sin(\thetaone + \thetatwo+\thetazero)+sin(\thetaone+ \thetatwo+\thetazero)}) node[anchor=west]{$x_2$};
+
+  \draw[ultra thick,->] (4.5,3) arc [start angle=0, end angle=\thetaone, x radius=1.5, y radius=1.5];
+  \draw[ultra thick,->] (Ob0) arc [start angle=\thetazero, end angle={\thetaone+\thetazero}, x radius=1.2, y radius=1.2];
+  \draw[ultra thick,->] (C0) arc [start angle=\thetaone, end angle={\thetatwo+\thetaone}, x radius=2.7, y radius=1.5];
+
+  \filldraw[fill=black] (O) circle (0.1);
+  \filldraw[fill=black] (Ob) circle (0.1);
+  \filldraw[fill=black] (A) circle (0.1);
+  \filldraw[fill=black] (B) circle (0.1);
+
+  \node[anchor=east] at (O) {$O_f$};
+  \node[anchor=east] at (Ob) {$O_b$};
+  \node[anchor=north west] at (A) {$O_1$};
+  \node[anchor=west] at (B) {$O_2$};
+  \node[anchor=south west] at (4.5,3.1) {$\theta$};
+  \node[anchor=south west] at (Ob01) {$q_1$};
+  \node[anchor=south west] at (C01) {$q_2$};
+
+\end{tikzpicture}

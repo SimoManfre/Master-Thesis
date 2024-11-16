@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  13 NOV 2024 13:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  15 NOV 2024 00:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -54,24 +54,83 @@ Package babel Info: Importing font and identification data for english
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/ctable/ctable.sty
-Package: ctable 2015/10/17 v1.31 ctable package for flexible typesetting of table and figure floats using key/value directives
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
-)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count199
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen142
+\pgfutil@tempdimb=\dimen143
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box51
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen146
+\pgf@y=\dimen147
+\pgf@xa=\dimen148
+\pgf@ya=\dimen149
+\pgf@xb=\dimen150
+\pgf@yb=\dimen151
+\pgf@xc=\dimen152
+\pgf@yc=\dimen153
+\pgf@xd=\dimen154
+\pgf@yd=\dimen155
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count199
+\c@pgf@countb=\count266
+\c@pgf@countc=\count267
+\c@pgf@countd=\count268
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
+\pgf@sys@id@count=\count269
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count270
+\pgfsyssoftpath@bigbuffer@items=\count271
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -81,101 +140,219 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen156
+\pgfmath@count=\count272
+\pgfmath@box=\box52
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count273
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen157
+\pgf@picmaxx=\dimen158
+\pgf@picminy=\dimen159
+\pgf@picmaxy=\dimen160
+\pgf@pathminx=\dimen161
+\pgf@pathmaxx=\dimen162
+\pgf@pathminy=\dimen163
+\pgf@pathmaxy=\dimen164
+\pgf@xx=\dimen165
+\pgf@xy=\dimen166
+\pgf@yx=\dimen167
+\pgf@yy=\dimen168
+\pgf@zx=\dimen169
+\pgf@zy=\dimen170
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen171
+\pgf@path@lasty=\dimen172
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen173
+\pgf@shorten@start@additional=\dimen174
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box53
+\pgf@hbox=\box54
+\pgf@layerbox@main=\box55
+\pgf@picture@serial@count=\count274
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen175
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen176
+\pgf@pt@y=\dimen177
+\pgf@pt@temp=\dimen178
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen179
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen180
+\pgf@sys@shading@range@num=\count275
+\pgf@shadingcount=\count276
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box56
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box57
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen181
+\pgf@nodesepend=\dimen182
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen183
+\pgffor@skip=\dimen184
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count277
+\pgfplotmarksize=\dimen185
+)
+\tikz@lastx=\dimen186
+\tikz@lasty=\dimen187
+\tikz@lastxsaved=\dimen188
+\tikz@lastysaved=\dimen189
+\tikz@lastmovetox=\dimen190
+\tikz@lastmovetoy=\dimen191
+\tikzleveldistance=\dimen192
+\tikzsiblingdistance=\dimen193
+\tikz@figbox=\box58
+\tikz@figbox@bg=\box59
+\tikz@tempbox=\box60
+\tikz@tempbox@bg=\box61
+\tikztreelevel=\count278
+\tikznumberofchildren=\count279
+\tikznumberofcurrentchild=\count280
+\tikz@fig@count=\count281
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count282
+\pgfmatrixcurrentcolumn=\count283
+\pgf@matrix@numberofcolumns=\count284
+)
+\tikz@expandcount=\count285
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/ctable/ctable.sty
+Package: ctable 2015/10/17 v1.31 ctable package for flexible typesetting of table and figure floats using key/value directives
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks19
-\XKV@tempa@toks=\toks20
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count266
+\XKV@toks=\toks32
+\XKV@tempa@toks=\toks33
+)
+\XKV@depth=\count287
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen142
-\ar@mcellbox=\box51
-\extrarowheight=\dimen143
-\NC@list=\toks21
+\col@sep=\dimen194
+\ar@mcellbox=\box62
+\extrarowheight=\dimen195
+\NC@list=\toks34
 \extratabsurround=\skip50
 \backup@length=\skip51
-\ar@cellbox=\box52
+\ar@cellbox=\box63
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen144
-\TX@old@table=\dimen145
-\TX@old@col=\dimen146
-\TX@target=\dimen147
-\TX@delta=\dimen148
-\TX@cols=\count267
-\TX@ftn=\toks22
+\TX@col@width=\dimen196
+\TX@old@table=\dimen197
+\TX@old@col=\dimen198
+\TX@target=\dimen199
+\TX@delta=\dimen256
+\TX@cols=\count288
+\TX@ftn=\toks35
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen149
-\lightrulewidth=\dimen150
-\cmidrulewidth=\dimen151
-\belowrulesep=\dimen152
-\belowbottomsep=\dimen153
-\aboverulesep=\dimen154
-\abovetopsep=\dimen155
-\cmidrulesep=\dimen156
-\cmidrulekern=\dimen157
-\defaultaddspace=\dimen158
-\@cmidla=\count268
-\@cmidlb=\count269
-\@aboverulesep=\dimen159
-\@belowrulesep=\dimen160
-\@thisruleclass=\count270
-\@lastruleclass=\count271
-\@thisrulewidth=\dimen161
+\heavyrulewidth=\dimen257
+\lightrulewidth=\dimen258
+\cmidrulewidth=\dimen259
+\belowrulesep=\dimen260
+\belowbottomsep=\dimen261
+\aboverulesep=\dimen262
+\abovetopsep=\dimen263
+\cmidrulesep=\dimen264
+\cmidrulekern=\dimen265
+\defaultaddspace=\dimen266
+\@cmidla=\count289
+\@cmidlb=\count290
+\@aboverulesep=\dimen267
+\@belowrulesep=\dimen268
+\@thisruleclass=\count291
+\@lastruleclass=\count292
+\@thisrulewidth=\dimen269
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 107.
-)
-\Gin@req@height=\dimen162
-\Gin@req@width=\dimen163
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/base/ifthen.sty
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count272
+\c@r@tfl@t=\count293
 \rotFPtop=\skip52
 \rotFPbot=\skip53
-\rot@float@box=\box53
-\rot@mess@toks=\toks23
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/transparent/transparent.sty
-Package: transparent 2022-10-27 v1.5 Transparency with color stacks
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
-Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color stack (HO)
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)))
-\@CTframesep=\dimen164
-\@dfltCTframesep=\dimen165
-\@CTframerule=\dimen166
-\@dfltCTframerule=\dimen167
-\@CTwidth=\dimen168
-\@dfltCTwidth=\dimen169
-\@CTcaptionskip=\dimen170
-\@dfltCTcaptionskip=\dimen171
-\@CTmaxwidth=\dimen172
-\@dfltCTmaxwidth=\dimen173
-\@CTmincapwidth=\dimen174
-\@dfltCTmincapwidth=\dimen175
-\@CTfooterwidth=\dimen176
-\@dfltCTfooterwidth=\dimen177
-\@CTw=\dimen178
-\@CTfloatwidth=\dimen179
-\@CToldsep=\dimen180
-\@CToldrule=\dimen181
-\CT@t=\box54
-\@CTcurftwidth=\dimen182
+\rot@float@box=\box64
+\rot@mess@toks=\toks36
+)
+
+Package ctable Warning:  Transparency disabled: incompatible with tikz package  on input line 36.
+
+\@CTframesep=\dimen270
+\@dfltCTframesep=\dimen271
+\@CTframerule=\dimen272
+\@dfltCTframerule=\dimen273
+\@CTwidth=\dimen274
+\@dfltCTwidth=\dimen275
+\@CTcaptionskip=\dimen276
+\@dfltCTcaptionskip=\dimen277
+\@CTmaxwidth=\dimen278
+\@dfltCTmaxwidth=\dimen279
+\@CTmincapwidth=\dimen280
+\@dfltCTmincapwidth=\dimen281
+\@CTfooterwidth=\dimen282
+\@dfltCTfooterwidth=\dimen283
+\@CTw=\dimen284
+\@CTfloatwidth=\dimen285
+\@CToldsep=\dimen286
+\@CToldrule=\dimen287
+\CT@t=\box65
+\@CTcurftwidth=\dimen288
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/layaureo/layaureo.sty
 Package: layaureo 2004/09/16 v0.2
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/geometry/geometry.sty
@@ -183,29 +360,29 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count273
-\Gm@cntv=\count274
-\c@Gm@tempcnt=\count275
-\Gm@bindingoffset=\dimen183
-\Gm@wd@mp=\dimen184
-\Gm@odd@mp=\dimen185
-\Gm@even@mp=\dimen186
-\Gm@layoutwidth=\dimen187
-\Gm@layoutheight=\dimen188
-\Gm@layouthoffset=\dimen189
-\Gm@layoutvoffset=\dimen190
-\Gm@dimlist=\toks24
+\Gm@cnth=\count294
+\Gm@cntv=\count295
+\c@Gm@tempcnt=\count296
+\Gm@bindingoffset=\dimen289
+\Gm@wd@mp=\dimen290
+\Gm@odd@mp=\dimen291
+\Gm@even@mp=\dimen292
+\Gm@layoutwidth=\dimen293
+\Gm@layoutheight=\dimen294
+\Gm@layouthoffset=\dimen295
+\Gm@layoutvoffset=\dimen296
+\Gm@dimlist=\toks37
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count276
-\calc@Bcount=\count277
-\calc@Adimen=\dimen191
-\calc@Bdimen=\dimen192
+\calc@Acount=\count297
+\calc@Bcount=\count298
+\calc@Adimen=\dimen297
+\calc@Bdimen=\dimen298
 \calc@Askip=\skip54
 \calc@Bskip=\skip55
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count278
+\calc@Ccount=\count299
 \calc@Cskip=\skip56
 )
 \LA@MargineRilegatura=\skip57
@@ -215,7 +392,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \LA@MargineSuperiore=\skip61
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/varioref.sty
 Package: varioref 2022/01/09 v1.6f package for extended references (FMi)
-\c@vrcnt=\count279
+\c@vrcnt=\count300
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -229,89 +406,89 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks25
-\ex@=\dimen193
+\@emptytoks=\toks38
+\ex@=\dimen299
 )) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen194
+\pmbraise@=\dimen300
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count280
+\inf@bad=\count301
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count281
-\leftroot@=\count282
+\uproot@=\count302
+\leftroot@=\count303
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count283
-\DOTSCASE@=\count284
+\classnum@=\count304
+\DOTSCASE@=\count305
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box55
-\strutbox@=\box56
+\Mathstrutbox@=\box66
+\strutbox@=\box67
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen195
+\big@size=\dimen301
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count285
+\macc@depth=\count306
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count286
+\c@MaxMatrixCols=\count307
 \dotsspace@=\muskip17
-\c@parentequation=\count287
-\dspbrk@lvl=\count288
-\tag@help=\toks26
-\row@=\count289
-\column@=\count290
-\maxfields@=\count291
-\andhelp@=\toks27
-\eqnshift@=\dimen196
-\alignsep@=\dimen197
-\tagshift@=\dimen198
-\tagwidth@=\dimen199
-\totwidth@=\dimen256
-\lineht@=\dimen257
-\@envbody=\toks28
+\c@parentequation=\count308
+\dspbrk@lvl=\count309
+\tag@help=\toks39
+\row@=\count310
+\column@=\count311
+\maxfields@=\count312
+\andhelp@=\toks40
+\eqnshift@=\dimen302
+\alignsep@=\dimen303
+\tagshift@=\dimen304
+\tagwidth@=\dimen305
+\totwidth@=\dimen306
+\lineht@=\dimen307
+\@envbody=\toks41
 \multlinegap=\skip63
 \multlinetaggap=\skip64
-\mathdisplay@stack=\toks29
+\mathdisplay@stack=\toks42
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-\g_MT_multlinerow_int=\count292
-\l_MT_multwidth_dim=\dimen258
+\g_MT_multlinerow_int=\count313
+\l_MT_multwidth_dim=\dimen308
 \origjot=\skip65
-\l_MT_shortvdotswithinadjustabove_dim=\dimen259
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen260
-\l_MT_above_intertext_sep=\dimen261
-\l_MT_below_intertext_sep=\dimen262
-\l_MT_above_shortintertext_sep=\dimen263
-\l_MT_below_shortintertext_sep=\dimen264
-\xmathstrut@box=\box57
-\xmathstrut@dim=\dimen265
+\l_MT_shortvdotswithinadjustabove_dim=\dimen309
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen310
+\l_MT_above_intertext_sep=\dimen311
+\l_MT_below_intertext_sep=\dimen312
+\l_MT_above_shortintertext_sep=\dimen313
+\l_MT_below_shortintertext_sep=\dimen314
+\xmathstrut@box=\box68
+\xmathstrut@dim=\dimen315
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2024-02-15 v3.3.12 A comprehensive (SI) units package
-\l__siunitx_number_uncert_offset_int=\count293
-\l__siunitx_number_exponent_fixed_int=\count294
-\l__siunitx_number_min_decimal_int=\count295
-\l__siunitx_number_min_integer_int=\count296
-\l__siunitx_number_round_precision_int=\count297
-\l__siunitx_number_lower_threshold_int=\count298
-\l__siunitx_number_upper_threshold_int=\count299
-\l__siunitx_number_group_first_int=\count300
-\l__siunitx_number_group_size_int=\count301
-\l__siunitx_number_group_minimum_int=\count302
-\l__siunitx_angle_tmp_dim=\dimen266
-\l__siunitx_angle_marker_box=\box58
-\l__siunitx_angle_unit_box=\box59
-\l__siunitx_compound_count_int=\count303
+\l__siunitx_number_uncert_offset_int=\count314
+\l__siunitx_number_exponent_fixed_int=\count315
+\l__siunitx_number_min_decimal_int=\count316
+\l__siunitx_number_min_integer_int=\count317
+\l__siunitx_number_round_precision_int=\count318
+\l__siunitx_number_lower_threshold_int=\count319
+\l__siunitx_number_upper_threshold_int=\count320
+\l__siunitx_number_group_first_int=\count321
+\l__siunitx_number_group_size_int=\count322
+\l__siunitx_number_group_minimum_int=\count323
+\l__siunitx_angle_tmp_dim=\dimen316
+\l__siunitx_angle_marker_box=\box69
+\l__siunitx_angle_unit_box=\box70
+\l__siunitx_compound_count_int=\count324
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/translations/translations.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -325,19 +502,19 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ))
-\l__siunitx_table_tmp_box=\box60
-\l__siunitx_table_tmp_dim=\dimen267
-\l__siunitx_table_column_width_dim=\dimen268
-\l__siunitx_table_integer_box=\box61
-\l__siunitx_table_decimal_box=\box62
-\l__siunitx_table_uncert_box=\box63
-\l__siunitx_table_before_box=\box64
-\l__siunitx_table_after_box=\box65
-\l__siunitx_table_before_dim=\dimen269
-\l__siunitx_table_carry_dim=\dimen270
-\l__siunitx_unit_tmp_int=\count304
-\l__siunitx_unit_position_int=\count305
-\l__siunitx_unit_total_int=\count306
+\l__siunitx_table_tmp_box=\box71
+\l__siunitx_table_tmp_dim=\dimen317
+\l__siunitx_table_column_width_dim=\dimen318
+\l__siunitx_table_integer_box=\box72
+\l__siunitx_table_decimal_box=\box73
+\l__siunitx_table_uncert_box=\box74
+\l__siunitx_table_before_box=\box75
+\l__siunitx_table_after_box=\box76
+\l__siunitx_table_before_dim=\dimen319
+\l__siunitx_table_carry_dim=\dimen320
+\l__siunitx_unit_tmp_int=\count325
+\l__siunitx_unit_position_int=\count326
+\l__siunitx_unit_total_int=\count327
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -347,17 +524,17 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
-\MT@toks=\toks30
-\MT@tempbox=\box66
-\MT@count=\count307
+\MT@toks=\toks43
+\MT@tempbox=\box77
+\MT@count=\count328
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
 LaTeX Info: Redefining \leftprotrusion on input line 1060.
-\MT@prot@toks=\toks31
+\MT@prot@toks=\toks44
 LaTeX Info: Redefining \rightprotrusion on input line 1078.
 LaTeX Info: Redefining \textls on input line 1368.
-\MT@outer@kern=\dimen271
+\MT@outer@kern=\dimen321
 LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
-\MT@listname@count=\count308
+\MT@listname@count=\count329
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
@@ -371,39 +548,39 @@ File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen272
-\captionmargin=\dimen273
-\caption@leftmargin=\dimen274
-\caption@rightmargin=\dimen275
-\caption@width=\dimen276
-\caption@indent=\dimen277
-\caption@parindent=\dimen278
-\caption@hangindent=\dimen279
+\caption@tempdima=\dimen322
+\captionmargin=\dimen323
+\caption@leftmargin=\dimen324
+\caption@rightmargin=\dimen325
+\caption@width=\dimen326
+\caption@indent=\dimen327
+\caption@parindent=\dimen328
+\caption@hangindent=\dimen329
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count309
-\c@continuedfloat=\count310
+\c@caption@flags=\count330
+\c@continuedfloat=\count331
 Package caption Info: rotating package is loaded.
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count311
+\c@KVtest=\count332
 \sf@farskip=\skip67
-\sf@captopadj=\dimen280
+\sf@captopadj=\dimen330
 \sf@capskip=\skip68
 \sf@nearskip=\skip69
-\c@subfigure=\count312
-\c@subfigure@save=\count313
-\c@lofdepth=\count314
-\c@subtable=\count315
-\c@subtable@save=\count316
-\c@lotdepth=\count317
+\c@subfigure=\count333
+\c@subfigure@save=\count334
+\c@lofdepth=\count335
+\c@subtable=\count336
+\c@subtable@save=\count337
+\c@lotdepth=\count338
 \sf@top=\skip70
 \sf@bottom=\skip71
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count318
-\c@@ppsavesec=\count319
-\c@@ppsaveapp=\count320
+\c@@pps=\count339
+\c@@ppsavesec=\count340
+\c@@ppsaveapp=\count341
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip72
@@ -417,13 +594,13 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@orf=\skip80
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count321
-\csq@gtype=\count322
-\csq@glevel=\count323
-\csq@qlevel=\count324
-\csq@maxlvl=\count325
-\csq@tshold=\count326
-\csq@ltx@everypar=\toks32
+\csq@reset=\count342
+\csq@gtype=\count343
+\csq@glevel=\count344
+\csq@qlevel=\count345
+\csq@maxlvl=\count346
+\csq@tshold=\count347
+\csq@ltx@everypar=\toks45
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
@@ -435,35 +612,57 @@ File: csquotes.cfg
 Package csquotes Info: Enabling multilingual quotes.
 Package csquotes Info: Redefining alias 'italian' -> 'italian/guillemets'.
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count327
-\lst@gtempboxa=\box67
-\lst@token=\toks33
-\lst@length=\count328
-\lst@currlwidth=\dimen281
-\lst@column=\count329
-\lst@pos=\count330
-\lst@lostspace=\dimen282
-\lst@width=\dimen283
-\lst@newlines=\count331
-\lst@lineno=\count332
-\lst@maxwidth=\dimen284
+\lst@mode=\count348
+\lst@gtempboxa=\box78
+\lst@token=\toks46
+\lst@length=\count349
+\lst@currlwidth=\dimen331
+\lst@column=\count350
+\lst@pos=\count351
+\lst@lostspace=\dimen332
+\lst@width=\dimen333
+\lst@newlines=\count352
+\lst@lineno=\count353
+\lst@maxwidth=\dimen334
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-\c@lstnumber=\count333
-\lst@skipnumbers=\count334
-\lst@framebox=\box68
+\c@lstnumber=\count354
+\lst@skipnumbers=\count355
+\lst@framebox=\box79
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
 Package: listings 2024/02/21 1.10 (Carsten Heinz)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.text.code.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen335
+\pgfdecoratedremainingdistance=\dimen336
+\pgfdecoratedinputsegmentcompleteddistance=\dimen337
+\pgfdecoratedinputsegmentremainingdistance=\dimen338
+\pgf@decorate@distancetomove=\dimen339
+\pgf@decorate@repeatstate=\count356
+\pgfdecorationsegmentamplitude=\dimen340
+\pgfdecorationsegmentlength=\dimen341
+)
+\tikz@lib@dec@box=\box80
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.text.code.tex
+\pgf@lib@dec@text@box=\box81
+)
+\tikz@lib@dec@te@box=\box82
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen342
+\pgfarrowlength=\dimen343
+\pgfarrowwidth=\dimen344
+\pgfarrowlinewidth=\dimen345
+)
 \mylen=\skip81
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -476,6 +675,8 @@ Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -485,11 +686,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count335
+\c@section@level=\count357
 )
-\@linkdim=\dimen285
-\Hy@linkcounter=\count336
-\Hy@pagecounter=\count337
+\@linkdim=\dimen346
+\Hy@linkcounter=\count358
+\Hy@pagecounter=\count359
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -497,7 +698,7 @@ Now handling font encoding PD1 ...
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count338
+\Hy@SavedSpaceFactor=\count360
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -510,17 +711,17 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count339
+\c@Hy@tempcnt=\count361
 LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen286
+\XeTeXLinkMargin=\dimen347
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count340
-\Field@Width=\dimen287
-\Fld@charsize=\dimen288
+\Fld@menulength=\count362
+\Field@Width=\dimen348
+\Fld@charsize=\dimen349
 Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
@@ -532,9 +733,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count341
-\c@Item=\count342
-\c@Hfootnote=\count343
+\Hy@abspage=\count363
+\c@Item=\count364
+\c@Hfootnote=\count365
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -543,8 +744,8 @@ File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count344
-\c@bookmark@seq@number=\count345
+\Fld@listcount=\count366
+\c@bookmark@seq@number=\count367
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -558,42 +759,42 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count346
-\l__pdf_internal_box=\box69
+\l__color_backend_stack_int=\count368
+\l__pdf_internal_box=\box83
 ) (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count347
-\scratchdimen=\dimen289
-\scratchbox=\box70
-\nofMPsegments=\count348
-\nofMParguments=\count349
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count350
-\MPscratchDim=\dimen290
-\MPnumerator=\count351
-\makeMPintoPDFobject=\count352
-\everyMPtoPDFconversion=\toks35
+\scratchcounter=\count369
+\scratchdimen=\dimen350
+\scratchbox=\box84
+\nofMPsegments=\count370
+\nofMParguments=\count371
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count372
+\MPscratchDim=\dimen351
+\MPnumerator=\count373
+\makeMPintoPDFobject=\count374
+\everyMPtoPDFconversion=\toks48
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -637,20 +838,20 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 43.
-LaTeX Info: Redefining \microtypecontext on input line 43.
-Package microtype Info: Applying patch `item' on input line 43.
-Package microtype Info: Applying patch `toc' on input line 43.
-Package microtype Info: Applying patch `eqnum' on input line 43.
-Package microtype Info: Applying patch `footnote' on input line 43.
-Package microtype Info: Applying patch `verbatim' on input line 43.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 47.
+LaTeX Info: Redefining \microtypecontext on input line 47.
+Package microtype Info: Applying patch `item' on input line 47.
+Package microtype Info: Applying patch `toc' on input line 47.
+Package microtype Info: Applying patch `eqnum' on input line 47.
+Package microtype Info: Applying patch `footnote' on input line 47.
+Package microtype Info: Applying patch `verbatim' on input line 47.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 43.
+LaTeX Info: Redefining \showhyphens on input line 47.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -662,16 +863,16 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count353
-Package hyperref Info: Link coloring OFF on input line 43.
+\c@lstlisting=\count375
+Package hyperref Info: Link coloring OFF on input line 47.
  (./Thesis.out) (./Thesis.out)
-\@outlinefile=\write3
-\openout3 = `Thesis.out'.
+\@outlinefile=\write4
+\openout4 = `Thesis.out'.
 
-<./Images/sigillo2.jpg, id=76, 486.81876pt x 484.81125pt>
+<./Images/sigillo2.jpg, id=79, 486.81876pt x 484.81125pt>
 File: ./Images/sigillo2.jpg Graphic file (type jpg)
 <use ./Images/sigillo2.jpg>
-Package pdftex.def Info: ./Images/sigillo2.jpg  used on input line 48.
+Package pdftex.def Info: ./Images/sigillo2.jpg  used on input line 52.
 (pdftex.def)             Requested size: 121.70439pt x 121.20251pt.
  [1
 
@@ -679,19 +880,19 @@ Package pdftex.def Info: ./Images/sigillo2.jpg  used on input line 48.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.82 \end{abstract}
+l.86 \end{abstract}
                     [1] (./Thesis.toc (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ))
-\tf@toc=\write4
-\openout4 = `Thesis.toc'.
+\tf@toc=\write5
+\openout5 = `Thesis.toc'.
 
  [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
 
  []
 
@@ -703,7 +904,7 @@ Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.108 \item s
+l.112 \item s
              upport of Extra-Vehicular-Activities (EVA) [1
 
 
@@ -732,7 +933,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 139--149
+Underfull \hbox (badness 10000) in paragraph at lines 143--153
 
  []
 
@@ -760,15 +961,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-<./Images/SSRMS_dimensions.png, id=158, 1190.4475pt x 249.93375pt>
+<./Images/SSRMS_dimensions.png, id=161, 1190.4475pt x 249.93375pt>
 File: ./Images/SSRMS_dimensions.png Graphic file (type png)
 <use ./Images/SSRMS_dimensions.png>
-Package pdftex.def Info: ./Images/SSRMS_dimensions.png  used on input line 184.
+Package pdftex.def Info: ./Images/SSRMS_dimensions.png  used on input line 188.
 (pdftex.def)             Requested size: 357.13701pt x 74.9807pt.
-<./Images/SSRMS_orbit.png, id=160, 938.50626pt x 513.92pt>
+<./Images/SSRMS_orbit.png, id=163, 938.50626pt x 513.92pt>
 File: ./Images/SSRMS_orbit.png Graphic file (type png)
 <use ./Images/SSRMS_orbit.png>
-Package pdftex.def Info: ./Images/SSRMS_orbit.png  used on input line 190.
+Package pdftex.def Info: ./Images/SSRMS_orbit.png  used on input line 194.
 (pdftex.def)             Requested size: 375.39584pt x 205.56435pt.
 
 
@@ -782,10 +983,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./Images/SPDM.png, id=170, 546.04pt x 363.3575pt>
+<./Images/SPDM.png, id=173, 546.04pt x 363.3575pt>
 File: ./Images/SPDM.png Graphic file (type png)
 <use ./Images/SPDM.png>
-Package pdftex.def Info: ./Images/SPDM.png  used on input line 201.
+Package pdftex.def Info: ./Images/SPDM.png  used on input line 205.
 (pdftex.def)             Requested size: 327.62653pt x 218.01617pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -795,18 +996,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9 <./Images/SSRMS_dimensions.png>]
-<./Images/MA.png, id=182, 614.295pt x 382.42876pt>
+<./Images/MA.png, id=185, 614.295pt x 382.42876pt>
 File: ./Images/MA.png Graphic file (type png)
 <use ./Images/MA.png>
-Package pdftex.def Info: ./Images/MA.png  used on input line 213.
+Package pdftex.def Info: ./Images/MA.png  used on input line 217.
 (pdftex.def)             Requested size: 215.00647pt x 133.85207pt.
-<./Images/SFA.png, id=183, 525.965pt x 404.51125pt>
+<./Images/SFA.png, id=186, 525.965pt x 404.51125pt>
 File: ./Images/SFA.png Graphic file (type png)
 <use ./Images/SFA.png>
-Package pdftex.def Info: ./Images/SFA.png  used on input line 215.
+Package pdftex.def Info: ./Images/SFA.png  used on input line 219.
 (pdftex.def)             Requested size: 184.0905pt x 141.58105pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--220
+Underfull \hbox (badness 10000) in paragraph at lines 210--224
 
  []
 
@@ -818,10 +1019,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10 <./Images/SSRMS_orbit.png> <./Images/SPDM.png>]
-<./Images/ERA.png, id=192, 925.4575pt x 693.59125pt>
+<./Images/ERA.png, id=195, 925.4575pt x 693.59125pt>
 File: ./Images/ERA.png Graphic file (type png)
 <use ./Images/ERA.png>
-Package pdftex.def Info: ./Images/ERA.png  used on input line 230.
+Package pdftex.def Info: ./Images/ERA.png  used on input line 234.
 (pdftex.def)             Requested size: 416.45203pt x 312.11317pt.
 
 
@@ -850,14 +1051,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [13]
 Chapter 2.
 
-LaTeX Warning: Reference `end_defector' on page 14 undefined on input line 284.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 290.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
-
- []
-
-[14
+(./tikz/EE.tikz) [14
 
 ]
 
@@ -867,15 +1064,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
+[15] (./tikz/rotation_vectors.tikz) (./tikz/rotation_point.tikz)
 
-LaTeX Warning: Reference `rotation_points' on page 16 undefined on input line 293.
-
-
-LaTeX Warning: Reference `rotation_frame' on page 16 undefined on input line 311.
-
-
-LaTeX Warning: Reference `translation' on page 16 undefined on input line 340.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -886,10 +1077,31 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [16]
 
-LaTeX Warning: Reference `rotation_frame' on page 17 undefined on input line 373.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
+[17] (./tikz/translation_point.tikz)
 
-LaTeX Warning: Reference `rival' on page 17 undefined on input line 392.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18] (./tikz/rivals_theorem.tikz)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19] (./tikz/DH.tikz)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -898,7 +1110,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17]
+[20]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -906,7 +1118,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18]
+[21]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -914,10 +1126,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19]
-
-LaTeX Warning: Reference `DH' on page 20 undefined on input line 453.
-
+[22]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -925,31 +1134,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20] (./Thesis.aux)
+[23] (./Thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 66CE5ECCF575D9AD4BB44F507C8E6E71;2465.
  ) 
 Here is how much of TeX's memory you used:
- 22739 strings out of 474116
- 429675 string characters out of 5732612
- 1948187 words of memory out of 5000000
- 44545 multiletter control sequences out of 15000+600000
- 584772 words of font info for 172 fonts, out of 8000000 for 9000
+ 34324 strings out of 474116
+ 695357 string characters out of 5732612
+ 1949187 words of memory out of 5000000
+ 55864 multiletter control sequences out of 15000+600000
+ 588205 words of font info for 192 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,19n,117p,1076b,1055s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Thesis.pdf (24 pages, 2374645 bytes).
+ 102i,19n,117p,1076b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on Thesis.pdf (27 pages, 2421571 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 314 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
- 53428 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 451 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 59584 words of extra memory for PDF output out of 61914 (max. 10000000)
 

@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+
+  % Definizione delle lunghezze dei bracci
+  \def\lone{4} % Lunghezza del primo braccio
+  \def\ltwo{3.5} % Lunghezza del secondo braccio
+
+  % Angoli dei giunti
+  \def\thetaone{30} % Angolo del primo giunto (in gradi)
+  \def\thetatwo{45} % Angolo del secondo giunto (in gradi)
+
+  % Coordinate del primo giunto
+  \coordinate (O) at (0,0);
+
+  % Calcolo delle coordinate del secondo giunto
+  \coordinate (A) at ({\lone*cos(\thetaone)},{\lone*sin(\thetaone)});
+
+  % Calcolo delle coordinate dell'end effector
+  \coordinate (B) at ({\lone*cos(\thetaone) + \ltwo*cos(\thetaone + \thetatwo)}, 
+                      {\lone*sin(\thetaone) + \ltwo*sin(\thetaone + \thetatwo)});
+
+  % Disegno del primo braccio
+  \draw[thick, black] (O) -- (A);
+
+  % Disegno del secondo braccio
+  \draw[thick, black] (A) -- (B);
+
+  % Disegno assi
+  \draw[thick,black,->] (0,0) -- (0,6) node[anchor=east]{y};
+    \draw[thick,black,->] (0,0) -- (6,0) node[anchor=west]{x};
+
+  % Rappresentazione dei giunti
+  \filldraw[fill=black] (O) circle (0.1); % Base del manipolatore
+  \filldraw[fill=black] (A) circle (0.1); % Primo giunto
+  \filldraw[fill=red] (B) circle (0.1);   % End effector
+
+  % Etichette
+  \node[anchor=east] at (O) {$O$};
+  \node[anchor=north] at (A) {$A$};
+  \node[anchor=west] at (B) {$B$};
+
+\end{tikzpicture}

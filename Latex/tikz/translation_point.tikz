@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+
+  \def\alpha{25}
+
+  \coordinate (Of) at (0,0);
+  \coordinate (Om) at (5,2);
+  \coordinate (P) at (6,4);
+  \coordinate (xf) at (3,0);
+  \coordinate (yf) at (0,3);
+  \coordinate (xm) at ({5+3*cos(\alpha)},{2+3*sin(\alpha)});
+  \coordinate (ym) at ({5-3*sin(\alpha)},{2+3*cos(\alpha)});
+
+  \draw[thick, red,->,] (Of) -- (P);
+  \draw[thick, blue,->] (Of) -- (Om);
+  \draw[thick, blue,->] (Om) -- (P);
+
+  \draw[thick,black,->] (Of) -- (yf) node[anchor=east]{$y_f$};
+  \draw[thick,black,->] (Of) -- (xf) node[anchor=west]{$x_f$};
+  \filldraw[fill=black] (P) circle (0.1);
+  \filldraw[fill=black] (Om) circle (0.1);
+  \filldraw[fill=black] (Of) circle (0.1);
+
+  \draw[thick,black,->] (Om) -- (ym) node[anchor=east]{$y_m$};
+  \draw[thick,black,->] (Om) -- (xm) node[anchor=west]{$x_m$};
+
+  \node[anchor=west] at (P) {$P$};
+  \node[anchor=north] at (Om) {$O_m$};
+  \node[anchor=north] at (Of) {$O_f$};
+
+\end{tikzpicture}

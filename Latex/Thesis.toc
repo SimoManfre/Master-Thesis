@@ -13,7 +13,7 @@
 \contentsline {chapter}{\numberline {2}Kinematics}{14}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Fundamental of Kinematics}{16}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Roto-Translation Matrix}{16}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Velocity Matrix}{17}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Danavit-Hartenberg Method}{18}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Jacobian Matrix}{19}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Planar Vehicle-Manipulator System}{20}{section.2.2}%
+\contentsline {subsection}{\numberline {2.1.2}Velocity Matrix}{18}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Danavit-Hartenberg Method}{20}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Jacobian Matrix}{21}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Planar Vehicle-Manipulator System}{23}{section.2.2}%

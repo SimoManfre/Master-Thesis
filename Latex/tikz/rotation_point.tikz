@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+  
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (3,2);
+  \coordinate (x0) at (6,0);
+  \coordinate (x01) at ({0.7*6},0);
+  \coordinate (x02) at ({0.7*6},0.5);
+  \coordinate (y0) at (0,6);
+
+  \def\alpha{15}
+
+  \draw[thick, black] (O) -- (P);
+
+  \draw[thick,black,->] (0,0) -- (y0) node[anchor=east]{$y_f$};
+  \draw[thick,black,->] (0,0) -- (x0) node[anchor=west]{$x_f$};
+  \filldraw[fill=black] (P) circle (0.1);
+
+  \draw[thick,red,->] (0,0) -- ({-6*sin(\alpha)},{6*cos(\alpha)}) node[anchor=east]{$y_m$};
+  \draw[thick,red,->] (0,0) -- ({6*cos(\alpha)},{6*sin(\alpha)}) node[anchor=west]{$x_m$};
+
+  \draw[thick,->] (x01) arc [start angle=0, end angle=\alpha, x radius=4, y radius=4];
+
+  \node[anchor=west] at (x02) {$\theta$};
+  \node[anchor=west] at (P) {$P$};
+
+\end{tikzpicture}

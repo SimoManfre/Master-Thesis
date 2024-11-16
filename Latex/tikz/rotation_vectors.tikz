@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+
+  \def\alpha{25}
+  \coordinate (O) at (0,0);
+  \coordinate (v1) at (3,1);
+  \coordinate (v10) at (0.7*3,0.7*1);
+  \coordinate (v11) at (0.7*3,0.7*1+0.3);
+  \coordinate (v2) at ({3*cos(\alpha)-sin(\alpha)},{3*sin(\alpha)+cos(\alpha)});
+
+  \draw[thick, black,->] (O) -> (v1);
+  \draw[thick, red,->] (O) -> (v2);
+  % \draw[thick, ->] (v1) arc (v2);
+
+  % \draw (v1) arc(0:\theta:2 and 2) (v2);
+  \draw[thick,->] (v10) arc [start angle=0, end angle=\alpha, x radius=2.4, y radius=2.4];
+
+
+  \draw[thick,black,->] (0,0) -- (0,6) node[anchor=east]{$y$};
+  \draw[thick,black,->] (0,0) -- (6,0) node[anchor=west]{$x$};
+
+
+  \node[anchor=west] at (v1) {$v_1$};
+  \node[anchor=south] at (v2) {$v_2$};
+  \node[anchor=south west] at (v11) {$\theta$};
+
+\end{tikzpicture}

@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc} 
 \usepackage[english]{babel}
 \usepackage{url}
+\usepackage{tikz}
 \usepackage{ctable}
 \usepackage{layaureo}
 \usepackage[english]{varioref}
@@ -21,6 +22,9 @@
 \usepackage{xcolor}
 \usepackage[autostyle,italian=guillemets]{csquotes}
 \usepackage{listings,xcolor}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{arrows.meta}
+\tikzset{>={Latex[width=2mm,length=2mm]}}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[R]{\thepage}
@@ -274,23 +278,28 @@ According to [11] there are two main families of robots:
   \item parallel robots: a set of bodies connected in a closed kinematic chain. They can withstand/produce a larger force.
 \end{itemize}
 A kinematic chain is therefore the concatenation of single degree of freedom (i.e. the minimum amount of indipendent coordinates that define the configuration of the robot) links. The joints can be revolute, prismatic or spherical, depending on the movement allowed by them (plane rotational, translational or 3D rotatonal respectively).\\
-Grubler equation for palanar mechanisms gives the overall DoFs:
+Grubler equation for palanar mechanisms gives the overall DoFs of a multibody system:
 \begin{equation}
   n = 3(m-1)-2c_1-c_2
   \label{grubler}
 \end{equation}
 where $m$ is the number of rigid bodies attached to the base, $c_1$ and $c_2$ are class 1 and class 2 joints respectively, depending on how many DoFs do they allow (one or two). Revolute joints allows one DoF, i.e. rotation around their axes.\\
 Whenever $n<n_j$, where $n_J$ is the number of joints, a redundancy occurs, meaning that the system has more joints than the dimension of the task space [11].\\
-A very important definition for serial robots is the end defector (EE), i.e the point of the chain dedicated to the programmed task, as shown in Figure \ref{end_defector}.\\
+A very important definition for serial robots is the end defector (EE), i.e the point of the chain dedicated to the programmed task, as shown in Figure \ref{end_defector} in red.\\
 Studying the kinematics of a mechanical system (such as a robot) refers to the calculation of the position and orientation of its end-eﬀector frame from its joint coordinates [11].\\
-
+\begin{figure}[!]
+  \centering
+  \input{tikz/EE.tikz}
+  \caption{2D RR (revolute-revolute) manipulator.}
+  \label{end_defector}
+\end{figure}
 We will now analyze the forward kinematics of a manipulator mounted on top of a mobile base, to form a vehicle-manipulator system (VMS) that can be controlled as a whole.\\
-Starting from a simple model of the BMS, it will be possible to analyze its behaviour before and after the impact with an external object (i.e. meteorite or satellite).
+Starting from a simple model of the VMS, it will be possible to analyze its behaviour before and after the impact with an external object (i.e. meteorite or satellite).
 \newpage
 \section{Fundamental of Kinematics}
 In this thesis, the kinematics chain have been evaluated by means of the "Homogeneous Matrix Approach" shown in [9,10]. For such approach, a briefly summary of notation is here presented.
 \subsection{Roto-Translation Matrix}
-Given two vectors in an $xy$ plane, only rotated without distortion, as in Figure~\ref{rotation_points}, the relationship between them can be found in the following way:
+Given two vectors in an $xy$ plane, only rotated without distortion, as in Figure~\ref{rotation_vectors}, the relationship between them can be found in the following way:
 \begin{equation}
   v_2=\begin{bmatrix}
     v_{x_2}\\
@@ -307,15 +316,28 @@ Given two vectors in an $xy$ plane, only rotated without distortion, as in Figur
   \end{bmatrix}=R(\theta)v_1
   \label{rotation_matrix}
 \end{equation}
+\begin{figure}[h]
+  \centering
+  \input{tikz/rotation_vectors.tikz}
+  \caption{Vecors $v_2$ is rotate by $\theta$ withh respect to $v_1$.}
+  \label{rotation_vectors}
+\end{figure}
 where $R_{\theta}$ is the rotation matrix.\\
-We can use the same matrix to describe another transformation, i.e. to find the coordinated of a point initially defined with respect to a mobile frame, with respect to another frame, such as a fixed one (Figure~\ref{rotation_frame}):
+We can use the same matrix to describe another transformation, i.e. to find the coordinated of a point initially defined with respect to a mobile frame, with respect to another frame, such as a fixed one (Figure~\ref{rotation_point}):
 \begin{equation}
-  \prescript{f}{}{p}=\prescript{f}{m}{R(\theta)}\prescript{m}{}{p}
+  \prescript{f}{}{P}=\prescript{f}{m}{R(\theta)}\prescript{m}{}{P}
 \end{equation}
+\begin{figure}[h]
+  \centering
+  \input{tikz/rotation_point.tikz}
+  \caption{The same point can be described with respect to both a fixed and a rotated mobile frame (in red).}
+  \label{rotation_point}
+\end{figure}
+The notation used here is the following: the left superscript indicates the reference frame in which the point or the vector is referred to: $\prescript{m}{}{P}$ referes to the point $P$ with coordinate written with respect to the mobile frame. The matrix $\prescript{f}{m}{R(\theta)}$ "translates" a point described in the mobile frame to the fixed frame.\\
 An important property of the rotation matrix is that it is orthogonal, hence its inverse is equal to its transpose.\\
 We can concatenate the rotational matrices such that we can describe a point in a given reference frame to another one if we know all the relative rotational matrices of the frames between the two we are interested in:
 \begin{equation}
-  \prescript{0}{}{p}=\prescript{0}{1}{R(\theta)}\prescript{1}{2}{R(\theta)}\prescript{2}{}{p}
+  \prescript{0}{}{P}=\prescript{0}{1}{R(\theta)}\prescript{1}{2}{R(\theta)}\prescript{2}{}{P}
   \label{concatenate}
 \end{equation}
 This concept can be expanded easily in the 3D case, noticing that the columns of $R(\theta)$ in (\ref{rotation_matrix}) are the unit vectors of the moving (new) frame written in the fixed (old) frame. In this way, rotation matrices along the x, y and z axis are found [6]:
@@ -368,13 +390,19 @@ which can be written as follows:
     \end{bmatrix}}
 \label{roto_translation}
 \end{equation}
-where $\mathbf{0} \in \mathbb{R}^{3\times1}$ and $\prescript{m}{f}{M} \in \mathbb{R}^{4\times4}$ is called the \textit{Roto-Translational Matrix} or \textit{Homogeneous Transformation Matrix}, for which the same properties seen in equation~(\ref{concatenate}) apply.
+where $\mathbf{0} \in \mathbb{R}^{3\times1}$ and $\prescript{m}{f}{M} \in \mathbb{R}^{4\times4}$ is called the \textit{Roto-Translational Matrix} or \textit{Homogeneous Transformation Matrix}, for which the same properties seen in equation~(\ref{concatenate}) hold. A fourth component has been appended at the end of the vectors, which is 1, since the Homogeneous Matrix would have had three rows but four columns otherwise. In this way it is squared and invertible.
+\begin{figure}[h]
+  \centering
+  \input{tikz/translation_point.tikz}
+  \caption{Definition of a point in a rotated and translated frame with respect to the fixed one. The position of $P$ with respect to the fixed frame (red arrow) can be seen as the sum of the position of the moving frame $O_m$ with respect of $O_f$ and the relative position of $P$ in the moving frame, both in blue.}
+  \label{translation}
+\end{figure}
 \subsection{Velocity Matrix}
-Given the same point in Figure~\ref{rotation_frame} is is possible to find the velocity of the point with respect to the fixed frame. By derivation of equation (\ref{roto_translation}) one get get:
+Given the same point in Figure~\ref{translation} is is possible to find the velocity of the point with respect to the fixed frame. By derivation of equation (\ref{roto_translation}) one can get:
 \begin{equation}
   \prescript{f}{}{\{\dot{O_fP}\}}=\prescript{f}{m}{\dot{M}}\prescript{m}{}{\{O_mP\}}+\prescript{f}{m}{M}\prescript{m}{}{\{\dot{O_mP}\}}
 \end{equation}
-and since $\prescript{m}{}{\{\dot{O_mP}\}}=0$, assuming the point fixed, and $\prescript{m}{}{\{O_mP\}}=\prescript{m}{f}{M}\prescript{f}{}{\{O_fP\}}$:
+and since $\prescript{m}{}{\{\dot{O_mP}\}}=0$, assuming the point fixed in the mobile frame, and $\prescript{m}{}{\{O_mP\}}=\prescript{m}{f}{M}\prescript{f}{}{\{O_fP\}}$:
 \begin{equation}
   \prescript{f}{}{\{\dot{O_fP}\}}=\prescript{m}{f}{\dot{M}}\prescript{f}{m}{M}\prescript{f}{}{\{O_fP\}}=\prescript{f}{}{W}\prescript{f}{}{\{O_fP\}}
 \end{equation}
@@ -393,6 +421,12 @@ The composition of the Velocity Matrix follows the Rival's Theorem (see Figure~\
 \begin{equation}
   \prescript{n}{}{W_{02}}=\prescript{n}{}{W_{01}}+\prescript{n}{}{W_{12}}
 \end{equation}
+\begin{figure}[h]
+  \centering
+  \input{tikz/rivals_theorem.tikz}
+  \caption{Rival's Theorem for velocities composition. The three transformation $W_{01}$, $W_{12}$ and $W_{02}$ are also called \textit{Drag Motion}, \textit{Relative Motion} and \textit{Absolute Motion} respectively.}
+  \label{rival}
+\end{figure}
 which is true only when all the matrices are projected in the same frame $n$.\\
 Some attention must be given also to the matrix representing a "boolean" interpretation of the rotation: the $L$ matrix. For the aim of this thesis, and as it is introduced in [10], this matrix can be easily obtained from its Velocity Matrix dividing it by the module of its angular (or linear, when there is translation) velocity:
 \begin{equation}
@@ -426,7 +460,13 @@ It follows this ordered procedures:
   \item $x_i$ axis: line of minimum distance between $z_{i-1}$ and $z_i$, oriented from $z_{i-1}$ to $z_i$.
   \item $y_i$ axis: obtained by the vectorial product of the other two axes.
 \end{enumerate}
-In the bottom example, a DH convention for a planar serial manipulator has been used.
+In Figure~\ref{DH}, a DH convention for a planar serial manipulator has been used for configuration shown in Figure~\ref{end_defector}.
+\begin{figure}[h]
+  \centering
+  \input{tikz/DH.tikz}
+  \caption{The Danavit-Hartenberg rule has been used to place the local joints' frame (in red) in a planar RR manipulator mounted on top of a disk-shaped base (in green). The rotated frame of the base of the angle $\theta$ has been plotted in blue. Following the hand rule, the z axis is orthogonal to the plane.}
+  \label{DH}
+\end{figure}
 \subsection{Jacobian Matrix}
 Another important matrix in the analysis if a manipulator is the so called \textit{Jacobian Matrix}.\\
 To study the direct kinematics of a manipulator, as already said, means to find the relationship between the end-defector position and orientation and its joints. When writing the position of the EE (denoted by S), we obtain a function of the robot's joints:
@@ -439,15 +479,16 @@ By derivation of (\ref{EE_position}) one can obtain:
 \begin{equation}
   \dot{S}=J_a\dot{Q}
 \end{equation}
-where $J_a$ is the \textit{Analytical Jacobian Matrix}.\\
-Its dimension are very important, since Kinematic singularities, which are configurations in which the end-eﬀector frame loses the ability to move or rotate in one or more directions, correspond to those configurations at which the Jacobian matrix fails to have maximal rank [11], where the rank is defined as the number of indipendent rows or couloumn of the matrix.\\
-Singularities, happen if the open-chain robot is kinematically redundant, meaning, as already mentioned, that it has more joints than the dimension of the task space; then the inverse of the jacobian doesn't exist anymore, since the inversion requires a squared full rank matrix. When this occurs, the pseudoinverse or \textit{Moore-Penrose Inverse} matrix, denoted by $J^+$, must be used:
+where $J_a$ is the \textit{Analytical Jacobian Matrix} and $Q=\{q_1,q_2,\dots,q_n\}$.\\
+Its dimension are very important, since kinematic singularities, which are configurations in which the end-eﬀector frame loses the ability to move or rotate in one or more directions, correspond to those configurations at which the Jacobian matrix fails to have maximal rank [11], where the rank is defined as the number of indipendent rows or couloumn of the matrix.\\
+Singularities happen if the open-chain robot is kinematically redundant, meaning, as already mentioned, that it has more joints than the dimension of the task space; then the inverse of the jacobian doesn't exist anymore, since the inversion requires a squared full rank matrix. When this occurs, the pseudoinverse or \textit{Moore-Penrose Inverse} matrix, denoted by $J^+$, must be used:
 \begin{equation}
   \begin{cases}
     J^+=(J^TJ)^{-1}J^T \quad \text{when J has linearly indipendent comlumns}\\
     J^+=J^T(JJ^T)^{-1} \quad \text{when J has linearly indipendent rows}
   \end{cases}
 \end{equation}
+In robotics, the most common case is the one with a Jacobian with linearly indipendent columns, since it's common to have more links than dimensions in the task space.
 \newpage
 \section{Planar Vehicle-Manipulator System}
 It will be now presented a simple case of Vehicle-Manipulator System, consisting in a base approximated with a disk and a planar serial manipulator whose revolute joints move around their z axis, orthoginal to the plane (as the one shown in Figure~\ref{DH}).\\
@@ -457,7 +498,7 @@ Firstly, let's define the DoFs of the VMS, which will be:
   p=\{x_b,y_b,\theta_b,q_1,q_2\}
 \end{equation}
 It is already clear that, being in the 2D case, the number of DoFs is greater than the dimension of the task space (i.e. $5>2$). This means that a redundancy occurs and the pseudoinverse jacobian must be used instead of the inverse one, when needed.\\
-The generalized coordinate of the tumblinh object are the following:
+The generalized coordinate of the tumbling object are the following:
 \begin{equation}
   \psi=\{x_o,y_o,\theta_o\}
 \end{equation}
