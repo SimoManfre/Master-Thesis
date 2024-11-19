@@ -358,6 +358,7 @@ This concept can be expanded easily in the 3D case, noticing that the columns of
     0&0&1
   \end{bmatrix} 
 \end{array}
+\label{rotation_matrices}
 \end{equation}
 When a translation occurs, as shown in Figure~\ref{translation}, the transformation becomes:
 \begin{equation}
@@ -464,7 +465,7 @@ In Figure~\ref{DH}, a DH convention for a planar serial manipulator has been use
 \begin{figure}[h]
   \centering
   \input{tikz/DH.tikz}
-  \caption{The Danavit-Hartenberg rule has been used to place the local joints' frame (in red) in a planar RR manipulator mounted on top of a disk-shaped base (in green). The rotated frame of the base of the angle $\theta$ has been plotted in blue. Following the hand rule, the z axis is orthogonal to the plane.}
+  \caption{The Danavit-Hartenberg rule has been used to place the local joints' frame (in red) in a planar RR manipulator mounted on top of a disk-shaped base (in green). The rotated frame of the base of the angle $\theta_o$ has been plotted in blue. Following the hand rule, the z axis is orthogonal to the plane.}
   \label{DH}
 \end{figure}
 \subsection{Jacobian Matrix}
@@ -492,7 +493,7 @@ In robotics, the most common case is the one with a Jacobian with linearly indip
 \newpage
 \section{Planar Vehicle-Manipulator System}
 It will be now presented a simple case of Vehicle-Manipulator System, consisting in a base approximated with a disk and a planar serial manipulator whose revolute joints move around their z axis, orthoginal to the plane (as the one shown in Figure~\ref{DH}).\\
-Since the aim of this work is to study the dynamics of the system after the catching of a tumbling object, its kinematics will be analyzed too, by considering it as a disk.\\
+Since the aim of this work is to study the dynamics of the system after the catching of a tumbling object, its kinematics will be analyzed too, by considering it as a disk. The calculations will be shown as a reference for future more complex model, for which the matrices and joint positions will be omitted.\\
 Firstly, let's define the DoFs of the VMS, which will be:
 \begin{equation}
   p=\{x_b,y_b,\theta_b,q_1,q_2\}
@@ -502,4 +503,65 @@ The generalized coordinate of the tumbling object are the following:
 \begin{equation}
   \psi=\{x_o,y_o,\theta_o\}
 \end{equation}
+Since the links rotate only aorund the local z-axis, given equations (\ref{rotation_matrices}) and (\ref{roto_translation}), the roto-translation matrices of the manipulator chain have the following form:
+\begin{equation}
+  \prescript{a}{f}{M}=
+  \begin{bmatrix}
+    \cos{\alpha}&-\sin{\alpha}&0&p_1\\
+    \sin{\alpha}&\cos{\alpha}&0&p_2\\
+    0&0&1&p_3\\
+    0&0&0&1
+  \end{bmatrix}
+\end{equation}
+where $p_1,p_2,p_3$ are the coordinates of the following moving frame in the chain projected in the actual frame.\\
+Following the notation of Figure~\ref{DH}, the matrices are then given:
+\begin{equation}
+  \begin{array}{c}
+    \prescript{f}{b}{M}=\begin{bmatrix}
+      0&0&0&x_b\\
+    0&0&0&y_b\\
+    0&0&1&0\\
+    0&0&0&1
+    \end{bmatrix}\quad
+    \prescript{b}{0}{M}=\begin{bmatrix}
+      \cos{\theta_0}&-\sin{\theta_0}&0&0\\
+      \sin{\theta_0}&\cos{\theta_0}&0&0\\
+      0&0&1&0\\
+      0&0&0&1
+    \end{bmatrix}\\ \\
+    \prescript{0}{1}{M}=\begin{bmatrix}
+      \cos{q_1}&-\sin{q_1}&0&l_1\cos{q_1}\\
+      \sin{q_1}&\cos{q_1}&0&l_1\sin{q_1}\\
+      0&0&1&0\\
+      0&0&0&1
+    \end{bmatrix}\quad
+    \prescript{1}{2}{M}=\begin{bmatrix}
+      \cos{q_2}&-\sin{q_2}&0&l_2\cos{q_2}\\
+      \sin{q_2}&\cos{q_2}&0&l_2\sin{q_2}\\
+      0&0&1&0\\
+      0&0&0&1
+    \end{bmatrix}
+  \end{array}
+\end{equation}
+with $l_1$ and $l_2$ the lenghts of the two arms.\\
+The origin of the frames written in the fixed one can be found by multiplying the Homogeneous Matrix by $O_3=\{0,0,0,1\}$. Thus, the end-defector position is:
+\begin{equation}
+  p_{EE}=\prescript{0}{2}{M}O_3= \begin{bmatrix}
+    l_1\cos{(\theta_0+q_1)}+l_2\cos{(\theta_0+q_1+q_2)}+x_b\\
+    l_1\sin{(\theta_0+q_1)}+l_2\sin{(\theta_0+q_1+q_2)}+y_b\\0\\1
+   \end{bmatrix}
+\end{equation}
+with $\prescript{0}{3}{M}=\prescript{f}{b}{M}\prescript{b}{0}{M}\prescript{0}{1}{M}\prescript{1}{2}{M}$ for the chain rule (\ref{concatenate}).\\
+The Jacobian Matrix is then obtained by deriviation of $EE$ with respect to the VMS DoFs $p$ such that $\dot{p}_{EE}=J\dot{p}$:
+
+\begin{align}
+  \begin{tiny}
+  J=\begin{bmatrix}
+    1&0&-l_1\sin{(\theta_0+q_1)}-l_2\sin{(\theta_0+q_1+q_2)}&-l_1\sin{(\theta_0+q_1)}-l_2\sin{(\theta_0+q_1+q_2)}&-l_2\sin{(\theta_0+q_1+q_2)}\\
+    0&1&l_1\cos{(\theta_0+q_1)}+l_2\cos{(\theta_0+q_1+q_2)}&l_1\cos{(\theta_0+q_1)}+l_2\cos{(\theta_0+q_1+q_2)}&l_2\cos{(\theta_0+q_1+q_2)}
+  \end{bmatrix}
+\end{tiny}
+\end{align}
+As already forecasted, the Jacobian Matrix is rectangular, i.e. $J\in \mathbb{R}^{2\times5}$, thus not invertibile.\\
+\subsection{Object's Kinematics}
 \end{document}

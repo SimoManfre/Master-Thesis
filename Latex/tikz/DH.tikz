@@ -55,7 +55,7 @@
   \node[anchor=east] at (Ob) {$O_b$};
   \node[anchor=north west] at (A) {$O_1$};
   \node[anchor=west] at (B) {$O_2$};
-  \node[anchor=south west] at (4.5,3.1) {$\theta$};
+  \node[anchor=south west] at (4.5,3.1) {$\theta_o$};
   \node[anchor=south west] at (Ob01) {$q_1$};
   \node[anchor=south west] at (C01) {$q_2$};
 

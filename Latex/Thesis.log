@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  15 NOV 2024 00:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  18 NOV 2024 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -869,7 +869,7 @@ Package hyperref Info: Link coloring OFF on input line 47.
 \@outlinefile=\write4
 \openout4 = `Thesis.out'.
 
-<./Images/sigillo2.jpg, id=79, 486.81876pt x 484.81125pt>
+<./Images/sigillo2.jpg, id=83, 486.81876pt x 484.81125pt>
 File: ./Images/sigillo2.jpg Graphic file (type jpg)
 <use ./Images/sigillo2.jpg>
 Package pdftex.def Info: ./Images/sigillo2.jpg  used on input line 52.
@@ -961,12 +961,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-<./Images/SSRMS_dimensions.png, id=161, 1190.4475pt x 249.93375pt>
+<./Images/SSRMS_dimensions.png, id=167, 1190.4475pt x 249.93375pt>
 File: ./Images/SSRMS_dimensions.png Graphic file (type png)
 <use ./Images/SSRMS_dimensions.png>
 Package pdftex.def Info: ./Images/SSRMS_dimensions.png  used on input line 188.
 (pdftex.def)             Requested size: 357.13701pt x 74.9807pt.
-<./Images/SSRMS_orbit.png, id=163, 938.50626pt x 513.92pt>
+<./Images/SSRMS_orbit.png, id=169, 938.50626pt x 513.92pt>
 File: ./Images/SSRMS_orbit.png Graphic file (type png)
 <use ./Images/SSRMS_orbit.png>
 Package pdftex.def Info: ./Images/SSRMS_orbit.png  used on input line 194.
@@ -983,7 +983,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./Images/SPDM.png, id=173, 546.04pt x 363.3575pt>
+<./Images/SPDM.png, id=178, 546.04pt x 363.3575pt>
 File: ./Images/SPDM.png Graphic file (type png)
 <use ./Images/SPDM.png>
 Package pdftex.def Info: ./Images/SPDM.png  used on input line 205.
@@ -996,12 +996,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9 <./Images/SSRMS_dimensions.png>]
-<./Images/MA.png, id=185, 614.295pt x 382.42876pt>
+<./Images/MA.png, id=190, 614.295pt x 382.42876pt>
 File: ./Images/MA.png Graphic file (type png)
 <use ./Images/MA.png>
 Package pdftex.def Info: ./Images/MA.png  used on input line 217.
 (pdftex.def)             Requested size: 215.00647pt x 133.85207pt.
-<./Images/SFA.png, id=186, 525.965pt x 404.51125pt>
+<./Images/SFA.png, id=191, 525.965pt x 404.51125pt>
 File: ./Images/SFA.png Graphic file (type png)
 <use ./Images/SFA.png>
 Package pdftex.def Info: ./Images/SFA.png  used on input line 219.
@@ -1019,7 +1019,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10 <./Images/SSRMS_orbit.png> <./Images/SPDM.png>]
-<./Images/ERA.png, id=195, 925.4575pt x 693.59125pt>
+<./Images/ERA.png, id=200, 925.4575pt x 693.59125pt>
 File: ./Images/ERA.png Graphic file (type png)
 <use ./Images/ERA.png>
 Package pdftex.def Info: ./Images/ERA.png  used on input line 234.
@@ -1134,27 +1134,46 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23] (./Thesis.aux)
+[23]
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 564.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 564.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24] (./Thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 66CE5ECCF575D9AD4BB44F507C8E6E71;2465.
+(rerunfilecheck)             Checksum: B0667A5E15AF5FE789D2029E12FF03A8;2625.
  ) 
 Here is how much of TeX's memory you used:
- 34324 strings out of 474116
- 695357 string characters out of 5732612
+ 34346 strings out of 474116
+ 695684 string characters out of 5732612
  1949187 words of memory out of 5000000
- 55864 multiletter control sequences out of 15000+600000
- 588205 words of font info for 192 fonts, out of 8000000 for 9000
+ 55873 multiletter control sequences out of 15000+600000
+ 588697 words of font info for 196 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,19n,117p,1076b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Thesis.pdf (27 pages, 2421571 bytes).
+</opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on Thesis.pdf (28 pages, 2445265 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 349 compressed objects within 4 object streams
- 89 named destinations out of 1000 (max. 500000)
- 59584 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 479 PDF objects out of 1000 (max. 8388607)
+ 372 compressed objects within 4 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 61640 words of extra memory for PDF output out of 61914 (max. 10000000)
 
