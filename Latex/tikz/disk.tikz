@@ -19,6 +19,9 @@
   \draw[thick,black,->] (Oo) -- ({3-3*sin(\thetaO)},{3+3*cos(\thetaO)}) node[anchor=east]{$y_{O_1}$};
   \draw[thick,black,->] (Oo) -- ({3+3*cos(\thetaO)},{3+3*sin(\thetaO)}) node[anchor=west]{$x_{O_1}$};
 
+  % \draw[thick,black,->] (cp) -- ({3+4*cos(\alpha)},{3+4*sin(\alpha)}) node[anchor=east]{$x_{O_2}$};
+  % \draw[thick,black,->] (cp) -- ({3-4*cos(\alpha)},{3+4*sin(\alpha)})  node[anchor=west]{$y_{O_2}$};
+
   \draw[thick,white] (Oo) -- ({3+\r*cos(\alpha)},{3+\r*sin(\alpha)}) node[anchor=north east]{$r$};
 
   \draw[ultra thick,->] (5.5,3) arc [start angle=0, end angle=\thetaO, x radius=2.5, y radius=2.5];

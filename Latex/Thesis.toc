@@ -20,3 +20,7 @@
 \contentsline {subsection}{\numberline {2.2.1}Object's Kinematics}{26}{subsection.2.2.1}%
 \contentsline {chapter}{\numberline {3}Dynamics}{28}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Classic Approach}{30}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Object's Dynamics}{33}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Homogeneous Matrices Approach}{35}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Object's Dynamics}{38}{subsection.3.2.1}%
+\contentsline {chapter}{\numberline {4}Impact Analysis}{39}{chapter.4}%

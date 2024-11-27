@@ -292,7 +292,7 @@ In the Table \ref{SRMs_comparison} the specifications of the SSRMS, ERA and JEMR
     \end{center}
     \end{table}
 
-\chapter{Kinematics}
+\chapter{Kinematics}\label{kinematics}
 What is a robot, then? In the previous chapter we have seen an overview of the actual reality of the space robotics field, but a proper definition of a what a robot is has not been given. A robot is a re-programmable machine for manipulation, positioning, orientation, machining of bodies able to interact with the environment, with a certain level of autonomy.\\
 A robot is not just an automated machine, it is something more: takes decisions autonomously, can do different things at different times, is flexible.\\
 According to [11] there are two main families of robots:
@@ -319,7 +319,7 @@ Studying the kinematics of a mechanical system (such as a robot) refers to the c
 We will now analyze the forward kinematics of a manipulator mounted on top of a mobile base, to form a vehicle-manipulator system (VMS) that can be controlled as a whole.\\
 Starting from a simple model of the VMS, it will be possible to analyze its behaviour before and after the impact with an external object (i.e. meteorite or satellite).
 \newpage
-\section{Fundamental of Kinematics}
+\section{Fundamental of Kinematics}\label{Homogeneous}
 In this thesis, the kinematics chain have been evaluated by means of the "Homogeneous Matrix Approach" shown in [9,10]. For such approach, a briefly summary of notation is here presented.
 \subsection{Roto-Translation Matrix}
 Given two vectors in an $xy$ plane, only rotated without distortion, as in Figure~\ref{rotation_vectors}, the relationship between them can be found in the following way:
@@ -421,7 +421,7 @@ where $\mathbf{0} \in \mathbb{R}^{3\times1}$ and $\prescript{m}{f}{M} \in \mathb
   \caption{Definition of a point in a rotated and translated frame with respect to the fixed one. The position of $P$ with respect to the fixed frame (red arrow) can be seen as the sum of the position of the moving frame $O_m$ with respect of $O_f$ and the relative position of $P$ in the moving frame, both in blue.}
   \label{translation}
 \end{figure}
-\subsection{Velocity Matrix}
+\subsection{Velocity Matrix}\label{velocity_section}
 Given the same point in Figure~\ref{translation} is is possible to find the velocity of the point with respect to the fixed frame. By derivation of equation (\ref{roto_translation}) one can get:
 \begin{equation}
   \prescript{f}{}{\{\dot{O_fP}\}}=\prescript{f}{m}{\dot{M}}\prescript{m}{}{\{O_mP\}}+\prescript{f}{m}{M}\prescript{m}{}{\{\dot{O_mP}\}}
@@ -531,7 +531,8 @@ Firstly, let's define the DoFs of the VMS, which will be:
 \begin{equation}
   p=\{x_b,y_b,\theta_b,q_1,q_2\}
 \end{equation}
-It is already clear that, being in the 2D case, the number of DoFs is greater than the dimension of the task space (i.e. $5>2$). This means that a redundancy occurs and the pseudoinverse jacobian must be used instead of the inverse one, when needed.\\
+It is already clear that, being in the 2D case, the number of DoFs is greater than the dimension of the task space (i.e. $5>2$). In fact, from (\ref{grubler}), given $m=3$ (base and two arms) and $c_1=2$ (two revolute joints), we have $n=2$, while $p\in\mathbb{R} ^5$.\\ 
+This means that a redundancy occurs and the pseudoinverse jacobian must be used instead of the inverse one, when needed.\\
 The generalized coordinate of the tumbling object are the following:
 \begin{equation}
   \psi=\{x_O,y_O,\theta_O\}
@@ -629,7 +630,7 @@ Following equation (\ref{velocity_matrix}), the Velocity Matrices can be found a
   \end{array}
 \end{equation}
 where the notation is the same of equation (\ref{composition}).\\
-Since is of our interest (see Chapter \ref{dynamics}) to write all the velociti matrices projected in the fixed frame, following equation (\ref{change_frame}) it is possible to write:
+Since it is of our interest (see Chapter \ref{dynamics}) to write all the velociti matrices projected in the fixed frame, following equation (\ref{change_frame}) it is possible to write:
 \begin{equation}
     \prescript{f}{}{W_{b0}}=\prescript{f}{b}{M}\prescript{b}{}{W_{b0}}\prescript{b}{f}{M}=\begin{bmatrix}
       0&-\theta_0&0&y_b \dot{\theta_0}\\
@@ -646,6 +647,7 @@ Finally, now that both $\prescript{f}{}{W_{fb}}$ and $\prescript{f}{}{W_{b0}}$ a
       0&0&0&0\\
       0&0&0&0
     \end{bmatrix}
+    \label{arm_1_vel}
 \end{equation}
 and the same holds for $\prescript{f}{}{W_{f1}}$ and $\prescript{f}{}{W_{f2}}$, whose $3\times 3$ submatrices, related to the angular velocity, are:
   \begin{equation}
@@ -686,6 +688,7 @@ We could have calculated $\prescript{f}{}{W_{f0}}$ using equation (\ref{velocity
       0&0&0&0
     \end{bmatrix}
   \end{array}
+  \label{L_matrices}
 \end{equation}
 where $\prescript{f}{}{L_{{fb}_x}}$ and $\prescript{f}{}{L_{{fb}_y}}$ have been found such that $\prescript{f}{}{L_{fb}}=\prescript{f}{}{L_{{fb}_x}}+\prescript{f}{}{L_{{fb}_y}}$.
 \subsection{Object's Kinematics}
@@ -701,8 +704,15 @@ Hence, the Homogeneous Matrices related to the tumbling object are the following
     0&0&0&1
     \end{bmatrix}\quad
     \prescript{O_0}{O_1}{M}=\begin{bmatrix}
-      \cos{\theta_O}&-\sin{\theta_O}&0&r \cos{(\theta_O+\gamma)}\\
-      \sin{\theta_O}&\cos{\theta_O}&0&r \sin{(\theta_O+\gamma)}\\
+      \cos{\theta_O}&-\sin{\theta_O}&0&0\\
+      \sin{\theta_O}&\cos{\theta_O}&0&0\\
+      0&0&1&0\\
+      0&0&0&1
+    \end{bmatrix}\\
+    \\
+    \prescript{O_1}{O_2}{M}=\begin{bmatrix}
+      \cos{\gamma}&-\sin{\gamma}&0&r \cos{\gamma}\\
+      \sin{\gamma}&\cos{\gamma}&0&r \sin{\gamma}\\
       0&0&1&0\\
       0&0&0&1
     \end{bmatrix}
@@ -717,7 +727,7 @@ with the coordinates of the object as in (\ref{object_coordinates}), $\gamma$ th
 \end{figure}
 As for the previous case, the position of the contact point with respect to the fixed frame is found with the chain rule:
 \begin{equation}
-  \prescript{f}{}{c_p}=\prescript{f}{O_0}{M}\prescript{O_0}{O_1}{M}\prescript{O_1}{}{c_p}=\begin{bmatrix}
+  \prescript{f}{}{c_p}=\prescript{f}{O_0}{M}\prescript{O_0}{O_1}{M}\prescript{O_1}{O_2}{M}\prescript{O_1}{}{c_p}=\begin{bmatrix}
     x_O + r \cos{(\theta_O+\gamma)}\\
     y_O + r \sin{(\theta_O+\gamma)}
   \end{bmatrix}
@@ -730,7 +740,7 @@ By deriving the position of the contact point with respect to the object coordin
   \end{bmatrix}
 \end{equation}
 which is still not squared ($J_O \in \mathbb{R}^{2 \times 3}$), thus not invertible.
-\chapter{Dynamics}
+\chapter{Dynamics}\label{dynamics}
 The dynamics analysis of a mechanical system consists in studying how the system evloves according to the present actions, given by motors and/or external world. If the kinematics analyisis is used to describe the motion, the dynamics one studies its causes. For a robotic system, the forces involves are usually the torques applied at the joints and, in this case, also the forces applied to the base.\\
 The analyisis can be:
 \begin{itemize}
@@ -741,7 +751,7 @@ The former problem requires differential calculation, while the latter algebraic
 In this thesis, both problems will be studied: given the impact of the tumbling object with the VMS, we want to analyse the motion of the system after the impact; however, we also want to find a control algorith to be applied at the torques to stabilize the system after the impact.\\
 The dynamic equations, also referred to as the equations of motion, are a set of second-order differential equations of the form:
 \begin{equation}
-  M(q)\ddot{q}+c(q,\dot{q})=\tau
+  M(q)\ddot{q}+c(q,\dot{q})=u
   \label{equation_motion}
 \end{equation}
 where $q \in \mathbb{R}^n$ is the vector of joint variables, $\tau \in \mathbb{R}^n$ is the vector of joint forces and torques, $M(q) \in \mathbb{R}^{n \times n}$ is a symmetric positive-definite \textit{Mass Matrix}, and $c(q,\dot{q}) \in \mathbb{R}^n$ are forces that lumped together centripetal, Coriolis, gravity and friction terms that depend solely on $q$ and $\dot{q}$ [11].\\
@@ -790,41 +800,286 @@ The potential energy, on the other hand, will not be take into consideration in 
 
 Finally, it is possible to write the lagrangian formulation:
 \begin{equation}
-  L(q,\dot{q}) \triangleq \sum_{i=1}^NT_i-U_i
+  \mathcal{L} (q,\dot{q}) \triangleq \sum_{i=1}^NT_i-U_i
+\label{energy_sum}
 \end{equation}
 where $N$ is the number of bodies and $L$ is the \textit{Lagrangian Function}.\\
 The equations of motion can now be expressed in terms of the Lagrangian as follows [11]:
 \begin{equation}
-  \frac{d}{dt}\frac{\partial L}{\partial \dot{q}_i}-\frac{\partial L}{\partial q_i}=f_i
+  \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_i}-\frac{\partial \mathcal{L} }{\partial q_i}=f_i
   \label{lagrangian} 
 \end{equation}
-with $f_i$ the non lagrangian, non conservative forces (external/dissipative) performing work on $q_i$.\\
+with $f_i$ the non lagrangian, non conservative forces (external/dissipative) performing work on $q_i$. The number of equations obtained is equal to the number of DoFs of the system $i$.\\
 
-Regarding the planar VMS seen in Section~\ref{planar_VMS} it is possible to write the position of the centre of mass of each body using the same approach of equation (\ref{EE_position}): $p_{c_b}=O_b=\prescript{f}{b}{M}\{0,0,0,1\}^T$, $p_{c_1}=\prescript{b}{1}{M}\{-\frac{l_1}{2},0,0,1\}^T$ and $p_{c_2}=\prescript{1}{2}{M}\{-\frac{l_2}{2},0,0,1\}^T$, since the position of the centre of mass of each arm is located in its middel point and the local frame is located at the end of the arm.\\
+Regarding the planar VMS seen in Section~\ref{planar_VMS} it is possible to write the position of the centre of mass of each body using the same approach of equation (\ref{EE_position}): $p_{c_b}=O_b=\prescript{f}{b}{M}\{0,0,0,1\}^T$, $p_{c_1}=\prescript{b}{1}{M}\{-\frac{l_1}{2},0,0,1\}^T$ and $p_{c_2}=\prescript{1}{2}{M}\{-\frac{l_2}{2},0,0,1\}^T$, since the position of the centre of mass of each arm is located in its middlee point and the local frame is located at the end of the arm.\\
 Now, $v_{c_b}$, $v_{c_1}$ and $v_{c_2}$ can be found by derivation of the position vectors and the translational part of the kinetic energy (\ref{final_kinetic_body}) can be computed.\\
 In order to find the rotational part, the tensors of inertia of the disk and the two arms are needed. Table~\ref{inertia_moments} reports the moments of inertia.\\
 \begin{table}
-  \caption{Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the disk and the arm).}
+  \caption{Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$.}
   \label{inertia_moments}
   \begin{center}
   \begin{tabular}{lccc}
     \toprule
-  \textbf{Figure} & \textbf{Tensors of Inertia}\\
+  \textbf{Body} & \textbf{Tensor of Inertia}\\
   \midrule
-  Disk&$\begin{bmatrix}
-    \frac{1}{4}mr^2&0&0\\
-    0&\frac{1}{4}mr^2&0\\
-    0&0&\frac{1}{2}mr^2
+  Base&$\begin{bmatrix}
+    \frac{1}{4}m_br^2&0&0\\
+    0&\frac{1}{4}m_br^2&0\\
+    0&0&\frac{1}{2}m_br^2
   \end{bmatrix}$\\
   \\
-  Arm&$\begin{bmatrix}
+  Arms&$\begin{bmatrix}
     0&0&0\\
-    0&\frac{1}{12}mL^2&0\\
-    0&0&\frac{1}{12}mL^2
+    0&\frac{1}{12}m_il_i^2&0\\
+    0&0&\frac{1}{12}m_il_i^2
   \end{bmatrix}$\\
   \bottomrule
   \end{tabular}
   \end{center}
   \end{table}
 Since the rotation happens to be only around the orthogonal axis of the plane (following the Denavit-Hartenberg formulation, the z-axis), we will use only $I_z$:
+\begin{equation}
+  \begin{array}{l}
+  T_b=v_{c_b}m_bv_{c_b}^T+\frac{1}{2}I_{b_z}\omega_{b_z}^2\\
+  T_1=v_{c_1}m_1v_{c_1}^T+\frac{1}{2}I_{1_z}\omega_{1_z}^2\\
+  T_2=v_{c_2}m_2v_{c_2}^T+\frac{1}{2}I_{2_z}\omega_{2_z}^2
+  \end{array}
+  \label{kin_energy}
+\end{equation}
+with $\omega_{b_z}$, $\omega_{1_z}$ and $\omega_{2_z}$ the angular velocities extrapolated from the Velocity Matrices in equations (\ref{arm_1_vel}, \ref{arms_velocity}).\\
+As already said, $L$ is only the sum of the three contribution of equation (\ref{kin_energy}) and, since we have five DoFs ($p \in \mathbb{R} ^5$), there will be five lagrangian equations, one for each genralized coordinate.\\
+The non lagrangian are called this way because they are not captured by the Lagrange equation: if the conservative part of the forces is captured by $\mathcal{L}$, the non lagrangian's are the ones which are not capured by any energy.\\ 
+\begin{figure}
+  \centering
+  \input{tikz/forces.tikz}
+  \caption{Forces and torques applied to the base ($F_x,F_y,\tau_0$) and to the links ($\tau_1,\tau_2$). Note that the torque of the first arm affects the base and the torque of the second arm affects the first arm.}
+  \label{forces}
+\end{figure}
+In this case they are the torques and forces applied to the base and the manipulator's links (see Figure~\ref{forces}):
+\begin{equation}
+  \begin{array}{l}
+  f_1=F_x\cos{\theta_0}-F_y\sin{\theta_0}\\
+  f_2=F_x\sin{\theta_0}+F_y\cos{\theta_0}\\
+  f_3=\tau_0\\
+  f_4=\tau_1\\
+  f_5=\tau_2
+  \end{array}
+  \label{non_lagrangian}
+\end{equation}
+Since the kinetic energy is written with respect to the fixed frame, the forces are projected too in that frame through $\theta_0$.\\
+Equation (\ref{lagrangian}) can now be written as:
+\begin{equation}
+  \begin{cases}
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{x}_b}-\frac{\partial \mathcal{L} }{\partial x_b}=F_x\cos{\theta_0}-F_y\sin{\theta_0}\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{y}_b}-\frac{\partial \mathcal{L} }{\partial y_b}=F_x\sin{\theta_0}+F_y\cos{\theta_0}\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{\theta}_0}-\frac{\partial \mathcal{L} }{\partial \theta_0}=\tau_0\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_1}-\frac{\partial \mathcal{L} }{\partial q_1}=\tau_1\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_2}-\frac{\partial \mathcal{L} }{\partial q_2}=\tau_2
+  \end{cases}
+\end{equation}
+After having solved these five equations, it is possible to gather them together in a vectorial form, such as in (\ref{equation_motion}), with $M\in\mathbb{R}^{5\times 5}$, $c\in \mathbb{R}^5$ and $u\in\mathbb{R}^{5\times 5}$.\textcolor{red}{MATRICES IN THE APPENDIX?}
+\subsection{Object's Dynamics}
+The same approach can be implemented for the object to be captured: since it is approximated as a disk too, its moment of inertia is equal to the base one.\\
+The kinetic energy is then:
+\begin{equation}
+  T_O=v_Om_Ov_O^T+\frac{1}{2}I_{O_z}\theta_O^2
+\end{equation}
+and the non lagrangian components:
+\begin{equation}
+  \begin{array}{l}
+  f_{O_1}=F_{O_x}\cos{\theta_O}-F_{O_y}\sin{\theta_O}\\
+  f_{O_2}=F_{O_x}\sin{\theta_O}+F_{O_y}\cos{\theta_O}\\
+  f_{O_3}=\tau_O
+  \end{array}
+\end{equation}
+By solving equation (\ref{lagrangian}), we get the mass, Coriolis' and torques matrices:
+\begin{equation}
+  \begin{array}{c}
+    M_O=\begin{bmatrix}
+      m_O&0&0\\
+      0&m_O&0\\
+      0&0&\frac{m_Or^2}{2}
+    \end{bmatrix}\quad
+    c_O=\begin{bmatrix}
+      0\\0\\0
+    \end{bmatrix}\\
+    \\
+    u_O=\begin{bmatrix}
+      \cos{\theta_O}&-\sin{\theta_0}&0\\
+      \sin{\theta_O}&\cos{\theta_0}&0\\
+      0&0&1
+    \end{bmatrix}
+  \end{array}
+\end{equation}
+\newpage
+\section{Homogeneous Matrices Approach}
+The Homogeneous Matrices Approach introduced in [9,10] offers a quick, intuitive and scalable (for higher DoFs) method for robotic's dynamics.\\
+It is base, as the name suggests, on the Homogeneous Matrices shown in Section~\ref{Homogeneous} and on other characteristic matrices that will be here presented.\\
+The goal of this approach is to write the lagrangian in a matrix form and, to do so, we need to define matrices for the inertia of the system, for the non-lagrangian actions present in the system and the velocity of the bodies.\\
+The latter ones have already been discussed in Section~\ref{velocity_section}, while the inertia and non-lagrangian forces need to be introduced.\\
+
+The mass distribution of a body $k$, projected in the frame $i$, can be described through the \textit{Pseudo Inertia Tensor} $J$:
+\begin{equation}
+  \prescript{i}{}{J_k}=\begin{bmatrix}
+    J_{xx}&J_{xy}&J_{xz}&mx_G\\
+    J_{yx}&J_{yy}&J_{yz}&my_G\\
+    J_{zx}&J_{zy}&J_{zz}&mz_G\\
+    mx_G&my_G&mz_G&m
+  \end{bmatrix}
+\end{equation}
+where $m$ is the mass of the body, $\{x_G,y_G,z_G\}$ is the position of the centre of mass and the pseudo moments of inertia are defined as:
+\begin{equation}
+  \begin{array}{c}
+    J_{xx}=\int x^2\,dm\quad J_{yy}=\int y^2\,dm\quad J_{zz}=\int z^2\,dm\\
+    J_{xy}=\int xy\,dm\quad J_{xz}=\int xz\,dm\quad J_{yz}=\int yz\,dm
+  \end{array}
+  \label{pseudo_moments}
+\end{equation}
+These are differents from the well known moments of inertia ($I_{xx},I_{yy},I_{zz},I_{xy},I_{xz},I_{yz}$) and their relation is shown in equation (\ref{moments_convertion}):
+\begin{equation}
+  \begin{array}{c}
+    \begin{cases}
+      J_{xx}=\frac{-I_{xx}+I_{yy}+I_{zz}}{2}\\
+      J_{yy}=\frac{-I_{yy}+I_{xx}+I_{zz}}{2}\\
+      J_{zz}=\frac{-I_{zz}+I_{xx}+I_{yy}}{2}
+    \end{cases}
+    \quad
+    \begin{cases}
+      J_{xy}=-I_{xy}\\
+      J_{yz}=-I_{yz}\\
+      J_{zz}=-I_{zx}
+    \end{cases}
+  \end{array}
+\label{moments_convertion}
+\end{equation}
+\\
+In order to evaluate the non lagrangian components of equation (\ref{lagrangian}), [9] introduces the \textit{Action Matrix}:
+\begin{equation}
+  \prescript{i}{}{\phi}_k=\begin{bmatrix}
+    0&-c_z&c_y&f_x\\
+    c_z&0&-c_x&f_y\\
+    -c_y&c_x&0&f_z\\
+    -f_x&-f_y&-f_z&0
+  \end{bmatrix}
+  \label{action_matrix}
+\end{equation}
+where $\{f_x,f_y,f_z\}$ is the resultant of the forces applied to a body $k$, $\{c_x,c_y,c_z\}$ holds the torques calculated with respect to the origin of the frame $i$.\\
+The pseudo-scalar product (see \ref{appendix}) between the action matrix of a body and its velocity matrix, gives the power developed by the actions included in $\phi$ as the object moves according to the velocities described by $W$:
+\begin{equation}
+  P=\prescript{f}{}{\phi}\otimes \prescript{f}{}{W}
+\end{equation}
+Notice that both the action and velocity matrix have been projected in the fixed frame.\\
+A manipulator with two revolute links will have two contribution to the overall power, one for each link:
+\begin{equation}
+  \begin{split}
+  P&=\prescript{f}{}{\phi_1}\otimes \prescript{f}{}{W_{f1}}+\prescript{f}{}{\phi_2}\otimes \prescript{f}{}{W_{f2}}\\
+   &=\prescript{f}{}{\phi_1}\otimes \prescript{f}{}{L_{f1}}\dot{\theta_1}+\prescript{f}{}{\phi_2}\otimes \Big(\prescript{f}{}{W_{f1}}+\prescript{f}{}{W_{12}}\Big)\\
+   &=\Big(\prescript{f}{}{\phi_1}+\prescript{f}{}{\phi_2}\Big)\otimes\prescript{f}{}{L_{f1}}\dot{\theta_1}+\prescript{f}{}{\phi_2}\otimes \prescript{f}{}{L_{12}}\dot{\theta_2}\\
+   &=f_{\theta_1}\dot{\theta_1}+f_{\theta_2}\dot{\theta_2}
+  \end{split}
+\end{equation}
+whith $f_{\theta_1}$ and $f_{\theta_2}$ the non-lagrangian components of links one and two, respectively.\\
+It is now clear the importance of the $L$ matrix, introduced in Section~\ref{velocity_section}: we can write the non-lagrangian components as a pseudo-scalr product between the overall set of action applied to the system downstream and the relative motion permitted by the joint $i$:
+\begin{equation}
+  f_{q_i}=\Big(\sum_{j=1}^N\prescript{f}{}{\phi_j}\Big)\otimes \prescript{f}{}{L_{q_i}}
+\label{non_lagrangian_matrix}
+\end{equation}
+It can be proved that ideal constraints between links don't affect the Lagrange equation: we can neglet the constraint forces in $\phi$.\\
+
+Finally, we can write the kinetic energy of the body $j$ as follows:
+\begin{equation}
+  T_j=\frac{1}{2}\prescript{f}{}{W_{fj}}\prescript{f}{}{J_j}\prescript{f}{}{W_{fj}^T}
+  \label{kinetic_matrix}
+\end{equation}
+and, from equation (\ref{energy_sum}), we still get (\ref{lagrangian}).\\
+
+Regarding the planar VMS system, it is useful to write the pseudo inertial tensor starting from the local frame: since the body is rigid, the mass is supposed to remain in the same position with respect to the local frame.\\
+The pseudo moments of inertia are found starting from the moments of inertia (Table \ref{inertia_moments}) and following equation (\ref{moments_convertion}), as shown in Table~\ref{pseudo_moments_table}. Thus:
+\begin{equation}
+  \begin{array}{c}
+  \prescript{0}{}{J_b}=\begin{bmatrix}
+    \frac{m_br^2}{4}&0&0&0\\
+    0&\frac{m_br^2}{4}&0&0\\
+    0&0&0&0\\
+    0&0&0&m_b
+  \end{bmatrix} \quad
+    \prescript{1}{}{J_1}=\begin{bmatrix}
+    \frac{l_1^2m_1}{3}&0&0&0\\
+    0&0&0&-\frac{l_1m_1}{2}\\
+    0&0&0&0\\
+    \frac{l_1m_1}{2}&0&0&m_1
+  \end{bmatrix}\\
+  \\
+  \prescript{2}{}{J_2}=\begin{bmatrix}
+    \frac{l_2^2m_2}{3}&0&0&0\\
+    0&0&0&-\frac{l_2m_2}{2}\\
+    0&0&0&0\\
+    \frac{l_2m_2}{2}&0&0&m_2
+  \end{bmatrix}
+  \end{array}
+\end{equation}
+\begin{table}
+  \caption{Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$.}
+  \label{pseudo_moments_table}
+  \begin{center}
+  \begin{tabular}{lccc}
+    \toprule
+  \textbf{Body} & \textbf{Tensor of Pseudo Inertia}\\
+  \midrule
+  Base&$\begin{bmatrix}
+    \frac{1}{4}m_br^2&0&0\\
+    0&\frac{1}{4}m_br^2&0\\
+    0&0&0
+  \end{bmatrix}$\\
+  \\
+  Arms&$\begin{bmatrix}
+    \frac{1}{3}m_il_i^2&0&0\\
+    0&0&0\\
+    0&0&0
+  \end{bmatrix}$\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+  \end{table}
+Then, following equation (\ref{change_frame}), we can project $\prescript{0}{}{J_b}$, $\prescript{1}{}{J_1}$ and $\prescript{2}{}{J_2}$ in the fixed frame, obtaining $\prescript{f}{}{J_b}$, $\prescript{f}{}{J_1}$ and $\prescript{f}{}{J_2}$.\\
+It is already possibile to write the kinetic energy (\ref{kinetic_matrix}) for every body, since we have both the velocity matrices and the tensors of pseudo inertia projected in the fixed frame.\\
+To find the non lagrangian components, the action and the $L$ matrices need to be calculated.\\
+We have already found the $L$ matrices associated with the permitted motion of each body in Chapter~\ref{kinematics} (see equation (\ref{L_matrices})). The action matrices can be easily found by looking at the definition of $\phi$ (\ref{action_matrix}) and confronting it with Figure~\ref{forces}:
+\begin{equation}
+  \begin{array}{c}
+    \prescript{0}{}{\phi_b}=\begin{bmatrix}
+      0&-\tau_0+\tau_1&0&F_x\\
+      \tau_0-\tau_1&0&0&F_y\\
+      0&0&0&0\\
+      -F_x&-F_y&0&0
+    \end{bmatrix} \quad
+    \prescript{1}{}{\phi_1}=\begin{bmatrix}
+      0&-\tau_1+\tau_2&0&0\\
+      \tau_1-\tau_2&0&0&0\\
+      0&0&0&0\\
+      0&0&0&0
+    \end{bmatrix}\\
+    \\
+    \prescript{2}{}{\phi_2}=\begin{bmatrix}
+      0&-\tau_3&0&0\\
+      \tau_2&0&0&0\\
+      0&0&0&0\\
+      0&0&0&0
+    \end{bmatrix}
+  \end{array}
+\end{equation}
+After the projection of the action matrices in the fixed frame, it is possible to find the non lagrangian components:
+\begin{equation}
+  \begin{array}{l}
+  f_1=\Big(\prescript{f}{}{\phi_b}+\prescript{f}{}{\phi_1}+\prescript{f}{}{\phi_2}\Big)\otimes \prescript{f}{}{L_{fb_x}}=F_x\cos{\theta_0}-F_y\sin{\theta_0}\\
+  f_2=\Big(\prescript{f}{}{\phi_b}+\prescript{f}{}{\phi_1}+\prescript{f}{}{\phi_2}\Big)\otimes \prescript{f}{}{L_{fb_y}}=F_x\sin{\theta_0}+F_y\cos{\theta_0}\\
+  f_3=\Big(\prescript{f}{}{\phi_b}+\prescript{f}{}{\phi_1}+\prescript{f}{}{\phi_2}\Big)\otimes \prescript{f}{}{L_{f0}}=\tau_0\\
+  f_4=\Big(\prescript{f}{}{\phi_b}+\prescript{f}{}{\phi_1}\Big)\otimes \prescript{f}{}{L_{01}}=\tau_1\\
+  f_5=\prescript{f}{}{\phi_b}\otimes \prescript{f}{}{L_{12}}=\tau_2
+  \end{array}
+\end{equation}
+which are the same of (\ref{non_lagrangian}).
+\subsection{Object's Dynamics}
+\newpage
+\chapter{Impact Analysis}
 \end{document}
