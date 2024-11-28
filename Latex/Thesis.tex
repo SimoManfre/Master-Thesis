@@ -23,6 +23,7 @@
 \usepackage{xcolor}
 \usepackage[autostyle,italian=guillemets]{csquotes}
 \usepackage{listings,xcolor}
+\DeclareMathOperator{\Tr}{Tr}
 \usetikzlibrary{decorations.text}
 \usetikzlibrary{arrows.meta}
 \tikzset{>={Latex[width=2mm,length=2mm]}}
@@ -521,6 +522,7 @@ Singularities happen if the open-chain robot is kinematically redundant, meaning
     J^+=(J^TJ)^{-1}J^T \quad \text{when J has linearly indipendent comlumns}\\
     J^+=J^T(JJ^T)^{-1} \quad \text{when J has linearly indipendent rows}
   \end{cases}
+  \label{pseudoinverse}
 \end{equation}
 In robotics, the most common case is the one with a Jacobian with linearly indipendent columns, since it's common to have more links than dimensions in the task space.
 \newpage
@@ -638,6 +640,7 @@ Since it is of our interest (see Chapter \ref{dynamics}) to write all the veloci
       0&0&0&0\\
       0&0&0&0
     \end{bmatrix}
+  \label{W_bo}
 \end{equation}
 Finally, now that both $\prescript{f}{}{W_{fb}}$ and $\prescript{f}{}{W_{b0}}$ are projected in the same frame, following equation (\ref{concatenate}):
 \begin{equation}
@@ -690,7 +693,17 @@ We could have calculated $\prescript{f}{}{W_{f0}}$ using equation (\ref{velocity
   \end{array}
   \label{L_matrices}
 \end{equation}
-where $\prescript{f}{}{L_{{fb}_x}}$ and $\prescript{f}{}{L_{{fb}_y}}$ have been found such that $\prescript{f}{}{L_{fb}}=\prescript{f}{}{L_{{fb}_x}}+\prescript{f}{}{L_{{fb}_y}}$.
+where $\prescript{f}{}{L_{{fb}_x}}$ and $\prescript{f}{}{L_{{fb}_y}}$ have been found such that $\prescript{f}{}{L_{fb}}=\prescript{f}{}{L_{{fb}_x}}+\prescript{f}{}{L_{{fb}_y}}$.\\
+By projecting in the fixed frame:
+\begin{equation}
+  \prescript{f}{}{L_{b0}}=\begin{bmatrix}
+    0&-1&0&y_b\\
+    1&0&0&-x_b\\
+    0&0&0&0\\
+    0&0&0&0
+  \end{bmatrix}
+\end{equation}
+which is $\prescript{f}{}{W_{b0}}/ \dot{\theta_0}$ from equation (\ref{W_bo}).
 \subsection{Object's Kinematics}
 For the planar case, the object to be captured (might it be a satellite or a micro-meteorite) is approximated with a  disk, in the same way we did for the base of the VMS.\\
 The goal of the object's kinematics is to find the relationshipt between the velocity of its centre and the velocity of the contact point ($c_p$), as suggested in [12].\\
@@ -738,8 +751,42 @@ By deriving the position of the contact point with respect to the object coordin
     1&0&-r\sin{(\theta_O+\gamma)}\\
     0&1&r\cos{(\theta_O+\gamma)}
   \end{bmatrix}
+  \label{object_jacobian}
 \end{equation}
-which is still not squared ($J_O \in \mathbb{R}^{2 \times 3}$), thus not invertible.
+which is still not squared ($J_O \in \mathbb{R}^{2 \times 3}$), thus not invertible.\\
+
+Regarding the velocity matrix, we are not intersted in $\prescript{f}{}{W_{fO_2}}$, since we can find the velocity of the contact point by just derivation with respect of time. Instead, it will be useful in the next chapter to have $\prescript{f}{}{W_{O_0O_1}}$, which is the velocity of frame one with respect to frame zero, projected in the fixed frame:
+\begin{equation}
+  \prescript{f}{}{W_{O_0O_1}}=\begin{bmatrix}
+    0&-\theta_O&0&y_O \dot{\theta_O}\\
+    \theta_O&0&0&-x_O \dot{\theta_O}\\
+    0&0&0&0\\
+    0&0&0&0
+  \end{bmatrix}
+\end{equation}
+which is very similar to (\ref{W_bo}). Hence, in the same way we did in the previous section, we can retrive the following matrices:
+\begin{equation}
+  \begin{array}{c}
+    \prescript{f}{}{L_{{fO}_x}}=\begin{bmatrix}
+      0&0&0&1\\
+      0&0&0&0\\
+      0&0&0&0\\
+      0&0&0&0
+    \end{bmatrix} \quad
+    \prescript{f}{}{L_{{fO}_y}}=\begin{bmatrix}
+      0&0&0&0\\
+      0&0&0&1\\
+      0&0&0&0\\
+      0&0&0&0
+    \end{bmatrix}\\ \\
+    \prescript{f}{}{L_{O_0O_1}}=\begin{bmatrix}
+      0&-1&0&y_O\\
+      1&0&0&-x_O\\
+      0&0&0&0\\
+      0&0&0&0
+    \end{bmatrix}
+  \end{array}
+\end{equation}
 \chapter{Dynamics}\label{dynamics}
 The dynamics analysis of a mechanical system consists in studying how the system evloves according to the present actions, given by motors and/or external world. If the kinematics analyisis is used to describe the motion, the dynamics one studies its causes. For a robotic system, the forces involves are usually the torques applied at the joints and, in this case, also the forces applied to the base.\\
 The analyisis can be:
@@ -878,8 +925,8 @@ Equation (\ref{lagrangian}) can now be written as:
   \end{cases}
 \end{equation}
 After having solved these five equations, it is possible to gather them together in a vectorial form, such as in (\ref{equation_motion}), with $M\in\mathbb{R}^{5\times 5}$, $c\in \mathbb{R}^5$ and $u\in\mathbb{R}^{5\times 5}$.\textcolor{red}{MATRICES IN THE APPENDIX?}
-\subsection{Object's Dynamics}
-The same approach can be implemented for the object to be captured: since it is approximated as a disk too, its moment of inertia is equal to the base one.\\
+\subsection{Object's Dynamics}\label{object_dynamics}
+The same approach can be implemented for the object to be captured: since it is approximated as a disk too, its moment of inertia is equal to the base's one.\\
 The kinetic energy is then:
 \begin{equation}
   T_O=v_Om_Ov_O^T+\frac{1}{2}I_{O_z}\theta_O^2
@@ -892,6 +939,7 @@ and the non lagrangian components:
   f_{O_3}=\tau_O
   \end{array}
 \end{equation}
+supposing to have, as the VMS' base, two translational forces acting on the centre of mass and a torque around its inertial frame. However, since we are not really interested in the control of the external object, these are not necessary and we will use only the mass and Coriolis matrices.\\
 By solving equation (\ref{lagrangian}), we get the mass, Coriolis' and torques matrices:
 \begin{equation}
   \begin{array}{c}
@@ -910,6 +958,7 @@ By solving equation (\ref{lagrangian}), we get the mass, Coriolis' and torques m
       0&0&1
     \end{bmatrix}
   \end{array}
+  \label{object_matrices}
 \end{equation}
 \newpage
 \section{Homogeneous Matrices Approach}
@@ -988,7 +1037,7 @@ It can be proved that ideal constraints between links don't affect the Lagrange 
 
 Finally, we can write the kinetic energy of the body $j$ as follows:
 \begin{equation}
-  T_j=\frac{1}{2}\prescript{f}{}{W_{fj}}\prescript{f}{}{J_j}\prescript{f}{}{W_{fj}^T}
+  T_j=\frac{1}{2}\Tr{\Big(\prescript{f}{}{W_{fj}}\prescript{f}{}{J_j}\prescript{f}{}{W_{fj}^T}\Big)}
   \label{kinetic_matrix}
 \end{equation}
 and, from equation (\ref{energy_sum}), we still get (\ref{lagrangian}).\\
@@ -1042,7 +1091,14 @@ The pseudo moments of inertia are found starting from the moments of inertia (Ta
   \end{center}
   \end{table}
 Then, following equation (\ref{change_frame}), we can project $\prescript{0}{}{J_b}$, $\prescript{1}{}{J_1}$ and $\prescript{2}{}{J_2}$ in the fixed frame, obtaining $\prescript{f}{}{J_b}$, $\prescript{f}{}{J_1}$ and $\prescript{f}{}{J_2}$.\\
-It is already possibile to write the kinetic energy (\ref{kinetic_matrix}) for every body, since we have both the velocity matrices and the tensors of pseudo inertia projected in the fixed frame.\\
+It is already possibile to write the kinetic energy (\ref{kinetic_matrix}) for every body, since we have both the velocity matrices and the tensors of pseudo inertia projected in the fixed frame:
+\begin{equation}
+  \begin{array}{l}
+    T_b=\frac{1}{2}\Tr{\Big(\prescript{f}{}{W_{f0}}\prescript{f}{}{J_0}\prescript{f}{}{W_{f0}^T}\Big)}\\
+    T_1=\frac{1}{2}\Tr{\Big(\prescript{f}{}{W_{f1}}\prescript{f}{}{J_1}\prescript{f}{}{W_{f1}^T}\Big)}\\
+    T_2=\frac{1}{2}\Tr{\Big(\prescript{f}{}{W_{f2}}\prescript{f}{}{J_2}\prescript{f}{}{W_{f2}^T}\Big)}
+  \end{array}
+\end{equation}
 To find the non lagrangian components, the action and the $L$ matrices need to be calculated.\\
 We have already found the $L$ matrices associated with the permitted motion of each body in Chapter~\ref{kinematics} (see equation (\ref{L_matrices})). The action matrices can be easily found by looking at the definition of $\phi$ (\ref{action_matrix}) and confronting it with Figure~\ref{forces}:
 \begin{equation}
@@ -1078,8 +1134,99 @@ After the projection of the action matrices in the fixed frame, it is possible t
   f_5=\prescript{f}{}{\phi_b}\otimes \prescript{f}{}{L_{12}}=\tau_2
   \end{array}
 \end{equation}
-which are the same of (\ref{non_lagrangian}).
+which are the same of (\ref{non_lagrangian}).\\
+It is now possibile to solve the Lagrange equation, 
+with $\mathcal{L}=T_b+T_1+T_2$:
+\begin{equation}
+  \begin{cases}
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{x}_b}-\frac{\partial \mathcal{L}}{\partial x_b}=f_1\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{y}_b}-\frac{\partial \mathcal{L}}{\partial y_b}=f_2\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{\theta}_0}-\frac{\partial \mathcal{L}}{\partial \theta_0}=f_3\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_1}-\frac{\partial \mathcal{L}}{\partial q_1}=f_4\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_2}-\frac{\partial \mathcal{L}}{\partial q_2}=f_5\\
+  \end{cases}
+\end{equation}
 \subsection{Object's Dynamics}
+The object's pseudo inertia tensor follows the same structure of the base's one:
+\begin{equation}
+  \prescript{O_1}{}{J_{O_1}}=\begin{bmatrix}
+    \frac{m_br^2}{4}&0&0&0\\
+    0&\frac{m_br^2}{4}&0&0\\
+    0&0&0&0\\
+    0&0&0&m_b
+  \end{bmatrix}
+\end{equation}
+and $\prescript{f}{}{J_b}=\prescript{f}{O_1}{M}\prescript{O_1}{}{J_{O_1}}\prescript{O_1}{f}{M}$.\\
+The velocity and $L$ matrices have already been found in the previous chapter; the action matrix can be written with the same assimption made for the classic method approach:
+\begin{equation}
+  \prescript{O_1}{}{\phi_{O_1}}=\begin{bmatrix}
+    0&-\tau_O&0&F_{O_x}\\
+    \tau_O&0&0&F_{O_y}\\
+    0&0&0&0\\
+    -F_{O_x}&-F_{O_y}&0&0
+  \end{bmatrix}
+\end{equation}
+and $\prescript{f}{}{\phi_{O_1}}=\prescript{f}{O_1}{M}\prescript{O_1}{}{\phi_{O_1}}\prescript{O_1}{f}{M}$.
+Finally:
+\begin{equation}
+  T_O=\frac{1}{2}\Tr{\Big(\prescript{f}{}{W_{fO_1}}\prescript{f}{}{J_b}\prescript{f}{}{W_{fO_1}^T}\Big)}
+\end{equation}
+and:
+\begin{equation}
+  \begin{array}{l}
+    f_{O_1}=\prescript{f}{}{\phi_{O_1}}\otimes \prescript{f}{}{L_{fO_x}}=F_{O_x}\cos{\theta_O}-F_{O_y}\sin{\theta_O}\\
+    f_{O_2}=\prescript{f}{}{\phi_{O_1}}\otimes \prescript{f}{}{L_{fO_y}}=F_{O_y}\cos{\theta_O}+F_{O_x}\sin{\theta_O}\\
+    f_{O_3}=\prescript{f}{}{\phi_{O_1}}\otimes \prescript{f}{}{L_{O_0O_1}}=\tau_O
+  \end{array}
+\end{equation}
+By solving (\ref{lagrangian}), we get the same matrices in (\ref{object_matrices}).
 \newpage
 \chapter{Impact Analysis}
+Once the Kinematics and the Dynamics of both the VMS and the external object are analysed, the impact analysis between the two is here performed.\\
+In [13] and [14], two basic assumptions are made in the formulation of the impact model:
+\begin{enumerate}
+  \item although the generalized velocities change substantially, the generalized coordinates of the system remain the same over the impact duration. This is justified not only for the rotational coordinates but for the elastic ones as well [15]. The latter conclusion can also be implied by reasoning that since the duration of impact (approximately \SI{d-4}{\second}) is very small compared with the period of the fundamental mode of vibration of the links (several seconds), the change in deflection of a flexible beam during impact is negligible (\textcolor{red}{mettere questa info più anvanti quando/se introdurremo l'elasticità dei link}).
+  \item at the contact point between the end-defector and the target there are forces but not moments. Impact occurs at a single point, which is unable to transmit a local moment.
+\end{enumerate}
+Another assumption that has been already done in the previous chapters is that we know in advance the inertia and dynamic properties of the payload, as well as the position of the contact point on the payload.\\
+Following the second assumption, during the impact the equations of motion of the VMS and the object can be expressed in a form similar to equation (\ref{equation_motion}) except for the impact force $f_I$:
+\begin{equation}
+  \begin{cases}
+    M\ddot{p}+c=u+J^Tf_I\\
+    M_O\ddot{\psi}+c_O=-J_O^Tf_I
+  \end{cases}
+  \label{initial_impact}
+\end{equation}
+Notice that $u_O$ has been omitted in the second equation, since, as already mentioned in Section~\ref{object_dynamics}, we are not interested in controlling the object.\\
+From the second equation of (\ref{initial_impact}), we can write:
+\begin{equation}
+  f_I=-(J_O^T)^+(M_O\ddot{\psi}_O+c_O)
+  \label{impact_force}
+\end{equation}
+with $(J_O^T)^+$ the pseudoinverse of the transposed object's jacobian; in fact, since as found in (\ref{object_jacobian}) this jacobian is not squared, we can use the pseudoinverse to invert it and, by having linearly indipendent rows, it is defined accordingly to (\ref{pseudoinverse}).\\
+By substuting (\ref{impact_force}) in the first equation of (\ref{initial_impact}), one obtaines:
+\begin{equation}
+  \begin{split}
+  M\ddot{p}+c&=u-J^T(J_O^T)^+(M_O\ddot{\psi}_O+c_O)\\
+  &=u-J^T(J_O^+)^T(M_O\ddot{\psi}_O+c_O)
+  \end{split}
+\end{equation}
+Now, integrating the above equation over the period od impact $\pi$:
+\begin{equation}
+  \int_{0}^{\pi}M\ddot{p}\,dt+\int_{0}^{\pi}c\,dt =-\int_{0}^{\pi}J^T(J_O^+)^TM_O\ddot{\psi}_O\,dt+\int_{0}^{\pi}(u-J^T(J_O^+)^Tc_O)\,dt
+\end{equation}
+Under the first assumption of no change of the generalized coordinates during the impact (but only of their velocities), all the contributions that depend only on the velocities and positions (i.e. $c,u,J^T(J_O^+)^Tc_O$) can be ignored:
+\begin{equation}
+  M(\dot{p}_f-\dot{p}_i)+J^T(J_O^+)^TM_O(\dot{\psi}_f-\dot{\psi_i})=0
+\end{equation}
+This equation can be used for all collisions ranging from plastic to perfectly elastic~[15,16].\\
+
+In the following sections different scenarios will be analysed:
+\begin{enumerate}
+  \item Rigid bodies, plastic impact
+  \item Elastic bodies, plastic impact
+  \item Elastic bodies, elastic impact
+\end{enumerate}
+\newpage
+\section{Plastic Impact}
 \end{document}

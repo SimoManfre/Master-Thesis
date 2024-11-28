@@ -70,43 +70,51 @@
 \newlabel{DH}{{2.6}{21}{The Danavit-Hartenberg rule has been used to place the local joints' frame (in red) in a planar RR manipulator, with arms length $l_1$ and $l_2$, mounted on top of a disk-shaped base (in green). The rotated frame of the base of the angle $\theta _o$ has been plotted in blue. Following the hand rule, the z axis is orthogonal to the plane}{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Jacobian Matrix}{21}{subsection.2.1.4}\protected@file@percent }
 \newlabel{EE_position}{{2.16}{21}{Jacobian Matrix}{equation.2.1.16}{}}
+\newlabel{pseudoinverse}{{2.18}{22}{Jacobian Matrix}{equation.2.1.18}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Planar Vehicle-Manipulator System}{23}{section.2.2}\protected@file@percent }
 \newlabel{planar_VMS}{{2.2}{23}{Planar Vehicle-Manipulator System}{section.2.2}{}}
 \newlabel{object_coordinates}{{2.20}{23}{Planar Vehicle-Manipulator System}{equation.2.2.20}{}}
 \newlabel{EE_position}{{2.23}{24}{Planar Vehicle-Manipulator System}{equation.2.2.23}{}}
+\newlabel{W_bo}{{2.26}{25}{Planar Vehicle-Manipulator System}{equation.2.2.26}{}}
 \newlabel{arm_1_vel}{{2.27}{25}{Planar Vehicle-Manipulator System}{equation.2.2.27}{}}
 \newlabel{arms_velocity}{{2.28}{25}{Planar Vehicle-Manipulator System}{equation.2.2.28}{}}
 \newlabel{L_matrices}{{2.29}{26}{Planar Vehicle-Manipulator System}{equation.2.2.29}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Object's Kinematics}{26}{subsection.2.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Tumbling object disk approximation.}}{27}{figure.caption.16}\protected@file@percent }
 \newlabel{contact_point}{{2.7}{27}{Tumbling object disk approximation}{figure.caption.16}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Dynamics}{28}{chapter.3}\protected@file@percent }
+\newlabel{object_jacobian}{{2.33}{28}{Object's Kinematics}{equation.2.2.33}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Dynamics}{29}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{dynamics}{{3}{28}{Dynamics}{chapter.3}{}}
-\newlabel{equation_motion}{{3.1}{28}{Dynamics}{equation.3.0.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Classic Approach}{30}{section.3.1}\protected@file@percent }
-\newlabel{kinetic_body}{{3.4}{30}{Classic Approach}{equation.3.1.4}{}}
-\newlabel{final_kinetic_body}{{3.5}{30}{Classic Approach}{equation.3.1.5}{}}
-\newlabel{energy_sum}{{3.6}{31}{Classic Approach}{equation.3.1.6}{}}
-\newlabel{lagrangian}{{3.7}{31}{Classic Approach}{equation.3.1.7}{}}
-\newlabel{kin_energy}{{3.8}{31}{Classic Approach}{equation.3.1.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$.}}{32}{table.caption.17}\protected@file@percent }
-\newlabel{inertia_moments}{{3.1}{32}{Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$}{table.caption.17}{}}
-\newlabel{non_lagrangian}{{3.9}{32}{Classic Approach}{equation.3.1.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Forces and torques applied to the base ($F_x,F_y,\tau _0$) and to the links ($\tau _1,\tau _2$). Note that the torque of the first arm affects the base and the torque of the second arm affects the first arm.}}{33}{figure.caption.18}\protected@file@percent }
-\newlabel{forces}{{3.1}{33}{Forces and torques applied to the base ($F_x,F_y,\tau _0$) and to the links ($\tau _1,\tau _2$). Note that the torque of the first arm affects the base and the torque of the second arm affects the first arm}{figure.caption.18}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Object's Dynamics}{33}{subsection.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Homogeneous Matrices Approach}{35}{section.3.2}\protected@file@percent }
-\newlabel{pseudo_moments}{{3.15}{35}{Homogeneous Matrices Approach}{equation.3.2.15}{}}
-\newlabel{moments_convertion}{{3.16}{35}{Homogeneous Matrices Approach}{equation.3.2.16}{}}
-\newlabel{action_matrix}{{3.17}{35}{Homogeneous Matrices Approach}{equation.3.2.17}{}}
-\newlabel{non_lagrangian_matrix}{{3.20}{36}{Homogeneous Matrices Approach}{equation.3.2.20}{}}
-\newlabel{kinetic_matrix}{{3.21}{36}{Homogeneous Matrices Approach}{equation.3.2.21}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$.}}{37}{table.caption.19}\protected@file@percent }
-\newlabel{pseudo_moments_table}{{3.2}{37}{Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$}{table.caption.19}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Object's Dynamics}{38}{subsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Impact Analysis}{39}{chapter.4}\protected@file@percent }
+\newlabel{dynamics}{{3}{29}{Dynamics}{chapter.3}{}}
+\newlabel{equation_motion}{{3.1}{29}{Dynamics}{equation.3.0.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Classic Approach}{31}{section.3.1}\protected@file@percent }
+\newlabel{kinetic_body}{{3.4}{31}{Classic Approach}{equation.3.1.4}{}}
+\newlabel{final_kinetic_body}{{3.5}{31}{Classic Approach}{equation.3.1.5}{}}
+\newlabel{energy_sum}{{3.6}{32}{Classic Approach}{equation.3.1.6}{}}
+\newlabel{lagrangian}{{3.7}{32}{Classic Approach}{equation.3.1.7}{}}
+\newlabel{kin_energy}{{3.8}{32}{Classic Approach}{equation.3.1.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$.}}{33}{table.caption.17}\protected@file@percent }
+\newlabel{inertia_moments}{{3.1}{33}{Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$}{table.caption.17}{}}
+\newlabel{non_lagrangian}{{3.9}{33}{Classic Approach}{equation.3.1.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Forces and torques applied to the base ($F_x,F_y,\tau _0$) and to the links ($\tau _1,\tau _2$). Note that the torque of the first arm affects the base and the torque of the second arm affects the first arm.}}{34}{figure.caption.18}\protected@file@percent }
+\newlabel{forces}{{3.1}{34}{Forces and torques applied to the base ($F_x,F_y,\tau _0$) and to the links ($\tau _1,\tau _2$). Note that the torque of the first arm affects the base and the torque of the second arm affects the first arm}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Object's Dynamics}{34}{subsection.3.1.1}\protected@file@percent }
+\newlabel{object_dynamics}{{3.1.1}{34}{Object's Dynamics}{subsection.3.1.1}{}}
+\newlabel{object_matrices}{{3.13}{35}{Object's Dynamics}{equation.3.1.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Homogeneous Matrices Approach}{36}{section.3.2}\protected@file@percent }
+\newlabel{pseudo_moments}{{3.15}{36}{Homogeneous Matrices Approach}{equation.3.2.15}{}}
+\newlabel{moments_convertion}{{3.16}{36}{Homogeneous Matrices Approach}{equation.3.2.16}{}}
+\newlabel{action_matrix}{{3.17}{36}{Homogeneous Matrices Approach}{equation.3.2.17}{}}
+\newlabel{non_lagrangian_matrix}{{3.20}{37}{Homogeneous Matrices Approach}{equation.3.2.20}{}}
+\newlabel{kinetic_matrix}{{3.21}{37}{Homogeneous Matrices Approach}{equation.3.2.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$.}}{38}{table.caption.19}\protected@file@percent }
+\newlabel{pseudo_moments_table}{{3.2}{38}{Moments of inertia of the planar VMS' bodies, with respect to their centre of mass (in the centre of the base and the arms), with $i=\{1,2\}$}{table.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Object's Dynamics}{39}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Impact Analysis}{41}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\gdef \@abspage@last{43}
+\newlabel{initial_impact}{{4.1}{41}{Impact Analysis}{equation.4.0.1}{}}
+\newlabel{impact_force}{{4.2}{42}{Impact Analysis}{equation.4.0.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Plastic Impact}{43}{section.4.1}\protected@file@percent }
+\gdef \@abspage@last{47}
