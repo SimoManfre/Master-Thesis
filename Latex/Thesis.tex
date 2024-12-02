@@ -513,6 +513,7 @@ where $q_i$ are the manipulators DoFs.\\
 By derivation of (\ref{EE_position}) one can obtain:
 \begin{equation}
   \dot{S}=J_a\dot{Q}
+  \label{task_dimension}
 \end{equation}
 where $J_a$ is the \textit{Analytical Jacobian Matrix} and $Q=\{q_1,q_2,\dots,q_n\}$.\\
 Its dimension are very important, since kinematic singularities, which are configurations in which the end-eﬀector frame loses the ability to move or rotate in one or more directions, correspond to those configurations at which the Jacobian matrix fails to have maximal rank [11], where the rank is defined as the number of indipendent rows or couloumn of the matrix.\\
@@ -798,13 +799,15 @@ The former problem requires differential calculation, while the latter algebraic
 In this thesis, both problems will be studied: given the impact of the tumbling object with the VMS, we want to analyse the motion of the system after the impact; however, we also want to find a control algorith to be applied at the torques to stabilize the system after the impact.\\
 The dynamic equations, also referred to as the equations of motion, are a set of second-order differential equations of the form:
 \begin{equation}
-  M(q)\ddot{q}+c(q,\dot{q})=u
+  M(q)\ddot{q}+C(q,\dot{q})=u
   \label{equation_motion}
 \end{equation}
-where $q \in \mathbb{R}^n$ is the vector of joint variables, $\tau \in \mathbb{R}^n$ is the vector of joint forces and torques, $M(q) \in \mathbb{R}^{n \times n}$ is a symmetric positive-definite \textit{Mass Matrix}, and $c(q,\dot{q}) \in \mathbb{R}^n$ are forces that lumped together centripetal, Coriolis, gravity and friction terms that depend solely on $q$ and $\dot{q}$ [11].\\
+where $q \in \mathbb{R}^n$ is the vector of joint variables, $\tau \in \mathbb{R}^n$ is the vector of joint forces and torques, $M(q) \in \mathbb{R}^{n \times n}$ is a symmetric positive-definite \textit{Mass Matrix}, and $C(q,\dot{q}) \in \mathbb{R}^n$ are forces that lumped together centripetal, Coriolis, gravity and friction terms that depend solely on $q$ and $\dot{q}$ [11].\\
 By solving these equation, given the nature of the problem (direct or inverse), we can find the motion or the torques respectively.\\
 There are different methods to find the equations of motion, such as Newton-Euler method and the lagrangian one. In this thesis the latter will be used, both in a "classic" scalar approach and in the Homogeneous Matrix approach shown in [10].\\
-The dynamic analysis will be performed considering plastic bodies.
+The dynamic analysis will be performed considering plastic bodies.\\
+
+A little note has to be done in order to understand some calculations in the next sections: (\textcolor{red}{scrivere della relazione dinamica della jacobiana}).
 \newpage
 \section{Classic Approach}
 The lagrangian approach is an energy-based one, which allows to find the dynamic equations in a symbolic closed form. Particularly, the method involes the calculation of the kinetic and potential energy of the system.\\
@@ -924,7 +927,7 @@ Equation (\ref{lagrangian}) can now be written as:
     \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_2}-\frac{\partial \mathcal{L} }{\partial q_2}=\tau_2
   \end{cases}
 \end{equation}
-After having solved these five equations, it is possible to gather them together in a vectorial form, such as in (\ref{equation_motion}), with $M\in\mathbb{R}^{5\times 5}$, $c\in \mathbb{R}^5$ and $u\in\mathbb{R}^{5\times 5}$.\textcolor{red}{MATRICES IN THE APPENDIX?}
+After having solved these five equations, it is possible to gather them together in a vectorial form, such as in (\ref{equation_motion}), with $M\in\mathbb{R}^{5\times 5}$, $C\in \mathbb{R}^5$ and $u\in\mathbb{R}^{5\times 5}$.\textcolor{red}{MATRICES IN THE APPENDIX?}
 \subsection{Object's Dynamics}\label{object_dynamics}
 The same approach can be implemented for the object to be captured: since it is approximated as a disk too, its moment of inertia is equal to the base's one.\\
 The kinetic energy is then:
@@ -948,7 +951,7 @@ By solving equation (\ref{lagrangian}), we get the mass, Coriolis' and torques m
       0&m_O&0\\
       0&0&\frac{m_Or^2}{2}
     \end{bmatrix}\quad
-    c_O=\begin{bmatrix}
+    C_O=\begin{bmatrix}
       0\\0\\0
     \end{bmatrix}\\
     \\
@@ -1192,35 +1195,45 @@ Another assumption that has been already done in the previous chapters is that w
 Following the second assumption, during the impact the equations of motion of the VMS and the object can be expressed in a form similar to equation (\ref{equation_motion}) except for the impact force $f_I$:
 \begin{equation}
   \begin{cases}
-    M\ddot{p}+c=u+J^Tf_I\\
-    M_O\ddot{\psi}+c_O=-J_O^Tf_I
+    M\ddot{p}+C=u+J^Tf_I\\
+    M_O\ddot{\psi}+C_O=-J_O^Tf_I
   \end{cases}
   \label{initial_impact}
 \end{equation}
+where $J^Tf_I$ and $J_O^Tf_I$ are the torques and forces applied to the VMS and object's generalized coordinates respectively, following the relation shown in (\ref{dynamic_jacobian}).\\
 Notice that $u_O$ has been omitted in the second equation, since, as already mentioned in Section~\ref{object_dynamics}, we are not interested in controlling the object.\\
 From the second equation of (\ref{initial_impact}), we can write:
 \begin{equation}
-  f_I=-(J_O^T)^+(M_O\ddot{\psi}_O+c_O)
+  f_I=-(J_O^T)^+(M_O\ddot{\psi}_O+C_O)
   \label{impact_force}
 \end{equation}
 with $(J_O^T)^+$ the pseudoinverse of the transposed object's jacobian; in fact, since as found in (\ref{object_jacobian}) this jacobian is not squared, we can use the pseudoinverse to invert it and, by having linearly indipendent rows, it is defined accordingly to (\ref{pseudoinverse}).\\
 By substuting (\ref{impact_force}) in the first equation of (\ref{initial_impact}), one obtaines:
 \begin{equation}
   \begin{split}
-  M\ddot{p}+c&=u-J^T(J_O^T)^+(M_O\ddot{\psi}_O+c_O)\\
-  &=u-J^T(J_O^+)^T(M_O\ddot{\psi}_O+c_O)
+  M\ddot{p}+C&=u-J^T(J_O^T)^+(M_O\ddot{\psi}_O+C_O)\\
+  &=u-J^T(J_O^+)^T(M_O\ddot{\psi}_O+C_O)
   \end{split}
 \end{equation}
 Now, integrating the above equation over the period od impact $\pi$:
 \begin{equation}
-  \int_{0}^{\pi}M\ddot{p}\,dt+\int_{0}^{\pi}c\,dt =-\int_{0}^{\pi}J^T(J_O^+)^TM_O\ddot{\psi}_O\,dt+\int_{0}^{\pi}(u-J^T(J_O^+)^Tc_O)\,dt
+  \int_{0}^{\pi}M\ddot{p}\,dt+\int_{0}^{\pi}C\,dt =-\int_{0}^{\pi}J^T(J_O^+)^TM_O\ddot{\psi}_O\,dt+\int_{0}^{\pi}(u-J^T(J_O^+)^TC_O)\,dt
 \end{equation}
-Under the first assumption of no change of the generalized coordinates during the impact (but only of their velocities), all the contributions that depend only on the velocities and positions (i.e. $c,u,J^T(J_O^+)^Tc_O$) can be ignored:
+Under the first assumption of no change of the generalized coordinates during the impact (but only of their velocities), all the contributions that depend only on the velocities and positions (i.e. $C,u,J^T(J_O^+)^TC_O$) can be ignored:
 \begin{equation}
   M(\dot{p}_f-\dot{p}_i)+J^T(J_O^+)^TM_O(\dot{\psi}_f-\dot{\psi_i})=0
+  \label{general_impact}
 \end{equation}
-This equation can be used for all collisions ranging from plastic to perfectly elastic~[15,16].\\
-
+This equation can be used for all collisions ranging from plastic to perfectly elastic~[15,16]. It is in fact the general property of conservation of momentum:  given two point masses $m_1$ and $m_2$, with linear initial velocity $v_{1,i}$ and $v_{2,i}$, the conservation of momentum law states:
+\begin{equation}
+  m_1v_{i,1}+m_2v_{i,2}=m_1v_{f,1}+m_2v_{f,2}
+\end{equation}
+or, equivalently:
+\begin{equation}
+  m_1(v_{f,1}-v_{i,1})+m_2(v_{f,2}-v_{i,2})=0
+  \label{momentum_conservation}
+\end{equation}
+Equation (\ref{momentum_conservation}) is very similar to (\ref{general_impact}), with the difference that $M\dot{p}\in \mathbb{R}^{5\times 1}$ and $M_O\dot{\psi}\in \mathbb{R}^{3\times 1}$: they cannot be summed. That is why the object's mass matrix is multiply by the two jacobians, which comes directly from the equation of motion.\\
 In the following sections different scenarios will be analysed:
 \begin{enumerate}
   \item Rigid bodies, plastic impact
@@ -1229,4 +1242,147 @@ In the following sections different scenarios will be analysed:
 \end{enumerate}
 \newpage
 \section{Plastic Impact}
+In a plastic impact, the velocity of the contact point of each system is the same after the impact:
+\begin{equation}
+  J\dot{p_f}=J_O\dot{\psi_f}
+  \label{kinematic_constraint}
+\end{equation}
+where the left-hand side term of the equation is the velocity of the contact point written as a function of the final VMS generalized coordinates and velocities $p_f,\dot{p}_f$ (see (\ref{task_dimension})) and the right-hand side term is the velocity of the same point written with respect to the object generalized final coordinates and velocities $\psi_f,\dot{\psi}_f$.\\
+From (\ref{kinematic_constraint}), the velocities of the object can be expressed in terms of those of the VMS as:
+\begin{equation}
+  \dot{\psi}_f=J_O^+J\dot{p}_f
+  \label{composition}
+\end{equation}
+By substituting equation (\ref{composition}) in equation (\ref{general_impact}), the following is obtained:
+\begin{equation}
+  \dot{p}_f=G^{-1}H
+  \label{final_velocities}
+\end{equation}
+where:
+\begin{equation}
+  \begin{array}{l}
+    G=M+J^T(J_O^+)^TM_OJ_O^+J\\
+    H=M\dot{p}_i+J^T(J_O^+)^TM_O\dot{\psi}_i
+  \end{array}
+\end{equation}
+We can confront this result with the one obtained starting from equation (\ref{momentum_conservation}) in the case of two point masses; since the final velocity in a plastic impact would have been the same $v_f$ for both masses, we can write:
+\begin{equation}
+  \begin{array}{l}
+  m_1v_{i,1}+m_2v_{i,2}=(m_1+m_2)v_f\\
+  \Rightarrow v_f=g^{-1}h
+  \end{array}
+\end{equation}
+with:
+\begin{equation}
+  \begin{array}{l}
+    g=m_1+m_2\\
+    h=m_1v_{i,1}+m_2v_{i,2}
+  \end{array}
+\end{equation}
+Notice that $G,H$ are very similar to $g,h$, the difference is still due to the jacobians matrices which come from the kinematic relation.\\
+Once the initial velocities $\dot{p}_i,\dot{\psi}_i$ have been determined, $\dot{p}_f$ can be evaluated according to (\ref{final_velocities}) and $\dot{\psi}_f$ can be solved from (\ref{composition}). These final values are used as the initial velocity conditions for the post-impact dynamical simulation of the system, whose model will be the combination of the equations of robot and object, so that equation (\ref{composition}) will always hold and we can get rid off the subscripts:
+\begin{equation}
+  \dot{\psi}=J_O^+J\dot{p}
+\end{equation}
+While in [14] the post-impact analyisis is not fully covered, [16] offers an intuitive procedure to write the dynamics of the new VMS, composed now by the object too, with respect of the VMS generalized coordinates alone (i.e. $p$).\\ 
+By differentiating the above equation we can obtain:
+\begin{equation}
+  \ddot{\psi}=J_O^+J\ddot{p}+\frac{\partial J_O^+}{\partial t}J\dot{p}+J_O^+\frac{\partial J}{\partial t}\dot{p}
+  \label{composition_diff}
+\end{equation}
+We can now substitute (\ref{composition_diff}) in the second equation of (\ref{initial_impact}) (i.e. the dynamics of the object), obtaining:
+\begin{equation}
+  M_O\Big(J_O^+J\ddot{p}+\frac{\partial J_O^+}{\partial t}J\dot{p}+J_O^+\frac{\partial J}{\partial t}\dot{p}\Big)+C_O=-J_O^Tf_I
+\end{equation}
+from which $f_I$ can be written as:
+\begin{equation}
+  f_I=-\Big(J_O^{-T}M_OJ_O^+J\ddot{p}+J_O^{-T}M_O\frac{\partial J_O^+}{\partial t}J\dot{p}+J_O^{-T}M_OJ_O^+\frac{\partial J}{\partial t}\dot{p}+J_O^{-T}C_O\Big)
+\end{equation}
+Now, $f_I$ can be substituted in the first equation of (\ref{initial_impact}) (i.e. the VMS dynamics) and by doing so, we can write the overall dynamics with respect to $p$ only:
+\begin{equation}
+  M'\ddot{p}+C'=u
+\end{equation}
+where:
+\begin{equation}
+  \begin{array}{l}
+    M'=M+J^T(J_O^T)^+M_OJ_O^+J\\
+    C'=C+J^T(J_O^T)^+M_O\frac{\partial J_O^+}{\partial t}J\dot{p}+J^T(J_O^T)^+M_OJ^+\frac{\partial J}{\partial t}\dot{p}+J^T(J_O^T)^+C_O
+  \end{array}
+  \label{VMS_dynamics}
+\end{equation}
+Equation (\ref{VMS_dynamics}) is the post-impact dynamic model of the VMS containing the object. Both $M'$ and $C'$ are still dependent on $J_O$, which depends on the object's coordinates, but since the object is now captured by the manipulator, its coordinated coincide with the end-effector ones, and its velocities are found by differentization.
+\subsection{Simulation}
+A simulation has been perfomed by means of the Mathematica software (version 13.2.1.0) with VMS paramers shown in Table~\ref{VMS_parameters} and the initial conditions shown in Tables~\ref{initial_positions}, \ref{initial_velocities}.\\
+\begin{table}
+  \caption{VMS parameters.}
+  \label{VMS_parameters}
+  \begin{center}
+  \begin{tabular}{cccccccc}
+    \toprule
+    $l_1$&$l_2$&$m_b$&$m_1$&$m_2$&$m_O$&$r$&$\gamma$\\
+  \midrule
+    \SI{2}{\metre}&\SI{3}{\metre}&\SI{100}{\kilogram}&\SI{10}{\kilogram}&\SI{10}{\kilogram}&\SI{15}{\kilogram}&\SI{1}{\metre}&\SI{0.5}{\radian}\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}
+  \caption{Simulation's initial positions.}
+  \label{initial_positions}
+  \begin{center}
+  \begin{tabular}{cccccccc}
+    \toprule
+    $\theta_0$&$x_b$&$y_b$&$q_1$&$q_2$&$x_O$&$y_O$&$\theta_O$\\
+  \midrule
+    \SI[parse-numbers = false]{\pi/2}{\radian}&\SI{1}{\metre}&\SI{2}{\metre}&\SI{0}{\radian}&\SI{0}{\radian}&\SI{1}{\metre}&\SI{8}{\metre}&\SI{4.21}{\radian}\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}
+  \caption{Simulation's initial velocities.}
+  \label{initial_velocities}
+  \begin{center}
+  \begin{tabular}{lcc}
+    \toprule
+    &\textbf{Simulation 1}&\textbf{Simulation 2}\\
+  \midrule
+  $\dot{\theta_0}$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
+  $\dot{x_b}$&\SI{0}{\metre\per\second}&\SI{0}{\metre\per\second}\\
+  $\dot{y_b}$&\SI{0}{\metre\per\second}&\SI{0}{\metre\per\second}\\
+  $\dot{q_1}$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
+  $\dot{q_2}$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
+  $\dot{x_O}$&\SI{-1}{\metre\per\second}&\SI{0}{\metre\per\second}\\
+  $\dot{y_O}$&\SI{0}{\metre\per\second}&\SI{-1}{\metre\per\second}\\
+  $\dot{\theta}_O$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+\end{table}
+The position of the object in the pre-impact has been found by imposing that the contact point coincides with the initial end-effector position, while its orientation $\theta_O$ has been chosen as follows:
+\begin{equation}
+  \theta_O=\theta_{0,0}+q_{1,0}+q_{2,0}+\pi-\gamma
+  \label{contact_rotation}
+\end{equation}
+which is, the orientation of the object is such that it is rotated of the same end-effector angle ($\theta_{0,0}+q_{1,0}+q_{2,0}$) minus $\gamma$ to align the x-axis with the EE's one. In order to make the contact point coincide with the EE, \SI{180}{\degree} have been added.\\
+As shown in Table~\ref{initial_velocities}, two simulations have been performed, with the only difference in the object's initial velocities: in the first simulation, the payload moved only in the negative x-direction, in the second it moves only in the negative y-direction.\\
+Given these initial conditions, the final velocities $\dot{p}_f$ in (\ref{final_velocities}) can be calculated.\\
+
+For the post-impact analysis, the position of the object have been imposed again as a function of the EE position, but now as a function of time, and its orientation similarly to equation (\ref{contact_rotation}):
+\begin{equation}
+  \theta_O(t)=\theta_0(t)+q_1(t)+q_2(t)+\pi-\gamma
+\end{equation}
+Having now the new post-impact $\psi_p$ generalized coordinates as a function of $p$, the object's jacobian can be expressed as a function of the VMS generalized coordinates too and $M'$ and $C'$ can be found according to (\ref{VMS_dynamics}).\\
+A control-free dynamics has been performed using as inital conditions the initial positions in Table~\ref{initial_positions} and the final velocities $\dot{p}_f$ found in the pre-impact analysis. As already stated at the beginning of this chapter, in fact, during the impact only the rates change, while the positions remain the same.\\
+A quick and intuitive visual result can be seen in Figure~\ref{no_control_result}, while the evolution of the generalized coordinates over time are reported in the \ref{Appendix}.
+\begin{figure}
+  \centering
+  \subfloat[][\emph{Solution 1.}]
+  {\input{tikz/no_control_sol1.tikz}}
+\subfloat[][\emph{Solution 2.}]
+  {\input{tikz/no_control_sol2.tikz}} 
+  \caption{Initial and final (dashed) position of the VMS after the impact for the two different simulations. In the left image, the object approaches with a east to west motion, while in the right one with a north to south motion.}
+  \label{no_control_result}
+\end{figure}
+It is interesting to notice that, in both cases, $\theta_0$ does not change over time: the absence of a torque applied to the base allows free rotation of $q_1$ around $z_b$ and the base does not rotate.\\
 \end{document}

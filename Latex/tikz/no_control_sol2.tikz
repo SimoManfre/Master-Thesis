@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+
+  \def\lone{4} 
+  \def\ltwo{3.5}
+
+  \def\thetazero{90}
+  \def\thetaone{0}
+  \def\thetatwo{0} 
+
+  \coordinate (O) at (0,0);
+  \coordinate (Ob) at (4,2);
+  \coordinate (A) at ({4+\lone*cos(\thetaone+\thetazero)},{2+\lone*sin(\thetaone+\thetazero)});
+  \coordinate (B) at ({4+\lone*cos(\thetaone+\thetazero) + \ltwo*cos(\thetaone + \thetatwo+\thetazero)}, 
+                      {2+\lone*sin(\thetaone+\thetazero) + \ltwo*sin(\thetaone + \thetatwo+\thetazero)});
+  \coordinate (Obp) at (4,0.89);
+  \coordinate (Ap) at (4,4.89);
+  \coordinate (Bp) at (4,8.39);
+
+  \draw[dashed,fill=green!25] (Obp) circle (1);
+  \draw[thick,fill=green!50] (Ob) circle (1);
+
+  \draw[thick, black] (Ob) -- (A);
+  \draw[thick, black] (A) -- (B);
+  \draw[thick, black, dashed] (Obp) -- (Ap);
+  \draw[thick, black, dashed] (Ap) -- (Bp);
+
+  \draw[thick,black,->] (O) -- (0,10) node[anchor=east]{$y_f$};
+  \draw[thick,black,->] (O) -- (6,0) node[anchor=west]{$x_f$};
+
+  \filldraw[fill=black] (O) circle (0.1);
+  \filldraw[fill=black] (Ob) circle (0.1);
+  \filldraw[fill=black] (A) circle (0.1);
+  \filldraw[fill=black] (B) circle (0.1);
+  \filldraw[fill=black] (Obp) circle (0.1);
+  \filldraw[fill=black] (Ap) circle (0.1);
+  \filldraw[fill=black] (Bp) circle (0.1);
+
+  \node[anchor=east] at (O) {$O_f$};
+  \node[anchor=east] at (Ob) {$O_b$};
+
+\end{tikzpicture}

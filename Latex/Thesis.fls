@@ -448,6 +448,12 @@ INPUT tikz/disk.tikz
 INPUT ./tikz/forces.tikz
 INPUT ./tikz/forces.tikz
 INPUT tikz/forces.tikz
+INPUT ./tikz/no_control_sol1.tikz
+INPUT ./tikz/no_control_sol1.tikz
+INPUT tikz/no_control_sol1.tikz
+INPUT ./tikz/no_control_sol2.tikz
+INPUT ./tikz/no_control_sol2.tikz
+INPUT tikz/no_control_sol2.tikz
 INPUT Thesis.aux
 INPUT ./Thesis.out
 INPUT ./Thesis.out
