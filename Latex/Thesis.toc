@@ -24,5 +24,7 @@
 \contentsline {section}{\numberline {3.2}Homogeneous Matrices Approach}{36}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Object's Dynamics}{39}{subsection.3.2.1}%
 \contentsline {chapter}{\numberline {4}Impact Analysis}{41}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Plastic Impact}{44}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Simulation}{45}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.1}Plastic Impact \& Rigid Bodies}{44}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Free motion simulation}{45}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Control based simulation}{47}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Plastic Impact \& Elastic Bodies}{55}{section.4.2}%

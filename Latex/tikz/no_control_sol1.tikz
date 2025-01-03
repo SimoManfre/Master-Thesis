@@ -1,3 +1,4 @@
+\scalebox{0.8}{
 \begin{tikzpicture}
 
   \def\lone{4} 
@@ -38,4 +39,4 @@
   \node[anchor=east] at (O) {$O_f$};
   \node[anchor=east] at (Ob) {$O_b$};
 
-\end{tikzpicture}
+\end{tikzpicture}}

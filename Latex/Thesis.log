@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  2 DEC 2024 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  3 DEC 2024 15:43
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex
@@ -265,233 +265,150 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count285
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/ctable/ctable.sty
-Package: ctable 2015/10/17 v1.31 ctable package for flexible typesetting of table and figure floats using key/value directives
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
-)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count286
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks32
-\XKV@tempa@toks=\toks33
-)
-\XKV@depth=\count287
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/array.sty
-Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen194
-\ar@mcellbox=\box62
-\extrarowheight=\dimen195
-\NC@list=\toks34
-\extratabsurround=\skip50
-\backup@length=\skip51
-\ar@cellbox=\box63
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen196
-\TX@old@table=\dimen197
-\TX@old@col=\dimen198
-\TX@target=\dimen199
-\TX@delta=\dimen256
-\TX@cols=\count288
-\TX@ftn=\toks35
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen257
-\lightrulewidth=\dimen258
-\cmidrulewidth=\dimen259
-\belowrulesep=\dimen260
-\belowbottomsep=\dimen261
-\aboverulesep=\dimen262
-\abovetopsep=\dimen263
-\cmidrulesep=\dimen264
-\cmidrulekern=\dimen265
-\defaultaddspace=\dimen266
-\@cmidla=\count289
-\@cmidlb=\count290
-\@aboverulesep=\dimen267
-\@belowrulesep=\dimen268
-\@thisruleclass=\count291
-\@lastruleclass=\count292
-\@thisrulewidth=\dimen269
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/graphics/rotating.sty
-Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-)
-\c@r@tfl@t=\count293
-\rotFPtop=\skip52
-\rotFPbot=\skip53
-\rot@float@box=\box64
-\rot@mess@toks=\toks36
-)
-
-Package ctable Warning:  Transparency disabled: incompatible with tikz package  on input line 36.
-
-\@CTframesep=\dimen270
-\@dfltCTframesep=\dimen271
-\@CTframerule=\dimen272
-\@dfltCTframerule=\dimen273
-\@CTwidth=\dimen274
-\@dfltCTwidth=\dimen275
-\@CTcaptionskip=\dimen276
-\@dfltCTcaptionskip=\dimen277
-\@CTmaxwidth=\dimen278
-\@dfltCTmaxwidth=\dimen279
-\@CTmincapwidth=\dimen280
-\@dfltCTmincapwidth=\dimen281
-\@CTfooterwidth=\dimen282
-\@dfltCTfooterwidth=\dimen283
-\@CTw=\dimen284
-\@CTfloatwidth=\dimen285
-\@CToldsep=\dimen286
-\@CToldrule=\dimen287
-\CT@t=\box65
-\@CTcurftwidth=\dimen288
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/layaureo/layaureo.sty
+))) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/layaureo/layaureo.sty
 Package: layaureo 2004/09/16 v0.2
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count294
-\Gm@cntv=\count295
-\c@Gm@tempcnt=\count296
-\Gm@bindingoffset=\dimen289
-\Gm@wd@mp=\dimen290
-\Gm@odd@mp=\dimen291
-\Gm@even@mp=\dimen292
-\Gm@layoutwidth=\dimen293
-\Gm@layoutheight=\dimen294
-\Gm@layouthoffset=\dimen295
-\Gm@layoutvoffset=\dimen296
-\Gm@dimlist=\toks37
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count286
+\Gm@cntv=\count287
+\c@Gm@tempcnt=\count288
+\Gm@bindingoffset=\dimen194
+\Gm@wd@mp=\dimen195
+\Gm@odd@mp=\dimen196
+\Gm@even@mp=\dimen197
+\Gm@layoutwidth=\dimen198
+\Gm@layoutheight=\dimen199
+\Gm@layouthoffset=\dimen256
+\Gm@layoutvoffset=\dimen257
+\Gm@dimlist=\toks32
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count297
-\calc@Bcount=\count298
-\calc@Adimen=\dimen297
-\calc@Bdimen=\dimen298
-\calc@Askip=\skip54
-\calc@Bskip=\skip55
+\calc@Acount=\count289
+\calc@Bcount=\count290
+\calc@Adimen=\dimen258
+\calc@Bdimen=\dimen259
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count299
-\calc@Cskip=\skip56
+\calc@Ccount=\count291
+\calc@Cskip=\skip52
 )
-\LA@MargineRilegatura=\skip57
-\LA@LarghezzaTesto=\skip58
-\LA@AltezzaTesto=\skip59
-\LA@MargineSinistro=\skip60
-\LA@MargineSuperiore=\skip61
+\LA@MargineRilegatura=\skip53
+\LA@LarghezzaTesto=\skip54
+\LA@AltezzaTesto=\skip55
+\LA@MargineSinistro=\skip56
+\LA@MargineSuperiore=\skip57
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/varioref.sty
 Package: varioref 2022/01/09 v1.6f package for extended references (FMi)
-\c@vrcnt=\count300
+\c@vrcnt=\count292
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
-\@mathmargin=\skip62
+\@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
 (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks38
-\ex@=\dimen299
+\@emptytoks=\toks33
+\ex@=\dimen260
 )) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen300
+\pmbraise@=\dimen261
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count301
+\inf@bad=\count293
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count302
-\leftroot@=\count303
+\uproot@=\count294
+\leftroot@=\count295
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count304
-\DOTSCASE@=\count305
+\classnum@=\count296
+\DOTSCASE@=\count297
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box66
-\strutbox@=\box67
+\Mathstrutbox@=\box62
+\strutbox@=\box63
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen301
+\big@size=\dimen262
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count306
+\macc@depth=\count298
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count307
+\c@MaxMatrixCols=\count299
 \dotsspace@=\muskip17
-\c@parentequation=\count308
-\dspbrk@lvl=\count309
-\tag@help=\toks39
-\row@=\count310
-\column@=\count311
-\maxfields@=\count312
-\andhelp@=\toks40
-\eqnshift@=\dimen302
-\alignsep@=\dimen303
-\tagshift@=\dimen304
-\tagwidth@=\dimen305
-\totwidth@=\dimen306
-\lineht@=\dimen307
-\@envbody=\toks41
-\multlinegap=\skip63
-\multlinetaggap=\skip64
-\mathdisplay@stack=\toks42
+\c@parentequation=\count300
+\dspbrk@lvl=\count301
+\tag@help=\toks34
+\row@=\count302
+\column@=\count303
+\maxfields@=\count304
+\andhelp@=\toks35
+\eqnshift@=\dimen263
+\alignsep@=\dimen264
+\tagshift@=\dimen265
+\tagwidth@=\dimen266
+\totwidth@=\dimen267
+\lineht@=\dimen268
+\@envbody=\toks36
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks37
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-\g_MT_multlinerow_int=\count313
-\l_MT_multwidth_dim=\dimen308
-\origjot=\skip65
-\l_MT_shortvdotswithinadjustabove_dim=\dimen309
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen310
-\l_MT_above_intertext_sep=\dimen311
-\l_MT_below_intertext_sep=\dimen312
-\l_MT_above_shortintertext_sep=\dimen313
-\l_MT_below_shortintertext_sep=\dimen314
-\xmathstrut@box=\box68
-\xmathstrut@dim=\dimen315
+\g_MT_multlinerow_int=\count305
+\l_MT_multwidth_dim=\dimen269
+\origjot=\skip61
+\l_MT_shortvdotswithinadjustabove_dim=\dimen270
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen271
+\l_MT_above_intertext_sep=\dimen272
+\l_MT_below_intertext_sep=\dimen273
+\l_MT_above_shortintertext_sep=\dimen274
+\l_MT_below_shortintertext_sep=\dimen275
+\xmathstrut@box=\box64
+\xmathstrut@dim=\dimen276
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2024-02-15 v3.3.12 A comprehensive (SI) units package
-\l__siunitx_number_uncert_offset_int=\count314
-\l__siunitx_number_exponent_fixed_int=\count315
-\l__siunitx_number_min_decimal_int=\count316
-\l__siunitx_number_min_integer_int=\count317
-\l__siunitx_number_round_precision_int=\count318
-\l__siunitx_number_lower_threshold_int=\count319
-\l__siunitx_number_upper_threshold_int=\count320
-\l__siunitx_number_group_first_int=\count321
-\l__siunitx_number_group_size_int=\count322
-\l__siunitx_number_group_minimum_int=\count323
-\l__siunitx_angle_tmp_dim=\dimen316
-\l__siunitx_angle_marker_box=\box69
-\l__siunitx_angle_unit_box=\box70
-\l__siunitx_compound_count_int=\count324
+\l__siunitx_number_uncert_offset_int=\count306
+\l__siunitx_number_exponent_fixed_int=\count307
+\l__siunitx_number_min_decimal_int=\count308
+\l__siunitx_number_min_integer_int=\count309
+\l__siunitx_number_round_precision_int=\count310
+\l__siunitx_number_lower_threshold_int=\count311
+\l__siunitx_number_upper_threshold_int=\count312
+\l__siunitx_number_group_first_int=\count313
+\l__siunitx_number_group_size_int=\count314
+\l__siunitx_number_group_minimum_int=\count315
+\l__siunitx_angle_tmp_dim=\dimen277
+\l__siunitx_angle_marker_box=\box65
+\l__siunitx_angle_unit_box=\box66
+\l__siunitx_compound_count_int=\count316
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/translations/translations.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count317
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
@@ -502,20 +419,29 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ))
-\l__siunitx_table_tmp_box=\box71
-\l__siunitx_table_tmp_dim=\dimen317
-\l__siunitx_table_column_width_dim=\dimen318
-\l__siunitx_table_integer_box=\box72
-\l__siunitx_table_decimal_box=\box73
-\l__siunitx_table_uncert_box=\box74
-\l__siunitx_table_before_box=\box75
-\l__siunitx_table_after_box=\box76
-\l__siunitx_table_before_dim=\dimen319
-\l__siunitx_table_carry_dim=\dimen320
-\l__siunitx_unit_tmp_int=\count325
-\l__siunitx_unit_position_int=\count326
-\l__siunitx_unit_total_int=\count327
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+\l__siunitx_table_tmp_box=\box67
+\l__siunitx_table_tmp_dim=\dimen278
+\l__siunitx_table_column_width_dim=\dimen279
+\l__siunitx_table_integer_box=\box68
+\l__siunitx_table_decimal_box=\box69
+\l__siunitx_table_uncert_box=\box70
+\l__siunitx_table_before_box=\box71
+\l__siunitx_table_after_box=\box72
+\l__siunitx_table_before_dim=\dimen280
+\l__siunitx_table_carry_dim=\dimen281
+\l__siunitx_unit_tmp_int=\count318
+\l__siunitx_unit_position_int=\count319
+\l__siunitx_unit_total_int=\count320
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen282
+\ar@mcellbox=\box73
+\extrarowheight=\dimen283
+\NC@list=\toks38
+\extratabsurround=\skip62
+\backup@length=\skip63
+\ar@cellbox=\box74
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -526,83 +452,143 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
-\MT@toks=\toks43
-\MT@tempbox=\box77
-\MT@count=\count328
+\MT@toks=\toks39
+\MT@tempbox=\box75
+\MT@count=\count321
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
 LaTeX Info: Redefining \leftprotrusion on input line 1060.
-\MT@prot@toks=\toks44
+\MT@prot@toks=\toks40
 LaTeX Info: Redefining \rightprotrusion on input line 1078.
 LaTeX Info: Redefining \textls on input line 1368.
-\MT@outer@kern=\dimen321
+\MT@outer@kern=\dimen284
 LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
-\MT@listname@count=\count329
+\MT@listname@count=\count322
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 902.
 LaTeX Info: Redefining \lslig on input line 902.
-\MT@outer@space=\skip66
+\MT@outer@space=\skip64
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
-)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/caption/caption.sty
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen285
+\lightrulewidth=\dimen286
+\cmidrulewidth=\dimen287
+\belowrulesep=\dimen288
+\belowbottomsep=\dimen289
+\aboverulesep=\dimen290
+\abovetopsep=\dimen291
+\cmidrulesep=\dimen292
+\cmidrulekern=\dimen293
+\defaultaddspace=\dimen294
+\@cmidla=\count323
+\@cmidlb=\count324
+\@aboverulesep=\dimen295
+\@belowrulesep=\dimen296
+\@thisruleclass=\count325
+\@lastruleclass=\count326
+\@thisrulewidth=\dimen297
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+runsystem(uname -s > "Thesis.w18")...executed.
+
+ (./Thesis.w18)
+runsystem(rm -- "Thesis.w18")...executed.
+
+)
+\c@svg@param@lastpage=\count327
+\svg@box=\box76
+\c@svg@param@currpage=\count328
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/transparent/transparent.sty
+Package: transparent 2022-10-27 v1.5 Transparency with color stacks
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
+Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color stack (HO)
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+))) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen322
-\captionmargin=\dimen323
-\caption@leftmargin=\dimen324
-\caption@rightmargin=\dimen325
-\caption@width=\dimen326
-\caption@indent=\dimen327
-\caption@parindent=\dimen328
-\caption@hangindent=\dimen329
+\caption@tempdima=\dimen298
+\captionmargin=\dimen299
+\caption@leftmargin=\dimen300
+\caption@rightmargin=\dimen301
+\caption@width=\dimen302
+\caption@indent=\dimen303
+\caption@parindent=\dimen304
+\caption@hangindent=\dimen305
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count330
-\c@continuedfloat=\count331
-Package caption Info: rotating package is loaded.
+\c@caption@flags=\count329
+\c@continuedfloat=\count330
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count332
-\sf@farskip=\skip67
-\sf@captopadj=\dimen330
-\sf@capskip=\skip68
-\sf@nearskip=\skip69
-\c@subfigure=\count333
-\c@subfigure@save=\count334
-\c@lofdepth=\count335
-\c@subtable=\count336
-\c@subtable@save=\count337
-\c@lotdepth=\count338
-\sf@top=\skip70
-\sf@bottom=\skip71
+\c@KVtest=\count331
+\sf@farskip=\skip65
+\sf@captopadj=\dimen306
+\sf@capskip=\skip66
+\sf@nearskip=\skip67
+\c@subfigure=\count332
+\c@subfigure@save=\count333
+\c@lofdepth=\count334
+\c@subtable=\count335
+\c@subtable@save=\count336
+\c@lotdepth=\count337
+\sf@top=\skip68
+\sf@bottom=\skip69
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count339
-\c@@ppsavesec=\count340
-\c@@ppsaveapp=\count341
+\c@@pps=\count338
+\c@@ppsavesec=\count339
+\c@@ppsaveapp=\count340
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip72
-\f@nch@O@elh=\skip73
-\f@nch@O@erh=\skip74
-\f@nch@O@olh=\skip75
-\f@nch@O@orh=\skip76
-\f@nch@O@elf=\skip77
-\f@nch@O@erf=\skip78
-\f@nch@O@olf=\skip79
-\f@nch@O@orf=\skip80
+\f@nch@headwidth=\skip70
+\f@nch@O@elh=\skip71
+\f@nch@O@erh=\skip72
+\f@nch@O@olh=\skip73
+\f@nch@O@orh=\skip74
+\f@nch@O@elf=\skip75
+\f@nch@O@erf=\skip76
+\f@nch@O@olf=\skip77
+\f@nch@O@orf=\skip78
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count342
-\csq@gtype=\count343
-\csq@glevel=\count344
-\csq@qlevel=\count345
-\csq@maxlvl=\count346
-\csq@tshold=\count347
-\csq@ltx@everypar=\toks45
+\csq@reset=\count341
+\csq@gtype=\count342
+\csq@glevel=\count343
+\csq@qlevel=\count344
+\csq@maxlvl=\count345
+\csq@tshold=\count346
+\csq@ltx@everypar=\toks41
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
@@ -614,57 +600,57 @@ File: csquotes.cfg
 Package csquotes Info: Enabling multilingual quotes.
 Package csquotes Info: Redefining alias 'italian' -> 'italian/guillemets'.
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count348
-\lst@gtempboxa=\box78
-\lst@token=\toks46
-\lst@length=\count349
-\lst@currlwidth=\dimen331
-\lst@column=\count350
-\lst@pos=\count351
-\lst@lostspace=\dimen332
-\lst@width=\dimen333
-\lst@newlines=\count352
-\lst@lineno=\count353
-\lst@maxwidth=\dimen334
+\lst@mode=\count347
+\lst@gtempboxa=\box77
+\lst@token=\toks42
+\lst@length=\count348
+\lst@currlwidth=\dimen307
+\lst@column=\count349
+\lst@pos=\count350
+\lst@lostspace=\dimen308
+\lst@width=\dimen309
+\lst@newlines=\count351
+\lst@lineno=\count352
+\lst@maxwidth=\dimen310
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-\c@lstnumber=\count354
-\lst@skipnumbers=\count355
-\lst@framebox=\box79
+\c@lstnumber=\count353
+\lst@skipnumbers=\count354
+\lst@framebox=\box78
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
 Package: listings 2024/02/21 1.10 (Carsten Heinz)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.text.code.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen335
-\pgfdecoratedremainingdistance=\dimen336
-\pgfdecoratedinputsegmentcompleteddistance=\dimen337
-\pgfdecoratedinputsegmentremainingdistance=\dimen338
-\pgf@decorate@distancetomove=\dimen339
-\pgf@decorate@repeatstate=\count356
-\pgfdecorationsegmentamplitude=\dimen340
-\pgfdecorationsegmentlength=\dimen341
+\pgfdecoratedcompleteddistance=\dimen311
+\pgfdecoratedremainingdistance=\dimen312
+\pgfdecoratedinputsegmentcompleteddistance=\dimen313
+\pgfdecoratedinputsegmentremainingdistance=\dimen314
+\pgf@decorate@distancetomove=\dimen315
+\pgf@decorate@repeatstate=\count355
+\pgfdecorationsegmentamplitude=\dimen316
+\pgfdecorationsegmentlength=\dimen317
 )
-\tikz@lib@dec@box=\box80
+\tikz@lib@dec@box=\box79
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.text.code.tex
-\pgf@lib@dec@text@box=\box81
+\pgf@lib@dec@text@box=\box80
 )
-\tikz@lib@dec@te@box=\box82
+\tikz@lib@dec@te@box=\box81
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen342
-\pgfarrowlength=\dimen343
-\pgfarrowwidth=\dimen344
-\pgfarrowlinewidth=\dimen345
+\pgfarrowinset=\dimen318
+\pgfarrowlength=\dimen319
+\pgfarrowwidth=\dimen320
+\pgfarrowlinewidth=\dimen321
 )
-\mylen=\skip81
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+\mylen=\skip79
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -677,8 +663,6 @@ Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/refcount/refcount.sty
@@ -688,11 +672,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count357
+\c@section@level=\count356
 )
-\@linkdim=\dimen346
-\Hy@linkcounter=\count358
-\Hy@pagecounter=\count359
+\@linkdim=\dimen322
+\Hy@linkcounter=\count357
+\Hy@pagecounter=\count358
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -700,7 +684,7 @@ Now handling font encoding PD1 ...
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count360
+\Hy@SavedSpaceFactor=\count359
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -713,17 +697,17 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count361
+\c@Hy@tempcnt=\count360
 LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen347
+\XeTeXLinkMargin=\dimen323
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count362
-\Field@Width=\dimen348
-\Fld@charsize=\dimen349
+\Fld@menulength=\count361
+\Field@Width=\dimen324
+\Fld@charsize=\dimen325
 Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
@@ -735,9 +719,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count363
-\c@Item=\count364
-\c@Hfootnote=\count365
+\Hy@abspage=\count362
+\c@Item=\count363
+\c@Hfootnote=\count364
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -746,8 +730,8 @@ File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count366
-\c@bookmark@seq@number=\count367
+\Fld@listcount=\count365
+\c@bookmark@seq@number=\count366
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -755,14 +739,14 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip82
+\Hy@SectionHShift=\skip80
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count368
-\l__pdf_internal_box=\box83
+\l__color_backend_stack_int=\count367
+\l__pdf_internal_box=\box82
 ) (./Thesis.aux
 
 LaTeX Warning: Label `L_matrix' multiply defined.
@@ -776,37 +760,37 @@ LaTeX Warning: Label `composition' multiply defined.
 )
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count369
-\scratchdimen=\dimen350
-\scratchbox=\box84
-\nofMPsegments=\count370
-\nofMParguments=\count371
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count372
-\MPscratchDim=\dimen351
-\MPnumerator=\count373
-\makeMPintoPDFobject=\count374
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count368
+\scratchdimen=\dimen326
+\scratchbox=\box83
+\nofMPsegments=\count369
+\nofMParguments=\count370
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count371
+\MPscratchDim=\dimen327
+\MPnumerator=\count372
+\makeMPintoPDFobject=\count373
+\everyMPtoPDFconversion=\toks44
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -850,20 +834,20 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 49.
-LaTeX Info: Redefining \microtypecontext on input line 49.
-Package microtype Info: Applying patch `item' on input line 49.
-Package microtype Info: Applying patch `toc' on input line 49.
-Package microtype Info: Applying patch `eqnum' on input line 49.
-Package microtype Info: Applying patch `footnote' on input line 49.
-Package microtype Info: Applying patch `verbatim' on input line 49.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 50.
+LaTeX Info: Redefining \microtypecontext on input line 50.
+Package microtype Info: Applying patch `item' on input line 50.
+Package microtype Info: Applying patch `toc' on input line 50.
+Package microtype Info: Applying patch `eqnum' on input line 50.
+Package microtype Info: Applying patch `footnote' on input line 50.
+Package microtype Info: Applying patch `verbatim' on input line 50.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 49.
+LaTeX Info: Redefining \showhyphens on input line 50.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -875,16 +859,16 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count375
-Package hyperref Info: Link coloring OFF on input line 49.
+\c@lstlisting=\count374
+Package hyperref Info: Link coloring OFF on input line 50.
  (./Thesis.out) (./Thesis.out)
 \@outlinefile=\write4
 \openout4 = `Thesis.out'.
 
-<./Images/sigillo2.jpg, id=115, 486.81876pt x 484.81125pt>
+<./Images/sigillo2.jpg, id=123, 486.81876pt x 484.81125pt>
 File: ./Images/sigillo2.jpg Graphic file (type jpg)
 <use ./Images/sigillo2.jpg>
-Package pdftex.def Info: ./Images/sigillo2.jpg  used on input line 54.
+Package pdftex.def Info: ./Images/sigillo2.jpg  used on input line 55.
 (pdftex.def)             Requested size: 121.70439pt x 121.20251pt.
  [1
 
@@ -892,18 +876,18 @@ Package pdftex.def Info: ./Images/sigillo2.jpg  used on input line 54.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 \end{abstract}
+l.89 \end{abstract}
                     [1] (./Thesis.toc (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-))
+) [1
+
+])
 \tf@toc=\write5
 \openout5 = `Thesis.toc'.
 
- [1
 
-]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -912,7 +896,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
 
@@ -924,7 +908,7 @@ Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.114 \item s
+l.115 \item s
              upport of Extra-Vehicular-Activities (EVA) [1
 
 
@@ -953,7 +937,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 145--155
+Underfull \hbox (badness 10000) in paragraph at lines 146--156
 
  []
 
@@ -981,15 +965,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-<./Images/SSRMS_dimensions.png, id=211, 1190.4475pt x 249.93375pt>
+<./Images/SSRMS_dimensions.png, id=221, 1190.4475pt x 249.93375pt>
 File: ./Images/SSRMS_dimensions.png Graphic file (type png)
 <use ./Images/SSRMS_dimensions.png>
-Package pdftex.def Info: ./Images/SSRMS_dimensions.png  used on input line 190.
+Package pdftex.def Info: ./Images/SSRMS_dimensions.png  used on input line 191.
 (pdftex.def)             Requested size: 357.13701pt x 74.9807pt.
-<./Images/SSRMS_orbit.png, id=213, 938.50626pt x 513.92pt>
+<./Images/SSRMS_orbit.png, id=223, 938.50626pt x 513.92pt>
 File: ./Images/SSRMS_orbit.png Graphic file (type png)
 <use ./Images/SSRMS_orbit.png>
-Package pdftex.def Info: ./Images/SSRMS_orbit.png  used on input line 196.
+Package pdftex.def Info: ./Images/SSRMS_orbit.png  used on input line 197.
 (pdftex.def)             Requested size: 375.39584pt x 205.56435pt.
 
 
@@ -1003,10 +987,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./Images/SPDM.png, id=223, 546.04pt x 363.3575pt>
+<./Images/SPDM.png, id=233, 546.04pt x 363.3575pt>
 File: ./Images/SPDM.png Graphic file (type png)
 <use ./Images/SPDM.png>
-Package pdftex.def Info: ./Images/SPDM.png  used on input line 207.
+Package pdftex.def Info: ./Images/SPDM.png  used on input line 208.
 (pdftex.def)             Requested size: 327.62653pt x 218.01617pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1016,18 +1000,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9 <./Images/SSRMS_dimensions.png>]
-<./Images/MA.png, id=234, 614.295pt x 382.42876pt>
+<./Images/MA.png, id=244, 614.295pt x 382.42876pt>
 File: ./Images/MA.png Graphic file (type png)
 <use ./Images/MA.png>
-Package pdftex.def Info: ./Images/MA.png  used on input line 219.
+Package pdftex.def Info: ./Images/MA.png  used on input line 220.
 (pdftex.def)             Requested size: 215.00647pt x 133.85207pt.
-<./Images/SFA.png, id=235, 525.965pt x 404.51125pt>
+<./Images/SFA.png, id=245, 525.965pt x 404.51125pt>
 File: ./Images/SFA.png Graphic file (type png)
 <use ./Images/SFA.png>
-Package pdftex.def Info: ./Images/SFA.png  used on input line 221.
+Package pdftex.def Info: ./Images/SFA.png  used on input line 222.
 (pdftex.def)             Requested size: 184.0905pt x 141.58105pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--226
+Underfull \hbox (badness 10000) in paragraph at lines 213--227
 
  []
 
@@ -1039,10 +1023,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10 <./Images/SSRMS_orbit.png> <./Images/SPDM.png>]
-<./Images/ERA.png, id=244, 925.4575pt x 693.59125pt>
+<./Images/ERA.png, id=254, 925.4575pt x 693.59125pt>
 File: ./Images/ERA.png Graphic file (type png)
 <use ./Images/ERA.png>
-Package pdftex.def Info: ./Images/ERA.png  used on input line 236.
+Package pdftex.def Info: ./Images/ERA.png  used on input line 237.
 (pdftex.def)             Requested size: 416.45203pt x 312.11317pt.
 
 
@@ -1072,7 +1056,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Chapter 2.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 314.
+               Default added (so using `!tbp') on input line 315.
 
 (./tikz/EE.tikz) [14
 
@@ -1156,10 +1140,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [23]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 597.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 598.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--605
+Underfull \hbox (badness 10000) in paragraph at lines 604--606
 
  []
 
@@ -1171,7 +1155,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Overfull \hbox (21.73172pt too wide) detected at line 671
+Overfull \hbox (21.73172pt too wide) detected at line 672
 [][][][]
  []
 
@@ -1199,7 +1183,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 756--758
+Underfull \hbox (badness 10000) in paragraph at lines 757--759
 
  []
 
@@ -1212,11 +1196,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [28]
 Chapter 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
-
- []
-
 [29
 
 ]
@@ -1228,7 +1207,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 845--848
+Underfull \hbox (badness 10000) in paragraph at lines 863--866
 
  []
 
@@ -1240,12 +1219,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
+Underfull \hbox (badness 10000) in paragraph at lines 867--868
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 861--863
+Underfull \hbox (badness 10000) in paragraph at lines 879--881
 
  []
 
@@ -1282,12 +1261,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 968--972
+Underfull \hbox (badness 10000) in paragraph at lines 986--990
 
  []
 
 
-LaTeX Warning: Reference `appendix' on page 36 undefined on input line 1019.
+LaTeX Warning: Reference `appendix' on page 36 undefined on input line 1037.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1297,12 +1276,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1038--1040
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1058
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1045--1047
+Underfull \hbox (badness 10000) in paragraph at lines 1063--1065
 
  []
 
@@ -1339,9 +1318,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [40]
 Chapter 4.
-
-LaTeX Warning: Reference `dynamic_jacobian' on page 41 undefined on input line 1203.
-
 [41
 
 ]
@@ -1385,22 +1361,96 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1366--1370
+Underfull \hbox (badness 10000) in paragraph at lines 1385--1389
 
  []
-
-
-LaTeX Warning: Reference `Appendix' on page 47 undefined on input line 1377.
 
 (./tikz/no_control_sol1.tikz) (./tikz/no_control_sol2.tikz)
-Overfull \hbox (25.12173pt too wide) in paragraph at lines 1381--1384
- [][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1374--1388
-
- []
+Package svg Info: Last page of `./svg-inkscape/free_motion_x_svg-tex.pdf' is 1 on input line 1409.
+ (./svg-inkscape/free_motion_x_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_x_svg-tex.pdf, id=639, page=1, 722.7pt x 464.73625pt>
+File: ./svg-inkscape/free_motion_x_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_x_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_x_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 130.12526pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_y_svg-tex.pdf' is 1 on input line 1411.
+ (./svg-inkscape/free_motion_y_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_y_svg-tex.pdf, id=641, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/free_motion_y_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_y_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_y_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_theta_svg-tex.pdf' is 1 on input line 1413.
+ (./svg-inkscape/free_motion_theta_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_theta_svg-tex.pdf, id=643, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/free_motion_theta_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_theta_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_theta_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_q1_svg-tex.pdf' is 1 on input line 1415.
+ (./svg-inkscape/free_motion_q1_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_q1_svg-tex.pdf, id=645, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/free_motion_q1_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_q1_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_q1_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_q2_svg-tex.pdf' is 1 on input line 1417.
+ (./svg-inkscape/free_motion_q2_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_q2_svg-tex.pdf, id=647, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/free_motion_q2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_q2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_q2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_x2_svg-tex.pdf' is 1 on input line 1424.
+ (./svg-inkscape/free_motion_x2_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_x2_svg-tex.pdf, id=649, page=1, 722.7pt x 480.79625pt>
+File: ./svg-inkscape/free_motion_x2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_x2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_x2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 134.62202pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_y2_svg-tex.pdf' is 1 on input line 1426.
+ (./svg-inkscape/free_motion_y2_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_y2_svg-tex.pdf, id=651, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/free_motion_y2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_y2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_y2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_theta2_svg-tex.pdf' is 1 on input line 1428.
+ (./svg-inkscape/free_motion_theta2_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_theta2_svg-tex.pdf, id=653, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/free_motion_theta2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_theta2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_theta2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_q12_svg-tex.pdf' is 1 on input line 1430.
+ (./svg-inkscape/free_motion_q12_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_q12_svg-tex.pdf, id=655, page=1, 722.7pt x 432.61626pt>
+File: ./svg-inkscape/free_motion_q12_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_q12_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_q12_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 121.13171pt.
+)
+Package svg Info: Last page of `./svg-inkscape/free_motion_q22_svg-tex.pdf' is 1 on input line 1432.
+ (./svg-inkscape/free_motion_q22_svg-tex.pdf_tex
+<./svg-inkscape/free_motion_q22_svg-tex.pdf, id=657, page=1, 722.7pt x 439.6425pt>
+File: ./svg-inkscape/free_motion_q22_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/free_motion_q22_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/free_motion_q22_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 123.09906pt.
+)
+<./Images/control_diagram.png, id=659, 1046.91125pt x 348.30125pt>
+File: ./Images/control_diagram.png Graphic file (type png)
+<use ./Images/control_diagram.png>
+Package pdftex.def Info: ./Images/control_diagram.png  used on input line 1441.
+(pdftex.def)             Requested size: 418.75708pt x 139.31802pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1417,7 +1467,194 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48] (./Thesis.aux)
+[48]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[49 <./svg-inkscape/free_motion_x_svg-tex.pdf> <./svg-inkscape/free_motion_y_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_y_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/free_motion_theta_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_theta_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/free_motion_q1_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_q1_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/free_motion_q2_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_q2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[50 <./svg-inkscape/free_motion_x2_svg-tex.pdf> <./svg-inkscape/free_motion_y2_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_y2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/free_motion_theta2_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_theta2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/free_motion_q12_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_q12_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/free_motion_q22_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_q22_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./Images/control_diagram.png>]
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_x_svg-tex.pdf' is 1 on input line 1503.
+ (./svg-inkscape/controlled_motion_x_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_x_svg-tex.pdf, id=1080, page=1, 722.7pt x 452.69125pt>
+File: ./svg-inkscape/controlled_motion_x_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_x_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_x_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 126.75269pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_y_svg-tex.pdf' is 1 on input line 1505.
+ (./svg-inkscape/controlled_motion_y_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_y_svg-tex.pdf, id=1082, page=1, 722.7pt x 477.785pt>
+File: ./svg-inkscape/controlled_motion_y_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_y_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_y_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 133.77888pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_theta_svg-tex.pdf' is 1 on input line 1507.
+ (./svg-inkscape/controlled_motion_theta_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_theta_svg-tex.pdf, id=1084, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/controlled_motion_theta_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_theta_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_theta_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q1_svg-tex.pdf' is 1 on input line 1509.
+ (./svg-inkscape/controlled_motion_q1_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_q1_svg-tex.pdf, id=1086, page=1, 722.7pt x 449.68pt>
+File: ./svg-inkscape/controlled_motion_q1_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_q1_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_q1_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 125.90953pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q2_svg-tex.pdf' is 1 on input line 1511.
+ (./svg-inkscape/controlled_motion_q2_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_q2_svg-tex.pdf, id=1088, page=1, 722.7pt x 467.7475pt>
+File: ./svg-inkscape/controlled_motion_q2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_q2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_q2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 130.9684pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_x2_svg-tex.pdf' is 1 on input line 1518.
+ (./svg-inkscape/controlled_motion_x2_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_x2_svg-tex.pdf, id=1090, page=1, 722.7pt x 480.79625pt>
+File: ./svg-inkscape/controlled_motion_x2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_x2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_x2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 134.62202pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_y2_svg-tex.pdf' is 1 on input line 1520.
+ (./svg-inkscape/controlled_motion_y2_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_y2_svg-tex.pdf, id=1092, page=1, 722.7pt x 477.785pt>
+File: ./svg-inkscape/controlled_motion_y2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_y2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_y2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 133.77888pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_theta2_svg-tex.pdf' is 1 on input line 1522.
+ (./svg-inkscape/controlled_motion_theta2_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_theta2_svg-tex.pdf, id=1094, page=1, 722.7pt x 470.75874pt>
+File: ./svg-inkscape/controlled_motion_theta2_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_theta2_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_theta2_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q12_svg-tex.pdf' is 1 on input line 1524.
+ (./svg-inkscape/controlled_motion_q12_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_q12_svg-tex.pdf, id=1096, page=1, 722.7pt x 441.65pt>
+File: ./svg-inkscape/controlled_motion_q12_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_q12_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_q12_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 123.66115pt.
+)
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q22_svg-tex.pdf' is 1 on input line 1526.
+ (./svg-inkscape/controlled_motion_q22_svg-tex.pdf_tex
+<./svg-inkscape/controlled_motion_q22_svg-tex.pdf, id=1098, page=1, 722.7pt x 432.61626pt>
+File: ./svg-inkscape/controlled_motion_q22_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/controlled_motion_q22_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/controlled_motion_q22_svg-tex.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 202.3551pt x 121.13171pt.
+)
+
+LaTeX Warning: Reference `Appendix' on page 51 undefined on input line 1530.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[51]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[52 <./svg-inkscape/controlled_motion_x_svg-tex.pdf> <./svg-inkscape/controlled_motion_y_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_y_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/controlled_motion_theta_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_theta_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/controlled_motion_q1_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_q1_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/controlled_motion_q2_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_q2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[53 <./svg-inkscape/controlled_motion_x2_svg-tex.pdf> <./svg-inkscape/controlled_motion_y2_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_y2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/controlled_motion_theta2_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_theta2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/controlled_motion_q12_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_q12_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/controlled_motion_q22_svg-tex.pdf
+
+pdfTeX warning: pdflatex (file ./svg-inkscape/controlled_motion_q22_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[54]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[55] (./Thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1430,21 +1667,21 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 96B94A6BE2E995E08E60965B1AB1A1D7;3715.
+(rerunfilecheck)             Checksum: 4B3189412FEAD707096A9EC85A54B529;4281.
  ) 
 Here is how much of TeX's memory you used:
- 35118 strings out of 474116
- 705390 string characters out of 5732612
- 1960187 words of memory out of 5000000
- 56501 multiletter control sequences out of 15000+600000
- 589246 words of font info for 205 fonts, out of 8000000 for 9000
+ 35928 strings out of 474116
+ 736795 string characters out of 5732612
+ 1961187 words of memory out of 5000000
+ 57172 multiletter control sequences out of 15000+600000
+ 589461 words of font info for 208 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,22n,117p,1076b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,22n,107p,1076b,1126s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Thesis.pdf (53 pages, 2551980 bytes).
+Output written on Thesis.pdf (60 pages, 3020612 bytes).
 PDF statistics:
- 813 PDF objects out of 1000 (max. 8388607)
- 674 compressed objects within 7 object streams
- 206 named destinations out of 1000 (max. 500000)
- 61704 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1715 PDF objects out of 1728 (max. 8388607)
+ 1278 compressed objects within 13 object streams
+ 253 named destinations out of 1000 (max. 500000)
+ 61925 words of extra memory for PDF output out of 74296 (max. 10000000)
 
