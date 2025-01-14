@@ -1,21 +1,21 @@
 \scalebox{0.8}{
 \begin{tikzpicture}
 
-  \def\lone{4} 
-  \def\ltwo{3.5}
+  \def\lone{5.59} 
+  \def\ltwo{5.59}
 
   \def\thetazero{90}
   \def\thetaone{0}
-  \def\thetatwo{0} 
+  \def\thetatwo{90} 
 
   \coordinate (O) at (0,0);
   \coordinate (Ob) at (4,2);
   \coordinate (A) at ({4+\lone*cos(\thetaone+\thetazero)},{2+\lone*sin(\thetaone+\thetazero)});
   \coordinate (B) at ({4+\lone*cos(\thetaone+\thetazero) + \ltwo*cos(\thetaone + \thetatwo+\thetazero)}, 
                       {2+\lone*sin(\thetaone+\thetazero) + \ltwo*sin(\thetaone + \thetatwo+\thetazero)});
-  \coordinate (Obp) at (4.04,2.53);
-  \coordinate (Ap) at (2.15,6.05);
-  \coordinate (Bp) at (-1.04,4.61);
+  \coordinate (Obp) at (3.99,2);
+  \coordinate (Ap) at (4.88,7.52);
+  \coordinate (Bp) at (-0.71,7.59);
 
   \draw[dashed,fill=green!25] (Obp) circle (1);
   \draw[thick,fill=green!50] (Ob) circle (1);

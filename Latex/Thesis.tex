@@ -1332,6 +1332,8 @@ where:
 Equation (\ref{VMS_dynamics}) is the post-impact dynamic model of the VMS containing the object. Both $M'$ and $C'$ are still dependent on $J_O$, which depends on the object's coordinates, but since the object is now captured by the manipulator, its coordinated coincide with the end-effector ones, and its velocities are found by differentization.
 \subsection{Free motion simulation}
 A simulation has been perfomed by means of the Mathematica software (version 13.2.1.0) with VMS paramers shown in Table~\ref{VMS_parameters} and the initial conditions shown in Tables~\ref{initial_positions}, \ref{initial_velocities}.\\
+The VMS parameters have been chosen following a real case scenario: the lenghts, radiuses and masses of the manipulator's arms are the ERA ones (see Table~\ref{SRMs_comparison} and [4]); the base mass is the mass of the ISS, on top of which the ERA is attached; the payload mass is the mass of a medium-size satellite; $\gamma$ is an arbitrary value.\\
+Regarding the VMS initial positions, the choice of the values will be explained in the next section. For this analysis, every initial position is valid. The initial velocities are zero for almost every VMS generalized coordinate (i.e we assume the base and manipulator still before the impact) and small initial velocities for the payload, as the case of satellite docking is taking into consideration: the ideal condition would be a null relative velocities, however, in a real case scenario, a non-zero relative veloties is present, hence it is taken into consideration.\\
 \begin{table}
   \caption{VMS parameters.}
   \label{VMS_parameters}
@@ -1340,7 +1342,7 @@ A simulation has been perfomed by means of the Mathematica software (version 13.
     \toprule
     $l_1$&$l_2$&$m_b$&$m_1$&$m_2$&$m_O$&$r$&$\gamma$\\
   \midrule
-    \SI{2}{\metre}&\SI{3}{\metre}&\SI{100}{\kilogram}&\SI{10}{\kilogram}&\SI{10}{\kilogram}&\SI{15}{\kilogram}&\SI{1}{\metre}&\SI{0.5}{\radian}\\
+    \SI{5.59}{\metre}&\SI{5.59}{\metre}&\SI{419725}{\kilogram}&\SI{300}{\kilogram}&\SI{300}{\kilogram}&\SI{3000}{\kilogram}&\SI{0.12}{\metre}&\SI{0.5}{\radian}\\
   \bottomrule
   \end{tabular}
   \end{center}
@@ -1353,7 +1355,7 @@ A simulation has been perfomed by means of the Mathematica software (version 13.
     \toprule
     $\theta_0$&$x_b$&$y_b$&$q_1$&$q_2$&$x_O$&$y_O$&$\theta_O$\\
   \midrule
-    \SI[parse-numbers = false]{\pi/2}{\radian}&\SI{1}{\metre}&\SI{2}{\metre}&\SI{0}{\radian}&\SI{0}{\radian}&\SI{1}{\metre}&\SI{8}{\metre}&\SI{4.21}{\radian}\\
+    \SI{41}{\metre}&\SI{2}{\metre}&\SI[parse-numbers = false]{\pi/2}{\radian}&\SI{0}{\radian}&\SI[parse-numbers = false]{\pi/2}{\radian}&\SI{-1.71}{\metre}&\SI{7.59}{\metre}&\SI{5.78}{\radian}\\
   \bottomrule
   \end{tabular}
   \end{center}
@@ -1371,9 +1373,9 @@ A simulation has been perfomed by means of the Mathematica software (version 13.
   $\dot{y_b}$&\SI{0}{\metre\per\second}&\SI{0}{\metre\per\second}\\
   $\dot{q_1}$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
   $\dot{q_2}$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
-  $\dot{x_O}$&\SI{-1}{\metre\per\second}&\SI{0}{\metre\per\second}\\
-  $\dot{y_O}$&\SI{0}{\metre\per\second}&\SI{-1}{\metre\per\second}\\
-  $\dot{\theta}_O$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
+  $\dot{x_O}$&\SI{-0.1}{\metre\per\second}&\SI{0}{\metre\per\second}\\
+  $\dot{y_O}$&\SI{0}{\metre\per\second}&\SI{-0.1}{\metre\per\second}\\
+  $\dot{\theta}_O$&\SI{0.01}{\radian\per\second}&\SI{0.01}{\radian\per\second}\\
   \bottomrule
   \end{tabular}
   \end{center}
@@ -1400,40 +1402,41 @@ A quick and intuitive visual result can be seen in Figure~\ref{no_control_result
   {\input{tikz/no_control_sol1.tikz}}
 \subfloat[][\emph{Simulation 2.}]
   {\input{tikz/no_control_sol2.tikz}} 
-  \caption{Initial and final (dashed) position of the VMS after the impact for the two different simulations. In the left image, the object approaches with a east to west motion, while in the right one with a north to south motion.}
+  \caption{Initial and final (dashed) position of the VMS after the impact for the two different simulations. In the left image, the satellite approaches the VMS with a west to east motion, while in the right one with a north to south motion.}
   \label{no_control_result}
 \end{figure}
 \begin{figure}
   \centering
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_x.svg}}
+  {\includesvg[scale=0.25]{free_motion_x.svg}} \quad
 \subfloat
-  {\includesvg[scale=0.28]{free_motion_y.svg}} \\
+  {\includesvg[scale=0.25]{free_motion_y.svg}} \\
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_theta.svg}}
+  {\includesvg[scale=0.25]{free_motion_theta.svg}} \quad
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_q1.svg}}\\
+  {\includesvg[scale=0.25]{free_motion_q1.svg}}\\
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_q2.svg}}
+  {\includesvg[scale=0.25]{free_motion_q2.svg}}
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one.}
   \label{free_motion_1}
 \end{figure}
 \begin{figure}
   \centering
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_x2.svg}}
+  {\includesvg[scale=0.25]{free_motion_x2.svg}}\quad
 \subfloat
-  {\includesvg[scale=0.28]{free_motion_y2.svg}} \\
+  {\includesvg[scale=0.25]{free_motion_y2.svg}} \\
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_theta2.svg}}
+  {\includesvg[scale=0.25]{free_motion_theta2.svg}}\quad
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_q12.svg}}\\
+  {\includesvg[scale=0.25]{free_motion_q12.svg}}\\
   \subfloat
-  {\includesvg[scale=0.28]{free_motion_q22.svg}}
+  {\includesvg[scale=0.25]{free_motion_q22.svg}}
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation two.}
   \label{free_motion_2}
 \end{figure}
-It is interesting to notice that, in both cases, $\theta_0$ does not change over time: the absence of a torque applied to the base allows free rotation of $q_1$ around $z_b$ and the base does not rotate.
+It is interesting to notice that, in both cases, $\theta_0$ does not change over time: the absence of a torque applied to the base allows free rotation of $q_1$ around $z_b$, since the manipulator is directly attached to the CoM of the base (i.e. the arm does not apply any torque) and the base does not rotate.\\
+Furthermore, given the higher mass of the base with respect to the payload and manipulator masses, it moves very little and we can approximate it as still in the next calculations.\\
 \subsection{Control based simulation}
 A typical control block diagram is shown in Figure~\ref{block_diagram}. The sensors allow to keep track of the robot configuration $q,\dot{q}$ such that the controller can provide a control law to follow a desired behaviour.\\
 \begin{figure}
@@ -1469,6 +1472,7 @@ However, the above equation is coupled by the mass matrix. In order to have an u
 such that the final equation of motion becomes:
 \begin{equation}
   \ddot{e}+K_d\dot{e}+K_pe=0
+  \label{controlled_dynamics}
 \end{equation}
 The tracking error $e$ is governed by a second order dynamics that can be arbitrarily assigned (on each joint) by suitably selecting gains ($K_p,K_d$).\\
 The dynamics is now:
@@ -1495,31 +1499,33 @@ The control law shown in equation (\ref{feedback_linearization}) has been chosen
 $K_p$ has been chosen as the identity matrix (i.e. $I_{5\times 5}$) and $K_d$ has been calculated following the relation of the damping term shown above and chosing a critically damped behaviour, so that there are no overshoots of the links while reaching the desired position:
 \begin{equation}
   \xi=1 \quad \Rightarrow \quad K_d=2\sqrt{K_p}
+  \label{critically_damped}
 \end{equation}
-The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2}.\\
+The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2}, where underdamped and overdamped behaviours have been plotted as well.\\
+A remark needs to be done about the control of the translation of the base. It is highly improbable that it would be possibile to calculate the exact displacement of the spacecraft where the manipulator is attached, considering also the too little displacement from Figures~\ref{free_motion_1}, \ref{free_motion_2}. Hence, the control law is applied to $\theta_0, q_1$ and $q_2$ only. The base is free to move but, as already mentioned, it can be approximate as still, given the huge inertia of the spacecraft.\\ 
 \begin{figure}
   \centering
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_x.svg}}
+  {\includesvg[scale=0.25]{controlled_motion_x.svg}}\quad
 \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_y.svg}} \\
+  {\includesvg[scale=0.25]{controlled_motion_y.svg}} \\
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_theta.svg}}
+  {\includesvg[scale=0.25]{controlled_motion_theta.svg}}\quad
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_q1.svg}}\\
+  {\includesvg[scale=0.25]{controlled_motion_q1.svg}}\\
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_q2.svg}}
-  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one.}
+  {\includesvg[scale=0.25]{controlled_motion_q2.svg}}
+  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one. In yellow, an underdamped behaviour ($\xi=0.5$), in blue a critically damped behaviour ($\xi=1$), in green an overdamped behaviour ($\xi=1.5$).}
   \label{controlled_motion_1}
 \end{figure}
 \begin{figure}
   \centering
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_x2.svg}}
+  {\includesvg[scale=0.28]{controlled_motion_x2.svg}}\quad
 \subfloat
   {\includesvg[scale=0.28]{controlled_motion_y2.svg}} \\
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_theta2.svg}}
+  {\includesvg[scale=0.28]{controlled_motion_theta2.svg}}\quad
   \subfloat
   {\includesvg[scale=0.28]{controlled_motion_q12.svg}}\\
   \subfloat
@@ -1527,9 +1533,62 @@ The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlle
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation two.}
   \label{controlled_motion_2}
 \end{figure}
-In the \ref{Appendix} there are reported the same plots but with an underdamped behaviour, and the overshoots are visibile.
 \newpage
 \section{Plastic Impact \& Elastic Bodies}
 In this section, the assumption of rigid bodies will be deleted and the links of the manipulator will be considered flexible.\\
 Following the procedure in [16], flexible links are assumed as Euler-Bernoulli beams
+\chapter{Inertial and Kinetics Properties Retrieval}
+In the previous chapter, the captured object has been considered as a deterministic disturbance, i.e. the inertia and dynamic properties have been supposed known.\\
+However, in real case scenarios, the payload mass can be unknown (e.g. the captured of a small metoerite or of a satellite with estimated mass).\\
+In this chapter, the same problem of payload docking will be anlysed supposing unknown mass, trying to retrive it from the manipulator post-impact dynamics together with its initial velocities, which are not known a priori.
+\section{Mass Extraction}
+When the mass is not known, an estimate of the mass has to be injected in the control law (\ref{feedback_linearization}). This value can be estimated by visual techniques or thanks to previus knowledge.\\
+Before starting to calculate the real mass, some approximations has to be taken into account:
+\begin{itemize}
+  \item the spacecraft does not move; this has already been shwon as a good approximation in the previous chapter
+  \item the spacecraft does not rotate; this has also been shown in the previuos calculations (see Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2})
+  \item the displacement of one arm in the controlled dyanamics is negligible for the displacement of the other arm. From Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2} it can be seen that also the arms displacement is little, so we can approximate them to zero when analyzing the other arm's dynamics
+  \item given the little displacements after the impact, the mass and Coriolis' matrices can be linearized around the equilibrium position
+\end{itemize}
+With these suppositions, we can uncouple the dynamics of the two arms, since the accelerations and velocities of the all other coordinates are set to zero. We can furthermore set $C'=\hat{C'}$, since it depends on the coordinates positions and velocites.\\
+Figure~\ref{approximations} shows two time evolutions of the displacement of both arms with and without applying the approximation made above. The behaviour is almost identical.\\
+\begin{figure}
+  \centering
+  \subfloat[\emph{$q_1$ time evolution.}]
+  {\includesvg[scale=0.27]{approximation_1.svg}} \\
+\subfloat[\emph{$q_2$ time evolution.}]
+  {\includesvg[scale=0.27]{approximation_2.svg}}
+  \caption{Arms behaviours with estimated mass \SI{2000}{\kilogram}, with (orange) and without (blue) approximations.}
+  \label{approximations}
+\end{figure}
+We can now rewrite the controlled dynamics (\ref{controlled_dynamics}) of the two arms as follows:
+\begin{equation}
+  \begin{array}{l}
+    m_1\ddot{q}_1+\tilde{m_1}k_d\dot{e_1}+\tilde{m_1}k_p e_1=0\\
+    m_2\ddot{q}_2+\tilde{m_2}k_d\dot{e_2}+\tilde{m_2}k_p e_2=0
+  \end{array}
+\end{equation}
+Since the real mass is unknown, the approximation $M'=\hat{M'}$ is not possible anymore, that is why the supposed mass $\tilde{m}$ appears in the equation.\\
+We can divide for $m_1$ and $m_2$ to get:
+\begin{equation}
+  \begin{array}{l}
+    \ddot{q}_1+\frac{\tilde{m_1}}{m_1}k_d\dot{e_1}+\frac{\tilde{m_1}}{m_1}k_p e_1=0\\
+    \ddot{q}_2+\frac{\tilde{m_2}}{m_2}k_d\dot{e_2}+\frac{\tilde{m_2}}{m_2}k_p e_2=0
+  \end{array}
+  \label{approx_dynamics}
+\end{equation}
+When the new control law with the estimated mass is applied, the behaviours is not criticaly damped anymore, since, as we can see from equations (\ref{approx_dynamics}): the new damping coefficient is now given by:
+\begin{equation}
+  \xi'=\frac{\tilde{m}k_v}{2\omega_n m}=\frac{\tilde{m}2\sqrt{k_p}}{2\sqrt{\frac{\tilde{m}}{m}k_p} m}=\sqrt{\frac{\tilde{m}}{m}}
+\end{equation}
+Hence, given un understimated mass, such as \SI{2000}{\kilogram}, the new dynamics is underdamped ($\xi'\approx 0.82$). This means that an overshoot will be present in the time behaviours of the manipulators arms.\\
+The same relation holds for the natural frequency (i.e. $\omega_n=\sqrt{\frac{\tilde{m}}{m}}$, given (\ref{critically_damped})).
+
+It is on the presence of an overshoot that the real mass can be retrived: for a linear second order differential equation, like the ones in equation (\ref{approx_dynamics}), the so called \textit{time of frist peak}, which is the time at which the first overshoot appears, can be easily expressed as a function of the damping coefficient and the natural frequency.
+The solution of an homogeneous harmonic oscillator (\ref{approx_dynamics}) is, in fact, given by the well known formula
+\begin{equation}
+  q(t)=\frac{\dot{q}_0}{\sqrt{1-\xi^2}}e^{-\xi \omega_n t}\sin{(\sqrt{1-\xi^2}\omega_nt)}
+\end{equation}
+where $\dot{q}_0$ is now given by the final velocities of the joints after the impact.\\
+
 \end{document}
