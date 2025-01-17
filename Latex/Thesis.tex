@@ -38,6 +38,8 @@
 \setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
 \renewcommand\labelitemi{\raisebox{\mylen}{\tiny$\bullet$}}
 \onehalfspacing
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 %\usepackage[backend=biber,style=numeric-comp]{biblatex}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norma}{\lVert}{\rVert}
@@ -1512,7 +1514,8 @@ A remark needs to be done about the control of the translation of the base. It i
   \subfloat
   {\includesvg[scale=0.25]{controlled_motion_theta.svg}}\quad
   \subfloat
-  {\includesvg[scale=0.25]{controlled_motion_q1.svg}}\\
+  {\includesvg[scale=0.25]{controlled_motion_q1.svg}
+  \label{q1_real}}\\
   \subfloat
   {\includesvg[scale=0.25]{controlled_motion_q2.svg}}
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one. In yellow, an underdamped behaviour ($\xi=0.5$), in blue a critically damped behaviour ($\xi=1$), in green an overdamped behaviour ($\xi=1.5$).}
@@ -1558,7 +1561,7 @@ Figure~\ref{approximations} shows two time evolutions of the displacement of bot
   {\includesvg[scale=0.27]{approximation_1.svg}} \\
 \subfloat[\emph{$q_2$ time evolution.}]
   {\includesvg[scale=0.27]{approximation_2.svg}}
-  \caption{Arms behaviours with estimated mass \SI{2000}{\kilogram}, with (orange) and without (blue) approximations.}
+  \caption{Arms behaviours with estimated mass \SI{2000}{\kilogram}, with (orange) and without (blue) approximations for the first simulation.}
   \label{approximations}
 \end{figure}
 We can now rewrite the controlled dynamics (\ref{controlled_dynamics}) of the two arms as follows:
@@ -1572,23 +1575,93 @@ Since the real mass is unknown, the approximation $M'=\hat{M'}$ is not possible 
 We can divide for $m_1$ and $m_2$ to get:
 \begin{equation}
   \begin{array}{l}
-    \ddot{q}_1+\frac{\tilde{m_1}}{m_1}k_d\dot{e_1}+\frac{\tilde{m_1}}{m_1}k_p e_1=0\\
-    \ddot{q}_2+\frac{\tilde{m_2}}{m_2}k_d\dot{e_2}+\frac{\tilde{m_2}}{m_2}k_p e_2=0
+    \ddot{q}_1+\frac{\tilde{m_1}}{m_1}k_d\dot{e}_1+\frac{\tilde{m_1}}{m_1}k_p e_1=0\\
+    \ddot{q}_2+\frac{\tilde{m_2}}{m_2}k_d\dot{e}_2+\frac{\tilde{m_2}}{m_2}k_p e_2=0
   \end{array}
   \label{approx_dynamics}
 \end{equation}
 When the new control law with the estimated mass is applied, the behaviours is not criticaly damped anymore, since, as we can see from equations (\ref{approx_dynamics}): the new damping coefficient is now given by:
 \begin{equation}
   \xi'=\frac{\tilde{m}k_v}{2\omega_n m}=\frac{\tilde{m}2\sqrt{k_p}}{2\sqrt{\frac{\tilde{m}}{m}k_p} m}=\sqrt{\frac{\tilde{m}}{m}}
+  \label{mass_relation}
 \end{equation}
-Hence, given un understimated mass, such as \SI{2000}{\kilogram}, the new dynamics is underdamped ($\xi'\approx 0.82$). This means that an overshoot will be present in the time behaviours of the manipulators arms.\\
-The same relation holds for the natural frequency (i.e. $\omega_n=\sqrt{\frac{\tilde{m}}{m}}$, given (\ref{critically_damped})).
-
-It is on the presence of an overshoot that the real mass can be retrived: for a linear second order differential equation, like the ones in equation (\ref{approx_dynamics}), the so called \textit{time of frist peak}, which is the time at which the first overshoot appears, can be easily expressed as a function of the damping coefficient and the natural frequency.
-The solution of an homogeneous harmonic oscillator (\ref{approx_dynamics}) is, in fact, given by the well known formula
+\subsection{Symbolic Approach}
+Now that we have linear second order differential equations, like the ones in equation (\ref{approx_dynamics}), two methods have been introduced to retrieve the inertial properties of the payload (i.e. its mass). The first one, exposed in this section, is based on the fact that the solution of equations (\ref{approx_dynamics}) is known.\\
+However, not only its solution is known in closed form, but it is possible to find the exact solution by solving directly the second order equation. Both approaches are exploited.
+\subsubsection{Direct Solution}
+Given the simplicity of the equation of motions, a direct symbolic solution, containing $\tilde{m}$ as a parameter, can be easily found (i.e. $q(t,\tilde{m})$).\\
+Figure~\ref{parametric_plot} shows how the time response of the first joint for the first simulation changes according to the estimated mass. It is of particular interest the increasing of the first peak as the estimated mass increases.\\
+\begin{figure}
+  \centering
+  \includesvg[scale=0.35]{parametric_plot.svg}
+  \caption{Parametric plot of the first joint's time evolution, first simulation. The real mass is $\SI{3000}{\kilogram}$. A visual parameter setting can be possibile by confronting this plot with the real one (see Figure~\ref{q1_real}).}
+  \label{parametric_plot}
+\end{figure}
+Hence, once the peak time $t*$ is found, the real mass can be calculated by solving the following equation:
 \begin{equation}
-  q(t)=\frac{\dot{q}_0}{\sqrt{1-\xi^2}}e^{-\xi \omega_n t}\sin{(\sqrt{1-\xi^2}\omega_nt)}
+  q(t*,\tilde{m})=q*
 \end{equation}
-where $\dot{q}_0$ is now given by the final velocities of the joints after the impact.\\
-
+with $q*$ the peak value.
+\subsubsection{Closed Form Solution}
+\paragraph{First Joint}
+For the first joint, which has both initial position and velocity equal to zero, the equation of motion (\ref{approx_dynamics}) becomes:
+\begin{equation}
+  m_1 \ddot{q}_1+\tilde{m_1}k_d\dot{q}_1+\tilde{m_1}k_p q_1=0
+\end{equation}
+This can be threated as an homogeneous second order linear equation with one degree of freedeom.
+Its solution is given by the well known formula:
+\begin{equation}
+  q_h(t)=\Big[q_0\cos{(\omega_d)t}+\frac{\dot{q}_0+\xi\omega_n q_0}{\omega_d}\sin{(\omega_dt)}\Big]e^{-\xi \omega_n t}
+\end{equation}
+where $q_0,\dot{q}_0$ are the initial position and velocity of the joint and $\omega_d=\sqrt{1-\xi^2}\omega_n$. Notice that $\dot{q}_0$ is now given by the velocity of the joint after the impact.\\
+Given null initial position, we can further simplify the solution:
+\begin{equation}
+  q_h(t)=\frac{\dot{q}_0}{\omega_d}\sin{(\omega_dt)}e^{-\xi \omega_n t}
+  \label{first_joint}
+\end{equation}
+It is easier to find a relationship between the real mass and the peak time by differentiating equation (\ref{first_joint}), so that the RHS term becomes zero:
+\begin{equation}
+  \sqrt{1-\xi^2}\cos{(\sqrt{1-\xi^2}\omega_nt*)-\xi\sin{(\sqrt{1-\xi^2\omega_nt*})}}=0
+  \label{time_solution}
+\end{equation}
+which can be rearranged:
+\begin{equation}
+  \begin{array}{l}
+  \tan{(\sqrt{1-\xi^2}\omega_nt*)}=\frac{\sqrt{1-\xi^2}}{\xi}\\
+  \Rightarrow \tan{(\sqrt{1-\xi^2}\omega_nt*)}=\beta(\xi)
+\end{array}
+\end{equation}
+The intersection of the two functions allows to calculate the damping coefficient of the equation and thus the real mass from relation (\ref{mass_relation}).
+\paragraph{Second Joint}
+The equation of motion of the second joint, on the other hand, is:
+\begin{equation}
+  m_2\ddot{q}_2+\tilde{m_2}k_d\dot{q}_1+\tilde{m_2}k_p (q_2-q_{2,d})=0
+\end{equation}
+Now the desired position, which is the initial one, is not zero anymore. However, by moving the term on the RHS of the equation, we get a forced differential equation with constant external input:
+\begin{equation}
+  m_2\ddot{q}_2+\tilde{m_2}k_d\dot{q}_1+\tilde{m_2}k_p q_2=\tilde{m_2}k_pq_{2,d}
+  \label{new_q2}
+\end{equation}
+Equation (\ref{new_q2}) can be considered as a system subjected to a step function of amplitude $F_0=\tilde{m_2}k_pq_{2,d}$. The particular solution of such system is also known:
+\begin{equation}
+  \begin{split}
+  q_f(t)&=\frac{F_0}{k}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]\\
+  &=q_{2,d}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]
+\end{split}
+\end{equation}
+with $\theta=\arccos{\xi}$ and $k=\tilde{m_2}k_p$ elastic coefficient.\\
+The total solution will be given by the sum of the homogeneous and the particular solution:
+\begin{equation}
+  q_2(t)=q_{2,d}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]+\Big[q_0\cos{(\omega_d)t}+\frac{\dot{q}_0+\xi\omega_n q_0}{\omega_d}\sin{(\omega_dt)}\Big]e^{-\xi \omega_n t}
+\end{equation}
+By differentization of the above equation, one gets:
+\begin{equation}
+  \begin{array}{c}
+  \begin{tiny}
+  \frac{e^{-\xi \omega t}\{2 \dot{q}_0 [\sqrt{1-\xi^2} \cos (\omega_dt)-\xi \sin (\omega_dt)]-(\pi -2 q_0) \omega [\xi \sqrt{1-\xi^2} \cos (\omega_dt)-(\xi^2-1) \sin (\omega_dt)]\}}{2 \sqrt{1-\xi^2}}=0
+\end{tiny}
+\end{array}
+\end{equation}
+but since the initial position $q_{2,0}=\pi/2$, the second term becomes zero and we end up with equation (\ref{time_solution}) again. Hence, the same procedure holds.
+\subsection{Interpolation Approach}
 \end{document}

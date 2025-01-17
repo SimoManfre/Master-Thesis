@@ -30,3 +30,9 @@
 \contentsline {section}{\numberline {4.2}Plastic Impact \& Elastic Bodies}{54}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Inertial and Kinetics Properties Retrieval}{55}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Mass Extraction}{55}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Symbolic Approach}{57}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}Direct Solution}{57}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Closed Form Solution}{57}{subsubsection.5.1.1.2}%
+\contentsline {paragraph}{First Joint}{57}{section*.31}%
+\contentsline {paragraph}{Second Joint}{59}{section*.32}%
+\contentsline {subsection}{\numberline {5.1.2}Interpolation Approach}{59}{subsection.5.1.2}%
