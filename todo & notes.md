@@ -8,6 +8,7 @@
 4. Studiare strategia per disaccoppiare i giunti (espansione modale, vedere appunti quaderno)
 5. Implementare su Mathematica un manipolatore, impatto plastico, corplo rigido
 6. Finire di leggere paper su manipolatori nello spazio
+7. Implementare controllo approssimativo (come nella V1 di rigid) al caso elastico
 
 ## Note:
 

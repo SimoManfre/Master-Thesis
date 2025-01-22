@@ -1254,14 +1254,13 @@ or, equivalently:
   \label{momentum_conservation}
 \end{equation}
 Equation (\ref{momentum_conservation}) is very similar to (\ref{general_impact}), with the difference that $M\dot{p}\in \mathbb{R}^{5\times 1}$ and $M_O\dot{\psi}\in \mathbb{R}^{3\times 1}$: they cannot be summed. That is why the object's mass matrix is multiply by the two jacobians, which comes directly from the equation of motion.\\
-In the following sections different scenarios will be analysed:
+In the following sections two different scenarios will be analysedby assuming the manipulator's arms as:
 \begin{enumerate}
-  \item Plastic impact \& rigid bodies
-  \item Plastic impact \& elastic bodies
-  \item Elastic impact \& elastic bodies
+  \item Rigid bodies
+  \item Elastic bodies
 \end{enumerate}
 \newpage
-\section{Plastic Impact \& Rigid Bodies}
+\section{Rigid Bodies}
 In a plastic impact, the velocity of the contact point of each system is the same after the impact:
 \begin{equation}
   J\dot{p_f}=J_O\dot{\psi_f}
@@ -1438,7 +1437,7 @@ A quick and intuitive visual result can be seen in Figure~\ref{no_control_result
   \label{free_motion_2}
 \end{figure}
 It is interesting to notice that, in both cases, $\theta_0$ does not change over time: the absence of a torque applied to the base allows free rotation of $q_1$ around $z_b$, since the manipulator is directly attached to the CoM of the base (i.e. the arm does not apply any torque) and the base does not rotate.\\
-Furthermore, given the higher mass of the base with respect to the payload and manipulator masses, it moves very little and we can approximate it as still in the next calculations.\\
+Furthermore, given the higher mass of the base with respect to the payload and manipulator masses, it moves very little and we can approximate it as still in the next calculations.
 \subsection{Control based simulation}
 A typical control block diagram is shown in Figure~\ref{block_diagram}. The sensors allow to keep track of the robot configuration $q,\dot{q}$ such that the controller can provide a control law to follow a desired behaviour.\\
 \begin{figure}
@@ -1537,7 +1536,7 @@ A remark needs to be done about the control of the translation of the base. It i
   \label{controlled_motion_2}
 \end{figure}
 \newpage
-\section{Plastic Impact \& Elastic Bodies}
+\section{Elastic Bodies}
 In this section, the assumption of rigid bodies will be deleted and the links of the manipulator will be considered flexible.\\
 Following the procedure in [16], flexible links are assumed as Euler-Bernoulli beams
 \chapter{Inertial and Kinetics Properties Retrieval}

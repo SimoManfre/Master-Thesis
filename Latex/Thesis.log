@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  17 JAN 2025 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  21 JAN 2025 13:26
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1353,7 +1353,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 1389--1393
+Underfull \hbox (badness 10000) in paragraph at lines 1388--1392
 
  []
 
@@ -1365,95 +1365,92 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46] (./tikz/no_control_sol1.tikz) (./tikz/no_control_sol2.tikz)
-Package svg Info: Last page of `./svg-inkscape/free_motion_x_svg-tex.pdf' is 1 on input line 1413.
+Package svg Info: Last page of `./svg-inkscape/free_motion_x_svg-tex.pdf' is 1 on input line 1412.
  (./svg-inkscape/free_motion_x_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_x_svg-tex.pdf, id=672, page=1, 722.7pt x 446.66875pt>
+<./svg-inkscape/free_motion_x_svg-tex.pdf, id=671, page=1, 722.7pt x 446.66875pt>
 File: ./svg-inkscape/free_motion_x_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_x_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_x_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 111.6669pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_y_svg-tex.pdf' is 1 on input line 1415.
+Package svg Info: Last page of `./svg-inkscape/free_motion_y_svg-tex.pdf' is 1 on input line 1414.
  (./svg-inkscape/free_motion_y_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_y_svg-tex.pdf, id=674, page=1, 722.7pt x 446.66875pt>
+<./svg-inkscape/free_motion_y_svg-tex.pdf, id=673, page=1, 722.7pt x 446.66875pt>
 File: ./svg-inkscape/free_motion_y_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_y_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_y_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 111.6669pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_theta_svg-tex.pdf' is 1 on input line 1417.
+Package svg Info: Last page of `./svg-inkscape/free_motion_theta_svg-tex.pdf' is 1 on input line 1416.
  (./svg-inkscape/free_motion_theta_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_theta_svg-tex.pdf, id=676, page=1, 722.7pt x 470.75874pt>
+<./svg-inkscape/free_motion_theta_svg-tex.pdf, id=675, page=1, 722.7pt x 470.75874pt>
 File: ./svg-inkscape/free_motion_theta_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_theta_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_theta_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 117.68939pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_q1_svg-tex.pdf' is 1 on input line 1419.
+Package svg Info: Last page of `./svg-inkscape/free_motion_q1_svg-tex.pdf' is 1 on input line 1418.
  (./svg-inkscape/free_motion_q1_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_q1_svg-tex.pdf, id=678, page=1, 722.7pt x 456.70625pt>
+<./svg-inkscape/free_motion_q1_svg-tex.pdf, id=677, page=1, 722.7pt x 456.70625pt>
 File: ./svg-inkscape/free_motion_q1_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_q1_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_q1_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 114.17627pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_q2_svg-tex.pdf' is 1 on input line 1421.
+Package svg Info: Last page of `./svg-inkscape/free_motion_q2_svg-tex.pdf' is 1 on input line 1420.
  (./svg-inkscape/free_motion_q2_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_q2_svg-tex.pdf, id=680, page=1, 722.7pt x 464.73625pt>
+<./svg-inkscape/free_motion_q2_svg-tex.pdf, id=679, page=1, 722.7pt x 464.73625pt>
 File: ./svg-inkscape/free_motion_q2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_q2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_q2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 116.18378pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_x2_svg-tex.pdf' is 1 on input line 1428.
+Package svg Info: Last page of `./svg-inkscape/free_motion_x2_svg-tex.pdf' is 1 on input line 1427.
  (./svg-inkscape/free_motion_x2_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_x2_svg-tex.pdf, id=682, page=1, 722.7pt x 446.66875pt>
+<./svg-inkscape/free_motion_x2_svg-tex.pdf, id=681, page=1, 722.7pt x 446.66875pt>
 File: ./svg-inkscape/free_motion_x2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_x2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_x2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 111.6669pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_y2_svg-tex.pdf' is 1 on input line 1430.
+Package svg Info: Last page of `./svg-inkscape/free_motion_y2_svg-tex.pdf' is 1 on input line 1429.
  (./svg-inkscape/free_motion_y2_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_y2_svg-tex.pdf, id=684, page=1, 722.7pt x 455.7025pt>
+<./svg-inkscape/free_motion_y2_svg-tex.pdf, id=683, page=1, 722.7pt x 455.7025pt>
 File: ./svg-inkscape/free_motion_y2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_y2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_y2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 113.92534pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_theta2_svg-tex.pdf' is 1 on input line 1432.
+Package svg Info: Last page of `./svg-inkscape/free_motion_theta2_svg-tex.pdf' is 1 on input line 1431.
  (./svg-inkscape/free_motion_theta2_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_theta2_svg-tex.pdf, id=686, page=1, 722.7pt x 470.75874pt>
+<./svg-inkscape/free_motion_theta2_svg-tex.pdf, id=685, page=1, 722.7pt x 470.75874pt>
 File: ./svg-inkscape/free_motion_theta2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_theta2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_theta2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 117.68939pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_q12_svg-tex.pdf' is 1 on input line 1434.
+Package svg Info: Last page of `./svg-inkscape/free_motion_q12_svg-tex.pdf' is 1 on input line 1433.
  (./svg-inkscape/free_motion_q12_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_q12_svg-tex.pdf, id=688, page=1, 722.7pt x 458.71375pt>
+<./svg-inkscape/free_motion_q12_svg-tex.pdf, id=687, page=1, 722.7pt x 458.71375pt>
 File: ./svg-inkscape/free_motion_q12_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_q12_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_q12_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 114.67815pt.
 )
-Package svg Info: Last page of `./svg-inkscape/free_motion_q22_svg-tex.pdf' is 1 on input line 1436.
+Package svg Info: Last page of `./svg-inkscape/free_motion_q22_svg-tex.pdf' is 1 on input line 1435.
  (./svg-inkscape/free_motion_q22_svg-tex.pdf_tex
-<./svg-inkscape/free_motion_q22_svg-tex.pdf, id=690, page=1, 722.7pt x 464.73625pt>
+<./svg-inkscape/free_motion_q22_svg-tex.pdf, id=689, page=1, 722.7pt x 464.73625pt>
 File: ./svg-inkscape/free_motion_q22_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/free_motion_q22_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/free_motion_q22_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 116.18378pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 1397--1442
-
- []
-
-<./Images/control_diagram.png, id=692, 1046.91125pt x 348.30125pt>
+<./Images/control_diagram.png, id=691, 1046.91125pt x 348.30125pt>
 File: ./Images/control_diagram.png Graphic file (type png)
 <use ./Images/control_diagram.png>
-Package pdftex.def Info: ./Images/control_diagram.png  used on input line 1446.
+Package pdftex.def Info: ./Images/control_diagram.png  used on input line 1445.
 (pdftex.def)             Requested size: 418.75708pt x 139.31802pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1510,81 +1507,81 @@ pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_q12_svg-tex.pdf): PDF 
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/free_motion_q22_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./Images/control_diagram.png>]
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_x_svg-tex.pdf' is 1 on input line 1511.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_x_svg-tex.pdf' is 1 on input line 1510.
  (./svg-inkscape/controlled_motion_x_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_x_svg-tex.pdf, id=1032, page=1, 722.7pt x 458.71375pt>
+<./svg-inkscape/controlled_motion_x_svg-tex.pdf, id=1031, page=1, 722.7pt x 458.71375pt>
 File: ./svg-inkscape/controlled_motion_x_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_x_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_x_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 114.67815pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_y_svg-tex.pdf' is 1 on input line 1513.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_y_svg-tex.pdf' is 1 on input line 1512.
  (./svg-inkscape/controlled_motion_y_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_y_svg-tex.pdf, id=1034, page=1, 722.7pt x 477.785pt>
+<./svg-inkscape/controlled_motion_y_svg-tex.pdf, id=1033, page=1, 722.7pt x 477.785pt>
 File: ./svg-inkscape/controlled_motion_y_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_y_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_y_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 119.44595pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_theta_svg-tex.pdf' is 1 on input line 1515.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_theta_svg-tex.pdf' is 1 on input line 1514.
  (./svg-inkscape/controlled_motion_theta_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_theta_svg-tex.pdf, id=1036, page=1, 722.7pt x 470.75874pt>
+<./svg-inkscape/controlled_motion_theta_svg-tex.pdf, id=1035, page=1, 722.7pt x 470.75874pt>
 File: ./svg-inkscape/controlled_motion_theta_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_theta_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_theta_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 117.68939pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_q1_svg-tex.pdf' is 1 on input line 1518.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q1_svg-tex.pdf' is 1 on input line 1517.
  (./svg-inkscape/controlled_motion_q1_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_q1_svg-tex.pdf, id=1038, page=1, 722.7pt x 449.68pt>
+<./svg-inkscape/controlled_motion_q1_svg-tex.pdf, id=1037, page=1, 722.7pt x 449.68pt>
 File: ./svg-inkscape/controlled_motion_q1_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_q1_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_q1_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 112.41972pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_q2_svg-tex.pdf' is 1 on input line 1520.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q2_svg-tex.pdf' is 1 on input line 1519.
  (./svg-inkscape/controlled_motion_q2_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_q2_svg-tex.pdf, id=1040, page=1, 722.7pt x 458.71375pt>
+<./svg-inkscape/controlled_motion_q2_svg-tex.pdf, id=1039, page=1, 722.7pt x 458.71375pt>
 File: ./svg-inkscape/controlled_motion_q2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_q2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_q2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 180.67499pt x 114.67815pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_x2_svg-tex.pdf' is 1 on input line 1527.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_x2_svg-tex.pdf' is 1 on input line 1526.
  (./svg-inkscape/controlled_motion_x2_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_x2_svg-tex.pdf, id=1042, page=1, 722.7pt x 471.7625pt>
+<./svg-inkscape/controlled_motion_x2_svg-tex.pdf, id=1041, page=1, 722.7pt x 471.7625pt>
 File: ./svg-inkscape/controlled_motion_x2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_x2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_x2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.3551pt x 132.09259pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_y2_svg-tex.pdf' is 1 on input line 1529.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_y2_svg-tex.pdf' is 1 on input line 1528.
  (./svg-inkscape/controlled_motion_y2_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_y2_svg-tex.pdf, id=1044, page=1, 722.7pt x 458.71375pt>
+<./svg-inkscape/controlled_motion_y2_svg-tex.pdf, id=1043, page=1, 722.7pt x 458.71375pt>
 File: ./svg-inkscape/controlled_motion_y2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_y2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_y2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.3551pt x 128.43896pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_theta2_svg-tex.pdf' is 1 on input line 1531.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_theta2_svg-tex.pdf' is 1 on input line 1530.
  (./svg-inkscape/controlled_motion_theta2_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_theta2_svg-tex.pdf, id=1046, page=1, 722.7pt x 470.75874pt>
+<./svg-inkscape/controlled_motion_theta2_svg-tex.pdf, id=1045, page=1, 722.7pt x 470.75874pt>
 File: ./svg-inkscape/controlled_motion_theta2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_theta2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_theta2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.3551pt x 131.81154pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_q12_svg-tex.pdf' is 1 on input line 1533.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q12_svg-tex.pdf' is 1 on input line 1532.
  (./svg-inkscape/controlled_motion_q12_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_q12_svg-tex.pdf, id=1048, page=1, 722.7pt x 433.62pt>
+<./svg-inkscape/controlled_motion_q12_svg-tex.pdf, id=1047, page=1, 722.7pt x 433.62pt>
 File: ./svg-inkscape/controlled_motion_q12_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_q12_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_q12_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.3551pt x 121.41277pt.
 )
-Package svg Info: Last page of `./svg-inkscape/controlled_motion_q22_svg-tex.pdf' is 1 on input line 1535.
+Package svg Info: Last page of `./svg-inkscape/controlled_motion_q22_svg-tex.pdf' is 1 on input line 1534.
  (./svg-inkscape/controlled_motion_q22_svg-tex.pdf_tex
-<./svg-inkscape/controlled_motion_q22_svg-tex.pdf, id=1050, page=1, 722.7pt x 458.71375pt>
+<./svg-inkscape/controlled_motion_q22_svg-tex.pdf, id=1049, page=1, 722.7pt x 458.71375pt>
 File: ./svg-inkscape/controlled_motion_q22_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/controlled_motion_q22_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/controlled_motion_q22_svg-tex.pdf , page1 used on input line 56.
@@ -1650,17 +1647,17 @@ Chapter 5.
 [55
 
 ]
-Package svg Info: Last page of `./svg-inkscape/approximation_1_svg-tex.pdf' is 1 on input line 1561.
+Package svg Info: Last page of `./svg-inkscape/approximation_1_svg-tex.pdf' is 1 on input line 1560.
  (./svg-inkscape/approximation_1_svg-tex.pdf_tex
-<./svg-inkscape/approximation_1_svg-tex.pdf, id=1391, page=1, 867.24pt x 542.025pt>
+<./svg-inkscape/approximation_1_svg-tex.pdf, id=1390, page=1, 867.24pt x 542.025pt>
 File: ./svg-inkscape/approximation_1_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/approximation_1_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/approximation_1_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 234.1585pt x 146.3487pt.
 )
-Package svg Info: Last page of `./svg-inkscape/approximation_2_svg-tex.pdf' is 1 on input line 1563.
+Package svg Info: Last page of `./svg-inkscape/approximation_2_svg-tex.pdf' is 1 on input line 1562.
  (./svg-inkscape/approximation_2_svg-tex.pdf_tex
-<./svg-inkscape/approximation_2_svg-tex.pdf, id=1393, page=1, 867.24pt x 551.05875pt>
+<./svg-inkscape/approximation_2_svg-tex.pdf, id=1392, page=1, 867.24pt x 551.05875pt>
 File: ./svg-inkscape/approximation_2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/approximation_2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/approximation_2_svg-tex.pdf , page1 used on input line 56.
@@ -1677,9 +1674,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 pdfTeX warning: pdflatex (file ./svg-inkscape/approximation_2_svg-tex.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Package svg Info: Last page of `./svg-inkscape/parametric_plot_svg-tex.pdf' is 1 on input line 1596.
+Package svg Info: Last page of `./svg-inkscape/parametric_plot_svg-tex.pdf' is 1 on input line 1595.
  (./svg-inkscape/parametric_plot_svg-tex.pdf_tex
-<./svg-inkscape/parametric_plot_svg-tex.pdf, id=1462, page=1, 1164.35pt x 660.4675pt>
+<./svg-inkscape/parametric_plot_svg-tex.pdf, id=1461, page=1, 1164.35pt x 660.4675pt>
 File: ./svg-inkscape/parametric_plot_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/parametric_plot_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/parametric_plot_svg-tex.pdf , page1 used on input line 56.
@@ -1702,7 +1699,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [58 <./svg-inkscape/parametric_plot_svg-tex.pdf>]
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 1660.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 1659.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1724,21 +1721,21 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: EDE8CA60EA70F51959FBB2292C9BBE55;5333.
+(rerunfilecheck)             Checksum: 1C13FF3E84BB4E7C809EE99BB8912C5D;5139.
  ) 
 Here is how much of TeX's memory you used:
- 36084 strings out of 474116
- 740605 string characters out of 5732612
+ 36083 strings out of 474116
+ 740598 string characters out of 5732612
  1960187 words of memory out of 5000000
  57254 multiletter control sequences out of 15000+600000
  592158 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,22n,107p,1076b,1126s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Thesis.pdf (64 pages, 3226311 bytes).
+Output written on Thesis.pdf (64 pages, 3225433 bytes).
 PDF statistics:
- 1931 PDF objects out of 2073 (max. 8388607)
- 1444 compressed objects within 15 object streams
- 283 named destinations out of 1000 (max. 500000)
+ 1929 PDF objects out of 2073 (max. 8388607)
+ 1442 compressed objects within 15 object streams
+ 282 named destinations out of 1000 (max. 500000)
  70195 words of extra memory for PDF output out of 74296 (max. 10000000)
 
