@@ -29,5 +29,9 @@ This reposotory is organized as follows:
 - References: here all the papers used as knowledge background to develop equations and conclusion are present
 - Space Manipulators: files with dimensioning and basics information about the space manipulators attached to the International Space Station (ISS)
 
-### Simulations
+## Simulations
 Two simulations have been performed: the first one supposing the satellite to move from west to east horizontally and the second one supposing it to move from north to south.
+
+https://github.com/user-attachments/assets/fd3e4b01-923c-4e8e-97e9-3ccdd5e84da7
+
+https://github.com/user-attachments/assets/ac61b34a-267c-41ef-bfcb-b8e8443db741
