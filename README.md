@@ -31,5 +31,3 @@ This reposotory is organized as follows:
 
 ### Simulations
 Two simulations have been performed: the first one supposing the satellite to move from west to east horizontally and the second one supposing it to move from north to south.
-
-[![Watch the video](https://raw.githubusercontent.com/SimoManfre/Master-Thesis/main/Mathematica/thumbnail1.jpg)](https://raw.githubusercontent.com/SimoManfre/Master-Thesis/main/Mathematica/simulation_1.mp4)
