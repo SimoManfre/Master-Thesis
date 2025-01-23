@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1737462387.61645 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1737462389.69782 0
-  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1737462385.28601 107168 cb002fe60a7daf013c97a349fb0ac140 ""
+["pdflatex"] 1737636604.15103 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1737636606.22477 0
+  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1737636603.96439 117929 f6bbccaf4e2b98e251104af0c2672b00 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1710106625 2971 def0b6c1f0b107b3b936def894055589 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/fontname/texfonts.map" 1710106625 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1710106625 5472554 f7861620179a71a79d4bd86251f559d0 ""
@@ -275,6 +275,7 @@
   "Images/controlled_motion_x2.svg" 1736765458.82884 58626 a188f709c9d88c022712802328778692 ""
   "Images/controlled_motion_y.svg" 1736765416.25602 61549 1bcac5fabd1d8dfc37f69370d4d4e3b9 ""
   "Images/controlled_motion_y2.svg" 1736765470.38324 61028 443d3ab70afdf3b67239357f4d40f7fd ""
+  "Images/elementary.jpg" 1661255206 56891 2a99fe10f9c134dddeac4ab50e0be5e9 ""
   "Images/free_motion_q1.svg" 1736764978.28811 52549 f6960e34af02238e1d13bfcd391da5d8 ""
   "Images/free_motion_q12.svg" 1736765038.22705 62311 bea132139f9eccb42bb08e9e11bcebd0 ""
   "Images/free_motion_q2.svg" 1736764988.3915 52491 35c053fb4ad709d4efd711aa1059e673 ""
@@ -287,10 +288,10 @@
   "Images/free_motion_y2.svg" 1736765019.20451 58373 c25368582e90323a52e6785495650d96 ""
   "Images/parametric_plot.svg" 1737136018.63325 209185 80f033b898e44e40ba495ebdcd9f2c3f ""
   "Images/sigillo2.jpg" 1647183278.221 158706 65535208cd7f7254f47d81bd743e66bd ""
-  "Thesis.aux" 1737462389.52421 21774 b41b46c995ad89a2a95ff442382463fe "pdflatex"
-  "Thesis.out" 1737462389.5259 5139 1c13ff3e84bb4e7c809ee99bb8912c5d "pdflatex"
-  "Thesis.tex" 1737462385.28601 107168 cb002fe60a7daf013c97a349fb0ac140 ""
-  "Thesis.toc" 1737462389.52611 3031 34b6bf6250d3936e62d4bbe9805323bc "pdflatex"
+  "Thesis.aux" 1737636606.05858 22585 d4ab1fc3bc8b9c9f477ad763d087dfa1 "pdflatex"
+  "Thesis.out" 1737636606.0603 5139 1c13ff3e84bb4e7c809ee99bb8912c5d "pdflatex"
+  "Thesis.tex" 1737636603.96439 117929 f6bbccaf4e2b98e251104af0c2672b00 ""
+  "Thesis.toc" 1737636606.06048 3031 d63ed45fac8822dc3a09f5ee66138f06 "pdflatex"
   "svg-inkscape/approximation_1_svg-tex.pdf" 1736769026.71259 26745 b69bb3477b0c77a075a5b6d048bf90c1 ""
   "svg-inkscape/approximation_1_svg-tex.pdf_tex" 1736769026.71276 2084 7ab7d79945a27cfeef20e7faec6224f2 ""
   "svg-inkscape/approximation_2_svg-tex.pdf" 1736769033.79418 21960 830d241fd70706101ef62a265ba2d065 ""

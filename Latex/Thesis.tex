@@ -1254,13 +1254,9 @@ or, equivalently:
   \label{momentum_conservation}
 \end{equation}
 Equation (\ref{momentum_conservation}) is very similar to (\ref{general_impact}), with the difference that $M\dot{p}\in \mathbb{R}^{5\times 1}$ and $M_O\dot{\psi}\in \mathbb{R}^{3\times 1}$: they cannot be summed. That is why the object's mass matrix is multiply by the two jacobians, which comes directly from the equation of motion.\\
-In the following sections two different scenarios will be analysedby assuming the manipulator's arms as:
-\begin{enumerate}
-  \item Rigid bodies
-  \item Elastic bodies
-\end{enumerate}
+In the following sections two different scenarios will be analysedby assuming the manipulator's arms as rigid or elastic bodies.
 \newpage
-\section{Rigid Bodies}
+\section{Rigid Bodies}\label{rigid}
 In a plastic impact, the velocity of the contact point of each system is the same after the impact:
 \begin{equation}
   J\dot{p_f}=J_O\dot{\psi_f}
@@ -1354,9 +1350,9 @@ Regarding the VMS initial positions, the choice of the values will be explained 
   \begin{center}
   \begin{tabular}{cccccccc}
     \toprule
-    $\theta_0$&$x_b$&$y_b$&$q_1$&$q_2$&$x_O$&$y_O$&$\theta_O$\\
+    $x_b$&$y_b$&$\theta_0$&$q_1$&$q_2$&$x_O$&$y_O$&$\theta_O$\\
   \midrule
-    \SI{41}{\metre}&\SI{2}{\metre}&\SI[parse-numbers = false]{\pi/2}{\radian}&\SI{0}{\radian}&\SI[parse-numbers = false]{\pi/2}{\radian}&\SI{-1.71}{\metre}&\SI{7.59}{\metre}&\SI{5.78}{\radian}\\
+    \SI{4}{\metre}&\SI{2}{\metre}&\SI[parse-numbers = false]{\pi/2}{\radian}&\SI{0}{\radian}&\SI[parse-numbers = false]{\pi/2}{\radian}&\SI{-1.71}{\metre}&\SI{7.59}{\metre}&\SI{5.78}{\radian}\\
   \bottomrule
   \end{tabular}
   \end{center}
@@ -1537,8 +1533,148 @@ A remark needs to be done about the control of the translation of the base. It i
 \end{figure}
 \newpage
 \section{Elastic Bodies}
-In this section, the assumption of rigid bodies will be deleted and the links of the manipulator will be considered flexible.\\
-Following the procedure in [16], flexible links are assumed as Euler-Bernoulli beams
+In this section, a more realistic scenatio is developed and the assumption of rigid bodies will be discarded: the links of the manipulator will be considered flexible.\\
+The robotic systems with flexible links are continuous dynamical systems characterized by an infinite number of degrees of freedom and are governed by nonlinear, coupled, ordinary, and partial differential equations. The exact solution of such a mathematical model is normally not feasible, and the infinite dimensional model imposes severe constraint on the design of controllers as well. Hence it is necessary that these continuous systems are discretized. \\
+Flexible links with rigid joints in robot manipulators are discretized by using assumed modes, finite elements, or lumped parameters. The link deflections, with respect to the link’s rigid configuration, are usually assumed to be small, and a linear theory of elasticity is selected. Researchers commonly utilize the Euler-Bernoulli beam theory to represent the dynamics of link flexibility, which is the one selected for this work [17].\\
+The lateral vibration of a beam can be studied by considering it as a continuous system, characterized by an infinite number of degrees of freedom. The equation of motion is carried out by considering the forces and moments acting on an infinitesimal piece of the body (Figure~\ref{elementary}), whose mass can be written as:
+\begin{equation}
+\,dm=\rho Adx
+\end{equation}
+where $\rho$ is the beam densit and $A$ its cross-section area, whcih is considered constant along the beam.\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.25]{elementary}
+\caption{Forces acting on the infinitesimal piece of the beam.}
+\label{elementary}
+\end{figure}
+The equations of motion are:
+\begin{equation}
+\begin{cases}
+f(x,t)dx-(V+dV)+V=\rho A \,dx \frac{\partial^2w(x,t)}{\partial t^2}\\
+(M+dM)-(V+\,dV)dx+f(x,t)dx\frac{dx}{2}-M=0
+\end{cases}
+\end{equation}
+where $V$ is the shear force, $M$ the bending moment and $f(x,t)$ the distributed force. The dominant motion is assumed to be the lateral one, which is true when the beam is thin.\\
+By defining $\,dV=\frac{\partial V}{\partial x}\,dx$ and $\,dM=\frac{\partial M}{\partial x}\,dx$, and using the Euler-Bernoulli definition of moment $M(x,t)=EI\frac{\partial^2 w(x,t)}{\partial x^2}$, where $E$ is the Young's modulus and $I$ is the area moment of inertia, the equation of motion becomes:
+\begin{equation}
+  EI\frac{\partial^4w(x,t)}{\partial x^4}+\rho A\frac{\partial^2w(x,t)}{\partial t^2}=f(x,t)
+\end{equation}
+and, by defining $c=\sqrt{\frac{EI}{\rho A}}$ as the speed of longitudinal deformation, we get:
+\begin{equation}
+c^2\frac{\partial^4w(x,t)}{\partial x^4}+\frac{\partial^2w(x,t)}{\partial t^2}=f(x,t)
+\label{forced}
+\end{equation}
+$EI$ can also be referred to \textit{flexural rigidity} of the beam.\\
+The free vibration equation is obtained by imposing $f(x,t)=0$:\\
+ \begin{equation}
+c^2\frac{\partial^4w(x,t)}{\partial x^4}+\frac{\partial^2w(x,t)}{\partial t^2}=0
+\label{free}
+\end{equation}
+which is also reported in [18]: we assume that no control is applied to the tips' deformations. This assumption will be tackled in the next sections.\\
+The solution of the equation (\ref{free}) needs two initial condition and four boundary condition to be found. It can be calculated by separation of variables, writing the solution as the product of a function depending on time and another one depending on space:
+\begin{equation}
+w(x,t)=W(x)Q(t)
+\label{separability}
+\end{equation}
+It is now possible to rewrite the equation (\ref{free}) as:
+\begin{equation}
+\frac{c^2}{W(x)}\frac{\,d^4W(x)}{\,dx^4}=-\frac{1}{Q(t)}\frac{\,d^2Q(t)}{\,dt^2}=const
+\end{equation}
+and by choosing as the constant $\omega^2$, the time equation becomes the one degree of freedom oscillator, whose solution is known (\ref{time}), while the space equation solution can be written as (\ref{space}), where $\beta^4=\frac{\rho A}{EI}\omega^2$.
+\begin{equation}
+Q(t)=A\cos{\omega t}+B\sin{\omega t}
+\label{time}
+\end{equation}
+\begin{equation}
+W(x)=c_1\cos(\beta x)+c_2\sin{\beta x}+c_3\cosh{\beta x}+c_4\sinh{\beta x}
+\label{space}
+\end{equation}
+The four coefficient of the space solution can be found with the boundary condition of the system. Every natural frequency of the system is associated to one space solution (mode shape) and time solution, and can be found imposing the boundary conditions.\\
+The displacement of the beam is the sum of the product between the $n$ mode shapes selected and their time solutions [16,17,18]:
+\begin{equation}
+w(x,t)=\sum_{n=1}^\infty W_n(x)Q_n(t)
+\label{overall}
+\end{equation}
+As already mentioned, the assumption for the Euler-Bernoulli beams model is of small deformartions. The kinematic analysis can be carried out in the same way we did in Section~\ref{planar_VMS}, with the only addiction of homogeneous elasticity matrix, which accounts for the elastic deformation of the link [17]. Assuming null rotation and small tip deformation, we can write the elasticity matrix from link $i$ to $i+1$ as:
+\begin{equation}
+  \prescript{i}{i+1}{E}=\begin{bmatrix}
+    1&0&0&u(x,t)\\
+    0&1&0&w(x,t)\\
+    0&0&1&v(x,t)
+  \end{bmatrix}
+\end{equation}
+with $u(x,t),w(x,t),v(x,t)$ elastic deformations in the $x,y,z$ direction respectively.\\
+Since the deformation is calculated at the arm's tip and only in the y-direction (following the Denavit-Hartenberg notation), we can rewrite the matrix:
+\begin{equation}
+  \prescript{i}{i+1}{E}=\begin{bmatrix}
+    1&0&0&0\\
+    0&1&0&W_i(x)Q_i(t)\\
+    0&0&1&0
+  \end{bmatrix}
+\end{equation}
+where $W_i(x)=\{W_{i,1},W_{i,2},\dots,W_{i,n}\}$ and $Q_i(t)=\{Q_{i,1},Q_{i,2},\dots,Q_{i,n}\}^T$ [16].\\
+The joints' homogeneous transformation matrices, for the analyzed planar case, will be given as:
+\begin{equation}
+  \begin{array}{l}
+  \prescript{f}{1}{T}=\prescript{f}{b}{M}\prescript{b}{0}{M}\prescript{0}{1}{M}\prescript{0}{1}{E}\\
+  \prescript{f}{2}{T}=\prescript{f}{b}{M}\prescript{b}{0}{M}\prescript{0}{1}{M}\prescript{0}{1}{E}\prescript{1}{2}{M}\prescript{1}{2}{E}\\
+  \end{array}
+\end{equation}
+Hence, the time-varying part of the free-vibration solution can be found by sollowing the lagrangian approach as in the previous sections, where the genetalized coordinate vector of the system is now:
+\begin{equation}
+  p=\{x_b,y_b,\theta_b,q_1,q_2,Q_1,Q_2\}
+\end{equation}
+and its dimension depends on the number of modeshapes chosen (e.g. for $n=1$, $p\in\mathbb{R}^7$).\\
+
+For what regards the space-varying part of the free vibration solution, four boundary conditions need to be imposed. It is reasonable to suppose that the inertia of a lightweight link is small compared to the hub inertia, and then constrained mode shapes can be used. In particular, we assume each link to be clamped at the base:
+\begin{equation}
+  w_i(0,t)=0, \quad w_i'(0,t)=0
+\end{equation} 
+Furthermore, experiments and recent analytical studies have shown that the clamped assumption is even enforced when chosing a feedback control loop around the joint [18].\\
+Concerning the remaining boundary conditions, we consider mass boundary conditions representing balance of moment and shearing force owing to other links of the serial structure of robot manipulators and the payload [17,18]:
+\begin{equation}
+  \begin{array}{c}
+  (EI)_i\frac{\partial^2w_i(l_i,t)}{\partial x^2}=-J_{L_i}\frac{d^2}{dt^2}\Big(\frac{\partial w_i(l_i,t)}{\partial x}\Big)-M_{D_i}\frac{d^2}{dt^2}w_i(l_i,t)\\
+  (EI)_i\frac{\partial^3w_i(l_i,t)}{\partial x^3}=-M_{L_i}\frac{d^2}{dt^2}w_i(l_i,t)+M_{D_i}\frac{d^2}{dt^2}\frac{\partial w_i(l_i,t)}{\partial x}
+  \end{array}
+  \label{boundary_conditions}
+\end{equation}
+where $M_{L_i}$, and $J_{L_i}$, are the actual mass and moment of inertia at the end of link~$i$. Moreover, $M_{D_i}$ accounts for the contributions of masses of distal links, i.e., noncollocated at the-end of link $i$, weighted by the relative distance from axis $y$, (shearing axis at the end of link $i$). Incidentally, these contributions are often not included in mode shape analyses: if the arm has only one link, $M_{L_i}$  and $J_{L_i}$ are directly the payload mass and inertia, while the additional terms on the right-hand side of (\ref{boundary_conditions}) vanish ($M_{D_i}=0$) only when the payload is balanced at the tip.\\ 
+For the generic intermediate $i$th link in an open kinematic chain arrangement, instead, $M_{L_i}$ is the constant sum of all masses beyond link $i$, but $J_{L_i}$, and $M_{D_i}$, depend on the position of successive links. Thus, for exact mode shapes computation, these quantities should be updated as functions of the arm configuration; this may considerably increase the complexity of model derivation, beside overloading the computational burden of on-line execution. Therefore, some practical approximation leading to constant-although nonzero-boundary conditions at the link end might be in order. For instance, a convenient position is to set $M_{D_i}=0$ and compute $J_{L_i}$, for a fixed arm configuration.\\
+In the case of a planar RR manipulator, like the one used in this thesis, we would have:
+\begin{equation}
+  \begin{array}{l}
+    M_{L_1}=m_2+m_p\\
+    J_{L_1}=I_{2,z}+I_{O,z}+m_Ol_2^2\\
+    M_{D_1}=(m_2\frac{l_2}{2}+m_Ol_2)\cos{q_2}-\chi\sin{q_2}
+  \end{array}
+\end{equation}
+where $\chi$ is a term of an order of magnitude smaller than the first one, hence can be negletted.\\
+Notice that in the considered case of only two links, $J_{L_1}$ is a constant; for more than two links, $J_{L_1}$ will become a function of the generalized coordonate of link 3 and following ones.\\
+On the other handm for link 2:
+\begin{equation}
+  \begin{array}{l}
+    M_{L_2}=m_p\\
+    J_{L_2}=I_{O,z}\\
+    M_{D_2}=0
+  \end{array}
+\end{equation}
+The varying of $M_{D_1}$ in time, since it depends on the arm configuration, implies that the mode shapes, which are spacial quantities, would become implicit function of time, thus conflicting with the original separability assumption (\ref{separability}).\\
+However, $M_{D_1}$ can be rendered constant for a fixed arm configuration: assuming small displacement and initial position $q_{2,0}=\pi/2$, leads to $M_{D_1}=0$. That is why this has been chosen as the maniupaltor initial condition in both Section~\ref{rigid} and this one.\\
+By substituting in the boundary conditions equations the solutions (\ref{time},\ref{space}), the homogeneous solution for link $i$ and mode shape $j$ is [17,18]:
+\begin{equation}
+  W_{i,j}(x)=C_{i,j}[\cos{(\beta_{i,j} x)}-\cosh{(\beta_{i,j} x)}+\nu_i(\sin{(\beta_{i,j} x)}-\sinh{(\beta_{i,j} x)})]
+\end{equation}
+where:
+\begin{equation}
+  \nu_{i,j}=\frac{\sin{(\beta_{i,j}l_i)}-\sinh{(\beta_{i,j}l_i)}+M\beta_{i,j}[\cos{(\beta_{i,j}l_i)}-\cosh{(\beta_{i,j}l_i)}]}{\cos{(\beta_{i,j}l_i)}+\cosh{(\beta_{i,j}l_i)}-M\beta_{i,j}[\sin{(\beta_{i,j}l_i)}-\sinh{(\beta_{i,j}l_i)}]}
+\end{equation}
+where 
+\begin{equation}
+  M=\frac{M_L}{\rho A l}, \quad J=\frac{J_L}{\rho Al^3}
+\end{equation}
+and $\beta_{i,j}$ are solutions of the frequency equation:
+
 \chapter{Inertial and Kinetics Properties Retrieval}
 In the previous chapter, the captured object has been considered as a deterministic disturbance, i.e. the inertia and dynamic properties have been supposed known.\\
 However, in real case scenarios, the payload mass can be unknown (e.g. the captured of a small metoerite or of a satellite with estimated mass).\\
