@@ -28,11 +28,17 @@
 \usetikzlibrary{decorations.text}
 \usetikzlibrary{arrows.meta}
 \tikzset{>={Latex[width=2mm,length=2mm]}}
-\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\fancypagestyle{styletoc}{
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{CONTENTS}
+}
+\fancypagestyle{stylenor}{
 \fancyhf{}
 \fancyhead[R]{\thepage}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
 \fancyhead[L]{\scshape{\chaptername} \thechapter\ --\ \leftmark}
+}
 \newlength{\mylen}
 \setbox1=\hbox{$\bullet$}\setbox2=\hbox{\tiny$\bullet$}
 \setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
@@ -91,16 +97,15 @@
 \end{abstract}
 
 \newpage
-
 \pagenumbering{roman}
 \addcontentsline{toc}{chapter}{Contents}
-
 \tableofcontents
-
+\pagestyle{styletoc}
 \chapter*{Introduction}
+\pagestyle{stylenor}
 \addcontentsline{toc}{chapter}{Introduction}
 We live in a society overwhelmed by such technology, autonomous systems, industrial manipulators, AI and, very soon, services' humanoid robots, that we forget to look up in the sky. Most of the major progress in robotics and the scientific field is done in space, where human curiosity is pushing our abilities beyond any imaginable scenario.\\
-This thesis was born due to my curiosity in the field of robotics merged with the need to face space and modern problems, such as the berthing and docking of external objects by a manipulator or the tumbling of a spinning satellite. This dissertation aims to analyse the dynamic of a space manipulator after the impact with an external satellite/meteorite to retrieve its kinetic properties before the impact.\\
+This thesis was born due to my curiosity in the field of robotics merged with the need to face space and modern problems, such as the berthing and docking of external objects by a manipulator or the tumbling of a spinning satellite. This dissertation aims to analyse the dynamic of a space manipulator after the impact with an external satellite/meteorite to retrieve its kinetic properties before the impact.
 \clearpage
 \pagenumbering{arabic}
 \chapter{Space Manipulators: an Overview}
@@ -151,10 +156,9 @@ Depending on whether or not actuation is utilized to control the spacecraft posi
 In a free-flying robotic system the position and orientation of the base, in this case the spacecraft, is actively controlled by the spacecraft’s actuators. This allows to completely control both the base configuration and the manipulator arm.\\ 
 Due to the dynamic coupling between the manipulator and the spacecraft, the motion of the manipulator arm will constantly affect the motion of the base. The main concern with these systems is therefore the excessive fuel consumption required to compensate for the dynamic coupling between the manipulator and the base while maintaining a constant base attitude [6].\\
 This mode is employed during the final approach of a manipulator to its target, so that the target is within the manipulator workspace [2].\\
-A free-floating robotic system, on the other hand, does not use spacecraft actuation to compensate for the manipulator motion. The spacecraft motion is therefore not controlled directly, but arises as a result of the dynamic coupling between the manipulator and the base. In this case one can either choose not to control the spacecraft motion at all, or to use the manipulator arm to obtain the required motion also for the spacecraft. In many cases it is necessary to generate a manipulator motion which guarantees that the spacecraft orientation remains almost constant so that antennas and other instruments point in the right direction [6].\\
+A free-floating robotic system, on the other hand, does not use spacecraft actuation to compensate for the manipulator motion. The spacecraft motion is therefore not controlled directly, but arises as a result of the dynamic coupling between the manipulator and the base. In this case one can either choose not to control the spacecraft motion at all (as it has been done in this work), or to use the manipulator arm to obtain the required motion also for the spacecraft. In many cases it is necessary to generate a manipulator motion which guarantees that the spacecraft orientation remains almost constant so that antennas and other instruments point in the right direction [6].\\
 In this mode, the spacecraft attitude is controlled actively with momentum control devices (MCD), such as reaction wheels or momentum gyros, while the system CoM does not translate. The free-floating or the partial free-floating modes are preferred during grasping, since they eliminate sudden motions due to thrusters, and conserve propellant and power [2].\\
 Even though space exploration is challenging compared to Earth-based systems, space manipulator design also benefits from the free-fall environment in some areas. It is, for example, possible to construct robots with extremely high redundancy and with several joints. This type of robots, are able to support their own weight in space due to the small gravitational forces. On Earth, however, such robots would collapse due to their own weight when the number of joints becomes too large. This allows for more redundant robots in space than on Earth, and also more fault tolerant robots because the robots can continue operation even after several joint failures. Similarly, the free-fall environment allows for effective control with very small actuators. In fact, most space manipulators are able to handle very high payloads in space, while they cannot even withstand the weight of the manipulator arm itself if they were to be placed in the Earth’s gravity field [6].\\
-\textcolor{red}{WHICH ONES ARE CONSIDERED IN THIS WORK?}\\
 
 To execute on-orbit tasks being inaccessible to, or too dangerous for humans, robotic on-orbit servicing (OOS) can be employed, with tasks to be performed by space manipulator systems (SMSs), also called chasers or servicers in the literature. An SMS consists of a satellite base equipped with one or more robotic manipulators (arms) with grappling devices on them and driven by a vision system which allows them to capture a target (client) satellite, or another object. An SMS also can be a large servicing manipulator mounted on a space facility.\\
 Targets for capture may be cooperative, i.e., a stable and safe target due to its operational Attitude and Orbit Control Subsystem (AOCS), or non-cooperative i.e., an unknown or tumbling target with a varying axis of rotation. They can also be collaborative, i.e., designed for capture or servicing, equipped with visual markers and grapple fixtures, or non-collaborative, as most of today’s satellites. In many cases in the literature, the term cooperative stands for collaborative, too.
@@ -166,10 +170,10 @@ Clearly, only after a manipulator has successfully captured and stabilized a tum
   \item impact and grasping/capture phase;
   \item post-capture stabilization phase.
 \end{enumerate}
-\textcolor{red}{WHICH ONES ARE CONSIDERED IN THIS WORK?}\\
 With a target locally stationary, the approach phase can be achieved by point-to-point planning and depending on the actuation mode, by simple on-off thruster control, and attitude fine-tuning using momentum exchange devices. Capturing a tumbling, non-cooperative target is more challenging, as here velocity matching between the SMS end-effector and the capture point is required.\\
 In fact, to avoid impacts during the grasping phase, the difference between the velocities of the target and the end-effector should be zero. In practise, this never happens, thus small impacts and vibrations have to be taken into account. Research on this topic is still going on, some focusing on bio-inspired isolation systems ([2018], [2020]).\\
-In deploying a SMS for target capture, a manipulator trajectory is needed to achieve the goal. Several secondary optimization goals, such as obstacle and singularities avoidance, fuel consumption, and base disturbance minimization [1999] can be sought, too. E.g. [2009] focuses on the optimal time needed to reach the target [2].
+In deploying a SMS for target capture, a manipulator trajectory is needed to achieve the goal. Several secondary optimization goals, such as obstacle and singularities avoidance, fuel consumption, and base disturbance minimization [1999] can be sought, too. E.g. [2009] focuses on the optimal time needed to reach the target [2].\\
+For this thesis' purpose, only impact and captured phase along wirh post-captured stabilization phase have been considered.
 \newpage
 \section{State-of-art}\label{state_of_art}
 The Low Earth Orbit (LEO), a whole band of orbits between 300 and 700 km altitude, is the main of today's manned space missions. This class belongs to the US Skylab, the Space Shuttle, the Russian Space Station Mir, and the International Space Station (ISS). The orbits are just high enough to be practically free of destabilising dynamic disturbances but as low as possible to minimise launch costs.\\
@@ -183,28 +187,30 @@ Nowadays, as already mentioned, on the ISS there are three main SMSs:
 \end{enumerate}
 The ISS assembly, maintenance and scientific research tasks depend on the three robotic manipulators carrying out their intended operations. Each manipulator has a specific purpose and each has been designed to successfully complete its assigned mission.\\
 All three ISS robotic manipulators are designed to resemble the human arm. They are mechanically and electrically connected to the ISS at the shoulder, which is comprised of a set of revolute mechanical joints. A boom segment and then an elbow joint follow the shoulder. After the elbow there is another boom segment followed by a set of wrist joints and an end effector through which the operational grappling is carried out.[2]
+\newpage
 \subsection{SSRMS}
 The SSRMS, or Canadarm2, is primarily used for ISS assembly. This involves acquiring an assembly payload, either directly from the Shuttle Payload Bay or handed off from the Shuttle Remote Manipulator System (SRMS). The SSRMS is also used to manoeuvre astronauts and whatever they are holding from point to point as they complete their tasks during the EVA.\\
 The 16.9m SSRMS has 7 offset joints and is symmetric about the elbow with identical 3DOF shoulder and wrist clusters (Figure \ref{SSRMS_dim}). The shoulder/wrist clusters contain three mechanical joints with perpendicular rotation axes: pitch, yaw and roll. One joint cluster acts as the shoulder while the other acts as the wrist of the manipulator. All of the SSRMS joints are functionally identical with the same performance capabilities and angular range of $\pm 270$ degrees. \\
 The three pitch and two roll joints are identical and interchangeable. The two yaw joints are identical and interchangeable (the difference between the yaw and pitch/roll joints being that the yaw joints have a 5.25 inch extension non one end). Each of the joints is an ORU and each contains two identical joint electronics units and motor modules.\\
 Attached to the roll joint on each cluster is a Latching End Effector (LEE) which provides a mechanical and electrical connection to a payload, SPDM or the ISS when grappling an SSRMS grapple fixture. In this way, it is possible for the robotic arm to move around the station's exterior. Each LEE also includes a Force Moment Sensor (FMS) and two identical LEE Electronics Units (LEUs). This symmetric configuration allows either end of the SSRMS to be attached to a Power and Data Grapple Fixture (PDGF) and to function as the base of the arm.\\
-\begin{figure}[t]
+\begin{figure}[h]
   \centering
   \includegraphics[scale=0.3]{SSRMS_dimensions.png}
   \caption{SSRMS Dimensions [4].}
   \label{SSRMS_dim}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[b]
   \centering
-  \includegraphics[scale=0.4]{SSRMS_orbit.png}
+  \includegraphics[scale=0.35]{SSRMS_orbit.png}
   \caption{The SSRMS on orbit [7].}
   \label{SSRMS_orbit}
 \end{figure}
+\newpage
 \subsection{SPDM}
 The SPD is a highly dexterous dual-armed robot, with two shoulders that provide support for the arms.\\
 Each arm has seven joints, terminating with an Orbit Replacement Unit/Tool Changeout Mechanism (OTCM), the mechanism through which the SPDM arm interfaces with payloads and tools. The SPDM is also equipped with lights, video equipment, a tool platform and four tool holders.\\
 The SPDM's primary role is to carry out delicate maintenance and servicing tasks on the International Space Station. Tasks include installing and removing small payloads such as batteries, power supplies and computers; operate robotic tools such as specialized wrenches and socket extensions; provide power and data connectivity to payloads; manipulate, install, remove and inspect scientific payloads.\\
-It works near the Canadarm2 and can be grapped by it to be moved around.\\
+It works near the Canadarm2 and can be grapped by it to be moved around.
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.6]{SPDM.png}
@@ -225,7 +231,8 @@ The Small Fine Arm (SFA) is also asix-degree-of-freedom robot arm. It can perfor
   \caption{The JEMRMS components. [8]}
   \label{JEMRMS_components}
 \end{figure}
-The JEM RMS end effector was designed based on the Shuttle RMS (SRMS) end effector. The grapple fixtures compatible with the JEMRMS MA can also be grappled by the SSRMS [4].\\
+The JEM RMS end effector was designed based on the Shuttle RMS (SRMS) end effector. The grapple fixtures compatible with the JEMRMS MA can also be grappled by the SSRMS [4].
+\newpage
 \subsection{ERA}
 The ERA is used on the Russian segment (RS) of the ISS. Specific tasks for the ERA include: installing, removing or replacing experiment payloads
 and large Station elements; transferring small payloads in and out of the Station through the Russian airlock; transporting crew members from one external working site
@@ -236,44 +243,15 @@ actuation.\\
 The ERA is equipped with four Camera and Lighting Units (CLU) one on each EE and one on either side of the elbow. The CLU will be used to provide video images of operational tasks and, if necessary, to illuminate the scene and to act as an optical sensor to enable proximity control of a target during approach of a basepoint or grapple fixture in closed loop. The proximity control function enables ERA to approach grapple fixtures automatically and smoothly [4].
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.45]{ERA.png}
-  \caption{ERA's components.} \label{ERA}
+  \includegraphics[scale=0.4]{ERA.png}
+  \caption{ERA's components.} 
+  \label{ERA}
 \end{figure}
 \subsection{RMSs Comparison}
 To conlcude, The 7DOF design of the European and Canadian arms provide an extra degree of freedom that will enable both manipulators to access tight workspaces and avoid ISS structure during operations. This is particularly important when working in areas that have exposed station structure. The 7th DOF also allows for Arm Pitch Plane Change manoeuvres to avoid structure without changing the end effector position.\\
 The maximum handling payloads the manipulators can capacity also dictates the type of grasp. The SSRMS is capable of handling payloads that have an equivalent mass to the Orbiter. The ERA is designed for slightly smaller payloads such as solar panels.\\
 The ERA and the JEMRMS provide much finer position accuracy than the SSRMS: smaller payloads require more precise alignment. Also, the force moment sensor is always used for ERA and JEM operations and is optional for SSRMS operations. This FMS capability facilitates “peg in the hole” type of operations.
 In the Table \ref{SRMs_comparison} the specifications of the SSRMS, ERA and JEMRMS are reported [4].
-% \begin{table}[h]
-%   \caption{SSRMS, ERA and JEMRMS specifications [4].}
-%   \label{SRMs_comparison}
-%   \begin{center}
-%   \begin{tabular}{|l|c|c|c|}
-%   \hline
-%   & \textbf{SSRMS} & \textbf{ERA} & \textbf{JEMRMS (MA)}\\
-%   \hline
-%   Span&\SI{14.22}{\metre}&\SI{11.3}{\metre}&\SI{9.91}{\metre}\\
-%   \hline
-%   Boom Span&\SI{7.11}{\metre}&\SI{7.77}{\metre}&\SI{3.93}{\metre}\\
-%   \hline
-%   DOFs&7&7&6\\
-%   \hline
-%   Joints&Offset&Inline&Offset\\
-%   \hline
-%   Base&Relocatable&Relocatable&Fixed\\
-%   \hline
-%   Positioning Accuracy&\SI{65}{\milli\metre}, \SI{0.71}{\degree}&\SI{40}{\milli\metre}, \SI{1}{\degree}&\SI{50}{\milli\metre}, \SI{1.8}{\degree}\\
-%   \hline
-%   Mass&\SI{1336}{\kilogram}&\SI{630}{\kilogram}&\SI{757}{\kilogram}\\
-%   \hline
-%   Max Handling Capacity&\SI{116}{\mega\gram}&\SI{8}{\mega\gram}&\SI{7}{\mega\gram}\\\hline
-
-%   Power Consumption&\SI{1360}{\watt} (average)&>\SI{800}{\watt}&\SI{2.3}{\kilo\watt}\\
-%   \hline
-%   \end{tabular}
-%   \end{center}
-%   \end{table}
-
   \begin{table}[h]
     \caption{SSRMS, ERA and JEMRMS specifications [4].}
     \label{SRMs_comparison}
@@ -295,7 +273,6 @@ In the Table \ref{SRMs_comparison} the specifications of the SSRMS, ERA and JEMR
     \end{tabular}
     \end{center}
     \end{table}
-
 \chapter{Kinematics}\label{kinematics}
 What is a robot, then? In the previous chapter we have seen an overview of the actual reality of the space robotics field, but a proper definition of a what a robot is has not been given. A robot is a re-programmable machine for manipulation, positioning, orientation, machining of bodies able to interact with the environment, with a certain level of autonomy.\\
 A robot is not just an automated machine, it is something more: takes decisions autonomously, can do different things at different times, is flexible.\\
@@ -425,6 +402,7 @@ where $\mathbf{0} \in \mathbb{R}^{3\times1}$ and $\prescript{m}{f}{M} \in \mathb
   \caption{Definition of a point in a rotated and translated frame with respect to the fixed one. The position of $P$ with respect to the fixed frame (red arrow) can be seen as the sum of the position of the moving frame $O_m$ with respect of $O_f$ and the relative position of $P$ in the moving frame, both in blue.}
   \label{translation}
 \end{figure}
+\newpage
 \subsection{Velocity Matrix}\label{velocity_section}
 Given the same point in Figure~\ref{translation} is is possible to find the velocity of the point with respect to the fixed frame. By derivation of equation (\ref{roto_translation}) one can get:
 \begin{equation}
@@ -490,6 +468,7 @@ with $\dot{\alpha}=\omega_z$, and the "logic" of the rotation is thus given by $
   \end{bmatrix}
   \label{L_matrix}
 \end{equation}
+\newpage
 \subsection{Danavit-Hartenberg Method}
 To define the reference frames fixed to the links of a serial manipulator, one can follow the Danavit-Hartenberg algorithm, which guarantees a coherent and functional mehod through all the calculations. It has been thought for robots with revolute joints.\\
 It follows this ordered procedures:
@@ -707,7 +686,8 @@ By projecting in the fixed frame:
     0&0&0&0
   \end{bmatrix}
 \end{equation}
-which is $\prescript{f}{}{W_{b0}}/ \dot{\theta_0}$ from equation (\ref{W_bo}).
+which is $\prescript{f}{}{W_{b0}}/ \dot{\theta}_0$ from equation (\ref{W_bo}).
+\newpage
 \subsection{Object's Kinematics}
 For the planar case, the object to be captured (might it be a satellite or a micro-meteorite) is approximated with a  disk, in the same way we did for the base of the VMS.\\
 The goal of the object's kinematics is to find the relationshipt between the velocity of its centre and the velocity of the contact point ($c_p$), as suggested in [12].\\
@@ -736,7 +716,7 @@ Hence, the Homogeneous Matrices related to the tumbling object are the following
   \end{array}
 \end{equation}
 with the coordinates of the object as in (\ref{object_coordinates}), $\gamma$ the angle between the the object local frame and the position of the contact point (see Figure~\ref{contact_point}) and $r$ the radius of the disk.\\
-\begin{figure}
+\begin{figure}[h]
   \centering
   \input{tikz/disk.tikz}
   \caption{Tumbling object disk approximation.}
@@ -795,17 +775,17 @@ which is very similar to (\ref{W_bo}). Hence, in the same way we did in the prev
 The dynamics analysis of a mechanical system consists in studying how the system evloves according to the present actions, given by motors and/or external world. If the kinematics analyisis is used to describe the motion, the dynamics one studies its causes. For a robotic system, the forces involves are usually the torques applied at the joints and, in this case, also the forces applied to the base.\\
 The analyisis can be:
 \begin{itemize}
-  \item direct: from the torques applied by the motors, the motion is calculated.
-  \item inverse: given the motion we calculate the forces and torques that produce that motion
+  \item direct: from the torques applied by the motors, the motion is calculated;
+  \item inverse: given the motion we calculate the forces and torques that produce that motion.
 \end{itemize}
 The former problem requires differential calculation, while the latter algebraic.\\
 In this thesis, both problems will be studied: given the impact of the tumbling object with the VMS, we want to analyse the motion of the system after the impact; however, we also want to find a control algorith to be applied at the torques to stabilize the system after the impact.\\
-Before writing the dynamic equations, we want to find a relationship between the forces at the end-effector and the forces at the joints, that is, given a \textit{wrench} $w$ (force+moment) applied at the end-effector, compute the joints' torques $\tau_w$ generated by it.\\
+Before writing the dynamic equations, we want to find a relationship between the forces at the end-effector and the forces at the joints, that is, given a \textit{wrench}~\textbf{w} (force~+~moment) applied at the end-effector, compute the joints' torques $\tau_w$ generated by it.\\
 The power at the joints is given by:
 \begin{equation}
   P_{\tau}=\tau_w^T\dot{q}
 \end{equation}
-where $q \in \mathbb{R}^n$ is the vector of joint variables and  $\tau_w \in \mathbb{R}^n$ is the vector of joint forces and torques.\\
+where $q \in \mathbb{R}^n$ is the vector of joint variables and  $\tau_w \in \mathbb{R}^n$ is the vector of forces and torques applied to the joints because of $w$.\\
 The power at the end-effector is:
 \begin{equation}
   P_e=w^Tv
@@ -841,7 +821,7 @@ and for a system of point masses:
 \end{equation}
 A rigid body that moves in space has:
 \begin{itemize}
-  \item $v_c \in \mathbb{R} ^3$: linear velocity (of the centre of mass).
+  \item $v_c \in \mathbb{R} ^3$: linear velocity (of the centre of mass);
   \item $\omega_c \in \mathbb{R} ^3$: angular velocity (all points of the body).
 \end{itemize}
 Hence, the kinetic energy of a rigid body of volume $V$ is:
@@ -1204,11 +1184,11 @@ and:
 \end{equation}
 By solving (\ref{lagrangian}), we get the same matrices in (\ref{object_matrices}).
 \newpage
-\chapter{Impact Analysis}
+\chapter{Impact Analysis}\label{impact_analysis}
 Once the Kinematics and the Dynamics of both the VMS and the external object are analysed, the impact analysis between the two is here performed.\\
 In [13] and [14], two basic assumptions are made in the formulation of the impact model:
 \begin{enumerate}
-  \item although the generalized velocities change substantially, the generalized coordinates of the system remain the same over the impact duration. This is justified not only for the rotational coordinates but for the elastic ones as well [15]. The latter conclusion can also be implied by reasoning that since the duration of impact (approximately \SI{d-4}{\second}) is very small compared with the period of the fundamental mode of vibration of the links (several seconds), the change in deflection of a flexible beam during impact is negligible (\textcolor{red}{mettere questa info più anvanti quando/se introdurremo l'elasticità dei link}).
+  \item although the generalized velocities change substantially, the generalized coordinates of the system remain the same over the impact duration. This is justified not only for the rotational coordinates but for the elastic ones as well [15]. The latter conclusion can also be implied by reasoning that since the duration of impact (approximately \SI{d-4}{\second}) is very small compared with the period of the fundamental mode of vibration of the links (several seconds), the change in deflection of a flexible beam during impact is negligible;
   \item at the contact point between the end-defector and the target there are forces but not moments. Impact occurs at a single point, which is unable to transmit a local moment.
 \end{enumerate}
 Another assumption that has been already done in the previous chapters is that we know in advance the inertia and dynamic properties of the payload, as well as the position of the contact point on the payload.\\
@@ -1327,11 +1307,12 @@ where:
   \label{VMS_dynamics}
 \end{equation}
 Equation (\ref{VMS_dynamics}) is the post-impact dynamic model of the VMS containing the object. Both $M'$ and $C'$ are still dependent on $J_O$, which depends on the object's coordinates, but since the object is now captured by the manipulator, its coordinated coincide with the end-effector ones, and its velocities are found by differentization.
-\subsection{Free motion simulation}
+\newpage
+\subsection{Free Motion}
 A simulation has been perfomed by means of the Mathematica software (version 13.2.1.0) with VMS paramers shown in Table~\ref{VMS_parameters} and the initial conditions shown in Tables~\ref{initial_positions}, \ref{initial_velocities}.\\
 The VMS parameters have been chosen following a real case scenario: the lenghts, radiuses and masses of the manipulator's arms are the ERA ones (see Table~\ref{SRMs_comparison} and [4]); the base mass is the mass of the ISS, on top of which the ERA is attached; the payload mass is the mass of a medium-size satellite; $\gamma$ is an arbitrary value.\\
 Regarding the VMS initial positions, the choice of the values will be explained in the next section. For this analysis, every initial position is valid. The initial velocities are zero for almost every VMS generalized coordinate (i.e we assume the base and manipulator still before the impact) and small initial velocities for the payload, as the case of satellite docking is taking into consideration: the ideal condition would be a null relative velocities, however, in a real case scenario, a non-zero relative veloties is present, hence it is taken into consideration.\\
-\begin{table}
+\begin{table}[h]
   \caption{VMS parameters.}
   \label{VMS_parameters}
   \begin{center}
@@ -1344,7 +1325,7 @@ Regarding the VMS initial positions, the choice of the values will be explained 
   \end{tabular}
   \end{center}
 \end{table}
-\begin{table}
+\begin{table}[h]
   \caption{Simulation's initial positions.}
   \label{initial_positions}
   \begin{center}
@@ -1434,22 +1415,59 @@ A quick and intuitive visual result can be seen in Figure~\ref{no_control_result
 \end{figure}
 It is interesting to notice that, in both cases, $\theta_0$ does not change over time: the absence of a torque applied to the base allows free rotation of $q_1$ around $z_b$, since the manipulator is directly attached to the CoM of the base (i.e. the arm does not apply any torque) and the base does not rotate.\\
 Furthermore, given the higher mass of the base with respect to the payload and manipulator masses, it moves very little and we can approximate it as still in the next calculations.
-\subsection{Control based simulation}
+\newpage
+\subsection{Control Based Motion}
 A typical control block diagram is shown in Figure~\ref{block_diagram}. The sensors allow to keep track of the robot configuration $q,\dot{q}$ such that the controller can provide a control law to follow a desired behaviour.\\
-\begin{figure}
+\begin{figure}[b]
   \centering
   \includegraphics[scale=0.4]{control_diagram.png}
   \caption{A typical robot control system. An inner control loop is used to help the amplifier and actuator to achieve the desired force or torque [11].}
   \label{block_diagram}
 \end{figure}
-Given the final equation of motion (\ref{final_equation_motion}), if we knew perfectly the robot dynamics, we could use the following input (\textit{feed-forward}) to move the robot:
+A remark needs to be done about the control of the translation of the base. It is highly improbable that it would be possibile to calculate the exact displacement of the spacecraft where the manipulator is attached, considering also the too little displacement from Figures~\ref{free_motion_1}, \ref{free_motion_2}. Hence, the control law is applied to $\theta_0, q_1$ and $q_2$ only. The base is free to move but, as already mentioned, it can be approximate as still, given the huge inertia of the spacecraft.\\ 
+Thus, we can rewrite the final equation of motion (\ref{final_equation_motion}):
 \begin{equation}
-  \hat{u}=\hat{M'}\ddot{q}_d+\hat{C'}(q_d,\dot{q}_d)
+  \begin{bmatrix}
+    M'_{tt}&M'_{tr}\\
+    M'_{rt}&M'_{rr}
+  \end{bmatrix}
+  \begin{bmatrix}
+    \ddot{p}_t\\
+    \ddot{p}_r
+  \end{bmatrix}+\begin{bmatrix}
+    C'_{t}\\
+    C'_{r}
+  \end{bmatrix}=\begin{bmatrix}
+      0\\
+      u
+    \end{bmatrix}
+    \label{one_control}
+\end{equation}
+where $p_t=\{x_b,y_b\}$ refers to the translational coordinates and $p_r=\{\theta_0,q_1,q_2\}$ to the rotational ones.\\
+By writing the translational coordinate as a function of the rotational ones
+\begin{equation}
+  \ddot{p}_t=-M_{tt}^{-1'}(M'_{tr}\ddot{p}_r+C'_t)
+\end{equation}
+and by plugging in in the second row of (\ref{one_control}):
+\begin{equation}
+  \ddot{p}_r\tilde{M}+\tilde{C}=u
+  \label{rotation_equation_motion}
+\end{equation}
+with
+\begin{equation}
+\begin{array}{c}
+  \tilde{M}=M_{rr}'M_{rt}'{M'}_{tt}^{-1}M_{tr}', \quad \tilde{C}=C_r'M_{rt}'{M'}_{tt}^{-1}C'_t
+\end{array}
+\end{equation}
+where $\textbf{0}\in \mathbb{R}^2$.\\
+If we knew perfectly the robot dynamics, we could use the following input (\textit{feed-forward}) to move the robot:
+\begin{equation}
+  \hat{u}=\hat{M}\ddot{q}_d+\hat{C}(q_d,\dot{q}_d)
 \end{equation}
 where the RHS of the equation is the estimaed robot dynamics.\\
-Upon substitution in (\ref{final_equation_motion}), we would have, supposing $M'=\hat{M'}$ and $C'=\hat{C'}$:
+Upon substitution in (\ref{rotation_equation_motion}), we would have, supposing $\hat{M}=\tilde{M}$ and $\hat{C}=\tilde{C}$:
 \begin{equation}
-  M(\ddot{q}_d-\ddot{q})=0
+  \tilde{M}(\ddot{q}_d-\ddot{q})=0
 \end{equation}
 which is true when the desired configuration is reached.\\
 Since in practice it is not possible to know the exact dynamics, a PD controller is often used in addition to the feed-forward term to compensate for inaccuracy and disturbances:
@@ -1457,16 +1475,16 @@ Since in practice it is not possible to know the exact dynamics, a PD controller
   u=\hat{u}+K_p(q_d-q)+K_d(\dot{q}_d-\dot{q})
 \end{equation}
 with $K_p$ and $K_d$ the proportional and derivative positive definite gain matrices.\\
-Assuming then $M'\approx\hat{M'}$ and $C'\approx\hat{C'}$ and substituting in (\ref{final_equation_motion}):
+Assuming then $\hat{M}\approx\tilde{M}$ and $\hat{C}\approx\tilde{C}$ and substituting in (\ref{rotation_equation_motion}):
 \begin{equation}
-  M'(\ddot{q}_d-\ddot{q})+K_d(\dot{q}_d-\dot{q})+K_p(q_d-q)=0
+  \tilde{M}(\ddot{q}_d-\ddot{q})+K_d(\dot{q}_d-\dot{q})+K_p(q_d-q)=0
 \end{equation}
 However, the above equation is coupled by the mass matrix. In order to have an uncoupled control scheme, a \textit{feedback linearization} can be implemented, as suggested by [16]:
 \begin{equation}
-  u=\hat{M'}[\ddot{q}_d+K_d(\dot{q}_d-\dot{q})+K_p(q_d-q)]+\hat{C'}
+  u=\hat{M}[\ddot{q}_d+K_d(\dot{q}_d-\dot{q})+K_p(q_d-q)]+\hat{C}
   \label{feedback_linearization}
 \end{equation}
-such that the final equation of motion becomes:
+such that the final equation of motion for the rotational coordinates becomes:
 \begin{equation}
   \ddot{e}+K_d\dot{e}+K_pe=0
   \label{controlled_dynamics}
@@ -1498,8 +1516,7 @@ $K_p$ has been chosen as the identity matrix (i.e. $I_{5\times 5}$) and $K_d$ ha
   \xi=1 \quad \Rightarrow \quad K_d=2\sqrt{K_p}
   \label{critically_damped}
 \end{equation}
-The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2}, where underdamped and overdamped behaviours have been plotted as well.\\
-A remark needs to be done about the control of the translation of the base. It is highly improbable that it would be possibile to calculate the exact displacement of the spacecraft where the manipulator is attached, considering also the too little displacement from Figures~\ref{free_motion_1}, \ref{free_motion_2}. Hence, the control law is applied to $\theta_0, q_1$ and $q_2$ only. The base is free to move but, as already mentioned, it can be approximate as still, given the huge inertia of the spacecraft.\\ 
+The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2}, where underdamped and overdamped behaviours have been plotted as well.
 \begin{figure}
   \centering
   \subfloat
@@ -1555,9 +1572,9 @@ f(x,t)dx-(V+dV)+V=\rho A \,dx \frac{\partial^2w(x,t)}{\partial t^2}\\
 \end{cases}
 \end{equation}
 where $V$ is the shear force, $M$ the bending moment and $f(x,t)$ the distributed force. The dominant motion is assumed to be the lateral one, which is true when the beam is thin.\\
-By defining $\,dV=\frac{\partial V}{\partial x}\,dx$ and $\,dM=\frac{\partial M}{\partial x}\,dx$, and using the Euler-Bernoulli definition of moment $M(x,t)=EI\frac{\partial^2 w(x,t)}{\partial x^2}$, where $E$ is the Young's modulus and $I$ is the area moment of inertia, the equation of motion becomes:
+By defining $\,dV=\frac{\partial V}{\partial x}\,dx$ and $\,dM=\frac{\partial M}{\partial x}\,dx$, and using the Euler-Bernoulli definition of moment $M(x,t)=ES\frac{\partial^2 w(x,t)}{\partial x^2}$, where $E$ is the Young's modulus and $S$ is the area moment of inertia (not to be confused with the mass moment of inertia $I$), the equation of motion becomes:
 \begin{equation}
-  EI\frac{\partial^4w(x,t)}{\partial x^4}+\rho A\frac{\partial^2w(x,t)}{\partial t^2}=f(x,t)
+  ES\frac{\partial^4w(x,t)}{\partial x^4}+\rho A\frac{\partial^2w(x,t)}{\partial t^2}=f(x,t)
 \end{equation}
 and, by defining $c=\sqrt{\frac{EI}{\rho A}}$ as the speed of longitudinal deformation, we get:
 \begin{equation}
@@ -1619,19 +1636,21 @@ The joints' homogeneous transformation matrices, for the analyzed planar case, w
   \prescript{f}{1}{T}=\prescript{f}{b}{M}\prescript{b}{0}{M}\prescript{0}{1}{M}\prescript{0}{1}{E}\\
   \prescript{f}{2}{T}=\prescript{f}{b}{M}\prescript{b}{0}{M}\prescript{0}{1}{M}\prescript{0}{1}{E}\prescript{1}{2}{M}\prescript{1}{2}{E}\\
   \end{array}
+  \label{new_kinematics}
 \end{equation}
-Hence, the time-varying part of the free-vibration solution can be found by sollowing the lagrangian approach as in the previous sections, where the genetalized coordinate vector of the system is now:
+Hence, the time-varying part of the free-vibration solution $Q(t)$ can be found by sollowing the lagrangian approach as in the previous sections, where the genetalized coordinate vector of the system is now:
 \begin{equation}
   p=\{x_b,y_b,\theta_b,q_1,q_2,Q_1,Q_2\}
+  \label{new_coordinates}
 \end{equation}
 and its dimension depends on the number of modeshapes chosen (e.g. for $n=1$, $p\in\mathbb{R}^7$).\\
 
-For what regards the space-varying part of the free vibration solution, four boundary conditions need to be imposed. It is reasonable to suppose that the inertia of a lightweight link is small compared to the hub inertia, and then constrained mode shapes can be used. In particular, we assume each link to be clamped at the base:
+For what regards the space-varying part of the free vibration solution $W(x)$, four boundary conditions need to be imposed. It is reasonable to suppose that the inertia of a lightweight link is small compared to the hub inertia, and then constrained mode shapes can be used. In particular, we assume each link to be clamped at the base:
 \begin{equation}
   w_i(0,t)=0, \quad w_i'(0,t)=0
 \end{equation} 
 Furthermore, experiments and recent analytical studies have shown that the clamped assumption is even enforced when chosing a feedback control loop around the joint [18].\\
-Concerning the remaining boundary conditions, we consider mass boundary conditions representing balance of moment and shearing force owing to other links of the serial structure of robot manipulators and the payload [17,18]:
+Concerning the remaining boundary conditions, we consider mass boundary conditions representing balance of moment and shearing force owing to other links of the serial structure of robot manipulators and the payload [17, 18]:
 \begin{equation}
   \begin{array}{c}
   (EI)_i\frac{\partial^2w_i(l_i,t)}{\partial x^2}=-J_{L_i}\frac{d^2}{dt^2}\Big(\frac{\partial w_i(l_i,t)}{\partial x}\Big)-M_{D_i}\frac{d^2}{dt^2}w_i(l_i,t)\\
@@ -1661,9 +1680,10 @@ On the other handm for link 2:
 \end{equation}
 The varying of $M_{D_1}$ in time, since it depends on the arm configuration, implies that the mode shapes, which are spacial quantities, would become implicit function of time, thus conflicting with the original separability assumption (\ref{separability}).\\
 However, $M_{D_1}$ can be rendered constant for a fixed arm configuration: assuming small displacement and initial position $q_{2,0}=\pi/2$, leads to $M_{D_1}=0$. That is why this has been chosen as the maniupaltor initial condition in both Section~\ref{rigid} and this one.\\
-By substituting in the boundary conditions equations the solutions (\ref{time},\ref{space}), the homogeneous solution for link $i$ and mode shape $j$ is [17,18]:
+By substituting in the boundary conditions equations the solutions (\ref{time},\ref{space}), the homogeneous solution for link $i$ and mode shape $j$ is [17, 18]:
 \begin{equation}
   W_{i,j}(x)=C_{i,j}[\cos{(\beta_{i,j} x)}-\cosh{(\beta_{i,j} x)}+\nu_i(\sin{(\beta_{i,j} x)}-\sinh{(\beta_{i,j} x)})]
+  \label{lateral_solution}
 \end{equation}
 where:
 \begin{equation}
@@ -1674,7 +1694,83 @@ where
   M=\frac{M_L}{\rho A l}, \quad J=\frac{J_L}{\rho Al^3}
 \end{equation}
 and $\beta_{i,j}$ are solutions of the frequency equation:
+\begin{equation}
+  \begin{split}
+  1+\cos{(\beta_{i,j}l_i)}\cosh{(\beta_{i,j}l_i)}&-M\beta_{i,j}[\cosh{(\beta_{i,j}l_i)}\sin{(\beta_{i,j}l_i)}-\sinh{(\beta_{i,j}l_i)}\cos{(\beta_{i,j}l_i)}]\\
+  &-J\beta_{i,j}^3[\cosh{(\beta_{i,j}l_i)}\sin{(\beta_{i,j}l_i)}+\sinh{(\beta_{i,j}l_i)}\cos{(\beta_{i,j}l_i)}]\\
+  &+MJ\beta^4[1-\cosh{(\beta_{i,j}l_i)}\cos{(\beta_{i,j}l_i)}]=0
+  \end{split}
+  \label{freq_equation}
+\end{equation}
+The remaining constant in equation (\ref{lateral_solution}) (i.e. $C_{i,j}$) is found by mass normalizing the mode shape:
+\begin{equation}
+  \int_{0}^{l_i}\rho_i A_i W_{i,j}^2(x)dx=1
+\end{equation}
+where the RHS of the equation is the modal mass of the $j$th mode of the $i$th link.\\
+Mode shapes, in fact, can be normalized in different ways (normalization to the unit length vector, normalization to the largest component equal to unity), but the mass normalization is the most common one [19, 20], since it allows to have modal displacements with a physical meaning, since they are related to the modal mass.\\
+The choice of the normalization, however, does not affect the value of the natural frequencies, which are the same for all the normalizations and depend only on equation (\ref{freq_equation}).\\
 
+Once $W_{i,j}(x)$ are known, the kinematics can be evaluated through (\ref{new_kinematics}), and the dynamics can be calculated as in the previous sections, with the awareness that it is not possible to neglet the potential energy anymore.\\
+If in the previus sections the absence of gravity and the rigidity of the bodies allowed to ignore it, now the maniupulators' arms are modeled as elastic bodies, thus the elastic potenatial energy needs to be taken into account.\\
+The elastic energy for unit length stored in a bended beam can be written as [21]:
+\begin{equation}
+  \frac{dU}{dx}=\frac{1}{2}\frac{M^2}{ES}
+  \label{partial_elastic}
+\end{equation}
+with $M$ torque moment, which can be expressed as:
+\begin{equation}
+  M=ES\kappa
+  \label{torque_moment}
+\end{equation}
+where $\kappa$ is the curvature of the deformation, defined as the derivative of the deformation angle $\varphi$:
+\begin{equation}
+  \kappa=\frac{d\varphi}{dx}=\frac{d}{dx}\frac{\partial w(x,t)}{\partial x}=\frac{\partial^2 w(x,t)}{\partial x^2}
+  \label{curvature}
+\end{equation}
+By substituting (\ref{curvature}) in (\ref{torque_moment}) and then in (\ref{partial_elastic}), by integration along the beam direction we get:
+\begin{equation}
+  \begin{split}
+  U&=\frac{1}{2}\int_{0}^{l_i}ES\Big(\frac{\partial^2 w(x,t)}{\partial x^2}\Big)^2\,dx\\
+   &=\frac{1}{2}\int_{0}^{l_i}ES\Big(\frac{\partial^2 W(x)}{\partial x^2}Q(t)\Big)^2\,dx
+  \end{split}
+\end{equation}
+which is the same equation reported in [17, 18].\\
+The new lagrangian will be now:
+\begin{equation}
+  \mathcal{L}_i = T_i-U_i
+\end{equation}
+and the dynamics of the system is given by:
+\begin{equation}
+  \begin{cases}
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{x}_b}-\frac{\partial \mathcal{L} }{\partial x_b}=F_x\cos{\theta_0}-F_y\sin{\theta_0}\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{y}_b}-\frac{\partial \mathcal{L} }{\partial y_b}=F_x\sin{\theta_0}+F_y\cos{\theta_0}\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{\theta}_0}-\frac{\partial \mathcal{L} }{\partial \theta_0}=\tau_0\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_1}-\frac{\partial \mathcal{L} }{\partial q_1}=\tau_1\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_2}-\frac{\partial \mathcal{L} }{\partial q_2}=\tau_2\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{Q}_1}-\frac{\partial \mathcal{L} }{\partial Q_1}=0\\
+    \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{Q}_2}-\frac{\partial \mathcal{L} }{\partial Q_2}=0
+  \end{cases}
+\end{equation}
+since no torque is applied to control the vibrations at the arms' end.\\
+We can directly find the stiffness matrix, of the system, without calculating from scratch the equations of motion, through the following considerations:
+\begin{equation}
+  \frac{d}{dt}\frac{\partial U}{\partial \dot{Q}_i}-\frac{\partial U}{\partial Q_i}=0+\int_{0}^{l_i}ES\frac{\partial^2 W(x)}{\partial x^2}\,dx
+\end{equation}
+Hence, as reported in [16], the new set of dynamical equation is obtained in the form:
+\begin{equation}
+  M\ddot{p}+C+Kp=u+J^Tf_I
+\end{equation}
+which is similar to the equation of motion of Chapter~\ref{impact_analysis} (\ref{initial_impact}), with the addiction of the stiffnes matrix $K=\operatorname{diag}(\textbf{0},K_1,K_2)$ where:
+\begin{equation}
+  K_i=\int_{0}^{l_i}E_iS_i\frac{\partial^2 W_i(x)}{\partial x^2}\,dx
+\end{equation}
+Following the same procedure shown in the previous Chapter and in Section~\ref{rigid}, under the assumption that during the impact no change in the VMS' positions happens (i.e. we can neglet matrix $K$ and follow the exact same calculus), the dynamic equation of the whole system VMS plus payload becomes [16]:
+\begin{equation}
+  M'\ddot{p}+C'+Kp=u
+\end{equation}
+similar to (\ref{VMS_dynamics}) and with $p$ as in (\ref{new_coordinates}).
+\newpage
+\subsection{Free Motion}
 \chapter{Inertial and Kinetics Properties Retrieval}
 In the previous chapter, the captured object has been considered as a deterministic disturbance, i.e. the inertia and dynamic properties have been supposed known.\\
 However, in real case scenarios, the payload mass can be unknown (e.g. the captured of a small metoerite or of a satellite with estimated mass).\\

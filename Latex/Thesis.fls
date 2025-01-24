@@ -613,6 +613,8 @@ INPUT ./Images/control_diagram.png
 INPUT ./Images/control_diagram.png
 INPUT ./Images/control_diagram.png
 INPUT ./Images/control_diagram.png
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0600.tfm
 INPUT ./Images/controlled_motion_x.svg
 INPUT ./Images/controlled_motion_x.svg
 INPUT ./Images/controlled_motion_x.svg

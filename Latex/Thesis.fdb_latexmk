@@ -1,9 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1737636604.15103 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1737636606.22477 0
-  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1737636603.96439 117929 f6bbccaf4e2b98e251104af0c2672b00 ""
+["pdflatex"] 1737730719.65042 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1737730721.84058 0
+  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1737730719.41041 123434 19b4150df1edca50cb790fa11f04afab ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1710106625 2971 def0b6c1f0b107b3b936def894055589 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/fontname/texfonts.map" 1710106625 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1710106625 5472554 f7861620179a71a79d4bd86251f559d0 ""
+  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0600.tfm" 1710106625 3584 ad9fcbc26a2a7bccd6d08b0a5792fbe0 ""
+  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm" 1710106625 3584 269b66e921ba58750c12f7f1c8ea3ebd ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1710106625 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm" 1710106625 3584 21b378cca2e40816b0e6d74a4dc98f04 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1710106625 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -288,10 +290,10 @@
   "Images/free_motion_y2.svg" 1736765019.20451 58373 c25368582e90323a52e6785495650d96 ""
   "Images/parametric_plot.svg" 1737136018.63325 209185 80f033b898e44e40ba495ebdcd9f2c3f ""
   "Images/sigillo2.jpg" 1647183278.221 158706 65535208cd7f7254f47d81bd743e66bd ""
-  "Thesis.aux" 1737636606.05858 22585 d4ab1fc3bc8b9c9f477ad763d087dfa1 "pdflatex"
-  "Thesis.out" 1737636606.0603 5139 1c13ff3e84bb4e7c809ee99bb8912c5d "pdflatex"
-  "Thesis.tex" 1737636603.96439 117929 f6bbccaf4e2b98e251104af0c2672b00 ""
-  "Thesis.toc" 1737636606.06048 3031 d63ed45fac8822dc3a09f5ee66138f06 "pdflatex"
+  "Thesis.aux" 1737730721.6624 23410 3dd4b2ffcc62341db6c9437339bee639 "pdflatex"
+  "Thesis.out" 1737730721.66415 5181 11968bb4cc60354ac8cf6374d760db65 "pdflatex"
+  "Thesis.tex" 1737730719.41041 123434 19b4150df1edca50cb790fa11f04afab ""
+  "Thesis.toc" 1737730721.66435 3099 8410e910a6f87c784cf00c91b6bc843c "pdflatex"
   "svg-inkscape/approximation_1_svg-tex.pdf" 1736769026.71259 26745 b69bb3477b0c77a075a5b6d048bf90c1 ""
   "svg-inkscape/approximation_1_svg-tex.pdf_tex" 1736769026.71276 2084 7ab7d79945a27cfeef20e7faec6224f2 ""
   "svg-inkscape/approximation_2_svg-tex.pdf" 1736769033.79418 21960 830d241fd70706101ef62a265ba2d065 ""

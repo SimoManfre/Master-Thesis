@@ -5,19 +5,19 @@
 \contentsline {section}{\numberline {1.1}Historical background}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Main characteristics}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}State-of-art}{8}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}SSRMS}{8}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}SPDM}{9}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.1}SSRMS}{9}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}SPDM}{10}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}JEMRMS}{10}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}ERA}{11}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.4}ERA}{12}{subsection.1.3.4}%
 \contentsline {subsection}{\numberline {1.3.5}RMSs Comparison}{12}{subsection.1.3.5}%
 \contentsline {chapter}{\numberline {2}Kinematics}{14}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Fundamental of Kinematics}{16}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Roto-Translation Matrix}{16}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Velocity Matrix}{18}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Danavit-Hartenberg Method}{20}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Jacobian Matrix}{21}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.2}Velocity Matrix}{19}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Danavit-Hartenberg Method}{21}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Jacobian Matrix}{22}{subsection.2.1.4}%
 \contentsline {section}{\numberline {2.2}Planar Vehicle-Manipulator System}{23}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Object's Kinematics}{26}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.1}Object's Kinematics}{27}{subsection.2.2.1}%
 \contentsline {chapter}{\numberline {3}Dynamics}{29}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Classic Approach}{31}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Object's Dynamics}{34}{subsection.3.1.1}%
@@ -25,14 +25,15 @@
 \contentsline {subsection}{\numberline {3.2.1}Object's Dynamics}{39}{subsection.3.2.1}%
 \contentsline {chapter}{\numberline {4}Impact Analysis}{41}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Rigid Bodies}{43}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Free motion simulation}{44}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Control based simulation}{46}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Elastic Bodies}{53}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Inertial and Kinetics Properties Retrieval}{58}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Mass Extraction}{58}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Symbolic Approach}{60}{subsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.1}Direct Solution}{60}{subsubsection.5.1.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.2}Closed Form Solution}{60}{subsubsection.5.1.1.2}%
-\contentsline {paragraph}{First Joint}{60}{section*.32}%
-\contentsline {paragraph}{Second Joint}{62}{section*.33}%
-\contentsline {subsection}{\numberline {5.1.2}Interpolation Approach}{62}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {4.1.1}Free Motion}{45}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Control Based Motion}{50}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Elastic Bodies}{55}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Free Motion}{63}{subsection.4.2.1}%
+\contentsline {chapter}{\numberline {5}Inertial and Kinetics Properties Retrieval}{64}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Mass Extraction}{64}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Symbolic Approach}{66}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}Direct Solution}{66}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Closed Form Solution}{66}{subsubsection.5.1.1.2}%
+\contentsline {paragraph}{First Joint}{66}{section*.32}%
+\contentsline {paragraph}{Second Joint}{68}{section*.33}%
+\contentsline {subsection}{\numberline {5.1.2}Interpolation Approach}{68}{subsection.5.1.2}%
