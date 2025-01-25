@@ -28,12 +28,12 @@
 \contentsline {subsection}{\numberline {4.1.1}Free Motion}{45}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Control Based Motion}{50}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}Elastic Bodies}{55}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Free Motion}{63}{subsection.4.2.1}%
-\contentsline {chapter}{\numberline {5}Inertial and Kinetics Properties Retrieval}{64}{chapter.5}%
+\contentsline {subsection}{\numberline {4.2.1}Free Motion}{62}{subsection.4.2.1}%
+\contentsline {chapter}{\numberline {5}Inertial and Kinetics Properties Retrieval}{63}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Mass Extraction}{64}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Symbolic Approach}{66}{subsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.1.1}Direct Solution}{66}{subsubsection.5.1.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.2}Closed Form Solution}{66}{subsubsection.5.1.1.2}%
-\contentsline {paragraph}{First Joint}{66}{section*.32}%
-\contentsline {paragraph}{Second Joint}{68}{section*.33}%
-\contentsline {subsection}{\numberline {5.1.2}Interpolation Approach}{68}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Closed Form Solution}{67}{subsubsection.5.1.1.2}%
+\contentsline {paragraph}{First Joint}{67}{section*.32}%
+\contentsline {paragraph}{Second Joint}{67}{section*.33}%
+\contentsline {subsection}{\numberline {5.1.2}Interpolation Approach}{69}{subsection.5.1.2}%

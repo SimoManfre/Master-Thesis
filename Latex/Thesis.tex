@@ -12,10 +12,10 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage[section]{placeins}
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{svg}
-% \usepackage{ctable}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subfig}
 \usepackage{appendix}
@@ -24,6 +24,7 @@
 \usepackage{xcolor}
 \usepackage[autostyle,italian=guillemets]{csquotes}
 \usepackage{listings,xcolor}
+\addtolength{\textheight}{1cm}
 \DeclareMathOperator{\Tr}{Tr}
 \usetikzlibrary{decorations.text}
 \usetikzlibrary{arrows.meta}
@@ -1308,11 +1309,12 @@ where:
 \end{equation}
 Equation (\ref{VMS_dynamics}) is the post-impact dynamic model of the VMS containing the object. Both $M'$ and $C'$ are still dependent on $J_O$, which depends on the object's coordinates, but since the object is now captured by the manipulator, its coordinated coincide with the end-effector ones, and its velocities are found by differentization.
 \newpage
+\FloatBarrier
 \subsection{Free Motion}
 A simulation has been perfomed by means of the Mathematica software (version 13.2.1.0) with VMS paramers shown in Table~\ref{VMS_parameters} and the initial conditions shown in Tables~\ref{initial_positions}, \ref{initial_velocities}.\\
 The VMS parameters have been chosen following a real case scenario: the lenghts, radiuses and masses of the manipulator's arms are the ERA ones (see Table~\ref{SRMs_comparison} and [4]); the base mass is the mass of the ISS, on top of which the ERA is attached; the payload mass is the mass of a medium-size satellite; $\gamma$ is an arbitrary value.\\
-Regarding the VMS initial positions, the choice of the values will be explained in the next section. For this analysis, every initial position is valid. The initial velocities are zero for almost every VMS generalized coordinate (i.e we assume the base and manipulator still before the impact) and small initial velocities for the payload, as the case of satellite docking is taking into consideration: the ideal condition would be a null relative velocities, however, in a real case scenario, a non-zero relative veloties is present, hence it is taken into consideration.\\
-\begin{table}[h]
+Regarding the VMS initial positions, the choice of the values will be explained in the next section. For this analysis, every initial position is valid. The initial velocities are zero for almost every VMS generalized coordinate (i.e we assume the base and manipulator still before the impact) and small initial velocities for the payload, as the case of satellite docking is taken into consideration: the ideal condition would be a null relative velocities, however, in a real case scenario, a non-zero relative veloties is present.\\
+\begin{table}
   \caption{VMS parameters.}
   \label{VMS_parameters}
   \begin{center}
@@ -1325,7 +1327,7 @@ Regarding the VMS initial positions, the choice of the values will be explained 
   \end{tabular}
   \end{center}
 \end{table}
-\begin{table}[h]
+\begin{table}
   \caption{Simulation's initial positions.}
   \label{initial_positions}
   \begin{center}
@@ -1374,7 +1376,9 @@ For the post-impact analysis, the position of the object have been imposed again
 Having now the new post-impact $\psi_p$ generalized coordinates as a function of $p$, the object's jacobian can be expressed as a function of the VMS generalized coordinates too and $M'$ and $C'$ can be found according to (\ref{VMS_dynamics}).\\
 A control-free dynamics has been performed using as inital conditions the initial positions in Table~\ref{initial_positions} and the final velocities $\dot{p}_f$ found in the pre-impact analysis. As already stated at the beginning of this chapter, in fact, during the impact only the rates change, while the positions remain the same.\\
 A quick and intuitive visual result can be seen in Figure~\ref{no_control_result}, while the evolution of the generalized coordinates over time are reported in Figures~\ref{free_motion_1}, \ref{free_motion_2}.\\
-\begin{figure}
+It is interesting to notice that, in both cases, $\theta_0$ does not change over time: the absence of a torque applied to the base allows free rotation of $q_1$ around $z_b$, since the manipulator is directly attached to the CoM of the base (i.e. the arm does not apply any torque) and the base does not rotate.\\
+Furthermore, given the higher mass of the base with respect to the payload and manipulator masses, it moves very little and we can approximate it as still in the next calculations.\\
+\begin{figure}[!htb]
   \centering
   \subfloat[][\emph{Simulation 1.}]
   {\input{tikz/no_control_sol1.tikz}}
@@ -1383,39 +1387,38 @@ A quick and intuitive visual result can be seen in Figure~\ref{no_control_result
   \caption{Initial and final (dashed) position of the VMS after the impact for the two different simulations. In the left image, the satellite approaches the VMS with a west to east motion, while in the right one with a north to south motion.}
   \label{no_control_result}
 \end{figure}
-\begin{figure}
+\begin{figure}[!htb]
   \centering
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_x.svg}} \quad
+  {\includesvg[scale=0.37]{free_motion_x.svg}} \quad
 \subfloat
-  {\includesvg[scale=0.25]{free_motion_y.svg}} \\
+  {\includesvg[scale=0.37]{free_motion_y.svg}} \\
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_theta.svg}} \quad
+  {\includesvg[scale=0.37]{free_motion_theta.svg}} \quad
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_q1.svg}}\\
+  {\includesvg[scale=0.37]{free_motion_q1.svg}}\\
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_q2.svg}}
+  {\includesvg[scale=0.37]{free_motion_q2.svg}}
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one.}
   \label{free_motion_1}
 \end{figure}
-\begin{figure}
+\begin{figure}[!htb]
   \centering
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_x2.svg}}\quad
+  {\includesvg[scale=0.37]{free_motion_x2.svg}}\quad
 \subfloat
-  {\includesvg[scale=0.25]{free_motion_y2.svg}} \\
+  {\includesvg[scale=0.37]{free_motion_y2.svg}} \\
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_theta2.svg}}\quad
+  {\includesvg[scale=0.37]{free_motion_theta2.svg}}\quad
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_q12.svg}}\\
+  {\includesvg[scale=0.37]{free_motion_q12.svg}}\\
   \subfloat
-  {\includesvg[scale=0.25]{free_motion_q22.svg}}
+  {\includesvg[scale=0.37]{free_motion_q22.svg}}
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation two.}
   \label{free_motion_2}
 \end{figure}
-It is interesting to notice that, in both cases, $\theta_0$ does not change over time: the absence of a torque applied to the base allows free rotation of $q_1$ around $z_b$, since the manipulator is directly attached to the CoM of the base (i.e. the arm does not apply any torque) and the base does not rotate.\\
-Furthermore, given the higher mass of the base with respect to the payload and manipulator masses, it moves very little and we can approximate it as still in the next calculations.
 \newpage
+\FloatBarrier
 \subsection{Control Based Motion}
 A typical control block diagram is shown in Figure~\ref{block_diagram}. The sensors allow to keep track of the robot configuration $q,\dot{q}$ such that the controller can provide a control law to follow a desired behaviour.\\
 \begin{figure}[b]
@@ -1438,17 +1441,17 @@ Thus, we can rewrite the final equation of motion (\ref{final_equation_motion}):
     C'_{t}\\
     C'_{r}
   \end{bmatrix}=\begin{bmatrix}
-      0\\
+    \textbf{0}\\
       u
     \end{bmatrix}
     \label{one_control}
 \end{equation}
-where $p_t=\{x_b,y_b\}$ refers to the translational coordinates and $p_r=\{\theta_0,q_1,q_2\}$ to the rotational ones.\\
+where $p_t=\{x_b,y_b\}$ refers to the translational coordinates, $p_r=\{\theta_0,q_1,q_2\}$ to the rotational ones and $\textbf{0}\in \mathbb{R}^2$.\\
 By writing the translational coordinate as a function of the rotational ones
 \begin{equation}
   \ddot{p}_t=-M_{tt}^{-1'}(M'_{tr}\ddot{p}_r+C'_t)
 \end{equation}
-and by plugging in in the second row of (\ref{one_control}):
+and by plugging it in the second row of (\ref{one_control}):
 \begin{equation}
   \ddot{p}_r\tilde{M}+\tilde{C}=u
   \label{rotation_equation_motion}
@@ -1456,10 +1459,9 @@ and by plugging in in the second row of (\ref{one_control}):
 with
 \begin{equation}
 \begin{array}{c}
-  \tilde{M}=M_{rr}'M_{rt}'{M'}_{tt}^{-1}M_{tr}', \quad \tilde{C}=C_r'M_{rt}'{M'}_{tt}^{-1}C'_t
+  \tilde{M}=M_{rr}'-M_{rt}'{M'}_{tt}^{-1}M_{tr}', \quad \tilde{C}=C_r'-M_{rt}'{M'}_{tt}^{-1}C'_t
 \end{array}
 \end{equation}
-where $\textbf{0}\in \mathbb{R}^2$.\\
 If we knew perfectly the robot dynamics, we could use the following input (\textit{feed-forward}) to move the robot:
 \begin{equation}
   \hat{u}=\hat{M}\ddot{q}_d+\hat{C}(q_d,\dot{q}_d)
@@ -1520,31 +1522,31 @@ The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlle
 \begin{figure}
   \centering
   \subfloat
-  {\includesvg[scale=0.25]{controlled_motion_x.svg}}\quad
+  {\includesvg[scale=0.37]{controlled_motion_x.svg}}\quad
 \subfloat
-  {\includesvg[scale=0.25]{controlled_motion_y.svg}} \\
+  {\includesvg[scale=0.37]{controlled_motion_y.svg}} \\
   \subfloat
-  {\includesvg[scale=0.25]{controlled_motion_theta.svg}}\quad
+  {\includesvg[scale=0.37]{controlled_motion_theta.svg}}\quad
   \subfloat
-  {\includesvg[scale=0.25]{controlled_motion_q1.svg}
+  {\includesvg[scale=0.37]{controlled_motion_q1.svg}
   \label{q1_real}}\\
   \subfloat
-  {\includesvg[scale=0.25]{controlled_motion_q2.svg}}
+  {\includesvg[scale=0.37]{controlled_motion_q2.svg}}
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one. In yellow, an underdamped behaviour ($\xi=0.5$), in blue a critically damped behaviour ($\xi=1$), in green an overdamped behaviour ($\xi=1.5$).}
   \label{controlled_motion_1}
 \end{figure}
 \begin{figure}
   \centering
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_x2.svg}}\quad
+  {\includesvg[scale=0.37]{controlled_motion_x2.svg}}\quad
 \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_y2.svg}} \\
+  {\includesvg[scale=0.37]{controlled_motion_y2.svg}} \\
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_theta2.svg}}\quad
+  {\includesvg[scale=0.37]{controlled_motion_theta2.svg}}\quad
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_q12.svg}}\\
+  {\includesvg[scale=0.37]{controlled_motion_q12.svg}}\\
   \subfloat
-  {\includesvg[scale=0.28]{controlled_motion_q22.svg}}
+  {\includesvg[scale=0.37]{controlled_motion_q22.svg}}
   \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation two.}
   \label{controlled_motion_2}
 \end{figure}
@@ -1771,10 +1773,13 @@ Following the same procedure shown in the previous Chapter and in Section~\ref{r
 similar to (\ref{VMS_dynamics}) and with $p$ as in (\ref{new_coordinates}).
 \newpage
 \subsection{Free Motion}
+The frequency equation (\ref{freq_equation}) is a trascendental equation, so it has been solved with a finding-root algorithm (Mathematica provides it with a built-in command \texttt{FindRoot}), as shown in Figures~\ref{freq_plot_1} and \ref{freq_plot_2}.
+A free motion simulation has been performed with the same initial condition and parameters of the previous section, adding the new ones exposed in Table~\ref{elastic_paramters}. The joints' evolution can be seen in Figure~\ref{free_elastic_1} and \ref{free_elastic_2}.
 \chapter{Inertial and Kinetics Properties Retrieval}
 In the previous chapter, the captured object has been considered as a deterministic disturbance, i.e. the inertia and dynamic properties have been supposed known.\\
 However, in real case scenarios, the payload mass can be unknown (e.g. the captured of a small metoerite or of a satellite with estimated mass).\\
 In this chapter, the same problem of payload docking will be anlysed supposing unknown mass, trying to retrive it from the manipulator post-impact dynamics together with its initial velocities, which are not known a priori.
+\newpage
 \section{Mass Extraction}
 When the mass is not known, an estimate of the mass has to be injected in the control law (\ref{feedback_linearization}). This value can be estimated by visual techniques or thanks to previus knowledge.\\
 Before starting to calculate the real mass, some approximations has to be taken into account:
@@ -1789,9 +1794,9 @@ Figure~\ref{approximations} shows two time evolutions of the displacement of bot
 \begin{figure}
   \centering
   \subfloat[\emph{$q_1$ time evolution.}]
-  {\includesvg[scale=0.27]{approximation_1.svg}} \\
+  {\includesvg[scale=0.4]{approximation_1.svg}} \\
 \subfloat[\emph{$q_2$ time evolution.}]
-  {\includesvg[scale=0.27]{approximation_2.svg}}
+  {\includesvg[scale=0.4]{approximation_2.svg}}
   \caption{Arms behaviours with estimated mass \SI{2000}{\kilogram}, with (orange) and without (blue) approximations for the first simulation.}
   \label{approximations}
 \end{figure}
@@ -1816,15 +1821,16 @@ When the new control law with the estimated mass is applied, the behaviours is n
   \xi'=\frac{\tilde{m}k_v}{2\omega_n m}=\frac{\tilde{m}2\sqrt{k_p}}{2\sqrt{\frac{\tilde{m}}{m}k_p} m}=\sqrt{\frac{\tilde{m}}{m}}
   \label{mass_relation}
 \end{equation}
+\newpage
 \subsection{Symbolic Approach}
 Now that we have linear second order differential equations, like the ones in equation (\ref{approx_dynamics}), two methods have been introduced to retrieve the inertial properties of the payload (i.e. its mass). The first one, exposed in this section, is based on the fact that the solution of equations (\ref{approx_dynamics}) is known.\\
 However, not only its solution is known in closed form, but it is possible to find the exact solution by solving directly the second order equation. Both approaches are exploited.
 \subsubsection{Direct Solution}
 Given the simplicity of the equation of motions, a direct symbolic solution, containing $\tilde{m}$ as a parameter, can be easily found (i.e. $q(t,\tilde{m})$).\\
 Figure~\ref{parametric_plot} shows how the time response of the first joint for the first simulation changes according to the estimated mass. It is of particular interest the increasing of the first peak as the estimated mass increases.\\
-\begin{figure}
+\begin{figure}[!b]
   \centering
-  \includesvg[scale=0.35]{parametric_plot.svg}
+  \includesvg[scale=0.45]{parametric_plot.svg}
   \caption{Parametric plot of the first joint's time evolution, first simulation. The real mass is $\SI{3000}{\kilogram}$. A visual parameter setting can be possibile by confronting this plot with the real one (see Figure~\ref{q1_real}).}
   \label{parametric_plot}
 \end{figure}
@@ -1894,5 +1900,6 @@ By differentization of the above equation, one gets:
 \end{array}
 \end{equation}
 but since the initial position $q_{2,0}=\pi/2$, the second term becomes zero and we end up with equation (\ref{time_solution}) again. Hence, the same procedure holds.
+\newpage
 \subsection{Interpolation Approach}
 \end{document}
