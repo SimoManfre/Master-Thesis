@@ -71,21 +71,21 @@
 \vspace{7mm}
 \uppercase{Final Dissertation}
 \vspace{7mm}\\
-\huge{Titolo}
+\huge{Dynamics of a Space Robot Subjected to an Impact}
 \end{center}
 
 \vspace{8mm}
 \begin{flushleft}
 \large{\textbf{Supervisor:}\\ Daniele Bortoluzzi}\\
-\vspace{5mm}
+\vspace{3mm}
 \large{\textbf{Co-supervisor:}\\ Edoardo Dalla Ricca}\\
-\vspace{5mm}
+\vspace{3mm}
 \large{\textbf{Student:}\\ Simone Manfredi 239337}\\
 \end{flushleft}
 
-\vspace{15mm}
+\vspace{20mm}
 \begin{center}
-\Large{Academic Year 2023/2024}
+\Large{Academic Year 2024/2025}
 \end{center}
 
 \end{titlepage}
@@ -1836,7 +1836,7 @@ Figure~\ref{parametric_plot} shows how the time response of the first joint for 
 \end{figure}
 Hence, once the peak time $t*$ is found, the real mass can be calculated by solving the following equation:
 \begin{equation}
-  q(t*,\tilde{m})=q*
+  q(t^*,\tilde{m})=q^*
 \end{equation}
 with $q*$ the peak value.
 \subsubsection{Closed Form Solution}
@@ -1891,15 +1891,8 @@ The total solution will be given by the sum of the homogeneous and the particula
 \begin{equation}
   q_2(t)=q_{2,d}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]+\Big[q_0\cos{(\omega_d)t}+\frac{\dot{q}_0+\xi\omega_n q_0}{\omega_d}\sin{(\omega_dt)}\Big]e^{-\xi \omega_n t}
 \end{equation}
-By differentization of the above equation, one gets:
-\begin{equation}
-  \begin{array}{c}
-  \begin{tiny}
-  \frac{e^{-\xi \omega t}\{2 \dot{q}_0 [\sqrt{1-\xi^2} \cos (\omega_dt)-\xi \sin (\omega_dt)]-(\pi -2 q_0) \omega [\xi \sqrt{1-\xi^2} \cos (\omega_dt)-(\xi^2-1) \sin (\omega_dt)]\}}{2 \sqrt{1-\xi^2}}=0
-\end{tiny}
-\end{array}
-\end{equation}
-but since the initial position $q_{2,0}=\pi/2$, the second term becomes zero and we end up with equation (\ref{time_solution}) again. Hence, the same procedure holds.
+It can be shown that, by differentiation of the above equation, one still gets equation~(\ref{time_solution}).
+Hence, the same procedure holds.
 \newpage
 \subsection{Interpolation Approach}
 \end{document}
