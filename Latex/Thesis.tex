@@ -1353,8 +1353,8 @@ Regarding the VMS initial positions, the choice of the values will be explained 
   $\dot{y_b}$&\SI{0}{\metre\per\second}&\SI{0}{\metre\per\second}\\
   $\dot{q_1}$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
   $\dot{q_2}$&\SI{0}{\radian\per\second}&\SI{0}{\radian\per\second}\\
-  $\dot{x_O}$&\SI{-0.1}{\metre\per\second}&\SI{0}{\metre\per\second}\\
-  $\dot{y_O}$&\SI{0}{\metre\per\second}&\SI{-0.1}{\metre\per\second}\\
+  $\dot{x_O}$&\SI{1}{\metre\per\second}&\SI{0}{\metre\per\second}\\
+  $\dot{y_O}$&\SI{0}{\metre\per\second}&\SI{-1}{\metre\per\second}\\
   $\dot{\theta}_O$&\SI{0.01}{\radian\per\second}&\SI{0.01}{\radian\per\second}\\
   \bottomrule
   \end{tabular}
@@ -1419,7 +1419,7 @@ Furthermore, given the higher mass of the base with respect to the payload and m
 \end{figure}
 \newpage
 \FloatBarrier
-\subsection{Control Based Motion}
+\subsection{Control Based Motion}\label{control_motion}
 A typical control block diagram is shown in Figure~\ref{block_diagram}. The sensors allow to keep track of the robot configuration $q,\dot{q}$ such that the controller can provide a control law to follow a desired behaviour.\\
 \begin{figure}[b]
   \centering
@@ -1449,7 +1449,7 @@ Thus, we can rewrite the final equation of motion (\ref{final_equation_motion}):
 where $p_t=\{x_b,y_b\}$ refers to the translational coordinates, $p_r=\{\theta_0,q_1,q_2\}$ to the rotational ones and $\textbf{0}\in \mathbb{R}^2$.\\
 By writing the translational coordinate as a function of the rotational ones
 \begin{equation}
-  \ddot{p}_t=-M_{tt}^{-1'}(M'_{tr}\ddot{p}_r+C'_t)
+  \ddot{p}_t=-{M'}_{tt}^{-1}(M'_{tr}\ddot{p}_r+C'_t)
 \end{equation}
 and by plugging it in the second row of (\ref{one_control}):
 \begin{equation}
@@ -1578,12 +1578,12 @@ By defining $\,dV=\frac{\partial V}{\partial x}\,dx$ and $\,dM=\frac{\partial M}
 \begin{equation}
   ES\frac{\partial^4w(x,t)}{\partial x^4}+\rho A\frac{\partial^2w(x,t)}{\partial t^2}=f(x,t)
 \end{equation}
-and, by defining $c=\sqrt{\frac{EI}{\rho A}}$ as the speed of longitudinal deformation, we get:
+and, by defining $c=\sqrt{\frac{ES}{\rho A}}$ as the speed of longitudinal deformation, we get:
 \begin{equation}
 c^2\frac{\partial^4w(x,t)}{\partial x^4}+\frac{\partial^2w(x,t)}{\partial t^2}=f(x,t)
 \label{forced}
 \end{equation}
-$EI$ can also be referred to \textit{flexural rigidity} of the beam.\\
+$ES$ can also be referred to \textit{flexural rigidity} of the beam.\\
 The free vibration equation is obtained by imposing $f(x,t)=0$:\\
  \begin{equation}
 c^2\frac{\partial^4w(x,t)}{\partial x^4}+\frac{\partial^2w(x,t)}{\partial t^2}=0
@@ -1655,8 +1655,8 @@ Furthermore, experiments and recent analytical studies have shown that the clamp
 Concerning the remaining boundary conditions, we consider mass boundary conditions representing balance of moment and shearing force owing to other links of the serial structure of robot manipulators and the payload [17, 18]:
 \begin{equation}
   \begin{array}{c}
-  (EI)_i\frac{\partial^2w_i(l_i,t)}{\partial x^2}=-J_{L_i}\frac{d^2}{dt^2}\Big(\frac{\partial w_i(l_i,t)}{\partial x}\Big)-M_{D_i}\frac{d^2}{dt^2}w_i(l_i,t)\\
-  (EI)_i\frac{\partial^3w_i(l_i,t)}{\partial x^3}=-M_{L_i}\frac{d^2}{dt^2}w_i(l_i,t)+M_{D_i}\frac{d^2}{dt^2}\frac{\partial w_i(l_i,t)}{\partial x}
+  (ES)_i\frac{\partial^2w_i(l_i,t)}{\partial x^2}=-J_{L_i}\frac{d^2}{dt^2}\Big(\frac{\partial w_i(l_i,t)}{\partial x}\Big)-M_{D_i}\frac{d^2}{dt^2}w_i(l_i,t)\\
+  (ES)_i\frac{\partial^3w_i(l_i,t)}{\partial x^3}=-M_{L_i}\frac{d^2}{dt^2}w_i(l_i,t)+M_{D_i}\frac{d^2}{dt^2}\frac{\partial w_i(l_i,t)}{\partial x}
   \end{array}
   \label{boundary_conditions}
 \end{equation}
@@ -1708,7 +1708,7 @@ The remaining constant in equation (\ref{lateral_solution}) (i.e. $C_{i,j}$) is 
 \begin{equation}
   \int_{0}^{l_i}\rho_i A_i W_{i,j}^2(x)dx=1
 \end{equation}
-where the RHS of the equation is the modal mass of the $j$th mode of the $i$th link.\\
+where the RHS of the equation is the modal mass of the $j$th mode of the $i$th link and $\rho_i=m_i/l_i$.\\
 Mode shapes, in fact, can be normalized in different ways (normalization to the unit length vector, normalization to the largest component equal to unity), but the mass normalization is the most common one [19, 20], since it allows to have modal displacements with a physical meaning, since they are related to the modal mass.\\
 The choice of the normalization, however, does not affect the value of the natural frequencies, which are the same for all the normalizations and depend only on equation (\ref{freq_equation}).\\
 
@@ -1773,8 +1773,207 @@ Following the same procedure shown in the previous Chapter and in Section~\ref{r
 similar to (\ref{VMS_dynamics}) and with $p$ as in (\ref{new_coordinates}).
 \newpage
 \subsection{Free Motion}
-The frequency equation (\ref{freq_equation}) is a trascendental equation, so it has been solved with a finding-root algorithm (Mathematica provides it with a built-in command \texttt{FindRoot}), as shown in Figures~\ref{freq_plot_1} and \ref{freq_plot_2}.
-A free motion simulation has been performed with the same initial condition and parameters of the previous section, adding the new ones exposed in Table~\ref{elastic_paramters}. The joints' evolution can be seen in Figure~\ref{free_elastic_1} and \ref{free_elastic_2}.
+The frequency equation (\ref{freq_equation}) is a trascendental equation, so it has been solved with a finding-root algorithm (Mathematica provides it with a built-in command \texttt{FindRoot}).\\
+A free motion simulation has been performed with the same initial condition and parameters of the previous section, adding the new ones exposed in Table~\ref{elastic_parameters}. The arms flexural rigidity $ES_i$ has been calculated by considering a circular cross section with diameter $d$, which gives us the value of the area moment of inertia:
+\begin{equation}
+  S=\frac{\pi}{64}d^4
+\end{equation}
+and as materia aluminum, which has a Young's modulus $E\approx \SI{70}{\giga\pascal}$.\\
+Only one mode has been taken into consideration for the complexity of the calculations (i.e. $n=1$).\\
+The joints' evolution can be seen in Figure~\ref{free_elastic_1} and \ref{free_elastic_2}.\\
+As it can be seen, the rigid coordinates have the same behaviour as in the rigid case, as it should be, with the only difference that a little vibration is present.\\
+Furthermore, the initial velocity of the elastic coordinates has the same sign (direction) of the rigid's ones. This makes sense, since when the arm starts to move, it starts to vibrate in the same direction.\\
+It is interesting to notice that for both simulations, one arm's vibration seems to diverge. To better inspect this phenomenum, a longer temporal window of the two joints in the first simulation has been analyze in Figure~\ref{beat}. For some instants, such as for $t=\SI{40}{\second}$, the two arms reach the highest amplitude at the same time, while for others, like $t=\SI{50}{\second}$, one's amplitude increases while the other's reaches its minimum.\\
+If we look at the configuration of the arm at those instant we would see that in the first case the manipulator is fully streched, meaning that it reaches its singular configuration, while in the second case the angle between the two arms is \SI{90}{\degree}. It is possible to conclude that, given the non-constant relative position between the manipulator's arms, the vibration of one influences the second's and that when they are aligned they enforce each other vibration, whereas when they are orthogonal one vibration is suppressed by the other.
+\begin{table}[h]
+  \caption{VMS elastic parameters.}
+  \label{elastic_parameters}
+  \begin{center}
+  \begin{tabular}{cccccccc}
+    \toprule
+    $\rho_1$&$\rho_2$&$ES_1$&$ES_2$&$A_1$&$A_2$\\
+  \midrule
+    \SI{53.67}{\kilogram\over\metre}&\SI{53.67}{\kilogram\over\metre}&\SI{1.14e7}{\newton\over\metre^2}&\SI{1.14e7}{\newton\over\metre^2}&\SI{4.52e-2}{\metre^2}&\SI{4.52e-2}{\metre^2}\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+\end{table}
+\begin{figure}[h]
+  \centering
+  \subfloat{\includesvg[scale=0.35]{elastic_free_x.svg}} \quad
+  \subfloat{\includesvg[scale=0.35]{elastic_free_y.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_free_theta.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_free_q1.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_free_q2.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_free_QQ1.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_free_QQ2.svg}}\\
+  \caption{VMS generalized coordinates’ displacement after the catching of the payload
+  when no control is performed, Simulation 1. Arms modeled as Euler-Bernoulli beams.}
+  \label{free_elastic_1}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \subfloat{\includesvg[scale=0.35]{elastic_free_x2.svg}} \quad
+  \subfloat{\includesvg[scale=0.35]{elastic_free_y2.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_free_theta.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_free_q12.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_free_q22.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_free_QQ12.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_free_QQ22.svg}}\\
+  \caption{VMS generalized coordinates’ displacement after the catching of the payload
+  when no control is performed, Simulation 2. Arms modeled as Euler-Bernoulli beams.}
+  \label{free_elastic_2}
+\end{figure}
+\begin{figure}
+  \centering
+  \subfloat[\emph{First joint.}]{\includesvg[scale=0.6]{beat_1.svg}}\\
+  \subfloat[\emph{Second joint.}]{\includesvg[scale=0.6]{beat_2.svg}}\\
+  \caption{Extended temporal window of joints' elastic coordinates for Simulation 1. The oscillations change in time due to the movement of the arms.}
+  \label{beat}
+\end{figure}
+\newpage
+\section{Control Based Motion}
+As mentioned in [13], for flexible-link manipulators the control is not straightforward, because it involves the elastic degrees of freedom. Also, measurement of the angle between two links at a joint represent the sum of the angle between the two co-ordinate frames and the slopes of the elastic deformation at the joints.\\
+There can be three approaches for the flexible system control:
+\begin{itemize}
+  \item Elastic effects are ignored, i.e. the equation of motion is assumed to be as in (\ref{final_equation_motion}). The torque computed by this model would give good results only if the elastic effects are
+  negligible, otherwise it may result in gross inaccuracies in the positioning of the end-effector.
+  \item The elastic effects are included in the mathematical model, and their amplitudes could be determined from the sensor readings by means of an estimator. This model treats the elastic deformations as known disturbances, but does not explicitly control them.
+  \item Active control of both the rotational and bending co-ordinates, which is achieved by applying both torques and generalized forces. Such control is possible only if actuators capable of applying transverse forces to the links are present. Additionally, measurements of the elastic generalized coordinates and their rates must be available.
+\end{itemize}
+Since we have already analyzed the first (rigid) case and the third would require addiction sensors and further research in the "vibration control" field, the only feasible model is the second one.\\
+Similarly to what has been done in Section~\ref{control_motion} and equation (\ref{one_control}), only the rotational coordinates $q_1$ and $q_2$ are actively controlled. This time, however, the distinction is between translational, rotational and elastic:
+\begin{equation}
+  \begin{bmatrix}
+    M'_{tt}&M'_{tr}&M'_{te}\\
+    M'_{rt}&M'_{rr}&M'_{re}\\
+    M'_{et}&M'_{er}&M'_{ee}
+  \end{bmatrix}
+  \begin{bmatrix}
+    \ddot{p}_t\\
+    \ddot{p}_r\\
+    \ddot{p}_e
+  \end{bmatrix}+\begin{bmatrix}
+    C'_t\\
+    C'_r\\
+    C'_e
+  \end{bmatrix}=\begin{bmatrix}
+    \textbf{0}\\
+    u\\
+    \textbf{0}
+    \end{bmatrix}
+    +\begin{bmatrix}
+      0&0&0\\
+      0&0&0\\
+      0&0&K
+    \end{bmatrix}\begin{bmatrix}
+      p_r\\
+      p_t\\
+      p_e
+    \end{bmatrix}
+\end{equation}
+For simplicity, we move the uncontrolled coordinates together:
+\begin{equation}
+  \begin{bmatrix}
+    M'_{rr}&M'_{rt}&M'_{re}\\
+    M'_{tr}&M'_{tt}&M'_{te}\\
+    M'_{er}&M'_{et}&M'_{ee}
+  \end{bmatrix}
+  \begin{bmatrix}
+    \ddot{p}_r\\
+    \ddot{p}_t\\
+    \ddot{p}_e
+  \end{bmatrix}+\begin{bmatrix}
+    C'_r\\
+    C'_t\\
+    C'_e
+  \end{bmatrix}=\begin{bmatrix}
+    u\\
+    \textbf{0}\\
+    \textbf{0}
+    \end{bmatrix}
+\end{equation}
+with $M'_{jk}=M'_{kj}$ for the symmetry property of the mass matrix and its submatrices.\\
+Now, by setting:
+\begin{equation}
+  \begin{bmatrix}
+    p_t\\
+    p_e
+  \end{bmatrix}=p_{nc}, \quad \quad \bar{K}=\begin{bmatrix}
+    0&0\\
+    0&K
+  \end{bmatrix}
+\end{equation}
+where $nc$ stands for "non-controlled", we get to the following equation:
+\begin{equation}
+  \begin{bmatrix}
+    M'_{rr}&M'_{r,nc}\\
+    M'_{nc,r}&M'_{nc,nc}
+  \end{bmatrix}\begin{bmatrix}
+    \ddot{p}_r\\
+    \ddot{p}_{nc}
+  \end{bmatrix}+\begin{bmatrix}
+    C'_r\\
+    C'_{nc}
+  \end{bmatrix}+\begin{bmatrix}
+    0&0\\
+    0&\bar{K}
+  \end{bmatrix}\begin{bmatrix}
+    p_r\\
+    p_{nc}
+  \end{bmatrix}=\begin{bmatrix}
+    u\\
+    \textbf{0}
+  \end{bmatrix}
+\end{equation}
+In this way we have arrived to a similar formulation as the one in (\ref{one_control}). By writing the uncontrolled coordinate as a function of the rotational ones:
+\begin{equation}
+  \ddot{p}_{nc}=-{M'}_{nc}^{-1}({M'}_{nc,r}\ddot{p}_r+{C'}_{nc}+\bar{K})
+\end{equation}
+and pluggin it in the first row:
+\begin{equation}
+  \bar{M}\ddot{p}_r+\bar{C}=u
+\end{equation}
+with:
+\begin{equation}
+  \bar{M}=M'_{rr}-M'_{nc,r}{M'}_{nc,nc}^{-1}M'_{nc,r}, \quad \bar{C}=C'_r-M'_{r,nc}{M'}_{nc,nc}^{-1}C'_{nc}-{M'}_{r,nc}{M'}_{nc,nc}^{-1}\bar{K}p_{nc}
+\end{equation}
+Through a feedback linearization (\ref{feedback_linearization}), we can control the manipulator's joints $p_r=\{q_1,q_2\}$ letting $p_{nc}=\{x_b,y_b,\theta_0,Q_1,Q_2\}$ free to move.\\
+Figures~\ref{contolled_elastic_1} and \ref{controlled_elastic_2} show the VMS behaviour after the impact. Now, since the arms do not move anymore after the system has reached the equilibrium position, the oscilations of the arms is constant in time (and do not damped out since no damping has been considered, see Figure~\ref{no_beat}).\\
+Again, the rigid coordinated behave in a similar way as for the rigid case.
+\begin{figure}[h]
+  \centering
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_x.svg}} \quad
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_y.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_theta.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_q1.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_q2.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ1.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ2.svg}}\\
+  \caption{VMS generalized coordinates’ displacement after the catching of the payload
+  when no control is performed, Simulation 1. Arms modeled as Euler-Bernoulli beams.}
+  \label{contolled_elastic_1}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_x2.svg}} \quad
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_y2.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_theta.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_q12.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_q22.svg}}\\
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ12.svg}}\quad
+  \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ22.svg}}\\
+  \caption{VMS generalized coordinates’ displacement after the catching of the payload
+  when no control is performed, Simulation 2. Arms modeled as Euler-Bernoulli beams.}
+  \label{controlled_elastic_2}
+\end{figure}
+\begin{figure}
+  \centering
+  \subfloat[\emph{First joint.}]{\includesvg[scale=0.6]{no_beat_1.svg}}\\
+  \subfloat[\emph{Second joint.}]{\includesvg[scale=0.6]{no_beat_2.svg}}\\
+  \caption{Extended temporal window of joints' elastic coordinates for Simulation 1. The oscillations are constant, since the arms do not move after the impact.}
+  \label{no_beat}
+\end{figure}
 \chapter{Inertial and Kinetics Properties Retrieval}
 In the previous chapter, the captured object has been considered as a deterministic disturbance, i.e. the inertia and dynamic properties have been supposed known.\\
 However, in real case scenarios, the payload mass can be unknown (e.g. the captured of a small metoerite or of a satellite with estimated mass).\\
@@ -2020,7 +2219,7 @@ As it can be seen, when the displacement of one arm is little (e.g. when $q_{2,0
 Similarly, the more the behaviour of one arm affects the movement of the other, the greater the approximation error is.\\
 However, the linear error can be reduced by enambling a stronger control input, for example by increasing the proportional gain $K_p$, which assures faster convergence to the desired value but could enhance overshoots (if not critically damped). On the other hand, the approximation error relies on the geometry of the impact and it is more difficult to control.\\
 Figures~\ref{q201},~\ref{q261},~\ref{q241},~\ref{q231} and \ref{q221} show the mass found with the joints' decoupling methods for different guessed masses $\hat{m}$ for the first simulation. Since for each joint we can evaluate one mass (i.e. two retrived masses), its final value was obtained as the mean of the two. However, there are cases where the joint does not move and it is not possible to find the real mass: in those cases only the final mass found with the other joint is used (e.g. for the first simulation and $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$, the second joint, which lies on the satellite velocity direction does not move or very little).\\
-Furthermore, there could be cases where no arm moves: in the singular configuration ($q_{1,0}=\SI{0}{\radian}$ and $q_{2,0}=\SI{0}{\radian}$), for the second simulation (i.e. when the satellite approaches with zero velocity in the $x$ direction) both arms remain still and only translation of the VMS occurs. This is why in the Appendix, where the same Figures are shown for the second simulation, there is no plot of the configuration $q_{2,0}=\SI{0}{\radian}$.\\
+Furthermore, there could be cases where no arm moves: in the singular configuration ($q_{1,0}=\SI{0}{\radian}$ and $q_{2,0}=\SI{0}{\radian}$), for the second simulation (i.e. when the satellite approaches with zero velocity in the $x$ direction) both arms remain still and only translation of the VMS occurs (see Figure~\ref{controlled_motion_2}). This is why in the Appendix, where the same Figures are shown for the second simulation, there is no plot of the configuration $q_{2,0}=\SI{0}{\radian}$.\\
 With the uncoupled method, only the mass and linearization error hold, since no approximation has been done. As a consequence, the result are much more reliable and consistent, as Figures~\ref{uncoupled_1} and \ref{uncoupled_2} show for both simulation and all considered configurations.\\
 As already mentioned, for the second simulation no mass can be retrived when the manipulator's configuration is singular.\\
 The method shown here is the continous one only, since the discrete one gives similar results, as shown in Tables~\ref{uncoupled_comparison_1} and \ref{uncoupled_comparison_2}.

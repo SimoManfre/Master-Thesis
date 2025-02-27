@@ -29,20 +29,21 @@
 \contentsline {subsection}{\numberline {4.1.2}Control Based Motion}{50}{subsection.4.1.2}%
 \contentsline {section}{\numberline {4.2}Elastic Bodies}{55}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Free Motion}{62}{subsection.4.2.1}%
-\contentsline {chapter}{\numberline {5}Inertial and Kinetics Properties Retrieval}{63}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Mass Extraction: Joints' Decoupling}{65}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Direct Solution}{67}{subsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.1}Position Roots}{67}{subsubsection.5.1.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.1.2}Mass Fit}{67}{subsubsection.5.1.1.2}%
-\contentsline {subsection}{\numberline {5.1.2}Closed Form Solution}{69}{subsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.2.1}Derivative Roots}{69}{subsubsection.5.1.2.1}%
-\contentsline {subsubsection}{\numberline {5.1.2.2}Damping Coefficient and Natural Frequency Fit}{70}{subsubsection.5.1.2.2}%
-\contentsline {section}{\numberline {5.2}Mass Extraction: Coupled Solution}{71}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Continuous Domain}{71}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Discrete Domain}{72}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Velocity Extraction}{73}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Results and Conclusion}{74}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Mass Retrieval}{75}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Velocity Retrieval}{83}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Results' Analysis}{86}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Final Considerations}{87}{section.6.4}%
+\contentsline {section}{\numberline {4.3}Control Based Motion}{66}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Inertial and Kinetics Properties Retrieval}{71}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Mass Extraction: Joints' Decoupling}{73}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Direct Solution}{75}{subsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.1}Position Roots}{75}{subsubsection.5.1.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1.2}Mass Fit}{75}{subsubsection.5.1.1.2}%
+\contentsline {subsection}{\numberline {5.1.2}Closed Form Solution}{77}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}Derivative Roots}{77}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}Damping Coefficient and Natural Frequency Fit}{78}{subsubsection.5.1.2.2}%
+\contentsline {section}{\numberline {5.2}Mass Extraction: Coupled Solution}{79}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Continuous Domain}{79}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Discrete Domain}{80}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Velocity Extraction}{81}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Results and Conclusion}{82}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Mass Retrieval}{83}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Velocity Retrieval}{91}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Results' Analysis}{94}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Final Considerations}{95}{section.6.4}%
