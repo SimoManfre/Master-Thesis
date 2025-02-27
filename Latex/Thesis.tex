@@ -1778,121 +1778,400 @@ A free motion simulation has been performed with the same initial condition and 
 \chapter{Inertial and Kinetics Properties Retrieval}
 In the previous chapter, the captured object has been considered as a deterministic disturbance, i.e. the inertia and dynamic properties have been supposed known.\\
 However, in real case scenarios, the payload mass can be unknown (e.g. the captured of a small metoerite or of a satellite with estimated mass).\\
-In this chapter, the same problem of payload docking will be anlysed supposing unknown mass, trying to retrive it from the manipulator post-impact dynamics together with its initial velocities, which are not known a priori.
-\newpage
-\section{Mass Extraction}
+In this chapter, the same problem of payload docking will be anlysed supposing unknown mass, trying to retrive it from the manipulator post-impact dynamics together with its initial velocities, which are not known a priori.\\
+Only the rigid-bodies scenario will be taken into account, as the elastic-bodies one would require a lot of computational power and is very similar.\\
 When the mass is not known, an estimate of the mass has to be injected in the control law (\ref{feedback_linearization}). This value can be estimated by visual techniques or thanks to previus knowledge.\\
 Before starting to calculate the real mass, some approximations has to be taken into account:
 \begin{itemize}
-  \item the spacecraft does not move; this has already been shwon as a good approximation in the previous chapter
-  \item the spacecraft does not rotate; this has also been shown in the previuos calculations (see Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2})
-  \item the displacement of one arm in the controlled dyanamics is negligible for the displacement of the other arm. From Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2} it can be seen that also the arms displacement is little, so we can approximate them to zero when analyzing the other arm's dynamics
-  \item given the little displacements after the impact, the mass and Coriolis' matrices can be linearized around the equilibrium position
+  \item the spacecraft does not move; this has already been shwon as a good approximation in the previous chapter;
+  \item the spacecraft does not rotate; this has also been shown in the previuos calculations (see Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2});
+  \item given the little displacements after the impact, the dynamic can be linearized around the equilibrium position.
 \end{itemize}
-With these suppositions, we can uncouple the dynamics of the two arms, since the accelerations and velocities of the all other coordinates are set to zero. We can furthermore set $C'=\hat{C'}$, since it depends on the coordinates positions and velocites.\\
-Figure~\ref{approximations} shows two time evolutions of the displacement of both arms with and without applying the approximation made above. The behaviour is almost identical.\\
-\begin{figure}
+The VMS dynamics was described by the following equation:
+\begin{equation}
+  M'\ddot{p}+C'=u
+\end{equation}
+but under these assumptions, it can be rewritten as:
+\begin{equation}
+  M'(q_1,q_2)\begin{bmatrix}
+    \ddot{q}_1\\
+    \ddot{q}_2
+  \end{bmatrix}+C'(q_1,q_2,\dot{q}_1,\dot{q}_2)=u(q_1,q_2,\dot{q}_1,\dot{q}_2)
+\end{equation}
+Furthermore, the dynamics can be linearized around the equilibrium position (i.e. the initial one) through a Taylor expansion up to the first order:
+\begin{equation}
+  D(\textbf{x})=D(q_1,q_2,\dot{q}_1,\dot{q}_2,\ddot{q}_1,\ddot{q}_2)=M'(q_1,q_2)\begin{bmatrix}
+    \ddot{q}_1\\
+    \ddot{q}_2
+  \end{bmatrix}+C'(q_1,q_2,\dot{q}_1,\dot{q}_2)
+\end{equation}
+\begin{equation}
+  D(\textbf{x})\approx D(\bar{\textbf{x}})+(\textbf{x}-\bar{\textbf{x}})^T\nabla T(\textbf{x})
+\end{equation}
+where $\bar{\textbf{x}}=\{q_{1,0},q_{2,0},0,0,0,0\}$ is the equilibrium point and $\nabla T(\bar{\textbf{x}})$ is the gradient of $T(\textbf{x})$ evaluated at $\textbf{x}=\bar{\textbf{x}}$. The formula used in Mathematics is available in the Appendix.\\
+The control can now be found as in equation (\ref{feedback_linearization}):
+\begin{equation}
+  u=\hat{M}[\ddot{q}_d+K_d(\dot{q}_d-\dot{q})+K_p(q_d-q)]+\hat{C}
+\end{equation}
+with $q=\{q_1,q_2\}$, but now the mass inside the control is a guessed mass, different from the actual one and thus $\hat{M}\neq M'$, $\hat{C}\neq C'$, where the "hat" matrices are the ones where the real mass of the captures satellite has been substitute with the initial guess mass.\\
+However, after linearization $C'=0$ and the only error in the new equation is due to the mass matrix (along with the linearization error). The input becomes then:
+\begin{equation}
+  u_{lin}=\hat{M}_{lin}[\ddot{q}_d+K_d(\dot{q}_d-\dot{q})+K_p(q_d-q)]
+\end{equation}
+and the final coupled dynamics:
+\begin{equation}
+  M_{lin}\ddot{q}+C_{lin}\dot{q}+K_{lin}q-\delta=0
+\end{equation}
+where $C_{lin}$ and $K_{lin}$ come from the linearized control input $u_{lin}$ and $\delta$ from the desired final positions.\\
+Different approaches have been investigated to find the actual mass and they will be hereafter investigates, from the worst to the best one.
+\newpage
+\section{Mass Extraction: Joints' Decoupling} \label{decoupling}
+The first method requires another strong assumption that will be validated a posteriori: the displacement of one arm in the controlled dyanamics is negligible for the displacement of the other arm. From Figures~\ref{controlled_motion_1}, \ref{controlled_motion_2} it can be seen that also the arms displacement is little, so we can approximate them to zero when analyzing the other arm's dynamics.\\
+This is true when $\hat{M}=M'$, for the input control has been design to automatically uncouple the equations, so when the error is small we can approximate the real mass matrix with the guessed one and decouple the equation. The nearer to the true mass the guessed one is, the more accurate will be its retrival.\\
+Conceptually, we can see the input control as follows:
+\begin{equation}
+  u=-M'[K_d\dot{q}+K_p(q-q_d)]+C-dM[K_d\dot{q}+K_p(q-q_d)]+dC=u_e+du
+\end{equation}
+where the effective control $u_e$ is the one which decoples the equations and the error input $du$ couple them again due to the error matrices $dM$ and $dC$.\\
+After linearization, however, we can make use of one fundamental property of linear systems, which is the superposition principle (i.e. a linear combination of inputs produces a linear combination of the outputs):
+\begin{equation}
+  \begin{cases}
+    M_{lin}\ddot{q}=u_{lin,e}\\
+    M_{lin}\ddot{q}=du_{lin}
+  \end{cases}
+\end{equation}
+The assumotion made is then to neglet $du_{lin}$ and consider only the effective one and \[ \lim_{\hat{m} \to m}du_{lin}=0\]
+With these suppositions, we can uncouple the dynamics of the two arms, since the accelerations and velocities of the all other coordinates are set to zero.
+\begin{figure}[h]
   \centering
   \subfloat[\emph{$q_1$ time evolution.}]
-  {\includesvg[scale=0.4]{approximation_1.svg}} \\
+  {\includesvg[scale=0.4]{approximation1_pi2.svg}} \\
 \subfloat[\emph{$q_2$ time evolution.}]
-  {\includesvg[scale=0.4]{approximation_2.svg}}
-  \caption{Arms behaviours with estimated mass \SI{2000}{\kilogram}, with (orange) and without (blue) approximations for the first simulation.}
+  {\includesvg[scale=0.4]{approximation2_pi2.svg}}
+  \caption{Arms behaviours with estimated mass \SI{2000}{\kilogram}, with (blue) and without (orange) approximations for the first simulation.}
   \label{approximations}
-\end{figure}
+\end{figure}\\
+Figure~\ref{approximations} shows two time evolutions of the displacement of both arms with and without applying the approximation made above for the configuration assumed in the previous Chapter (i.e. $q_{1,0}=0,q_{2,0}=\pi/2$). The error is really small.\\
 We can now rewrite the controlled dynamics (\ref{controlled_dynamics}) of the two arms as follows:
 \begin{equation}
   \begin{array}{l}
-    m_1\ddot{q}_1+\tilde{m_1}k_d\dot{e_1}+\tilde{m_1}k_p e_1=0\\
-    m_2\ddot{q}_2+\tilde{m_2}k_d\dot{e_2}+\tilde{m_2}k_p e_2=0
+    \tilde{m}_1\ddot{q}_1+\hat{m_1}k_d\dot{e_1}+\hat{m_1}k_p e_1=0\\
+    \tilde{m}_2\ddot{q}_2+\hat{m_2}k_d\dot{e_2}+\hat{m_2}k_p e_2=0
   \end{array}
 \end{equation}
-Since the real mass is unknown, the approximation $M'=\hat{M'}$ is not possible anymore, that is why the supposed mass $\tilde{m}$ appears in the equation.\\
+where $\tilde{m}(m,\hat{m})$.\\
+Since the real mass is unknown, the approximation $M'=\hat{M'}$ is not possible anymore, that is why the supposed mass $\hat{m}$ appears in the equation.\\
 We can divide for $m_1$ and $m_2$ to get:
 \begin{equation}
   \begin{array}{l}
-    \ddot{q}_1+\frac{\tilde{m_1}}{m_1}k_d\dot{e}_1+\frac{\tilde{m_1}}{m_1}k_p e_1=0\\
-    \ddot{q}_2+\frac{\tilde{m_2}}{m_2}k_d\dot{e}_2+\frac{\tilde{m_2}}{m_2}k_p e_2=0
+    \ddot{q}_1+\frac{\hat{m_1}}{\tilde{m}_1}k_d\dot{e}_1+\frac{\hat{m_1}}{\tilde{m}_1}k_p e_1=0\\
+    \ddot{q}_2+\frac{\hat{m_2}}{\tilde{m}_2}k_d\dot{e}_2+\frac{\hat{m_2}}{\tilde{m}_2}k_p e_2=0
   \end{array}
   \label{approx_dynamics}
 \end{equation}
 When the new control law with the estimated mass is applied, the behaviours is not criticaly damped anymore, since, as we can see from equations (\ref{approx_dynamics}): the new damping coefficient is now given by:
 \begin{equation}
-  \xi'=\frac{\tilde{m}k_v}{2\omega_n m}=\frac{\tilde{m}2\sqrt{k_p}}{2\sqrt{\frac{\tilde{m}}{m}k_p} m}=\sqrt{\frac{\tilde{m}}{m}}
+  \xi'=\frac{\hat{m}k_v}{2\omega_n \tilde{m}}=\frac{\hat{m}2\sqrt{k_p}}{2\sqrt{\frac{\hat{m}}{\tilde{m}}k_p} \tilde{m}}=\sqrt{\frac{\hat{m}}{\tilde{m}}}
   \label{mass_relation}
 \end{equation}
 \newpage
-\subsection{Symbolic Approach}
-Now that we have linear second order differential equations, like the ones in equation (\ref{approx_dynamics}), two methods have been introduced to retrieve the inertial properties of the payload (i.e. its mass). The first one, exposed in this section, is based on the fact that the solution of equations (\ref{approx_dynamics}) is known.\\
-However, not only its solution is known in closed form, but it is possible to find the exact solution by solving directly the second order equation. Both approaches are exploited.
-\subsubsection{Direct Solution}
-Given the simplicity of the equation of motions, a direct symbolic solution, containing $\tilde{m}$ as a parameter, can be easily found (i.e. $q(t,\tilde{m})$).\\
-Figure~\ref{parametric_plot} shows how the time response of the first joint for the first simulation changes according to the estimated mass. It is of particular interest the increasing of the first peak as the estimated mass increases.\\
-\begin{figure}[!b]
+\subsection{Direct Solution}
+\subsubsection{Position Roots}
+Given the simplicity of the equation of motions, a direct symbolic solution, containing $\hat{m}$ as a parameter, can be easily found (i.e. $q(t,\hat{m})$).\\
+Figure~\ref{parametric_plot} shows how the time response of the first joint for the first simulation changes according to the estimated mass. It is of particular interest the increasing of the first peak as the estimated mass increases.
+\begin{figure}[h]
   \centering
   \includesvg[scale=0.45]{parametric_plot.svg}
   \caption{Parametric plot of the first joint's time evolution, first simulation. The real mass is $\SI{3000}{\kilogram}$. A visual parameter setting can be possibile by confronting this plot with the real one (see Figure~\ref{q1_real}).}
   \label{parametric_plot}
-\end{figure}
-Hence, once the peak time $t*$ is found, the real mass can be calculated by solving the following equation:
+\end{figure}\\
+Hence, once the peak time $t^*$ is found, the real mass can be calculated by solving the following equation:
 \begin{equation}
   q(t^*,\tilde{m})=q^*
 \end{equation}
-with $q*$ the peak value.
-\subsubsection{Closed Form Solution}
-\paragraph{First Joint}
-For the first joint, which has both initial position and velocity equal to zero, the equation of motion (\ref{approx_dynamics}) becomes:
+with $q^*$ the peak value.
+\subsubsection{Mass Fit}
+Furthermore, a minimization problem can be written to make the solution fit the available data. In the Wolfram software, the \texttt{NonLinearModelFit} command is available, allowing for nonlinear regression of a function by varying its parameters. In this case, the function to be optimized is the joint time evolution, and its parameter is the satellite mass.\\
+An important aspect of this approach is that it allows to work with noisy data, since the regression tries to minimize the overall error, wheares noise in the previous method seen above could disturb the overshoot's amplitude and time instant too much. Figure~\ref{noise} shows the time evolution of the first joint in the first simulation with a white noise $w(t)\sim \mathcal{N} (0,0.005)$.
+\begin{figure}[h]
+  \centering
+  \includesvg[scale=0.3]{noisy_data.svg}
+  \caption{Noisy data to simulate a real scenario in orange.}
+  \label{noise}
+\end{figure}
+\newpage
+\subsection{Closed Form Solution}
+Now that we have linear second order differential equations (\ref{approx_dynamics}), two methods have been introduced to retrieve the inertial properties of the payload (i.e. its mass). The first one, exposed in this section, is based on the fact that the solution of equations (\ref{approx_dynamics}) is known.
+\subsubsection{Derivative Roots}
+Given zero initial velocities, from equation (\ref{approx_dynamics}) one gets the generic equation for one joint:
 \begin{equation}
-  m_1 \ddot{q}_1+\tilde{m_1}k_d\dot{q}_1+\tilde{m_1}k_p q_1=0
+  \tilde{m}\ddot{q}+\hat{m}k_d\dot{q}+\hat{m}k_p (q-q_d)=0
 \end{equation}
-This can be threated as an homogeneous second order linear equation with one degree of freedeom.
-Its solution is given by the well known formula:
+The desired position is not zero in the general case. However, by moving the term on the RHS of the equation, we get a forced differential equation with constant external input:
 \begin{equation}
-  q_h(t)=\Big[q_0\cos{(\omega_d)t}+\frac{\dot{q}_0+\xi\omega_n q_0}{\omega_d}\sin{(\omega_dt)}\Big]e^{-\xi \omega_n t}
+  \tilde{m}\ddot{q}+\hat{m}k_d\dot{q}+\hat{m}k_p q=\hat{m}k_pq_d
+  \label{new_q}
 \end{equation}
-where $q_0,\dot{q}_0$ are the initial position and velocity of the joint and $\omega_d=\sqrt{1-\xi^2}\omega_n$. Notice that $\dot{q}_0$ is now given by the velocity of the joint after the impact.\\
-Given null initial position, we can further simplify the solution:
+Equation (\ref{new_q}) can be considered as a system subjected to a step function of amplitude $F_0=\hat{m}k_pq_d$. The particular solution of such system is also known:
 \begin{equation}
-  q_h(t)=\frac{\dot{q}_0}{\omega_d}\sin{(\omega_dt)}e^{-\xi \omega_n t}
-  \label{first_joint}
+  \begin{split}
+  q_f(t)&=\frac{F_0}{k}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]\\
+  &=q_d\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]
+\end{split}
 \end{equation}
-It is easier to find a relationship between the real mass and the peak time by differentiating equation (\ref{first_joint}), so that the RHS term becomes zero:
+with $\theta=\arccos{\xi}$ and $k=\hat{m}k_p$ elastic coefficient.\\
+The total solution will be given by the sum of the homogeneous and the particular solution, which are both known:
 \begin{equation}
-  \sqrt{1-\xi^2}\cos{(\sqrt{1-\xi^2}\omega_nt*)-\xi\sin{(\sqrt{1-\xi^2\omega_nt*})}}=0
+  q(t)=q_d\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]+\Big[q_0\cos{(\omega_d)t}+\frac{\dot{q}_0+\xi\omega_n q_0}{\omega_d}\sin{(\omega_dt)}\Big]e^{-\xi \omega_n t}
+  \label{closed_form}
+\end{equation}
+where $q_0,\dot{q}_0$ are the initial position and velocity of the joint and $\omega_d=\sqrt{1-\xi^2}\omega_n$. Notice that $\dot{q}_0$ is now given by the velocity of the joint after the impact, which can be retrived as the derivative of the data at the time $t=0$.\\
+It is easier to find a relationship between the real mass and the peak time $t^*$ by differentiating equation (\ref{closed_form}), so that the RHS term becomes zero, since the peak is a stationary point:
+\begin{equation}
+  \sqrt{1-\xi^2}\cos{(\sqrt{1-\xi^2}\omega_nt^*)-\xi\sin{(\sqrt{1-\xi^2\omega_nt^*})}}=0
   \label{time_solution}
 \end{equation}
 which can be rearranged:
 \begin{equation}
   \begin{array}{l}
-  \tan{(\sqrt{1-\xi^2}\omega_nt*)}=\frac{\sqrt{1-\xi^2}}{\xi}\\
-  \Rightarrow \tan{(\sqrt{1-\xi^2}\omega_nt*)}=\beta(\xi)
+  \tan{(\sqrt{1-\xi^2}\omega_nt^*)}=\frac{\sqrt{1-\xi^2}}{\xi}\\
+  \Rightarrow \tan{(\sqrt{1-\xi^2}\omega_nt^*)}=\beta(\xi)
 \end{array}
 \end{equation}
-The intersection of the two functions allows to calculate the damping coefficient of the equation and thus the real mass from relation (\ref{mass_relation}).
-\paragraph{Second Joint}
-The equation of motion of the second joint, on the other hand, is:
-\begin{equation}
-  m_2\ddot{q}_2+\tilde{m_2}k_d\dot{q}_1+\tilde{m_2}k_p (q_2-q_{2,d})=0
-\end{equation}
-Now the desired position, which is the initial one, is not zero anymore. However, by moving the term on the RHS of the equation, we get a forced differential equation with constant external input:
-\begin{equation}
-  m_2\ddot{q}_2+\tilde{m_2}k_d\dot{q}_1+\tilde{m_2}k_p q_2=\tilde{m_2}k_pq_{2,d}
-  \label{new_q2}
-\end{equation}
-Equation (\ref{new_q2}) can be considered as a system subjected to a step function of amplitude $F_0=\tilde{m_2}k_pq_{2,d}$. The particular solution of such system is also known:
-\begin{equation}
-  \begin{split}
-  q_f(t)&=\frac{F_0}{k}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]\\
-  &=q_{2,d}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]
-\end{split}
-\end{equation}
-with $\theta=\arccos{\xi}$ and $k=\tilde{m_2}k_p$ elastic coefficient.\\
-The total solution will be given by the sum of the homogeneous and the particular solution:
-\begin{equation}
-  q_2(t)=q_{2,d}\Big[1-\frac{e^{-\xi\omega_nt}}{\sqrt{1-\xi^2}}\sin{(\omega_dt+\theta)}\Big]+\Big[q_0\cos{(\omega_d)t}+\frac{\dot{q}_0+\xi\omega_n q_0}{\omega_d}\sin{(\omega_dt)}\Big]e^{-\xi \omega_n t}
-\end{equation}
-It can be shown that, by differentiation of the above equation, one still gets equation~(\ref{time_solution}).
-Hence, the same procedure holds.
+The intersection of the two functions allows to calculate the damping coefficient of the equation and thus the real mass from relation (\ref{mass_relation}).\\
+Note that equation (\ref{time_solution}) does not depend on the equilibrium position, hence it holds for the general case.
+\subsubsection{Damping Coefficient and Natural Frequency Fit}
+Similarly at what has been done for the mass fit, the same built-in command \texttt{NonLinearModelFit} is used inserting as interpolating function equation (\ref{closed_form}), with parameters $\xi$ and $\omega_n$, which are both equal to $\sqrt{\frac{\hat{m}}{\tilde{m}}}$ (see Section~\ref{decoupling}).
 \newpage
-\subsection{Interpolation Approach}
+\section{Mass Extraction: Coupled Solution}
+The problem with the joints' decoupling assumption is that it depends on the joints' configuration, as it will be better exposed in the next Chapter.\\
+Without decoupling them it would be difficult to find a closed form solution and, given the computational power available, different appraches can be evaulated.\\
+In this section two methods will be explored by solving the coupled linear equation directly and performing a minimization of a cost function.
+\subsection{Continuous Domain}
+Wolfram has a built-in command, \texttt{ParametricNDSolve}, which allows to solve numerically differential equations with uknown values (e.g. the actual mass $m$).\\
+The output is a parametric function $q(m,t)$ that, given a mass value, returns a continuous function in time.\\
+A cost function $\Gamma$ can be written as the integral along the simulation period $T$ of the squared residuals between the found solution and the actual evolution of the joint in time (given from the satellite captured):
+\begin{equation}
+  \Gamma(m)=\int_{0}^{T}\Big[q(m,t)-q_{data}(t)\Big]^2
+\end{equation}
+By setting the gradient of $\Gamma$ to zero we can find the mass that minimize the cost function, i.e. the true mass:
+\begin{equation}
+  m^*=\min_{m}\Gamma(m)
+\end{equation}
+Even if this method gives better and more consistent result than the previous ones (as it will be shown in the next Chapter), the computational power required to solve a minimiziation of an integral could be too demanding. That is why a second more efficient apporach has been explored.
+The actual code used in Wolfram is available in the Appendix.
+\newpage
+\subsection{Discrete Domain}
+The same problem can be described by discretizing the available data and the differential equations solutions in a finite number of points in time.\\
+However, to do so, a symbolic parametric solution of the coupled equations needs to be available and Wolfram does not manage to solve them.\\
+For this section another software has been used to solve directly the equations, Maple 2024.2, whose commands are reported in the Appendix as well.\\
+Maple manages to solve the joints' motion as a function of time and mass; it is now possible to discretize the solution:
+\begin{equation}
+  \varGamma(m)=\sum_{k=0}^{N_p}\Big[q(m,\frac{T}{N_p}k)-q_{data}(\frac{T}{N_p}k)\Big]^2
+\end{equation}
+where $N_p$ is the number of discretization points.\\
+In the same way as for the continuous case, the gradient of the cost function is set to zero and the optimal mass can be calculated.\\
+The number of discretization points should not be too low, in order not to have a huge discretization error, nor too high to avoid great computational resources.\\
+For this thesis, it has been found that $N_p=5$ gives better results than the Joints' Decoupling method. Conceptually it is very similar to the Position Root one, with the difference that no input error $du$ is introduced and the function is evaluated on more than one point.
+\begin{figure}[h]
+  \centering
+  \subfloat[\emph{$N_p=5$.}]
+  {\includesvg[scale=0.16]{discrete_5p.svg}} \quad
+\subfloat[\emph{$N_p=25$.}]
+  {\includesvg[scale=0.16]{discrete_25p.svg}}\\
+  \subfloat[\emph{$N_p=50$.}]
+  {\includesvg[scale=0.16]{discrete_50p.svg}}
+  \caption{In blue the continous solution, in red the discretized one.}
+\end{figure}
+\newpage
+\section{Velocity Extraction}
+Once the mass is found, it would be interesting asking what was the satellite velocity before the impact.\\
+Equation (\ref{final_velocities}) set an important relation between final and initial velocities of the VMS and the satellite as well. In particular, the initial velocity of the VMS are known (since it is supposed to be still) and the velocities after the impact of the VMS (i.e. $\dot{p}_f$) can be found by derivating $p_{data}$ in $t=0$.\\
+We can therefore isolate $\dot{\psi}_i$:
+\begin{equation}
+  \begin{array}{l}
+    H=G\dot{p}_f\\
+    \Rightarrow M\dot{p}_i+J^T(J_O^+)^TM_O\dot{\psi}_i=G\dot{p}_f\\
+    \Rightarrow \dot{\psi}_i=M_O^{-1}J_O^T(J^+)^T(G\dot{p}_f-M\dot{p}_i)
+  \end{array}
+\end{equation}
+but since the VMS is at rest before the impact:
+\begin{equation}
+  \dot{\psi}_i=M_O^{-1}J_O^T(J^+)^TG\dot{p}_f
+\end{equation}
+On Wolfram, solving this system of equations gives very good results regarding the translation velocity, while the angular velocity error is quite big due to numerical approximations.\\
+In this thesis, however, the assumption that has been made is that the relative velocity between the satellite and the VMS is small, so by setting $\dot{\theta}_O=0$ the output is consistent (notice that the real velocity in the simulation was set $\dot{\theta}_O=0.01$, see Table~\ref{initial_velocities}).
+\chapter{Results and Conclusion}
+In this Chapter a comparison between the methods suggested in the previuous sections will be displayed as well as plots with the results found for each approach.\\
+The first section will focus on the mass outputs and considerations about the validity and efficiency of each method; the second section fill focus on the error made in finding the initial velocity given different guessed masses; in the third one final considerations of this work and possibile future improvements will be exposed.
+\newpage
+\section{Mass Retrieval}
+The joints' decoupling method, as already mentioned, relies on three assumptions:
+\begin{enumerate}
+  \item Little displacement from initial position (linearization error);
+  \item When the guessed mass is near to the true one, we can decouple the differential equations (approximation error);
+  \item The guessed mass is not the real one (mass error).
+\end{enumerate}
+The first two errors depend on the VMS arms' configuration, i.e. on the direction of impact of the satellite and its inclination with respect to the manipulator.\\
+In Chapter~\ref{impact_analysis} only one configuration and two different directions of impact (respectively called Simulation 1 and Simulation 2) have been analyzed. Here, different arms' configurations are studied.\\
+However, $M_{lin}$, $C_{lin}$ and $K_{lin}$ do not depend on $q_{1,0}$, but on $q_{2,0}$ and $\hat{m}$ only: we can study different scenarios by changing the second joint's initial position and the guess mass only.\\
+Figures~\ref{linear_error_1} and \ref{approximation_error_1} show the behaviour of the first joint for the study case Simulation 1 (i.e. the satellite approaches the manipulator with positive linear velocity in the $x$ direction and null velocity in the $y$ direction) for different values of $q_{2,0}$ with $\hat{m}=\SI{2000}{\kilogram}$ (the true satellite's mass is $m=\SI{3000}{\kilogram}$, as shown in Table~\ref{VMS_parameters}). The plots for the second joint follow the same behaviour and are listed in the Appendix.\\
+As it can be seen, when the displacement of one arm is little (e.g. when $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$ the second arm is almost still for the first simulation) the linear error is almost zero, while when there is a greater displacement (e.g. $q_{2,0}=\SI{0}{\radian}$) it is more relevant.\\
+Similarly, the more the behaviour of one arm affects the movement of the other, the greater the approximation error is.\\
+However, the linear error can be reduced by enambling a stronger control input, for example by increasing the proportional gain $K_p$, which assures faster convergence to the desired value but could enhance overshoots (if not critically damped). On the other hand, the approximation error relies on the geometry of the impact and it is more difficult to control.\\
+Figures~\ref{q201},~\ref{q261},~\ref{q241},~\ref{q231} and \ref{q221} show the mass found with the joints' decoupling methods for different guessed masses $\hat{m}$ for the first simulation. Since for each joint we can evaluate one mass (i.e. two retrived masses), its final value was obtained as the mean of the two. However, there are cases where the joint does not move and it is not possible to find the real mass: in those cases only the final mass found with the other joint is used (e.g. for the first simulation and $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$, the second joint, which lies on the satellite velocity direction does not move or very little).\\
+Furthermore, there could be cases where no arm moves: in the singular configuration ($q_{1,0}=\SI{0}{\radian}$ and $q_{2,0}=\SI{0}{\radian}$), for the second simulation (i.e. when the satellite approaches with zero velocity in the $x$ direction) both arms remain still and only translation of the VMS occurs. This is why in the Appendix, where the same Figures are shown for the second simulation, there is no plot of the configuration $q_{2,0}=\SI{0}{\radian}$.\\
+With the uncoupled method, only the mass and linearization error hold, since no approximation has been done. As a consequence, the result are much more reliable and consistent, as Figures~\ref{uncoupled_1} and \ref{uncoupled_2} show for both simulation and all considered configurations.\\
+As already mentioned, for the second simulation no mass can be retrived when the manipulator's configuration is singular.\\
+The method shown here is the continous one only, since the discrete one gives similar results, as shown in Tables~\ref{uncoupled_comparison_1} and \ref{uncoupled_comparison_2}.
+\begin{figure}[h]
+  \centering
+  \subfloat[\emph{$q_{2,0}=\SI{0}{\radian}$}]{\includesvg[scale=0.35]{lin_err1_0.svg}} \quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/6}{\radian}$}]{\includesvg[scale=0.35]{lin_err1_pi6.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/4}{\radian}$}]{\includesvg[scale=0.35]{lin_err1_pi4.svg}}\quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/3}{\radian}$}]{\includesvg[scale=0.35]{lin_err1_pi3.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$}]{\includesvg[scale=0.35]{lin_err1_pi2.svg}}
+  \caption{Linearization error for different first arm's configuration, Simulation 1: non-linear solution in blue, linearized solution in orange, with $\hat{m}=\SI{2000}{\kilogram}$.}
+  \label{linear_error_1}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \subfloat[\emph{$q_{2,0}=\SI{0}{\radian}$}]{\includesvg[scale=0.35]{approximation1_0.svg}} \quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/6}{\radian}$}]{\includesvg[scale=0.35]{approximation1_pi6.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/4}{\radian}$}]{\includesvg[scale=0.35]{approximation1_pi4.svg}}\quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/3}{\radian}$}]{\includesvg[scale=0.35]{approximation1_pi3.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$}]{\includesvg[scale=0.35]{approximation1_pi2.svg}}
+  \caption{Approximation error for different first arm's configuration, Simulation 1: non-approximated linearized solution in orange, approximated solution in blue, with $\hat{m}=\SI{2000}{\kilogram}$.}
+  \label{approximation_error_1}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includesvg[scale=0.4]{masses0_1.svg}
+  \caption{}
+  \label{q201}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi6_1.svg}
+  \caption{}
+  \label{q261}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi4_1.svg}
+  \caption{}
+  \label{q241}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi3_1.svg}
+  \caption{}
+  \label{q231}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi2_1.svg}
+  \caption{}
+  \label{q221}
+\end{figure}\\
+\begin{figure}[h]
+  \centering
+  \includesvg[scale=0.38]{masses_uncoupled_1.svg}
+  \caption{}
+  \label{uncoupled_1}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includesvg[scale=0.38]{masses_uncoupled_2.svg}
+  \caption{}
+  \label{uncoupled_2}
+\end{figure}
+\begin{table}[t]
+  \caption{Uncoupled methods comparison for Simulation 1 and $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$.}
+  \label{uncoupled_comparison_1}
+  \begin{center}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{Guess Mass}&\textbf{Discrete Method}&\textbf{Continuous Method}\\
+  \midrule
+  \SI{500}{\kilogram}&\SI{2866.06}{\kilogram}&\SI{2864.48}{\kilogram}\\
+  \SI{1000}{\kilogram}&\SI{2920.21}{\kilogram}&\SI{2920.38}{\kilogram}\\
+  \SI{1500}{\kilogram}&\SI{2949.45}{\kilogram}&\SI{2949.72}{\kilogram}\\
+  \SI{2000}{\kilogram}&\SI{2970.11}{\kilogram}&\SI{2969.52}{\kilogram}\\
+  \SI{2500}{\kilogram}&\SI{2986.09}{\kilogram}&\SI{2986.22}{\kilogram}\\
+  \SI{3000}{\kilogram}&\SI{2999.16}{\kilogram}&\SI{2997.87}{\kilogram}\\
+  \SI{3500}{\kilogram}&\SI{3010.29}{\kilogram}&\SI{3010.44}{\kilogram}\\
+  \SI{4000}{\kilogram}&\SI{3020.04}{\kilogram}&\SI{3018.57}{\kilogram}\\
+  \SI{4500}{\kilogram}&\SI{3028.79}{\kilogram}&\SI{3028.93}{\kilogram}\\
+  \SI{5000}{\kilogram}&\SI{3036.77}{\kilogram}&\SI{3035.47}{\kilogram}\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}[b]
+  \caption{Uncoupled methods comparison for Simulation 2 and $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$.}
+  \label{uncoupled_comparison_2}
+  \begin{center}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{Guess Mass}&\textbf{Discrete Method}&\textbf{Continuous Method}\\
+  \midrule
+  \SI{500}{\kilogram}&\SI{2770.30}{\kilogram}&\SI{2759.61}{\kilogram}\\
+  \SI{1000}{\kilogram}&\SI{2862.58}{\kilogram}&\SI{2874.43}{\kilogram}\\
+  \SI{1500}{\kilogram}&\SI{2913.02}{\kilogram}&\SI{2881.21}{\kilogram}\\
+  \SI{2000}{\kilogram}&\SI{2949.30}{\kilogram}&\SI{2918.53}{\kilogram}\\
+  \SI{2500}{\kilogram}&\SI{2977.09}{\kilogram}&\SI{2996.60}{\kilogram}\\
+  \SI{3000}{\kilogram}&\SI{2999.18}{\kilogram}&\SI{3017.16}{\kilogram}\\
+  \SI{3500}{\kilogram}&\SI{3017.32}{\kilogram}&\SI{2957.75}{\kilogram}\\
+  \SI{4000}{\kilogram}&\SI{3032.64}{\kilogram}&\SI{3028.08}{\kilogram}\\
+  \SI{4500}{\kilogram}&\SI{3045.89}{\kilogram}&\SI{2992.76}{\kilogram}\\
+  \SI{5000}{\kilogram}&\SI{3057.56}{\kilogram}&\SI{3144.85}{\kilogram}\\
+  \bottomrule
+  \end{tabular}
+  \end{center}
+\end{table}
+\newpage
+\section{Velocity Retrieval}
+The velocity retrieval error has been calculated in two different ways, since for both simulations the satellite initial velocity is zero in one direction:
+\begin{itemize}
+  \item As a relative error for the non-zero initial velocity: \begin{equation}
+    e_{\%}=\frac{|\dot{\psi}_{i,t}-\dot{\psi}_{i,r}|}{\dot{\psi}_{i,t}}*100
+  \end{equation}
+  where the subscripts $t$ and $r$ stand for "true" and "retrived" respectively;
+  \item As an asbolute error fro the zero initial velocity (as it is not possible to divide for zero):\begin{equation}
+    e_{\%}=|\dot{\psi}_{i,t}-\dot{\psi}_{i,r}|*100
+  \end{equation}
+\end{itemize}
+Figures~\ref{velocity_1} and \ref{velocity_2} show the error for two configurations only, which are the best and worst working scenario according to the linearization and approximation error (see Figures~\ref{linear_error_1} and \ref{approximation_error_1}).\\
+
+\begin{figure}[h]
+  \centering
+  \subfloat{\includesvg[scale=0.35]{velpi2_1.svg}} \quad
+  \subfloat{\includesvg[scale=0.35]{velpi6_1.svg}}\\
+  \caption{Velocoty error for Simulation 1.}
+  \label{velocity_1}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \subfloat{\includesvg[scale=0.35]{velpi2_2.svg}} \quad
+  \subfloat{\includesvg[scale=0.35]{velpi6_2.svg}}\\
+  \caption{Velocoty error for Simulation 2.}
+  \label{velocity_2}
+\end{figure}
+\section{Results' Analysis}
+Different methods have been explored, each one with its strengths and weaknesses. Here, some considerations on the aforeshown results are done:
+\begin{itemize}
+  \item The joints' decoupling approach allow to obtain closed form equation and simple time-dependent solution and can be used with different methods, such as the fitting ones or the position/derivative roots ones.\\
+    On the other hand they depends significantly on the VMS configuration and the more the configuration allows displacements, the less near the new mass is from the actual one.
+  \item Among the decoupling methods, the damping coefficient and natural frequency fit seems to be the best one, as it gives the higher values when $\hat{m}<m$.\\
+    When $\hat{m}>m$, all the methods give better results: since the initial guessed mass is higher, the control is more aggressive and the displacement after the impact is smaller, riducing the linearization error.
+  \item The uncoupled methods gives far more interesting results, as the final mass error is usually very small. The same consideration regarding the error linearization made above are valid, hence a higher initial mass is generally more preferable than a smaller one (i.e. an overestimation is preferable over an underestimation).
+    Furthermore, these methods are very little sensitive to the VMS configuration, allowing for more freedom in the satellite docking.
+  \item The continuos method and the discrete one give similar result for a sufficiently high number of discretization point, even though we have already seen that less than ten points give already a better result than the other methods. Furthermore, the discrete method is faster: in Wolfram, on a MacBook Air M3 with 16 GB of RAM, the mean execution time of the continuous minimization of the cost function take approximately $\SI{1.5}{\second}$, while the minimization of the discrete cost function only $\SI{0.03}{\second}$, which is $\approx 50$ times faster.\\
+    Hence, a discrete method is more suitable in environment with no huge computational power, as it could be in space.
+  \item The velocity error is lower for mass overestimation too and it is low for not too smaller initial guess as well.
+\end{itemize}
+\newpage
+\section{Final Considerations}
+
 \end{document}
