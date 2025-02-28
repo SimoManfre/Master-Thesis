@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {2.2.1}Object's Kinematics}{27}{subsection.2.2.1}%
 \contentsline {chapter}{\numberline {3}Dynamics}{29}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Classic Approach}{31}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Object's Dynamics}{34}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.1}Object's Dynamics}{35}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Homogeneous Matrices Approach}{36}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Object's Dynamics}{39}{subsection.3.2.1}%
 \contentsline {chapter}{\numberline {4}Impact Analysis}{41}{chapter.4}%
@@ -44,6 +44,12 @@
 \contentsline {section}{\numberline {5.3}Velocity Extraction}{81}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Results and Conclusion}{82}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Mass Retrieval}{83}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Velocity Retrieval}{91}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Results' Analysis}{94}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Final Considerations}{95}{section.6.4}%
+\contentsline {section}{\numberline {6.2}Velocity Retrieval}{92}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Results' Analysis}{95}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Final Considerations}{96}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Further Developments}{97}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Conclusion}{99}{subsection.6.4.2}%
+\contentsline {chapter}{Appendices}{100}{section*.56}%
+\contentsline {chapter}{\numberline {A}Matrices}{101}{appendix.a.A}%
+\contentsline {chapter}{\numberline {B}Code}{103}{appendix.a.B}%
+\contentsline {chapter}{\numberline {C}Plots}{106}{appendix.a.C}%

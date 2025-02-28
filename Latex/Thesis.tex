@@ -7,10 +7,10 @@
 \usepackage{tikz}
 \usepackage{layaureo}
 \usepackage[english]{varioref}
-\usepackage{mathtools}
+\usepackage{mathtools,trimclip}
 \usepackage{siunitx}
 \usepackage{amsfonts}
-\usepackage{amsmath}
+\usepackage{amsmath,rotating}
 \usepackage{amssymb}
 \usepackage[section]{placeins}
 \usepackage{microtype}
@@ -18,12 +18,13 @@
 \usepackage{svg}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subfig}
-\usepackage{appendix}
+\usepackage[toc,page]{appendix}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[autostyle,italian=guillemets]{csquotes}
 \usepackage{listings,xcolor}
+\usepackage{geometry}
 \addtolength{\textheight}{1cm}
 \DeclareMathOperator{\Tr}{Tr}
 \usetikzlibrary{decorations.text}
@@ -34,6 +35,11 @@
   \fancyhf{}
   \fancyhead[R]{\thepage}
   \fancyhead[L]{CONTENTS}
+}
+\fancypagestyle{styleint}{
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{INTRODUCTION}
 }
 \fancypagestyle{stylenor}{
 \fancyhf{}
@@ -93,7 +99,14 @@
 \newpage
 
 \begin{abstract}
-
+This thesis aims to describe, control and simulate a planar revolute-revolute (RR) manipulator in asbence of gravity (i.e. located in space) subjected to an impact due to the docking of a tumbling satellite.\\
+The actual outputs of this work are methods to retrive the satellite mass and initial velocities assuming them unknown in advance. Therefore, an initial guessed mass is implemented in the control law initialy.\\
+This work is organized as follows: the first chapter exposes an overview of the actual state-of-art of modern space maniupalators.\\ 
+The second chapter introduces the basics of robotic kinematics and the manipulator jacobian matrix is found.\\
+In the third chapter the system equation of motions are calculated with lagrangian-based approaches.\\
+The impact analysis is carried on in the fourth chapter, where the arms are modeled intially as rigid bodies and afterwards as Euler-Bernoulli beams.\\
+Satellite's mass and initial velocity retrieval methods are proposed in the fifth chapter, along with the found results.\\
+Methods' comparison and considerations, together with possible further developments are listed in the sixth and last chapter.
 
 \end{abstract}
 
@@ -103,15 +116,31 @@
 \tableofcontents
 \pagestyle{styletoc}
 \chapter*{Introduction}
-\pagestyle{stylenor}
+\pagestyle{styleint}
 \addcontentsline{toc}{chapter}{Introduction}
 We live in a society overwhelmed by such technology, autonomous systems, industrial manipulators, AI and, very soon, services' humanoid robots, that we forget to look up in the sky. Most of the major progress in robotics and the scientific field is done in space, where human curiosity is pushing our abilities beyond any imaginable scenario.\\
-This thesis was born due to my curiosity in the field of robotics merged with the need to face space and modern problems, such as the berthing and docking of external objects by a manipulator or the tumbling of a spinning satellite. This dissertation aims to analyse the dynamic of a space manipulator after the impact with an external satellite/meteorite to retrieve its kinetic properties before the impact.
+Bilionaires such as Elon Musk are pushing the technology even further with Mars colonization as a goal.\\
+However, this great chapter of human history is still quite hidden. When someone says that he is studying Law, Economics or Literature, nobody bats an eye; but when I tell people that I study Mechatronics Engineering, I always have to add some more information, key words like "mechanics", "robotics" or "programming". In my opinion, this makes clear that one the most revolutionary fields (even though I aknowledge that it is a very broad term) is not really interiorized by the people, like others faculties and studies are.\\
+In their defence, I must say that when I first enrolled in the university, aiming to the Mechatronics Master's Degree, I was more pushed by the unknown around that term than by real interest or passion related to it. But with the new available technology, such as the aforementioned AI, directly in our homes (and soon maybe also humanoid robots) it will become a common topic and an everyday experience.\\
+Yuval Noah, in his book "Sapiens: a Brief History of Humankind" [26] claims that three were the great human revolutions that completely changed our way to live and to act as social creatures: the Cognitive Revolution (around 70.000 years ago), which allowed us to think of nonexistent concepts, such as states, moral, legends, myths, tools; the Agricultural Revolution (about 12.000 years ago) when we started to settle and grow our own food; the Industrial Revolution (200 y.a.), which is fairly known to everybody. It is not difficult to think that the next human revolution, if there is ever going to be one, will have to do with space exploration.\\
+This is to say that it is a really promising and exiting field, which will (and it is already doing) play an important role in our society.\\
+Far from aiming to the moon, this thesis was born due to my curiosity in the field of robotics merged with the need to face space and modern problems, such as the berthing and docking of external objects by a manipulator or the tumbling of a spinning satellite.\\
+This dissertation aims to analyse the dynamic of a space manipulator after the impact with an external satellite to retrieve its kinetic and inertial properties before the impact.\\ 
+The workflow was the following: a first phase committed to gather information about space manipulators and to study papers regarding the useful impact equations to model the docking of the satellite.\\
+Secondly, a 2D model of the manipulator has been implemented in Wolfram 14.2 and equation of motion for the pre-impact and post-impact phases have been calculated.\\
+Finally, the results have been listed and considerations have been made.\\
+The machine on which the calculation have been made is a MacBook Air M3 with $\SI{16}{\giga\byte}$ of RAM.
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.15]{sapiens.jpg}
+  \caption{Yuval Noah's book cover.}
+\end{figure}
 \clearpage
 \pagenumbering{arabic}
-\chapter{Space Manipulators: an Overview}
+\chapter{Space Manipulators: an Overview}\label{overview}
+\pagestyle{stylenor}
 Space Robotics is important to human's overall ability to explore or operate in space. Autonomous systems can reduce the cognitive load on humans and improve human and systems' safety.\\
-Space robots can be split into two main categories: orbital robots and planetary robots. The formers can be used for repairing satellites, assembling large space telescopes, capturing and returning asteroids, etc; the latter play a key role in surveying, observations, extraction, working on planetary surfaces for subsequential human arrival, etc.\\
+Space robots can be split into two main categories: orbital robots and planetary robots. The formers can be used for repairing satellites, assembling large space telescopes, capturing and returning asteroids, etc; the latters play a key role in surveying, observations, extraction, working on planetary surfaces for subsequential human arrival, etc.\\
 Furthermore, spacecraft are classified as space robots when two attributes are satisfied: locomotion and autonomy. Depending on its application, a space robot is designed to possess locomotion to manipulate, grip, rove, drill and/or sample; at the same time, it is expected to possess varying levels of autonomy, ranging from teleoperation by humans to fully autonomous operation by the robot itself [3].\\
 Another classification of robotic devices in space could be represented by mobile robots, flying robots, and manipulators. Manipulators are used on board spacecraft (Space Shuttle) or space stations [5].
 According to [1], a very loose definition calls every unmanned space probe a robotic spacecraft, referring to the challenges of largely autonomous operation in a complex mission. But even discarding this and focussing on space robotics elements in a more narrow sense (systems involving arms for manipulation or some kind of locomotion device for mobility and having the flexibility to perform varying tasks), there is a wide array of uses in the scope of space missions, giving rise to challenging problems and ingenious solution.\\
@@ -136,7 +165,7 @@ But what is so special about a space robot? In many ways, robot systems for spac
 This thesis will investigate space manipulators' dynamics, whose tasks involve berthing and docking satellites or managing tumbling meteorites; thus, a historical summary of their evolution and the actual state-of-art of this field will be briefly exposed.
 \newpage
 \section{Historical background}
-The first robot used in space was the Remote Manipulator System (RMS), also called \textit{Canadarm}, developed by the Canadian Space Agency and mounted on the Space Shuttle. This robot was used for the first time on 12th November 1981 in the Columbia Shuttle and it was retired in July 2011. It is 15 meters long and has three hinged joints for pitch and three others for yaw and roll, which makes a total of six degrees of freedom (DOF).\\
+The first robot used in space was the Remote Manipulator System (RMS), also called \textit{Canadarm}, developed by the Canadian Space Agency and mounted on the Space Shuttle. This robot was used for the first time on 12th November 1981 in the Columbia Shuttle and it was retired in July 2011. It was 15 meters long and had three hinged joints for pitch and three others for yaw and roll, which makes a total of six degrees of freedom (DOF).\\
 There were numerous problems related to the use of the RMS in space. One of the most important was related to its positioning: since it is built out of light materials to minimise the launch cost, its links deflect substantially. When the arm is accelerated and stopped, large vibrations occur.\\
 There are two main methods of improving the positioning accuracy of the RMS: passive and active. The passive methods focus on redesigning the manipulator and applying different materials. The active ones refer to a preshape input and to the usage of position, velocity or force feedback.\\
 Eventually, some lessons have been learnt during the RMS' lifetime: the speed of manipulation should be drastically improved; the positioning accuracy is one of the most important issues in day-to-day operations; the new manipulators should be designed to include passive vibration control capabilities; active vibration control should be added in order to improve the positioning accuracy and shorten the settling time; the force loop could add significantly to the capabilities of the manipulator [5].\\
@@ -298,6 +327,11 @@ Studying the kinematics of a mechanical system (such as a robot) refers to the c
   \caption{2D RR (revolute-revolute) manipulator.}
   \label{end_defector}
 \end{figure}
+Usually we speak of:
+\begin{itemize}
+  \item Forward or Direct Kinematics when, given the joints' angles we want to find the EE position, used to define the relation between joints and EE and determine the system jacobian (see Section~\ref{jacobian_matrix});
+  \item Inverse Kinematics when we want to find the joints' angles that realize a desired position at the EE, used to define the joint's time evolution to move the EE to follow a desired trajectory or to reach a desired final position (see Chapter~\ref{impact_analysis}).
+\end{itemize}
 We will now analyze the forward kinematics of a manipulator mounted on top of a mobile base, to form a vehicle-manipulator system (VMS) that can be controlled as a whole.\\
 Starting from a simple model of the VMS, it will be possible to analyze its behaviour before and after the impact with an external object (i.e. meteorite or satellite).
 \newpage
@@ -485,7 +519,7 @@ In Figure~\ref{DH}, a DH convention for a planar serial manipulator has been use
   \caption{The Danavit-Hartenberg rule has been used to place the local joints' frame (in red) in a planar RR manipulator, with arms length $l_1$ and $l_2$, mounted on top of a disk-shaped base (in green). The rotated frame of the base of the angle $\theta_o$ has been plotted in blue. Following the hand rule, the z axis is orthogonal to the plane.}
   \label{DH}
 \end{figure}
-\subsection{Jacobian Matrix}
+\subsection{Jacobian Matrix}\label{jacobian_matrix}
 Another important matrix in the analysis if a manipulator is the so called \textit{Jacobian Matrix}.\\
 To study the direct kinematics of a manipulator, as already said, means to find the relationship between the end-defector position and orientation and its joints. When writing the position of the EE (denoted by S), we obtain a function of the robot's joints:
 \begin{equation}
@@ -499,8 +533,8 @@ By derivation of (\ref{EE_position}) one can obtain:
   \label{task_dimension}
 \end{equation}
 where $J_a$ is the \textit{Analytical Jacobian Matrix} and $Q=\{q_1,q_2,\dots,q_n\}$.\\
-Its dimension are very important, since kinematic singularities, which are configurations in which the end-eﬀector frame loses the ability to move or rotate in one or more directions, correspond to those configurations at which the Jacobian matrix fails to have maximal rank [11], where the rank is defined as the number of indipendent rows or couloumn of the matrix.\\
-Singularities happen if the open-chain robot is kinematically redundant, meaning, as already mentioned, that it has more joints than the dimension of the task space; then the inverse of the jacobian doesn't exist anymore, since the inversion requires a squared full rank matrix. When this occurs, the pseudoinverse or \textit{Moore-Penrose Inverse} matrix, denoted by $J^+$, must be used:
+Its dimension are very important, since kinematic singularities, which are configurations in which the end-eﬀector frame loses the ability to move or rotate in one or more directions (i.e. it loses one or more DoFs), correspond to those configurations at which the Jacobian matrix fails to have maximal rank [11], where the rank is defined as the number of indipendent rows or couloumn of the matrix.\\
+Singularities happen if the open-chain robot is kinematically redundant, meaning, as already mentioned, that it has more joints than the dimension of the task space; then the inverse of the jacobian doesn't exist anymore, since the inversion requires a squared full rank matrix, and the inverse kinematics is not possible ($\dot{Q}=J_a^{-1}\dot{S} $ and $J_a^{-1}$ does not exist in singular configuartions). When this occurs, the pseudoinverse or \textit{Moore-Penrose Inverse} matrix, denoted by $J^+$, must be used:
 \begin{equation}
   \begin{cases}
     J^+=(J^TJ)^{-1}J^T \quad \text{when J has linearly indipendent comlumns}\\
@@ -616,7 +650,7 @@ Following equation (\ref{velocity_matrix}), the Velocity Matrices can be found a
   \end{array}
 \end{equation}
 where the notation is the same of equation (\ref{composition}).\\
-Since it is of our interest (see Chapter \ref{dynamics}) to write all the velociti matrices projected in the fixed frame, following equation (\ref{change_frame}) it is possible to write:
+Since it is of our interest (see Chapter \ref{dynamics}) to write all the velocity matrices projected in the fixed frame, following equation (\ref{change_frame}) it is possible to write:
 \begin{equation}
     \prescript{f}{}{W_{b0}}=\prescript{f}{b}{M}\prescript{b}{}{W_{b0}}\prescript{b}{f}{M}=\begin{bmatrix}
       0&-\theta_0&0&y_b \dot{\theta_0}\\
@@ -776,11 +810,11 @@ which is very similar to (\ref{W_bo}). Hence, in the same way we did in the prev
 The dynamics analysis of a mechanical system consists in studying how the system evloves according to the present actions, given by motors and/or external world. If the kinematics analyisis is used to describe the motion, the dynamics one studies its causes. For a robotic system, the forces involves are usually the torques applied at the joints and, in this case, also the forces applied to the base.\\
 The analyisis can be:
 \begin{itemize}
-  \item direct: from the torques applied by the motors, the motion is calculated;
-  \item inverse: given the motion we calculate the forces and torques that produce that motion.
+  \item Direct: from the torques applied by the motors, the motion is calculated;
+  \item Inverse: given the motion we calculate the forces and torques that produce that motion.
 \end{itemize}
 The former problem requires differential calculation, while the latter algebraic.\\
-In this thesis, both problems will be studied: given the impact of the tumbling object with the VMS, we want to analyse the motion of the system after the impact; however, we also want to find a control algorith to be applied at the torques to stabilize the system after the impact.\\
+In this thesis, both problems will be studied: given the impact of the tumbling object with the VMS, we want to analyse the motion of the system after the impact; however, we also want to find a control algorithm to be applied at the joints to stabilize the system after the impact.\\
 Before writing the dynamic equations, we want to find a relationship between the forces at the end-effector and the forces at the joints, that is, given a \textit{wrench}~\textbf{w} (force~+~moment) applied at the end-effector, compute the joints' torques $\tau_w$ generated by it.\\
 The power at the joints is given by:
 \begin{equation}
@@ -807,8 +841,7 @@ The dynamic equations, also referred to as the equations of motion, are a set of
 \end{equation}
 where $u \in \mathbb{R}^n$ is the vector of joint forces and torques, $M(q) \in \mathbb{R}^{n \times n}$ is a symmetric positive-definite \textit{Mass Matrix}, and $C(q,\dot{q}) \in \mathbb{R}^n$ are forces that lumped together centripetal, Coriolis, gravity and friction terms that depend solely on $q$ and $\dot{q}$ [11].\\
 By solving these equation, given the nature of the problem (direct or inverse), we can find the motion or the torques respectively.\\
-There are different methods to find the equations of motion, such as Newton-Euler method and the lagrangian one. In this thesis the latter will be used, both in a "classic" scalar approach and in the Homogeneous Matrix approach shown in [10].\\
-The dynamic analysis will be performed considering plastic bodies.
+There are different methods to find the equations of motion, such as Newton-Euler method and the lagrangian one. In this thesis the latter will be used, both in a "classic" scalar approach and in the Homogeneous Matrix approach shown in [10].
 \newpage
 \section{Classic Approach}
 The lagrangian approach is an energy-based one, which allows to find the dynamic equations in a symbolic closed form. Particularly, the method involes the calculation of the kinetic and potential energy of the system.\\
@@ -847,7 +880,7 @@ From the first term of equation (\ref{kinetic_body}) the velocity vectors can be
 since $(-[P]_{\times}\omega)^T=\omega^T-[P]_{\times}^T=\omega^T[P]_{\times}$.\\
 The first term of equation (\ref{final_kinetic_body}) refers to the translational part (i.e. the kinetic energy of the point mass at the centre of mass), while the second to the rotational kinetic energy of the whole body, which takes into account the inertial distribution through the \textit{Tensor of Inertia} with respect to the centre of mass: $I \in \mathbb{R}^{3\times 3}$.\\
 
-The potential energy, on the other hand, will not be take into consideration in this Chapter, since in outer space there is no gravity and we are assuming the system to be composed only with rigid bodies: no elastic deformation is taken in account.\\
+The potential energy, on the other hand, will not be taken into consideration in this Chapter, since in outer space there is no gravity and we are assuming the system to be composed only with rigid bodies: no elastic deformation is taken in account. This assumption will be removed in the next Chapter when dealing with elastic arms.\\
 
 Finally, it is possible to write the lagrangian formulation:
 \begin{equation}
@@ -900,7 +933,7 @@ Since the rotation happens to be only around the orthogonal axis of the plane (f
 with $\omega_{b_z}$, $\omega_{1_z}$ and $\omega_{2_z}$ the angular velocities extrapolated from the Velocity Matrices in equations (\ref{arm_1_vel}, \ref{arms_velocity}).\\
 As already said, $L$ is only the sum of the three contribution of equation (\ref{kin_energy}) and, since we have five DoFs ($p \in \mathbb{R} ^5$), there will be five lagrangian equations, one for each genralized coordinate.\\
 The non lagrangian are called this way because they are not captured by the Lagrange equation: if the conservative part of the forces is captured by $\mathcal{L}$, the non lagrangian's are the ones which are not capured by any energy.\\ 
-\begin{figure}
+\begin{figure}[h]
   \centering
   \input{tikz/forces.tikz}
   \caption{Forces and torques applied to the base ($F_x,F_y,\tau_0$) and to the links ($\tau_1,\tau_2$). Note that the torque of the first arm affects the base and the torque of the second arm affects the first arm.}
@@ -928,7 +961,8 @@ Equation (\ref{lagrangian}) can now be written as:
     \frac{d}{dt}\frac{\partial \mathcal{L} }{\partial \dot{q}_2}-\frac{\partial \mathcal{L} }{\partial q_2}=\tau_2
   \end{cases}
 \end{equation}
-After having solved these five equations, it is possible to gather them together in a vectorial form, such as in (\ref{equation_motion}), with $M\in\mathbb{R}^{5\times 5}$, $C\in \mathbb{R}^5$ and $u\in\mathbb{R}^{5\times 5}$.\textcolor{red}{MATRICES IN THE APPENDIX?}
+After having solved these five equations, it is possible to gather them together in a vectorial form, such as in (\ref{equation_motion}), with $M\in\mathbb{R}^{5\times 5}$, $C\in \mathbb{R}^5$ and $u\in\mathbb{R}^{5\times 5}$. The mass and Coriolis matrices can be seen in Appendix~\ref{appendix_matrices}.
+\newpage
 \subsection{Object's Dynamics}\label{object_dynamics}
 The same approach can be implemented for the object to be captured: since it is approximated as a disk too, its moment of inertia is equal to the base's one.\\
 The kinetic energy is then:
@@ -1554,7 +1588,7 @@ The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlle
 \section{Elastic Bodies}
 In this section, a more realistic scenatio is developed and the assumption of rigid bodies will be discarded: the links of the manipulator will be considered flexible.\\
 The robotic systems with flexible links are continuous dynamical systems characterized by an infinite number of degrees of freedom and are governed by nonlinear, coupled, ordinary, and partial differential equations. The exact solution of such a mathematical model is normally not feasible, and the infinite dimensional model imposes severe constraint on the design of controllers as well. Hence it is necessary that these continuous systems are discretized. \\
-Flexible links with rigid joints in robot manipulators are discretized by using assumed modes, finite elements, or lumped parameters. The link deflections, with respect to the link’s rigid configuration, are usually assumed to be small, and a linear theory of elasticity is selected. Researchers commonly utilize the Euler-Bernoulli beam theory to represent the dynamics of link flexibility, which is the one selected for this work [17].\\
+Flexible links with rigid joints in robot manipulators are discretized by using assumed modes, finite elements, or lumped parameters. The link deflections, with respect to the link’s rigid configuration, are usually assumed to be small, and a linear theory of elasticity is selected. Researchers commonly utilize the Euler-Bernoulli beam theory to represent the dynamics of link flexibility, which is the one selected for this work [17, 18, 25].\\
 The lateral vibration of a beam can be studied by considering it as a continuous system, characterized by an infinite number of degrees of freedom. The equation of motion is carried out by considering the forces and moments acting on an infinitesimal piece of the body (Figure~\ref{elementary}), whose mass can be written as:
 \begin{equation}
 \,dm=\rho Adx
@@ -1704,7 +1738,7 @@ and $\beta_{i,j}$ are solutions of the frequency equation:
   \end{split}
   \label{freq_equation}
 \end{equation}
-The remaining constant in equation (\ref{lateral_solution}) (i.e. $C_{i,j}$) is found by mass normalizing the mode shape:
+The remaining constant in equation (\ref{lateral_solution}) (i.e. $C_{i,j}$) is found by mass normalizing the mode shape [19, 20]:
 \begin{equation}
   \int_{0}^{l_i}\rho_i A_i W_{i,j}^2(x)dx=1
 \end{equation}
@@ -1940,7 +1974,7 @@ with:
 \end{equation}
 Through a feedback linearization (\ref{feedback_linearization}), we can control the manipulator's joints $p_r=\{q_1,q_2\}$ letting $p_{nc}=\{x_b,y_b,\theta_0,Q_1,Q_2\}$ free to move.\\
 Figures~\ref{contolled_elastic_1} and \ref{controlled_elastic_2} show the VMS behaviour after the impact. Now, since the arms do not move anymore after the system has reached the equilibrium position, the oscilations of the arms is constant in time (and do not damped out since no damping has been considered, see Figure~\ref{no_beat}).\\
-Again, the rigid coordinated behave in a similar way as for the rigid case.
+Again, the rigid coordinates behave in a similar way as for the rigid case.
 \begin{figure}[h]
   \centering
   \subfloat{\includesvg[scale=0.35]{elastic_controlled_x.svg}} \quad
@@ -1997,7 +2031,7 @@ but under these assumptions, it can be rewritten as:
     \ddot{q}_2
   \end{bmatrix}+C'(q_1,q_2,\dot{q}_1,\dot{q}_2)=u(q_1,q_2,\dot{q}_1,\dot{q}_2)
 \end{equation}
-Furthermore, the dynamics can be linearized around the equilibrium position (i.e. the initial one) through a Taylor expansion up to the first order:
+Furthermore, the dynamics can be linearized around the equilibrium position (i.e. the initial one) through a Taylor expansion up to the first order [21]:
 \begin{equation}
   D(\textbf{x})=D(q_1,q_2,\dot{q}_1,\dot{q}_2,\ddot{q}_1,\ddot{q}_2)=M'(q_1,q_2)\begin{bmatrix}
     \ddot{q}_1\\
@@ -2007,7 +2041,7 @@ Furthermore, the dynamics can be linearized around the equilibrium position (i.e
 \begin{equation}
   D(\textbf{x})\approx D(\bar{\textbf{x}})+(\textbf{x}-\bar{\textbf{x}})^T\nabla T(\textbf{x})
 \end{equation}
-where $\bar{\textbf{x}}=\{q_{1,0},q_{2,0},0,0,0,0\}$ is the equilibrium point and $\nabla T(\bar{\textbf{x}})$ is the gradient of $T(\textbf{x})$ evaluated at $\textbf{x}=\bar{\textbf{x}}$. The formula used in Mathematics is available in the Appendix.\\
+where $\bar{\textbf{x}}=\{q_{1,0},q_{2,0},0,0,0,0\}$ is the equilibrium point and $\nabla T(\bar{\textbf{x}})$ is the gradient of $T(\textbf{x})$ evaluated at $\textbf{x}=\bar{\textbf{x}}$. The code used in Wolfram is available in the Appendix~\ref{code}.\\
 The control can now be found as in equation (\ref{feedback_linearization}):
 \begin{equation}
   u=\hat{M}[\ddot{q}_d+K_d(\dot{q}_d-\dot{q})+K_p(q_d-q)]+\hat{C}
@@ -2158,13 +2192,13 @@ By setting the gradient of $\Gamma$ to zero we can find the mass that minimize t
   m^*=\min_{m}\Gamma(m)
 \end{equation}
 Even if this method gives better and more consistent result than the previous ones (as it will be shown in the next Chapter), the computational power required to solve a minimiziation of an integral could be too demanding. That is why a second more efficient apporach has been explored.
-The actual code used in Wolfram is available in the Appendix.
+The actual code used in Wolfram is available in Appendix~\ref{code}.
 \newpage
 \subsection{Discrete Domain}
 The same problem can be described by discretizing the available data and the differential equations solutions in a finite number of points in time.\\
 However, to do so, a symbolic parametric solution of the coupled equations needs to be available and Wolfram does not manage to solve them.\\
-For this section another software has been used to solve directly the equations, Maple 2024.2, whose commands are reported in the Appendix as well.\\
-Maple manages to solve the joints' motion as a function of time and mass; it is now possible to discretize the solution:
+For this section another software has been used to solve directly the equations, Maple 2024.2, whose commands are reported in Appendix~\ref{code} as well.\\
+Maple manages to solve the joints' motion as a function of time and mass (the results are listed in Appendix~\ref{maple_q1}, \ref{maple_q2}); it is now possible to discretize the solution:
 \begin{equation}
   \varGamma(m)=\sum_{k=0}^{N_p}\Big[q(m,\frac{T}{N_p}k)-q_{data}(\frac{T}{N_p}k)\Big]^2
 \end{equation}
@@ -2204,7 +2238,7 @@ In this thesis, however, the assumption that has been made is that the relative 
 In this Chapter a comparison between the methods suggested in the previuous sections will be displayed as well as plots with the results found for each approach.\\
 The first section will focus on the mass outputs and considerations about the validity and efficiency of each method; the second section fill focus on the error made in finding the initial velocity given different guessed masses; in the third one final considerations of this work and possibile future improvements will be exposed.
 \newpage
-\section{Mass Retrieval}
+\section{Mass Retrieval}\label{mass_retrieval}
 The joints' decoupling method, as already mentioned, relies on three assumptions:
 \begin{enumerate}
   \item Little displacement from initial position (linearization error);
@@ -2214,15 +2248,20 @@ The joints' decoupling method, as already mentioned, relies on three assumptions
 The first two errors depend on the VMS arms' configuration, i.e. on the direction of impact of the satellite and its inclination with respect to the manipulator.\\
 In Chapter~\ref{impact_analysis} only one configuration and two different directions of impact (respectively called Simulation 1 and Simulation 2) have been analyzed. Here, different arms' configurations are studied.\\
 However, $M_{lin}$, $C_{lin}$ and $K_{lin}$ do not depend on $q_{1,0}$, but on $q_{2,0}$ and $\hat{m}$ only: we can study different scenarios by changing the second joint's initial position and the guess mass only.\\
-Figures~\ref{linear_error_1} and \ref{approximation_error_1} show the behaviour of the first joint for the study case Simulation 1 (i.e. the satellite approaches the manipulator with positive linear velocity in the $x$ direction and null velocity in the $y$ direction) for different values of $q_{2,0}$ with $\hat{m}=\SI{2000}{\kilogram}$ (the true satellite's mass is $m=\SI{3000}{\kilogram}$, as shown in Table~\ref{VMS_parameters}). The plots for the second joint follow the same behaviour and are listed in the Appendix.\\
+Figures~\ref{linear_error_1} and \ref{approximation_error_1} show the behaviour of the first joint for the study case Simulation 1 (i.e. the satellite approaches the manipulator with positive linear velocity in the $x$ direction and null velocity in the $y$ direction) for different values of $q_{2,0}$ with $\hat{m}=\SI{2000}{\kilogram}$ (the true satellite's mass is $m=\SI{3000}{\kilogram}$, as shown in Table~\ref{VMS_parameters}). The plots for the second joint follow the same behaviour and are listed in Appendix~\ref{appendix_plots}.\\
 As it can be seen, when the displacement of one arm is little (e.g. when $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$ the second arm is almost still for the first simulation) the linear error is almost zero, while when there is a greater displacement (e.g. $q_{2,0}=\SI{0}{\radian}$) it is more relevant.\\
 Similarly, the more the behaviour of one arm affects the movement of the other, the greater the approximation error is.\\
 However, the linear error can be reduced by enambling a stronger control input, for example by increasing the proportional gain $K_p$, which assures faster convergence to the desired value but could enhance overshoots (if not critically damped). On the other hand, the approximation error relies on the geometry of the impact and it is more difficult to control.\\
 Figures~\ref{q201},~\ref{q261},~\ref{q241},~\ref{q231} and \ref{q221} show the mass found with the joints' decoupling methods for different guessed masses $\hat{m}$ for the first simulation. Since for each joint we can evaluate one mass (i.e. two retrived masses), its final value was obtained as the mean of the two. However, there are cases where the joint does not move and it is not possible to find the real mass: in those cases only the final mass found with the other joint is used (e.g. for the first simulation and $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$, the second joint, which lies on the satellite velocity direction does not move or very little).\\
-Furthermore, there could be cases where no arm moves: in the singular configuration ($q_{1,0}=\SI{0}{\radian}$ and $q_{2,0}=\SI{0}{\radian}$), for the second simulation (i.e. when the satellite approaches with zero velocity in the $x$ direction) both arms remain still and only translation of the VMS occurs (see Figure~\ref{controlled_motion_2}). This is why in the Appendix, where the same Figures are shown for the second simulation, there is no plot of the configuration $q_{2,0}=\SI{0}{\radian}$.\\
+Furthermore, there could be cases where no arm moves: in the singular configuration ($q_{1,0}=\SI{0}{\radian}$ and $q_{2,0}=\SI{0}{\radian}$), for the second simulation (i.e. when the satellite approaches with zero velocity in the $x$ direction) both arms remain still and only translation of the VMS occurs (see Figure~\ref{controlled_motion_2}). This is why in the Appendix~\ref{appendix_plots}, where the same Figures are shown for the second simulation, there is no plot of the configuration $q_{2,0}=\SI{0}{\radian}$.\\
 With the uncoupled method, only the mass and linearization error hold, since no approximation has been done. As a consequence, the result are much more reliable and consistent, as Figures~\ref{uncoupled_1} and \ref{uncoupled_2} show for both simulation and all considered configurations.\\
 As already mentioned, for the second simulation no mass can be retrived when the manipulator's configuration is singular.\\
 The method shown here is the continous one only, since the discrete one gives similar results, as shown in Tables~\ref{uncoupled_comparison_1} and \ref{uncoupled_comparison_2}.
+\begin{figure}
+  \centering
+  \input{tikz/singular_conf.tikz}
+  \caption{When the manipulator is in its singular configuration, no displacement at the joints happens if the payload approaches with a north-to-south direction.}
+\end{figure}
 \begin{figure}[h]
   \centering
   \subfloat[\emph{$q_{2,0}=\SI{0}{\radian}$}]{\includesvg[scale=0.35]{lin_err1_0.svg}} \quad
@@ -2285,7 +2324,7 @@ The method shown here is the continous one only, since the discrete one gives si
   \caption{}
   \label{uncoupled_2}
 \end{figure}
-\begin{table}[t]
+\begin{table}[b]
   \caption{Uncoupled methods comparison for Simulation 1 and $q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$.}
   \label{uncoupled_comparison_1}
   \begin{center}
@@ -2354,7 +2393,7 @@ Figures~\ref{velocity_1} and \ref{velocity_2} show the error for two configurati
   \centering
   \subfloat{\includesvg[scale=0.35]{velpi2_2.svg}} \quad
   \subfloat{\includesvg[scale=0.35]{velpi6_2.svg}}\\
-  \caption{Velocoty error for Simulation 2.}
+  \caption{Velocity error for Simulation 2.}
   \label{velocity_2}
 \end{figure}
 \section{Results' Analysis}
@@ -2372,5 +2411,198 @@ Different methods have been explored, each one with its strengths and weaknesses
 \end{itemize}
 \newpage
 \section{Final Considerations}
+In this thesis, a planar VMS has been modeled, starting with the kinematics, then the dynamics through both the classic lagrangian approach and the homogeneous matrices method.\\
+The impact analysis of a satellite docking has been explored introducing assumptions on the joints' displacement during the impact and contact-point forces/moments. After having found a relation between the initial satellite's velocities and final VMS' velocities, two scenarios have been studied: a rigid bodies ones, where the manipulator's arms were considered as perfectly rigid, and an elastic and more realistic one, where the arms'a were approximated as Euler-Bernoulli Beams. This intriduces the stiffness matrix in the equations of motion and more degrees of freedom related to the elastic vibration. The number od DoFs depends on the number of modes considered.\\
+For both scenarios, both free and control-based motion simulations have been performed, considering as intial conditions a still VMS and a slow relative velocity between the VMS and the payload, with almost null angular velocity (since in the real case a null relative velocity is preferable, even though that is never the case and a non-zero verlocity is always present.)\\
+Regarding the control input, a feedback linearization was chosen along with a feed-forward term to account for the mass and Coriolis matrices. Furthermore, a critically damped behavious has been selected to have a smooth convergence.\\
+Only the rigid rotational coordinated have been controlled, since the base's mass is far greater than tha manipulator's arms and the satellite combined, so it can be considered as still, as the motion plots show. Moreover, the elastic coordinates for the elastic bodies scenario has been considered as uncontrollable noise and let free to evolve.\\
+Finally, in the last chapters the problem we tried to solve the problem of uknown satellite's mass and initial velocities. Different methods have been proposed, which can be gathered in two main approaches: an approximated one, where linearization, mass and approximation error have been considered and closed form solution could be found, thanks to the simplicity of the final equations; a coupled one, where only linearization and mass error were considered and more reliable solution have been found, with different strengths and weaknesses.\\
+Regarding the velocity retrival, the theoretical relation between final and initial velocities that comes from the impact theory has been used.\\
+The VMS' configuratuon plays an important role in these calculations, since the linearization error is as much smaller as the displacement after the impact is small, which may be not the case for some configuration where the initial displcamente is bigger than others'. This can be controlled by regulation of the control proportional and derivative parameters. \\
+However, for singular configurations the joints do not move, and no method aforeshown can be used to retrive the mass. Those configuration should be avoided in general, since the system loses a degree of freedom, as already seen in Section~\ref{jacobian_matrix}.\\
+The final results suggest that an overestimate of the satellite's mass is usually preferable over an underestimation and that discrete methods are to be chosen when lack of computation power is present.
+\subsection{Further Developments}
+There is still a lot of room for improvements and deeper analysis, such as:
+\begin{itemize}
+  \item The chosen geometry is a planar (2D) RR manipulator. In the Chapter~\ref{overview} real space manipulators are shown and they are redundant, meaning that they have more joints than degrees of freedom. On one hand, this allows for more manoeuvrability, e.g. to have more option when moving the EE in order to be able to avoid obstacles, and that is the reason why they are designed in that way. On the other hand this means a more complex direct kinematics and most importantly a complex inverse kinematics, since there are infinite solution to realize one EE position. There are a lot of possible solution, such as secondary tasks in the control law, which lies on the null-space of the EE and thus do not interfere with the main task, but allow to select, among the infinite solutions, the more appropiate one for he specific case. Other methods, such as the project gradient or the reduced gradient ones can be inspected [8].\\
+    Furhermore, a 3D model would be preferable, but it would have increased even more the complexity of the calculation which, given the available software and the aim of the thesis (i.e. to find mass retrival methods) would not have affect the result significantly.\\
+    All of this has not been considered in this work and an improvement like this would benefit of a more realistic and implementable study case.
+  \item The dynamics has been developed with lagrangian-based approached, however a Newton-Euler algorithm could be faster and more useful in space.
+  \item The satellite has been modeled as a disk, but in reality satellites have different shapes and usually not symmetric. A 3D real model of a medium-dimensions satellite would improve the study.
+  \item In the elastic case, null rotation has been assumed to simplify the calculations: a more realistic model could be introduced. Furthermore, [18] simplifies the frequency equation by considering $M_{D_1}=0$ for $q_{2,0}=\pi/2$. There are more complex time-dependent frequency equations that can be studied to describe a more realistic case, as suggested by [17].\\
+    The arms have been modeled as Euler-Bernoulli beams, but a finite-element method could lead to better results [15].
+  \item Only plastic impact has been considere in this thesi, while in reality a perfectly anelastic or elastic impact does not exist; a general non-plastic case lies between these two. A more realistic scenario has been analazed in [14] where two parameters are used to characterize the impact: the energy loss parameter and the friction parameter, which represent fractions of the loss of kinetic energy and friction impulse, respectively, of the plastic case.
+  \item Closed form solution of the linearized joints' equation can be solved as a function of not only the uknown mass but also the initial joints' position, to better inspect the relation between mass error and chosen configuration.
+  \item Other control laws other than the feedback linearization can be implemented. A conservation of momenta during pre-impact and post-impact phases control law would allow not only to control the joints but also the base orientation: it is possible to transfer the whole angular momentum from the base toward the free-floating manipulator and in the same time reducing the joints' velocities [23].\\
+    In [24] an optimal control law is developed as to bring the tumbling non-cooperative satellite to rest in minimum time while ensuring that the magnitude of the interaction torque between the manipulator and target remains below a prescribed value.\\
+    Authors in [25] present a combined prediction and motion-planning scheme for robotic capturing of a drifting and tumbling object with unknown dynamics using visual feedback. A Kalman filter estimates the states and a set of dynamics parameters of the object needed for long-term prediction of the motion from noisy measurements of a vision system.
+  \item The software used was Wolfram, which is very intuitive and free for students but lack of computational power and allows only for short and simple symbolic equations. Maple has been used in the final part to get a symbolic closed form solution of the coupled second ordere linearized equation of motions.\\
+    This study would benefit of a more powerful software with built-in function for robotic simulations (working entirely on Maple or Simulink could be a solution).
+\end{itemize}
+\newpage
+\subsection{Conclusion}
+To conclude, an overview on space manipulators and their functionality has been studied. I would like to thank professor Bortoluzzi for the proposed topic and the attention, availability and help given in these months.\\
+Thank you also to all my friends and family who always supported me in my choices and constantly remember me that no matter how hard sometimes the path is, there is always a good opportunity to improve ourselves.\\
+The University of Trento has thought me so many lessons in these years that it would be too long to list them all (as if this thesis were not already too long), but one thing that is for sure is that I learned to face problems I have never encountered before and to take the good from bad situations. I learned how to manage stress and future uncertainty, and I will bring all these soft skills in my upcoming working life with enthusiasm and curiosity.\\
+As my granfather always says, \textit{ad maiora!}
+\pagestyle{plain} % Usa lo stile di default per i capitoli, senza header
+\fancyhf{} % Cancella tutte le intestazioni e i piè di pagina
+\renewcommand{\headrulewidth}{0pt} % Rimuove la linea orizzontale
+\begin{appendices}
+\chapter{Matrices}\label{appendix_matrices}
+The VMS mass and Coriolis matrices are listed.
 
+\begin{tiny}
+\begin{flalign*}
+\clipbox*{0pt {-1.1\depth} {.44\width} {1.1\height}}{$
+    \left(
+\begin{array}{ccccc}
+ \text{m1}+\text{m2}+\text{mb} & 0 & \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & -\frac{1}{2} \text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) \\
+ 0 & \text{m1}+\text{m2}+\text{mb} & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} \text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) \\
+ \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{6} \left(2 \text{l1}^2 (\text{m1}+3 \text{m2})+6 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+2 \text{l2}^2 \text{m2}+3 \text{mb} r^2\right) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) \\
+ \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) \\
+ -\frac{1}{2} \text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) & \frac{1}{2} \text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) & \frac{\text{l2}^2 \text{m2}}{3} \\
+\end{array}
+\right)$}\\
+\clipbox*{{.44\width} {-1.1\depth} {.88\width} {1.1\height}}{$
+    \left(
+\begin{array}{ccccc}
+ \text{m1}+\text{m2}+\text{mb} & 0 & \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & -\frac{1}{2} \text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) \\
+ 0 & \text{m1}+\text{m2}+\text{mb} & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} \text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) \\
+ \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{6} \left(2 \text{l1}^2 (\text{m1}+3 \text{m2})+6 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+2 \text{l2}^2 \text{m2}+3 \text{mb} r^2\right) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) \\
+ \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) \\
+ -\frac{1}{2} \text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) & \frac{1}{2} \text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) & \frac{\text{l2}^2 \text{m2}}{3} \\
+\end{array}
+\right)$}\\
+\clipbox*{{.88\width} {-1.1\depth} {\width} {1.1\height}}{$
+    \left(
+\begin{array}{ccccc}
+ \text{m1}+\text{m2}+\text{mb} & 0 & \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & -\frac{1}{2} \text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) \\
+ 0 & \text{m1}+\text{m2}+\text{mb} & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} \text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) \\
+ \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{6} \left(2 \text{l1}^2 (\text{m1}+3 \text{m2})+6 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+2 \text{l2}^2 \text{m2}+3 \text{mb} r^2\right) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) \\
+ \frac{1}{2} (-\text{l1} (\text{m1}+2 \text{m2}) \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{2} (\text{l1} (\text{m1}+2 \text{m2}) \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t))) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{3} \left(\text{l1}^2 (\text{m1}+3 \text{m2})+3 \text{l1} \text{l2} \text{m2} \cos (\text{q2}(t))+\text{l2}^2 \text{m2}\right) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) \\
+ -\frac{1}{2} \text{l2} \text{m2} \sin (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) & \frac{1}{2} \text{l2} \text{m2} \cos (\text{q1}(t)+\text{q2}(t)+\text{$\theta $0}(t)) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) & \frac{1}{6} \text{l2} \text{m2} (3 \text{l1} \cos (\text{q2}(t))+2 \text{l2}) & \frac{\text{l2}^2 \text{m2}}{3} \\
+\end{array}
+\right)$}
+\end{flalign*}
+\end{tiny}
+\begin{sidewaysfigure}
+  \begin{tiny}
+  \clipbox*{0pt {-1.1\depth} {\width} {1.1\height}}{$\left(
+    \begin{array}{c}
+     \frac{1}{2} \left(-\text{l1} (\text{m1}+2 \text{m2}) \left(\text{q1}'(t)+\text{$\theta $0}'(t)\right)^2 \cos (\text{q1}(t)+\text{$\theta $0}(t))+\text{l2} \text{m2} \sin (\text{q2}(t)) \sin (\text{q1}(t)+\text{$\theta $0}(t)) \left(\text{q1}'(t)+\text{q2}'(t)+\text{$\theta $0}'(t)\right)^2-\text{l2} \text{m2} \cos (\text{q2}(t)) \cos (\text{q1}(t)+\text{$\theta $0}(t)) \left(\text{q1}'(t)+\text{q2}'(t)+\text{$\theta $0}'(t)\right)^2\right) \\
+     \frac{1}{2} \left(-\text{l1} (\text{m1}+2 \text{m2}) \left(\text{q1}'(t)+\text{$\theta $0}'(t)\right)^2 \sin (\text{q1}(t)+\text{$\theta $0}(t))-\text{l2} \text{m2} \sin (\text{q2}(t)) \cos (\text{q1}(t)+\text{$\theta $0}(t)) \left(\text{q1}'(t)+\text{q2}'(t)+\text{$\theta $0}'(t)\right)^2-\text{l2} \text{m2} \cos (\text{q2}(t)) \sin (\text{q1}(t)+\text{$\theta $0}(t)) \left(\text{q1}'(t)+\text{q2}'(t)+\text{$\theta $0}'(t)\right)^2\right) \\
+     -\frac{1}{2} \text{l1} \text{l2} \text{m2} \text{q2}'(t) \sin (\text{q2}(t)) \left(2 \text{q1}'(t)+\text{q2}'(t)+2 \text{$\theta $0}'(t)\right) \\
+     -\frac{1}{2} \text{l1} \text{l2} \text{m2} \text{q2}'(t) \sin (\text{q2}(t)) \left(2 \text{q1}'(t)+\text{q2}'(t)+2 \text{$\theta $0}'(t)\right) \\
+     \frac{1}{2} \text{l1} \text{l2} \text{m2} \sin (\text{q2}(t)) \left(\text{q1}'(t)+\text{$\theta $0}'(t)\right)^2 \\
+    \end{array}
+    \right)$}
+  \end{tiny}
+\end{sidewaysfigure}
+\chapter{Code}\label{code}
+Taylor expansion used to linearized the joints' equation of motions:
+\begin{scriptsize}
+\begin{verbatim}
+  series[f_,v_,v_0,_order]:=Module[{e},Expand[Normal[Series[f/.Thread[v->v0+e*v],{e,0,order}]]/.e->1]]
+\end{verbatim}
+\end{scriptsize}
+Cost function for the continous coupled method:
+\begin{scriptsize}
+\begin{verbatim}
+  errorFunction[q_, data_] := NIntegrate[(q - data)^2, {t, 0, 10}]
+\end{verbatim}
+\end{scriptsize}
+Cost function for the discrete coupled method:
+\begin{scriptsize}
+  \begin{verbatim}
+  FindMinimum[Sum[(DiscreteSol11[[k]] - DiscreteData11[[k]])^2, {k, 0, NP}], {mO,test}]
+  \end{verbatim}
+  \end{scriptsize}
+Maple code for copuled equations solution:
+\begin{scriptsize}
+  \begin{verbatim}
+    dsolve(eqns union {q1(0)=q__10,q2(0)=q__20,D(q1)(0)=vq__10,D(q2)(0)=vq__20},{q1(t),q2(t)},method=laplace)
+    assuming mO>0:
+  \end{verbatim}
+  \end{scriptsize}
+Coupled linearized joints' equations:
+\begin{scriptsize}
+  \begin{verbatim}
+  (3124.81 + 30.3704*mO)*diff(diff(q1(t), t), t) + (3124.81 + 30.3704*mO)*diff(diff(q2(t), t), t)
+   - 171878.0000 + 109421.0000*q1(t) + 109421.0000*q2(t) + 218733.0000*diff(q1(t), t) + 218733.0000*diff(q2(t), t);
+  (15624.1 + 61.6185*mO)*diff(diff(q1(t), t), t) + (3124.81 + 30.3704*mO)*diff(diff(q2(t), t), t)
+   - 171878.0000 + 231289.0000*q1(t) + 109421.0000*q2(t) + 462346.0000*diff(q1(t), t) + 218733.0000*diff(q2(t), t)
+  \end{verbatim}
+  \end{scriptsize}
+Solution of the coupled joints’ equations obtained with Maple (next pages).
+    \begin{sidewaysfigure}
+    \begin{scriptsize}
+    \begin{equation}
+      \begin{split}
+      \mathit{q1} \! \left(t \right)=&\frac{312481 \left(\frac{1218065000 \sinh \left(\frac{200 t \sqrt{33283899921325-9520358627 \mathit{mO}}}{312481 \mathit{mO} +124992900}\right)}{312481 \sqrt{33283899921325-9520358627 \mathit{mO}}}+\frac{200 \cosh \left(\frac{200 t \sqrt{33283899921325-9520358627 \mathit{mO}}}{312481 \mathit{mO} +124992900}\right)}{312481}\right) {\mathrm e}^{-\frac{1218065000 t}{312481 \mathit{mO} +124992900}} q_{\mathit{10}}}{200}\\
+      &+\frac{312481 \sinh \! \left(\frac{200 t \sqrt{33283899921325-9520358627 \mathit{mO}}}{312481 \mathit{mO} +124992900}\right) \left(\mathit{mO} +\frac{124992900}{312481}\right) {\mathrm e}^{-\frac{1218065000 t}{312481 \mathit{mO} +124992900}} \mathit{vq}_{\mathit{10}}}{200 \sqrt{33283899921325-9520358627 \mathit{mO}}}
+      \end{split}
+      \label{maple_q1}
+    \end{equation}
+  \end{scriptsize}
+\end{sidewaysfigure}
+      \begin{sidewaysfigure}
+        \begin{tiny}
+        \begin{equation}
+        \begin{split}
+          \mathit{q2}\! \left(t\right)=&\frac{171878}{109421}-q_{\mathit{10}} {\mathrm e}^{-\frac{1218065000 t}{312481 \mathit{mO}+124992900}} \cosh\! \left(\frac{200 t \sqrt{33283899921325-9520358627 \mathit{mO}}}{312481 \mathit{mO}+124992900}\right)\\
+          &+\frac{1}{25 \sqrt{29047778718100-8307898846 \mathit{mO}}}37963 \sinh\! \left(\frac{50 t \sqrt{29047778718100-8307898846 \mathit{mO}}}{75926 \mathit{mO}+7812025}\right) \left(\left(\mathit{vq}_{\mathit{10}}+\mathit{vq}_{\mathit{20}}\right) \mathit{mO}+\frac{136708125 q_{\mathit{10}}}{37963}+\frac{136708125 q_{\mathit{20}}}{37963}+\frac{7812025 \mathit{vq}_{\mathit{10}}}{75926}+\frac{7812025 \mathit{vq}_{\mathit{20}}}{75926}-\frac{23497119108750}{4153949423}\right) {\mathrm e}^{-\frac{273416250 t}{75926 \mathit{mO}+7812025}}\\
+          &+\frac{\left(\left(-312481 \mathit{mO}-124992900\right) \mathit{vq}_{\mathit{10}}-1218065000 q_{\mathit{10}}\right) {\mathrm e}^{-\frac{1218065000 t}{312481 \mathit{mO}+124992900}} \sinh\! \left(\frac{200 t \sqrt{33283899921325-9520358627 \mathit{mO}}}{312481 \mathit{mO}+124992900}\right)}{200 \sqrt{33283899921325-9520358627 \mathit{mO}}}+\frac{\cosh\! \left(\frac{50 t \sqrt{29047778718100-8307898846 \mathit{mO}}}{75926 \mathit{mO}+7812025}\right) {\mathrm e}^{-\frac{273416250 t}{75926 \mathit{mO}+7812025}} \left(109421 q_{\mathit{10}}+109421 q_{\mathit{20}}-171878\right)}{109421}
+        \end{split}
+        \label{maple_q2}
+      \end{equation}
+    \end{tiny}
+    \end{sidewaysfigure}
+\chapter{Plots}\label{appendix_plots}
+Here, the same plots of Section~\ref{mass_retrieval} al listed for Simulation 2 (i.e. when the satellite approaches with a non-zero vertical velocity and zero horizontal velocity with north-to-south direction).
+\begin{figure}[h]
+  \centering
+  \subfloat[\emph{$q_{2,0}=\SI{0}{\radian}$}]{\includesvg[scale=0.35]{lin_err2_0.svg}} \quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/6}{\radian}$}]{\includesvg[scale=0.35]{lin_err2_pi6.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/4}{\radian}$}]{\includesvg[scale=0.35]{lin_err2_pi4.svg}}\quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/3}{\radian}$}]{\includesvg[scale=0.35]{lin_err2_pi3.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$}]{\includesvg[scale=0.35]{lin_err2_pi2.svg}}
+  \caption{Linearization error for different first arm's configuration, Simulation 2: non-linear solution in blue, linearized solution in orange, with $\hat{m}=\SI{2000}{\kilogram}$.}
+  \label{linear_error_2}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \subfloat[\emph{$q_{2,0}=\SI{0}{\radian}$}]{\includesvg[scale=0.35]{approximation2_0.svg}} \quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/6}{\radian}$}]{\includesvg[scale=0.35]{approximation2_pi6.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/4}{\radian}$}]{\includesvg[scale=0.35]{approximation2_pi4.svg}}\quad
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/3}{\radian}$}]{\includesvg[scale=0.35]{approximation2_pi3.svg}}\\
+  \subfloat[\emph{$q_{2,0}=\SI[parse-numbers = false]{\pi/2}{\radian}$}]{\includesvg[scale=0.35]{approximation2_pi2.svg}}
+  \caption{Approximation error for different first arm's configuration, Simulation 2: non-approximated linearized solution in orange, approximated solution in blue, with $\hat{m}=\SI{2000}{\kilogram}$.}
+  \label{approximation_error_2}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi6_2.svg}
+  \caption{}
+  \label{q262}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi4_2.svg}
+  \caption{}
+  \label{q242}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi3_2.svg}
+  \caption{}
+  \label{q232}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includesvg[scale=0.4]{massespi2_2.svg}
+  \caption{}
+  \label{q222}
+\end{figure}
+\end{appendices}
 \end{document}
