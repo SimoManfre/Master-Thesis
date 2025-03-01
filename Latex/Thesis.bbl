@@ -1,0 +1,87 @@
+\begin{thebibliography}{10}
+
+\bibitem{twentyseven}
+Y.~Harari, {\em Sapiens: A Brief History of Humankind}.
+\newblock HarperCollins, 2015.
+
+\bibitem{three}
+Y.~Gao and S.~Chien, ``Review on space robotics: Towards top-level science through space exploration,'' {\em Science Robotics}, vol.~2, no.~7, 2017.
+
+\bibitem{five}
+J.~Sasiadek, ``Space robotics and manipulators---the past and the future,'' {\em Control Engineering Practice}, vol.~2, no.~3, pp.~491--497, 1994.
+
+\bibitem{one}
+P.~Putz, ``Space robotics in europe: A survey,'' {\em Robotics and Autonomous Systems}, vol.~23, pp.~3--16, 1998.
+
+\bibitem{six}
+P.~From, J.~Gravdahl, and K.~Pettersen, {\em Vehicle-Manipulator Systems: Modeling for Simulation, Analysis, and Control}.
+\newblock Springer, 01~ed., 2014.
+
+\bibitem{two}
+E.~Papadopoulos, F.~Aghili, O.~Ma, and R.~Lampariello, ``Robotic manipulation and capture in robotic manipulation and capture in space: A survey,'' {\em Frontiers in Robotics and AI}, vol.~8, 2021.
+
+\bibitem{twentythree}
+D.~N. Nenchev and K.~Yoshida, ``Impact analysis and post-impact motion control issues of a free-floating space robot subject to a force impulse,'' {\em IEEE Transactions on Robotics and Automation}, vol.~15, no.~3, pp.~548--557, 1999.
+
+\bibitem{twentyfour}
+F.~Aghili, ``Optimal control of a space manipulator for detumbling of a target satellite,'' in {\em 2009 IEEE international conference on robotics and automation}, pp.~3019--3024, IEEE, 2009.
+
+\bibitem{four}
+P.~Laryssa, E.~Lindsay, O.~Layi, O.~Marius, K.~Nara, L.~Aris, and T.~Ed, ``International space station robotics: a comparative study of era, jemrms and mss,'' in {\em 7th ESA Workshop on Advanced Space Technologies for Robotics and Automation}, pp.~19--21, 2002.
+
+\bibitem{seven}
+G.~Jorgensen and E.~Bains, ``Srms history, evolution and lessons learned,'' in {\em AIAA SPACE 2011 Conference \& Exposition}, 2011.
+
+\bibitem{eight}
+N.~Sato, ``Jemrms design features and topics from testing,'' in {\em Proc. 6th Int. Symp. on Artificial Intelligence, Robotics and Automation in Space, Montreal, 2001}, 2001.
+
+\bibitem{eleven}
+K.~M. Lynch and F.~C. Park, {\em Modern Robotics: Mechanics, Planning, and Control}.
+\newblock USA: Cambridge University Press, 1st~ed., 2017.
+
+\bibitem{nine}
+G.~Legnani, F.~Casolo, P.~Righettini, and B.~Zappa, ``A homogeneous matrix approach to 3d kinematics and dynamics---i. theory,'' {\em Mechanism and machine theory}, vol.~31, no.~5, pp.~573--587, 1996.
+
+\bibitem{ten}
+G.~Legnani, F.~Casalo, P.~Righettini, and B.~Zappa, ``A homogeneous matrix approach to 3d kinematics and dynamics---ii. applications to chains of rigid bodies and serial manipulators,'' {\em Mechanism and machine theory}, vol.~31, no.~5, pp.~589--605, 1996.
+
+\bibitem{twelve}
+D.~Raina and S.~V. Shah, ``Impact modeling and estimation for multi-arm space robot while capturing tumbling orbiting objects,'' in {\em Proceedings of the 2017 3rd International Conference on Advances in Robotics}, pp.~1--6, 2017.
+
+\bibitem{thirteen}
+X.~Cyril, G.~J. Jaar, and A.~K. Misra, ``Dynamical modelling and control of a spacecraft-mounted manipulator capturing a spinning satellite,'' {\em Acta Astronautica}, vol.~35, no.~2-3, pp.~167--174, 1995.
+
+\bibitem{fourteen}
+C.~Xavier, K.~Sun-Wook, I.~Michel, M.~Arun, and J.~Gilbert, ``Post-impact dynamics of two multi-body systems attempting docking/berthing,'' {\em Acta Astronautica}, vol.~40, no.~11, pp.~759--769, 1997.
+
+\bibitem{fifteen}
+B.~Chapnik, G.~R. Heppler, J.~D. Aplevich, {\em et~al.}, ``Modeling impact on a one-link flexible robotic arm,'' {\em IEEE Transactions on Robotics and Automation}, vol.~7, no.~4, pp.~479--488, 1991.
+
+\bibitem{sixteen}
+S.~Liu, L.~Wu, and Z.~Lu, ``Impact dynamics and control of a flexible dual-arm space robot capturing an object,'' {\em Applied mathematics and computation}, vol.~185, no.~2, pp.~1149--1159, 2007.
+
+\bibitem{seventeen}
+R.~J. Theodore and A.~Ghosal, ``Comparison of the assumed modes and finite element models for flexible multilink manipulators,'' {\em The International journal of robotics research}, vol.~14, no.~2, pp.~91--111, 1995.
+
+\bibitem{eighteen}
+A.~De~Luca and B.~Siciliano, ``Closed-form dynamic model of planar multilink lightweight robots,'' {\em IEEE Transactions on systems, MAN, and cybernetics}, vol.~21, no.~4, pp.~826--839, 1991.
+
+\bibitem{twentyfive}
+S.~Kayastha, J.~Katupitiya, G.~Pearce, and A.~Rao, ``Comparative study of post-impact motion control of a flexible arm space robot,'' {\em European Journal of Control}, vol.~69, 2023.
+
+\bibitem{nineteen}
+M.~Aenlle, M.~Juul, and R.~Brincker, ``Modal mass and length of mode shapes in structural dynamics,'' {\em Shock and Vibration}, no.~1, 2020.
+
+\bibitem{twenty}
+M.~Aenlle~L{\'o}pez and R.~Brincker, ``Basic concepts of modal scaling,'' 2019.
+
+\bibitem{twentyone}
+H.~Turnbull, ``A matrix form of taylor's theorem,'' {\em Proceedings of the Edinburgh Mathematical Society}, vol.~2, no.~1, pp.~33--54, 1930.
+
+\bibitem{twentysix}
+A.~De~Luca, G.~Oriolo, and P.~R. Giordano, ``Kinematic modeling and redundancy resolution for nonholonomic mobile manipulators,'' in {\em Proceedings 2006 IEEE International Conference on Robotics and Automation, 2006. ICRA 2006.}, pp.~1867--1873, 2006.
+
+\bibitem{twentytwo}
+K.~L. Hillsley and S.~Yurkovich, ``Vibration control of a two-link flexible robot arm,'' {\em Dynamics and Control}, vol.~3, no.~3, pp.~261--280, 1993.
+
+\end{thebibliography}

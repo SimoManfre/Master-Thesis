@@ -261,6 +261,8 @@ INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/appendi
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/appendix/appendix.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/cite/cite.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/cite/cite.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/csquotes/csquotes.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/csquotes/csquotes.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -1837,6 +1839,9 @@ INPUT ./svg-inkscape/massespi2_2_svg-tex.pdf
 INPUT ./svg-inkscape/massespi2_2_svg-tex.pdf_tex
 INPUT ./svg-inkscape/massespi2_2_svg-tex.pdf
 INPUT ./svg-inkscape/massespi2_2_svg-tex.pdf
+INPUT ./Thesis.bbl
+INPUT ./Thesis.bbl
+INPUT Thesis.bbl
 INPUT Thesis.aux
 INPUT ./Thesis.out
 INPUT ./Thesis.out

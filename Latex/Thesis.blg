@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2024/Homebrew)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+The style file: ieeetr.bst
+Database file #1: biblio.bib
+Warning--I didn't find a database entry for ""
+Warning--can't use both author and editor fields in eleven
+Warning--empty booktitle in twenty
+You've used 27 entries,
+            1876 wiz_defined-function locations,
+            637 strings with 7921 characters,
+and the built_in function-call counts, 7410 in all, are:
+= -- 746
+> -- 261
+< -- 0
++ -- 98
+- -- 71
+* -- 522
+:= -- 1029
+add.period$ -- 30
+call.type$ -- 27
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 29
+duplicate$ -- 398
+empty$ -- 727
+format.name$ -- 71
+if$ -- 1814
+int.to.chr$ -- 0
+int.to.str$ -- 27
+missing$ -- 30
+newline$ -- 87
+num.names$ -- 27
+pop$ -- 92
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 250
+stack$ -- 0
+substring$ -- 514
+swap$ -- 155
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 77
+width$ -- 29
+write$ -- 270
+(There were 3 warnings)
