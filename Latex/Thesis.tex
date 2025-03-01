@@ -101,7 +101,7 @@
 
 \begin{abstract}
 This thesis aims to describe, control and simulate a planar revolute-revolute (RR) manipulator in asbence of gravity (i.e. located in space) subjected to an impact due to the docking of a tumbling satellite.\\
-The actual outputs of this work are methods to retrive the satellite mass and initial velocities assuming them unknown in advance. Therefore, an initial guessed mass is implemented in the control law initialy.\\
+The actual outputs of this work are methods to retrive the satellite mass and initial velocities assuming them unknown in advance. Therefore, an initial guessed mass is implemented in the control law initially.\\
 This work is organized as follows: the first chapter exposes an overview of the actual state-of-art of modern space maniupalators.\\ 
 The second chapter introduces the basics of robotic kinematics and the manipulator jacobian matrix is found.\\
 In the third chapter the system equation of motions are calculated with lagrangian-based approaches.\\
@@ -123,14 +123,15 @@ We live in a society overwhelmed by such technology, autonomous systems, industr
 Bilionaires such as Elon Musk are pushing the technology even further with Mars colonization as a goal.\\
 However, this great chapter of human history is still quite hidden. When someone says that he is studying Law, Economics or Literature, nobody bats an eye; but when I tell people that I study Mechatronics Engineering, I always have to add some more information, key words like "mechanics", "robotics" or "programming". In my opinion, this makes clear that one the most revolutionary fields (even though I aknowledge that it is a very broad term) is not really interiorized by the people, like others faculties and studies are.\\
 In their defence, I must say that when I first enrolled in the university, aiming to the Mechatronics Master's Degree, I was more pushed by the unknown around that term than by real interest or passion related to it. But with the new available technology, such as the aforementioned AI, directly in our homes (and soon maybe also humanoid robots) it will become a common topic and an everyday experience.\\
-Yuval Noah, in his book "Sapiens: a Brief History of Humankind" \cite{twentyseven} claims that three were the great human revolutions that completely changed our way to live and to act as social creatures: the Cognitive Revolution (around 70.000 years ago), which allowed us to think of nonexistent concepts, such as states, moral, legends, myths, tools; the Agricultural Revolution (about 12.000 years ago) when we started to settle and grow our own food; the Industrial Revolution (200 y.a.), which is fairly known to everybody. It is not difficult to think that the next human revolution, if there is ever going to be one, will have to do with space exploration.\\
+Yuval Noah, in his book "Sapiens: a Brief History of Humankind" \cite{twentyseven} claims that three were the great human revolutions that completely changed our way to live and to act as social creatures: the Cognitive Revolution (around 70.000 years ago), which allowed us to think of nonexistent concepts, such as states, ethics, legends, myths, tools; the Agricultural Revolution (about 12.000 years ago) when we started to settle and grow our own food; the Industrial Revolution (200 y.a.), which is fairly known to everybody. It is not difficult to think that the next human revolution, if there is ever going to be one, will have to do with space exploration.\\
 This is to say that it is a really promising and exiting field, which will (and it is already doing) play an important role in our society.\\
 Far from aiming to the moon, this thesis was born due to my curiosity in the field of robotics merged with the need to face space and modern problems, such as the berthing and docking of external objects by a manipulator or the tumbling of a spinning satellite.\\
 This dissertation aims to analyse the dynamic of a space manipulator after the impact with an external satellite to retrieve its kinetic and inertial properties before the impact.\\ 
-The workflow was the following: a first phase committed to gather information about space manipulators and to study papers regarding the useful impact equations to model the docking of the satellite.\\
+The workflow was the following: a first phase was committed to gather information about space manipulators and to study papers regarding the useful impact equations to model the docking of the satellite.\\
 Secondly, a 2D model of the manipulator has been implemented in Wolfram 14.2 and equation of motion for the pre-impact and post-impact phases have been calculated.\\
 Finally, the results have been listed and considerations have been made.\\
-The machine on which the calculation have been made is a MacBook Air M3 with $\SI{16}{\giga\byte}$ of RAM.
+The machine on which the calculation have been done is a MacBook Air M3 with $\SI{16}{\giga\byte}$ of RAM.
+\vspace{0.8cm}
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.15]{sapiens.jpg}
@@ -620,7 +621,6 @@ The Jacobian Matrix is then obtained by deriviation of $p_{EE}$ with respect to 
 \end{tiny}
 \end{equation}
 As already forecasted, the Jacobian Matrix is rectangular, i.e. $J\in \mathbb{R}^{2\times5}$, thus not invertibile.\\
-
 Following equation (\ref{velocity_matrix}), the Velocity Matrices can be found as $\prescript{f}{}{W}=\prescript{f}{m}{\dot{M}}\prescript{m}{f}{M}$:
 \begin{equation}
   \begin{array}{c}
@@ -1052,7 +1052,7 @@ In order to evaluate the non lagrangian components of equation (\ref{lagrangian}
   \label{action_matrix}
 \end{equation}
 where $\{f_x,f_y,f_z\}$ is the resultant of the forces applied to a body $k$, $\{c_x,c_y,c_z\}$ holds the torques calculated with respect to the origin of the frame $i$.\\
-The pseudo-scalar product (see \ref{appendix}) between the action matrix of a body and its velocity matrix, gives the power developed by the actions included in $\phi$ as the object moves according to the velocities described by $W$:
+The pseudo-scalar product (see equation~(\ref{pseudo_scalar}) in the Appendix) between the action matrix of a body and its velocity matrix, gives the power developed by the actions included in $\phi$ as the object moves according to the velocities described by $W$:
 \begin{equation}
   P=\prescript{f}{}{\phi}\otimes \prescript{f}{}{W}
 \end{equation}
@@ -1644,7 +1644,7 @@ W(x)=c_1\cos(\beta x)+c_2\sin{\beta x}+c_3\cosh{\beta x}+c_4\sinh{\beta x}
 \label{space}
 \end{equation}
 The four coefficient of the space solution can be found with the boundary condition of the system. Every natural frequency of the system is associated to one space solution (mode shape) and time solution, and can be found imposing the boundary conditions.\\
-The displacement of the beam is the sum of the product between the $n$ mode shapes selected and their time solutions [16,17,18]:
+The displacement of the beam is the sum of the product between the $n$ mode shapes selected and their time solutions \cite{sixteen,seventeen,eighteen}:
 \begin{equation}
 w(x,t)=\sum_{n=1}^\infty W_n(x)Q_n(t)
 \label{overall}
@@ -2237,7 +2237,7 @@ but since the VMS is at rest before the impact:
   \dot{\psi}_i=M_O^{-1}J_O^T(J^+)^TG\dot{p}_f
 \end{equation}
 On Wolfram, solving this system of equations gives very good results regarding the translation velocity, while the angular velocity error is quite big due to numerical approximations.\\
-In this thesis, however, the assumption that has been made is that the relative velocity between the satellite and the VMS is small, so by setting $\dot{\theta}_O=0$ the output is consistent (notice that the real velocity in the simulation was set $\dot{\theta}_O=0.01$, see Table~\ref{initial_velocities}).
+In this thesis, however, the assumption that has been made is that the relative velocity between the satellite and the VMS is small, so by setting $\dot{\theta}_O=0$ the output is consistent (notice that the real velocity in the simulation was set $\dot{\theta}_O=\SI{0.01}{\radian\per\second}$, see Table~\ref{initial_velocities}).
 \chapter{Results and Conclusion}
 In this Chapter a comparison between the methods suggested in the previuous sections will be displayed as well as plots with the results found for each approach.\\
 The first section will focus on the mass outputs and considerations about the validity and efficiency of each method; the second section fill focus on the error made in finding the initial velocity given different guessed masses; in the third one final considerations of this work and possibile future improvements will be exposed.
@@ -2443,17 +2443,20 @@ There is still a lot of room for improvements and deeper analysis, such as:
   \item The software used was Wolfram, which is very intuitive and free for students but lack of computational power and allows only for short and simple symbolic equations. Maple has been used in the final part to get a symbolic closed form solution of the coupled second ordere linearized equation of motions.\\
     This study would benefit of a more powerful software with built-in function for robotic simulations (working entirely on Maple or Simulink could be a solution).
 \end{itemize}
-\newpage
+
 \subsection{Conclusion}
 To conclude, an overview on space manipulators and their functionality has been studied. I would like to thank professor Bortoluzzi for the proposed topic and the attention, availability and help given in these months.\\
 Thank you also to all my friends and family who always supported me in my choices and constantly remember me that no matter how hard sometimes the path is, there is always a good opportunity to improve ourselves.\\
-The University of Trento has thought me so many lessons in these years that it would be too long to list them all (as if this thesis were not already too long), but one thing that is for sure is that I learned to face problems I have never encountered before and to take the good from bad situations. I learned how to manage stress and future uncertainty, and I will bring all these soft skills in my upcoming working life with enthusiasm and curiosity.\\
+A special thanks goes to God, who believed in me in the first place and guided me through all the difficult decisions and lonely moments and showed me that, no matter what, "tribulation produces perseverance; and perseverance, character; and character, hope. Now hope does not disappoint, because the love of God has been poured out in our hearts by the Holy Spirit who was given to us" (Rm 5, 3-5).\\
+As a consequence, thank you to my St. Peter's community, for their frienship and affinity helped and help me in changing my ideas and always be open minded.\\
+Lastly, the University of Trento has thought me so many lessons in these years that it would be too long to list them all (as if this thesis were not already too long), but one thing that is for sure is that I learned to face problems I have never encountered before and to take the good from bad situations. I learned how to manage stress and future uncertainty, and I will bring all these soft skills in my upcoming working life with enthusiasm and curiosity.\\
 As my granfather always says, \textit{ad maiora!}
+\newpage
+\begin{appendices}
+\chapter{Matrices}\label{appendix_matrices}
 \pagestyle{plain} % Usa lo stile di default per i capitoli, senza header
 \fancyhf{} % Cancella tutte le intestazioni e i piè di pagina
 \renewcommand{\headrulewidth}{0pt} % Rimuove la linea orizzontale
-\begin{appendices}
-\chapter{Matrices}\label{appendix_matrices}
 The VMS mass and Coriolis matrices are listed.
 
 \begin{tiny}
@@ -2505,39 +2508,69 @@ The VMS mass and Coriolis matrices are listed.
 \end{sidewaysfigure}
 \chapter{Code}\label{code}
 Taylor expansion used to linearized the joints' equation of motions:
-\begin{scriptsize}
+\begin{small}
 \begin{verbatim}
-  series[f_,v_,v_0,_order]:=Module[{e},Expand[Normal[Series[f/.Thread[v->v0+e*v],{e,0,order}]]/.e->1]]
+  series[f_,v_,v_0,_order]:=Module[{e},Expand[Normal[Series[f/.Thread[v->v0+e*v],
+  {e,0,order}]]/.e->1]]
 \end{verbatim}
-\end{scriptsize}
+\end{small}
 Cost function for the continous coupled method:
-\begin{scriptsize}
+\begin{small}
 \begin{verbatim}
   errorFunction[q_, data_] := NIntegrate[(q - data)^2, {t, 0, 10}]
 \end{verbatim}
-\end{scriptsize}
+\end{small}
 Cost function for the discrete coupled method:
-\begin{scriptsize}
+\begin{small}
   \begin{verbatim}
-  FindMinimum[Sum[(DiscreteSol11[[k]] - DiscreteData11[[k]])^2, {k, 0, NP}], {mO,test}]
+  FindMinimum[Sum[(DiscreteSol11[[k]] - DiscreteData11[[k]])^2, {k, 0, NP}],
+   {mO,test}]
   \end{verbatim}
-  \end{scriptsize}
+  \end{small}
 Maple code for copuled equations solution:
-\begin{scriptsize}
+\begin{small}
   \begin{verbatim}
-    dsolve(eqns union {q1(0)=q__10,q2(0)=q__20,D(q1)(0)=vq__10,D(q2)(0)=vq__20},{q1(t),q2(t)},method=laplace)
-    assuming mO>0:
+    dsolve(eqns union {q1(0)=q__10,q2(0)=q__20,D(q1)(0)=vq__10,D(q2)(0)=vq__20},
+    {q1(t),q2(t)},method=laplace) assuming mO>0:
   \end{verbatim}
-  \end{scriptsize}
+  \end{small}
 Coupled linearized joints' equations:
-\begin{scriptsize}
+\begin{small}
   \begin{verbatim}
-  (3124.81 + 30.3704*mO)*diff(diff(q1(t), t), t) + (3124.81 + 30.3704*mO)*diff(diff(q2(t), t), t)
-   - 171878.0000 + 109421.0000*q1(t) + 109421.0000*q2(t) + 218733.0000*diff(q1(t), t) + 218733.0000*diff(q2(t), t);
-  (15624.1 + 61.6185*mO)*diff(diff(q1(t), t), t) + (3124.81 + 30.3704*mO)*diff(diff(q2(t), t), t)
-   - 171878.0000 + 231289.0000*q1(t) + 109421.0000*q2(t) + 462346.0000*diff(q1(t), t) + 218733.0000*diff(q2(t), t)
+  (3124.81 + 30.3704*mO)*diff(diff(q1(t), t), t) + (3124.81 + 30.3704*mO)*
+  *diff(diff(q2(t), t), t) - 171878.0000 + 109421.0000*q1(t) + 109421.0000*q2(t) +
+  + 218733.0000*diff(q1(t), t) + 218733.0000*diff(q2(t), t);
+  (15624.1 + 61.6185*mO)*diff(diff(q1(t), t), t) + (3124.81 + 30.3704*mO)*
+  *diff(diff(q2(t), t), t) - 171878.0000 + 231289.0000*q1(t) + 109421.0000*q2(t) + 
+  + 462346.0000*diff(q1(t), t) + 218733.0000*diff(q2(t), t)
   \end{verbatim}
-  \end{scriptsize}
+  \end{small}
+Given the following force matrix $\phi$ and velocity matrix $W$:
+\begin{equation}
+  \phi=\begin{bmatrix}
+    0&-c_z&c_y&f_x\\
+    c_z&0&-c_x&f_y\\
+    -c_y&c_x&0&f_z\\
+    -f_x&-f_y&-f_z&0
+  \end{bmatrix} \quad W=\begin{bmatrix}
+    0&-\omega_z&\omega_y&v_x\\
+    \omega_z&0&-\omega_x&v_y\\
+    -\omega_y&\omega_x&0&v_z\\
+    -v_x&-v_y&-v_z&0
+  \end{bmatrix}
+\end{equation}
+the \textit{pseudo-scalar product} (i.e. the power developed by the actions included in $\phi$ as the object moves according to the velocities described by $W$) is defined as:
+\begin{equation}
+  P=\phi\otimes W=c_x\omega_x+c_y\omega_y+c_z\omega_z+f_xv_x+f_yv_y+f_zv_z
+  \label{pseudo_scalar}
+\end{equation}
+In Wolfram this has been written as a function:
+\begin{small}
+  \begin{verbatim}
+    actionMatrix[cx_, cy_, cz_, fx_, fy_,fz_] := {{0, -cz, cy, fx},
+     {cz, 0, -cx, fy}, {-cy, cx, 0, fz}, {-fx, -fy, -fz, 0}}
+  \end{verbatim}
+\end{small}
 Solution of the coupled joints’ equations obtained with Maple (next pages).
     \begin{sidewaysfigure}
     \begin{scriptsize}

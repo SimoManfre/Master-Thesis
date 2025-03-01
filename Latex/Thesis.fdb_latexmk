@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex Thesis"] 1740787456.31948 "Thesis.aux" "Thesis.bbl" "Thesis" 1740787459.73177 0
+["bibtex Thesis"] 1740830851.41006 "Thesis.aux" "Thesis.bbl" "Thesis" 1740833627.75291 0
   "./biblio.bib" 1740785732.43523 7327 0cdde275f6f8c83724de7ae502c0c825 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/bibtex/bst/base/ieeetr.bst" 1710106625 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "Thesis.aux" 1740787459.37025 42892 aeb6584cf6c4cffb4162ce37738ad5b1 "pdflatex"
+  "Thesis.aux" 1740833627.38461 42993 cdb2434c97e39f4cf8790f1155ee0e4c "pdflatex"
   (generated)
   "Thesis.bbl"
   "Thesis.blg"
   (rewritten before read)
-["pdflatex"] 1740787456.40416 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1740787459.73191 0
-  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1740787446.67542 187475 ccd99e27064c6fad3fe67d51dd4bfc82 ""
+["pdflatex"] 1740833624.3864 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1740833627.75309 0
+  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1740833624.16693 189033 e72124d7b2f11dd8300c7d314f5467ee ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1710106625 2971 def0b6c1f0b107b3b936def894055589 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/fontname/texfonts.map" 1710106625 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1710106625 5472554 f7861620179a71a79d4bd86251f559d0 ""
@@ -35,7 +35,7 @@
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm" 1710106625 3072 3bce340d4c075dffe6d4ec732b4c32fe ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm" 1710106625 3072 b73d2778cc3af44970de4de5e032d7f6 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm" 1710106625 3072 8b5a64dc91775463bc95e2d818524028 ""
-  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ectt0800.tfm" 1710106625 1536 0b0b8ca286de6a006b681926403f35cd ""
+  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ectt1095.tfm" 1710106625 1536 a988bfe554c1f79514bd46d13c3c64ce ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm" 1710106625 1536 487c9b46984a816c7ed238d0674595c7 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1710106625 1004 54797486969f23fa377b128694d548df ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1710106625 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -110,7 +110,7 @@
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb" 1710106625 186554 e8f0fa8ca05e038f257a06405232745f ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb" 1710106625 196446 8fbbe4b97b83e5182def6d29a44e57fb ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb" 1710106625 198221 ca5aa71411090ef358a6cc78b7458365 ""
-  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb" 1710106625 175641 e30a691dc1402b08fd6535cf8a31e5b7 ""
+  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb" 1710106625 169670 48d12e69c9a3b23c81f6d703ccbd4554 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb" 1710106625 167085 68de377d2744a68a88fa40a1f610615a ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1710106625 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1710106625 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -397,11 +397,11 @@
   "Images/velpi2_2.svg" 1740658079.3211 113723 bff53a3119af8a44d0f2db6015ddf6cf ""
   "Images/velpi6_1.svg" 1740657842.76557 108276 8b90e65a8aa5944b6ea1bd61c434d396 ""
   "Images/velpi6_2.svg" 1740658300.13147 104260 abdc68d7c4e78e5434b01917c2ab2883 ""
-  "Thesis.aux" 1740787459.37025 42892 aeb6584cf6c4cffb4162ce37738ad5b1 "pdflatex"
-  "Thesis.bbl" 1740787456.37234 5409 c8f6b216691f65d2da51aee7a5e18679 "bibtex Thesis"
-  "Thesis.out" 1740787459.37303 7838 3aff3095928b9496800c8ccde979f13f "pdflatex"
-  "Thesis.tex" 1740787446.67542 187475 ccd99e27064c6fad3fe67d51dd4bfc82 ""
-  "Thesis.toc" 1740787459.37321 4458 67476e33e377594ecb64448808a9ac6f "pdflatex"
+  "Thesis.aux" 1740833627.38461 42993 cdb2434c97e39f4cf8790f1155ee0e4c "pdflatex"
+  "Thesis.bbl" 1740830851.45839 5409 c8f6b216691f65d2da51aee7a5e18679 "bibtex Thesis"
+  "Thesis.out" 1740833627.38758 7838 3aff3095928b9496800c8ccde979f13f "pdflatex"
+  "Thesis.tex" 1740833624.16693 189033 e72124d7b2f11dd8300c7d314f5467ee ""
+  "Thesis.toc" 1740833627.3878 4458 781923b967aad178fe53fbcddb0a7259 "pdflatex"
   "svg-inkscape/approximation1_0_svg-tex.pdf" 1740650903.43448 27013 58524a03d78b0a1d60be30328fff33ea ""
   "svg-inkscape/approximation1_0_svg-tex.pdf_tex" 1740650903.43466 2091 f65a027a449c28651f3c1aefa42ecf42 ""
   "svg-inkscape/approximation1_pi2_svg-tex.pdf" 1740650485.25592 25095 a568258c6542536f1bd719acf8b395ac ""
