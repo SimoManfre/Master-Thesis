@@ -17,8 +17,18 @@ P.~Putz, ``Space robotics in europe: A survey,'' {\em Robotics and Autonomous Sy
 P.~From, J.~Gravdahl, and K.~Pettersen, {\em Vehicle-Manipulator Systems: Modeling for Simulation, Analysis, and Control}.
 \newblock Springer, 01~ed., 2014.
 
+\bibitem{esa}
+ESA, ``European robotic arm (era),'' 1999.
+\newblock \url{https://www.esa.int/esearch?q=era} [Access: 04/03/2025)].
+
 \bibitem{two}
 E.~Papadopoulos, F.~Aghili, O.~Ma, and R.~Lampariello, ``Robotic manipulation and capture in robotic manipulation and capture in space: A survey,'' {\em Frontiers in Robotics and AI}, vol.~8, 2021.
+
+\bibitem{twentyeight}
+H.~Dai, X.~Jing, Y.~Wang, X.~Yue, and J.~Yuan, ``Post-capture vibration suppression of spacecraft via a bio-inspired isolation system,'' {\em Mechanical Systems and Signal Processing}, vol.~105, pp.~214--240, 2018.
+
+\bibitem{twentynine}
+X.~Wang, X.~Yue, H.~Dai, and J.~Yuan, ``Vibration suppression for post-capture spacecraft via a novel bio-inspired stewart isolation system,'' {\em Acta Astronautica}, vol.~168, pp.~1--22, 2020.
 
 \bibitem{twentythree}
 D.~N. Nenchev and K.~Yoshida, ``Impact analysis and post-impact motion control issues of a free-floating space robot subject to a force impulse,'' {\em IEEE Transactions on Robotics and Automation}, vol.~15, no.~3, pp.~548--557, 1999.
@@ -31,6 +41,14 @@ P.~Laryssa, E.~Lindsay, O.~Layi, O.~Marius, K.~Nara, L.~Aris, and T.~Ed, ``Inter
 
 \bibitem{seven}
 G.~Jorgensen and E.~Bains, ``Srms history, evolution and lessons learned,'' in {\em AIAA SPACE 2011 Conference \& Exposition}, 2011.
+
+\bibitem{sheet}
+M.~Robotics, ``Mobile servicing system data sheet.'' \url{http://www.mdrobotics.ca}, 2002.
+\newblock Accessed: 2025-03-04.
+
+\bibitem{nasa}
+NASA, ``The international space station’s fine-tuned robotic hand,'' 2022.
+\newblock \url{https://www.nasa.gov/image-article/international-space-stations-fine-tuned-robotic-hand/} [Access: 04/03/2025)].
 
 \bibitem{eight}
 N.~Sato, ``Jemrms design features and topics from testing,'' in {\em Proc. 6th Int. Symp. on Artificial Intelligence, Robotics and Automation in Space, Montreal, 2001}, 2001.
@@ -48,14 +66,11 @@ G.~Legnani, F.~Casalo, P.~Righettini, and B.~Zappa, ``A homogeneous matrix appro
 \bibitem{twelve}
 D.~Raina and S.~V. Shah, ``Impact modeling and estimation for multi-arm space robot while capturing tumbling orbiting objects,'' in {\em Proceedings of the 2017 3rd International Conference on Advances in Robotics}, pp.~1--6, 2017.
 
-\bibitem{thirteen}
-X.~Cyril, G.~J. Jaar, and A.~K. Misra, ``Dynamical modelling and control of a spacecraft-mounted manipulator capturing a spinning satellite,'' {\em Acta Astronautica}, vol.~35, no.~2-3, pp.~167--174, 1995.
+\bibitem{fifteen}
+B.~Chapnik, G.~R. Heppler, J.~D. Aplevich, {\em et~al.}, ``Modeling impact on a one-link flexible robotic arm,'' {\em IEEE Transactions on Robotics and Automation}, vol.~7, no.~4, pp.~479--488, 1991.
 
 \bibitem{fourteen}
 C.~Xavier, K.~Sun-Wook, I.~Michel, M.~Arun, and J.~Gilbert, ``Post-impact dynamics of two multi-body systems attempting docking/berthing,'' {\em Acta Astronautica}, vol.~40, no.~11, pp.~759--769, 1997.
-
-\bibitem{fifteen}
-B.~Chapnik, G.~R. Heppler, J.~D. Aplevich, {\em et~al.}, ``Modeling impact on a one-link flexible robotic arm,'' {\em IEEE Transactions on Robotics and Automation}, vol.~7, no.~4, pp.~479--488, 1991.
 
 \bibitem{sixteen}
 S.~Liu, L.~Wu, and Z.~Lu, ``Impact dynamics and control of a flexible dual-arm space robot capturing an object,'' {\em Applied mathematics and computation}, vol.~185, no.~2, pp.~1149--1159, 2007.
@@ -77,6 +92,9 @@ M.~Aenlle~L{\'o}pez and R.~Brincker, ``Basic concepts of modal scaling,'' 2019.
 
 \bibitem{twentyone}
 H.~Turnbull, ``A matrix form of taylor's theorem,'' {\em Proceedings of the Edinburgh Mathematical Society}, vol.~2, no.~1, pp.~33--54, 1930.
+
+\bibitem{thirteen}
+X.~Cyril, G.~J. Jaar, and A.~K. Misra, ``Dynamical modelling and control of a spacecraft-mounted manipulator capturing a spinning satellite,'' {\em Acta Astronautica}, vol.~35, no.~2-3, pp.~167--174, 1995.
 
 \bibitem{twentysix}
 A.~De~Luca, G.~Oriolo, and P.~R. Giordano, ``Kinematic modeling and redundancy resolution for nonholonomic mobile manipulators,'' in {\em Proceedings 2006 IEEE International Conference on Robotics and Automation, 2006. ICRA 2006.}, pp.~1867--1873, 2006.

@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex Thesis"] 1740830851.41006 "Thesis.aux" "Thesis.bbl" "Thesis" 1740833627.75291 0
-  "./biblio.bib" 1740785732.43523 7327 0cdde275f6f8c83724de7ae502c0c825 ""
+["bibtex Thesis"] 1741106783.53045 "Thesis.aux" "Thesis.bbl" "Thesis" 1741108369.71108 0
+  "./biblio.bib" 1741099896.79521 8672 0ae8a1b0a0131daeceb598c9d75954ba ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/bibtex/bst/base/ieeetr.bst" 1710106625 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "Thesis.aux" 1740833627.38461 42993 cdb2434c97e39f4cf8790f1155ee0e4c "pdflatex"
+  "Thesis.aux" 1741108369.34401 43910 17f94ca961251184f669fe5683d1dc80 "pdflatex"
   (generated)
   "Thesis.bbl"
   "Thesis.blg"
   (rewritten before read)
-["pdflatex"] 1740833624.3864 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1740833627.75309 0
-  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1740833624.16693 189033 e72124d7b2f11dd8300c7d314f5467ee ""
+["pdflatex"] 1741108366.29712 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" "Thesis.pdf" "Thesis" 1741108369.71126 0
+  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Thesis.tex" 1741108365.97735 187376 0055d716d3fdcdb55cf3dcea809b3e79 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1710106625 2971 def0b6c1f0b107b3b936def894055589 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/fontname/texfonts.map" 1710106625 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1710106625 5472554 f7861620179a71a79d4bd86251f559d0 ""
@@ -397,11 +397,11 @@
   "Images/velpi2_2.svg" 1740658079.3211 113723 bff53a3119af8a44d0f2db6015ddf6cf ""
   "Images/velpi6_1.svg" 1740657842.76557 108276 8b90e65a8aa5944b6ea1bd61c434d396 ""
   "Images/velpi6_2.svg" 1740658300.13147 104260 abdc68d7c4e78e5434b01917c2ab2883 ""
-  "Thesis.aux" 1740833627.38461 42993 cdb2434c97e39f4cf8790f1155ee0e4c "pdflatex"
-  "Thesis.bbl" 1740830851.45839 5409 c8f6b216691f65d2da51aee7a5e18679 "bibtex Thesis"
-  "Thesis.out" 1740833627.38758 7838 3aff3095928b9496800c8ccde979f13f "pdflatex"
-  "Thesis.tex" 1740833624.16693 189033 e72124d7b2f11dd8300c7d314f5467ee ""
-  "Thesis.toc" 1740833627.3878 4458 781923b967aad178fe53fbcddb0a7259 "pdflatex"
+  "Thesis.aux" 1741108369.34401 43910 17f94ca961251184f669fe5683d1dc80 "pdflatex"
+  "Thesis.bbl" 1741106783.57754 6356 6af515b03a5e7783af89de52da2ad912 "bibtex Thesis"
+  "Thesis.out" 1741108369.34697 7838 3aff3095928b9496800c8ccde979f13f "pdflatex"
+  "Thesis.tex" 1741108365.97735 187376 0055d716d3fdcdb55cf3dcea809b3e79 ""
+  "Thesis.toc" 1741108369.34717 4458 3be6c33ad47ae3a3e8267147a3671673 "pdflatex"
   "svg-inkscape/approximation1_0_svg-tex.pdf" 1740650903.43448 27013 58524a03d78b0a1d60be30328fff33ea ""
   "svg-inkscape/approximation1_0_svg-tex.pdf_tex" 1740650903.43466 2091 f65a027a449c28651f3c1aefa42ecf42 ""
   "svg-inkscape/approximation1_pi2_svg-tex.pdf" 1740650485.25592 25095 a568258c6542536f1bd719acf8b395ac ""
@@ -588,7 +588,7 @@
   "tikz/forces.tikz" 1732702354.83144 3770 a386adbc62790099bca4859d27237e26 ""
   "tikz/no_control_sol1.tikz" 1736764671.08164 1383 e9bebfbb2f9092948b2e4c217fc55024 ""
   "tikz/no_control_sol2.tikz" 1736764731.69291 1380 4a8e3cdeb2f63245de893da5d7bc46b8 ""
-  "tikz/rivals_theorem.tikz" 1731585948.34997 1846 b6edf9b72426e0a7b74b10881a3f9b0d ""
+  "tikz/rivals_theorem.tikz" 1741101830.71838 1846 b6edf9b72426e0a7b74b10881a3f9b0d ""
   "tikz/rotation_point.tikz" 1731581411.57984 803 03d0236b80d8e538051e356cc9829c25 ""
   "tikz/rotation_vectors.tikz" 1731581273.02242 775 14e97ea47403c69c8f736da5f2123fdd ""
   "tikz/singular_conf.tikz" 1740736658.73718 1500 801cbadd9e285e876120776ca236ceee ""
