@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  4 MAR 2025 18:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  5 MAR 2025 12:50
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2756,7 +2756,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Appendix A.
 
-Overfull \hbox (50.41678pt too wide) detected at line 2479
+Overfull \hbox (50.41678pt too wide) detected at line 2480
 []
  []
 
@@ -2765,40 +2765,40 @@ Overfull \hbox (50.41678pt too wide) detected at line 2479
 ] [102]
 Appendix B.
 
-Overfull \hbox (38.32805pt too wide) in paragraph at lines 2500--2500
+Overfull \hbox (38.32805pt too wide) in paragraph at lines 2501--2501
 []  \T1/cmtt/m/n/10.95 series[f_,v_,v_0,_order]:=Module[{e},Expand[Normal[Series[f/.Thread[v->v0+e*v],[] 
  []
 
 
-Overfull \hbox (10.0362pt too wide) in paragraph at lines 2513--2513
+Overfull \hbox (10.0362pt too wide) in paragraph at lines 2514--2514
 []  \T1/cmtt/m/n/10.95 FindMinimum[Sum[(DiscreteSol11[[k]] - DiscreteData11[[k]])^2, {k, 0, NP}],[] 
  []
 
 
-Overfull \hbox (32.66968pt too wide) in paragraph at lines 2520--2520
+Overfull \hbox (32.66968pt too wide) in paragraph at lines 2521--2521
 []    \T1/cmtt/m/n/10.95 dsolve(eqns union {q1(0)=q__10,q2(0)=q__20,D(q1)(0)=vq__10,D(q2)(0)=vq__20},[] 
  []
 
 
-Overfull \hbox (43.98642pt too wide) in paragraph at lines 2531--2531
+Overfull \hbox (43.98642pt too wide) in paragraph at lines 2532--2532
 []  \T1/cmtt/m/n/10.95 *diff(diff(q2(t), t), t) - 171878.0000 + 109421.0000*q1(t) + 109421.0000*q2(t) +[] 
  []
 
 
-Overfull \hbox (43.98642pt too wide) in paragraph at lines 2531--2531
+Overfull \hbox (43.98642pt too wide) in paragraph at lines 2532--2532
 []  \T1/cmtt/m/n/10.95 *diff(diff(q2(t), t), t) - 171878.0000 + 231289.0000*q1(t) + 109421.0000*q2(t) +[] 
  []
 
 [103
 
 ]
-Overfull \hbox (40.84047pt too wide) detected at line 2580
+Overfull \hbox (40.84047pt too wide) detected at line 2581
 []
  []
 
 [104] [105] [106]
 Appendix C.
-Package svg Info: Last page of `./svg-inkscape/lin_err2_0_svg-tex.pdf' is 1 on input line 2587.
+Package svg Info: Last page of `./svg-inkscape/lin_err2_0_svg-tex.pdf' is 1 on input line 2588.
 (./svg-inkscape/lin_err2_0_svg-tex.pdf_tex
 <./svg-inkscape/lin_err2_0_svg-tex.pdf, id=4583, page=1, 578.16pt x 364.4828pt>
 File: ./svg-inkscape/lin_err2_0_svg-tex.pdf Graphic file (type pdf)
@@ -2806,7 +2806,7 @@ File: ./svg-inkscape/lin_err2_0_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/lin_err2_0_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 127.57088pt.
 )
-Package svg Info: Last page of `./svg-inkscape/lin_err2_pi6_svg-tex.pdf' is 1 on input line 2588.
+Package svg Info: Last page of `./svg-inkscape/lin_err2_pi6_svg-tex.pdf' is 1 on input line 2589.
  (./svg-inkscape/lin_err2_pi6_svg-tex.pdf_tex
 <./svg-inkscape/lin_err2_pi6_svg-tex.pdf, id=4585, page=1, 578.16pt x 366.40796pt>
 File: ./svg-inkscape/lin_err2_pi6_svg-tex.pdf Graphic file (type pdf)
@@ -2814,7 +2814,7 @@ File: ./svg-inkscape/lin_err2_pi6_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/lin_err2_pi6_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 128.2447pt.
 )
-Package svg Info: Last page of `./svg-inkscape/lin_err2_pi4_svg-tex.pdf' is 1 on input line 2589.
+Package svg Info: Last page of `./svg-inkscape/lin_err2_pi4_svg-tex.pdf' is 1 on input line 2590.
  (./svg-inkscape/lin_err2_pi4_svg-tex.pdf_tex
 <./svg-inkscape/lin_err2_pi4_svg-tex.pdf, id=4587, page=1, 578.16pt x 371.3875pt>
 File: ./svg-inkscape/lin_err2_pi4_svg-tex.pdf Graphic file (type pdf)
@@ -2822,7 +2822,7 @@ File: ./svg-inkscape/lin_err2_pi4_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/lin_err2_pi4_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 129.98756pt.
 )
-Package svg Info: Last page of `./svg-inkscape/lin_err2_pi3_svg-tex.pdf' is 1 on input line 2590.
+Package svg Info: Last page of `./svg-inkscape/lin_err2_pi3_svg-tex.pdf' is 1 on input line 2591.
  (./svg-inkscape/lin_err2_pi3_svg-tex.pdf_tex
 <./svg-inkscape/lin_err2_pi3_svg-tex.pdf, id=4589, page=1, 578.16pt x 371.3875pt>
 File: ./svg-inkscape/lin_err2_pi3_svg-tex.pdf Graphic file (type pdf)
@@ -2830,7 +2830,7 @@ File: ./svg-inkscape/lin_err2_pi3_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/lin_err2_pi3_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 129.98756pt.
 )
-Package svg Info: Last page of `./svg-inkscape/lin_err2_pi2_svg-tex.pdf' is 1 on input line 2591.
+Package svg Info: Last page of `./svg-inkscape/lin_err2_pi2_svg-tex.pdf' is 1 on input line 2592.
  (./svg-inkscape/lin_err2_pi2_svg-tex.pdf_tex
 <./svg-inkscape/lin_err2_pi2_svg-tex.pdf, id=4591, page=1, 578.16pt x 371.3875pt>
 File: ./svg-inkscape/lin_err2_pi2_svg-tex.pdf Graphic file (type pdf)
@@ -2838,7 +2838,7 @@ File: ./svg-inkscape/lin_err2_pi2_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/lin_err2_pi2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 129.98756pt.
 )
-Package svg Info: Last page of `./svg-inkscape/approximation2_0_svg-tex.pdf' is 1 on input line 2597.
+Package svg Info: Last page of `./svg-inkscape/approximation2_0_svg-tex.pdf' is 1 on input line 2598.
  (./svg-inkscape/approximation2_0_svg-tex.pdf_tex
 <./svg-inkscape/approximation2_0_svg-tex.pdf, id=4593, page=1, 578.16pt x 364.4828pt>
 File: ./svg-inkscape/approximation2_0_svg-tex.pdf Graphic file (type pdf)
@@ -2846,7 +2846,7 @@ File: ./svg-inkscape/approximation2_0_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/approximation2_0_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 127.57088pt.
 )
-Package svg Info: Last page of `./svg-inkscape/approximation2_pi6_svg-tex.pdf' is 1 on input line 2598.
+Package svg Info: Last page of `./svg-inkscape/approximation2_pi6_svg-tex.pdf' is 1 on input line 2599.
  (./svg-inkscape/approximation2_pi6_svg-tex.pdf_tex
 <./svg-inkscape/approximation2_pi6_svg-tex.pdf, id=4595, page=1, 578.16pt x 377.7315pt>
 File: ./svg-inkscape/approximation2_pi6_svg-tex.pdf Graphic file (type pdf)
@@ -2854,7 +2854,7 @@ File: ./svg-inkscape/approximation2_pi6_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/approximation2_pi6_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 132.208pt.
 )
-Package svg Info: Last page of `./svg-inkscape/approximation2_pi4_svg-tex.pdf' is 1 on input line 2599.
+Package svg Info: Last page of `./svg-inkscape/approximation2_pi4_svg-tex.pdf' is 1 on input line 2600.
  (./svg-inkscape/approximation2_pi4_svg-tex.pdf_tex
 <./svg-inkscape/approximation2_pi4_svg-tex.pdf, id=4597, page=1, 578.16pt x 371.3875pt>
 File: ./svg-inkscape/approximation2_pi4_svg-tex.pdf Graphic file (type pdf)
@@ -2862,7 +2862,7 @@ File: ./svg-inkscape/approximation2_pi4_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/approximation2_pi4_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 129.98756pt.
 )
-Package svg Info: Last page of `./svg-inkscape/approximation2_pi3_svg-tex.pdf' is 1 on input line 2600.
+Package svg Info: Last page of `./svg-inkscape/approximation2_pi3_svg-tex.pdf' is 1 on input line 2601.
  (./svg-inkscape/approximation2_pi3_svg-tex.pdf_tex
 <./svg-inkscape/approximation2_pi3_svg-tex.pdf, id=4599, page=1, 578.16pt x 371.3875pt>
 File: ./svg-inkscape/approximation2_pi3_svg-tex.pdf Graphic file (type pdf)
@@ -2870,14 +2870,14 @@ File: ./svg-inkscape/approximation2_pi3_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/approximation2_pi3_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 129.98756pt.
 )
-Package svg Info: Last page of `./svg-inkscape/approximation2_pi2_svg-tex.pdf' is 1 on input line 2601.
+Package svg Info: Last page of `./svg-inkscape/approximation2_pi2_svg-tex.pdf' is 1 on input line 2602.
  (./svg-inkscape/approximation2_pi2_svg-tex.pdf_tex
 File: ./svg-inkscape/approximation2_pi2_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/approximation2_pi2_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/approximation2_pi2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 202.35951pt x 129.98756pt.
 )
-Package svg Info: Last page of `./svg-inkscape/massespi6_2_svg-tex.pdf' is 1 on input line 2607.
+Package svg Info: Last page of `./svg-inkscape/massespi6_2_svg-tex.pdf' is 1 on input line 2608.
  (./svg-inkscape/massespi6_2_svg-tex.pdf_tex
 <./svg-inkscape/massespi6_2_svg-tex.pdf, id=4602, page=1, 1171.4978pt x 638.86726pt>
 File: ./svg-inkscape/massespi6_2_svg-tex.pdf Graphic file (type pdf)
@@ -2885,11 +2885,11 @@ File: ./svg-inkscape/massespi6_2_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/massespi6_2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 468.59196pt x 255.54237pt.
 )
-Overfull \hbox (48.59196pt too wide) in paragraph at lines 2607--2608
+Overfull \hbox (48.59196pt too wide) in paragraph at lines 2608--2609
  [][] 
  []
 
-Package svg Info: Last page of `./svg-inkscape/massespi4_2_svg-tex.pdf' is 1 on input line 2613.
+Package svg Info: Last page of `./svg-inkscape/massespi4_2_svg-tex.pdf' is 1 on input line 2614.
 (./svg-inkscape/massespi4_2_svg-tex.pdf_tex
 <./svg-inkscape/massespi4_2_svg-tex.pdf, id=4604, page=1, 1171.4978pt x 638.86726pt>
 File: ./svg-inkscape/massespi4_2_svg-tex.pdf Graphic file (type pdf)
@@ -2897,11 +2897,11 @@ File: ./svg-inkscape/massespi4_2_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/massespi4_2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 468.59196pt x 255.54237pt.
 )
-Overfull \hbox (48.59196pt too wide) in paragraph at lines 2613--2614
+Overfull \hbox (48.59196pt too wide) in paragraph at lines 2614--2615
  [][] 
  []
 
-Package svg Info: Last page of `./svg-inkscape/massespi3_2_svg-tex.pdf' is 1 on input line 2619.
+Package svg Info: Last page of `./svg-inkscape/massespi3_2_svg-tex.pdf' is 1 on input line 2620.
 (./svg-inkscape/massespi3_2_svg-tex.pdf_tex
 <./svg-inkscape/massespi3_2_svg-tex.pdf, id=4606, page=1, 1171.4978pt x 638.86726pt>
 File: ./svg-inkscape/massespi3_2_svg-tex.pdf Graphic file (type pdf)
@@ -2909,11 +2909,11 @@ File: ./svg-inkscape/massespi3_2_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/massespi3_2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 468.59196pt x 255.54237pt.
 )
-Overfull \hbox (48.59196pt too wide) in paragraph at lines 2619--2620
+Overfull \hbox (48.59196pt too wide) in paragraph at lines 2620--2621
  [][] 
  []
 
-Package svg Info: Last page of `./svg-inkscape/massespi2_2_svg-tex.pdf' is 1 on input line 2625.
+Package svg Info: Last page of `./svg-inkscape/massespi2_2_svg-tex.pdf' is 1 on input line 2626.
 (./svg-inkscape/massespi2_2_svg-tex.pdf_tex
 <./svg-inkscape/massespi2_2_svg-tex.pdf, id=4608, page=1, 1171.4978pt x 638.86726pt>
 File: ./svg-inkscape/massespi2_2_svg-tex.pdf Graphic file (type pdf)
@@ -2921,7 +2921,7 @@ File: ./svg-inkscape/massespi2_2_svg-tex.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./svg-inkscape/massespi2_2_svg-tex.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 468.59196pt x 255.54237pt.
 )
-Overfull \hbox (48.59196pt too wide) in paragraph at lines 2625--2626
+Overfull \hbox (48.59196pt too wide) in paragraph at lines 2626--2627
  [][] 
  []
 
@@ -3047,18 +3047,18 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3AFF3095928B9496800C8CCDE979F13F;7838.
+(rerunfilecheck)             Checksum: B5BF94FC43ED7FE7C9F61A03CEDA8141;7861.
  ) 
 Here is how much of TeX's memory you used:
- 38492 strings out of 474116
- 814621 string characters out of 5732612
+ 38494 strings out of 474116
+ 814625 string characters out of 5732612
  1984187 words of memory out of 5000000
  59065 multiletter control sequences out of 15000+600000
- 600850 words of font info for 280 fonts, out of 8000000 for 9000
+ 600901 words of font info for 281 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,26n,117p,1073b,1267s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on Thesis.pdf (120 pages, 6378604 bytes).
+Output written on Thesis.pdf (120 pages, 6378505 bytes).
 PDF statistics:
  5635 PDF objects out of 6186 (max. 8388607)
  4025 compressed objects within 41 object streams

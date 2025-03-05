@@ -48,7 +48,7 @@
 \contentsline {section}{\numberline {6.3}Results' Analysis}{95}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Final Considerations}{96}{section.6.4}%
 \contentsline {subsection}{\numberline {6.4.1}Further Developments}{97}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Conclusion}{99}{subsection.6.4.2}%
+\contentsline {section}{\numberline {6.5}Acknowledgements}{99}{section.6.5}%
 \contentsline {chapter}{Appendices}{100}{section*.56}%
 \contentsline {chapter}{\numberline {A}Matrices}{101}{appendix.a.A}%
 \contentsline {chapter}{\numberline {B}Code}{103}{appendix.a.B}%
