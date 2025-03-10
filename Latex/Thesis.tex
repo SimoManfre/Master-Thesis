@@ -92,7 +92,7 @@
 
 \vspace{20mm}
 \begin{center}
-\Large{Academic Year 2024/2025}
+\Large{Academic Year 2023/2024}
 \end{center}
 
 \end{titlepage}
@@ -1734,7 +1734,7 @@ The choice of the normalization, however, does not affect the value of the natur
 
 Once $W_{i,j}(x)$ are known, the kinematics can be evaluated through (\ref{new_kinematics}), and the dynamics can be calculated as in the previous sections, with the awareness that it is not possible to neglect the potential energy anymore.\\
 If, in the previous sections, the absence of gravity and the rigidity of the bodies allowed them to be ignored, now the manipulators' arms are modeled as elastic bodies. Thus, the elastic potential energy needs to be taken into account.\\
-The elastic energy for unit length stored in a bent beam can be written as \cite{twentyone}:
+The elastic energy for unit length stored in a bent beam can be written as \cite{book}:
 \begin{equation}
   \frac{dU}{dx}=\frac{1}{2}\frac{M^2}{ES}
   \label{partial_elastic}
@@ -2628,6 +2628,9 @@ Here, the same plots of Section~\ref{mass_retrieval} al listed for Simulation 2 
   \label{q222}
 \end{figure}
 \end{appendices}
+\pagestyle{plain} % Usa lo stile di default per i capitoli, senza header
+\fancyhf{} % Cancella tutte le intestazioni e i piè di pagina
+\renewcommand{\headrulewidth}{0pt} % Rimuove la linea orizzontale
 \nocite{*}
 \bibliography{biblio}{}
 \bibliographystyle{ieeetr}

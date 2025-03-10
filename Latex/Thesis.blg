@@ -5,45 +5,45 @@ The style file: ieeetr.bst
 Database file #1: biblio.bib
 Warning--can't use both author and editor fields in eleven
 Warning--empty booktitle in twenty
-You've used 32 entries,
+You've used 33 entries,
             1876 wiz_defined-function locations,
-            664 strings with 8718 characters,
-and the built_in function-call counts, 8462 in all, are:
-= -- 851
-> -- 304
+            668 strings with 8832 characters,
+and the built_in function-call counts, 8620 in all, are:
+= -- 866
+> -- 308
 < -- 0
-+ -- 115
-- -- 83
-* -- 586
-:= -- 1181
-add.period$ -- 38
-call.type$ -- 32
++ -- 117
+- -- 84
+* -- 597
+:= -- 1203
+add.period$ -- 40
+call.type$ -- 33
 change.case$ -- 31
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 440
-empty$ -- 836
-format.name$ -- 83
-if$ -- 2073
+cite$ -- 35
+duplicate$ -- 449
+empty$ -- 857
+format.name$ -- 84
+if$ -- 2113
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 32
-newline$ -- 105
-num.names$ -- 32
-pop$ -- 116
+int.to.str$ -- 33
+missing$ -- 34
+newline$ -- 109
+num.names$ -- 33
+pop$ -- 121
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 281
+skip$ -- 282
 stack$ -- 0
 substring$ -- 565
-swap$ -- 169
+swap$ -- 171
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 88
-width$ -- 34
-write$ -- 318
+while$ -- 89
+width$ -- 35
+write$ -- 328
 (There were 2 warnings)

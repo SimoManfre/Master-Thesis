@@ -90,11 +90,15 @@ M.~Aenlle, M.~Juul, and R.~Brincker, ``Modal mass and length of mode shapes in s
 \bibitem{twenty}
 M.~Aenlle~L{\'o}pez and R.~Brincker, ``Basic concepts of modal scaling,'' 2019.
 
-\bibitem{twentyone}
-H.~Turnbull, ``A matrix form of taylor's theorem,'' {\em Proceedings of the Edinburgh Mathematical Society}, vol.~2, no.~1, pp.~33--54, 1930.
+\bibitem{book}
+M.~Beghini, {\em Lezioni ed esercitazioni di tecnica delle costruzioni meccaniche}, vol.~2 of {\em Arnus. Collegio di sociologia}.
+\newblock Il Campano, 2019.
 
 \bibitem{thirteen}
 X.~Cyril, G.~J. Jaar, and A.~K. Misra, ``Dynamical modelling and control of a spacecraft-mounted manipulator capturing a spinning satellite,'' {\em Acta Astronautica}, vol.~35, no.~2-3, pp.~167--174, 1995.
+
+\bibitem{twentyone}
+H.~Turnbull, ``A matrix form of taylor's theorem,'' {\em Proceedings of the Edinburgh Mathematical Society}, vol.~2, no.~1, pp.~33--54, 1930.
 
 \bibitem{twentysix}
 A.~De~Luca, G.~Oriolo, and P.~R. Giordano, ``Kinematic modeling and redundancy resolution for nonholonomic mobile manipulators,'' in {\em Proceedings 2006 IEEE International Conference on Robotics and Automation, 2006. ICRA 2006.}, pp.~1867--1873, 2006.
