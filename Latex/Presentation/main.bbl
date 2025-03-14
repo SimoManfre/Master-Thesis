@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{esa}
+ESA, ``European robotic arm (era),'' 1999.
+\newblock \url{https://www.eoportal.org/satellite-missions/iss-era} [Access: 11/03/2025)].
+
+\bibitem{mss_wiki}
+``Mobile servicing system.''
+\newblock \url{https://it.wikipedia.org/wiki/Mobile_Servicing_System} [Access: 11/03/2025)].
+
+\bibitem{era}
+ESA, ``European robotic arm (era),'' 1999.
+\newblock \url{https://www.esa.int/esearch?q=era} [Access: 04/03/2025)].
+
+\bibitem{comparison}
+P.~Laryssa, E.~Lindsay, O.~Layi, O.~Marius, K.~Nara, L.~Aris, and T.~Ed, ``International space station robotics: a comparative study of era, jemrms and mss,'' in {\em 7th ESA Workshop on Advanced Space Technologies for Robotics and Automation}, pp.~19--21, 2002.
+
+\bibitem{hma1}
+G.~Legnani, F.~Casolo, P.~Righettini, and B.~Zappa, ``A homogeneous matrix approach to 3d kinematics and dynamics---i. theory,'' {\em Mechanism and machine theory}, vol.~31, no.~5, pp.~573--587, 1996.
+
+\bibitem{hma2}
+G.~Legnani, F.~Casalo, P.~Righettini, and B.~Zappa, ``A homogeneous matrix approach to 3d kinematics and dynamics---ii. applications to chains of rigid bodies and serial manipulators,'' {\em Mechanism and machine theory}, vol.~31, no.~5, pp.~589--605, 1996.
+
+\bibitem{1997}
+C.~Xavier, K.~Sun-Wook, I.~Michel, M.~Arun, and J.~Gilbert, ``Post-impact dynamics of two multi-body systems attempting docking/berthing,'' {\em Acta Astronautica}, vol.~40, no.~11, pp.~759--769, 1997.
+
+\bibitem{elasticity}
+R.~J. Theodore and A.~Ghosal, ``Comparison of the assumed modes and finite element models for flexible multilink manipulators,'' {\em The International journal of robotics research}, vol.~14, no.~2, pp.~91--111, 1995.
+
+\end{thebibliography}

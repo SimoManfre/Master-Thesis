@@ -164,7 +164,7 @@ The first robot used in space was the Remote Manipulator System (RMS), also call
 The robotic arm was 15 meters long and was equipped with six degrees of freedom (DoF), thanks to three "hinged joints for pitch and three others for yaw and roll"~\cite{five}.\\
 Using the RMS in orbit involved different challenges, among which one of the most relevant was its precise positioning: since it was built out of light materials to reduce the launch costs, the arm tended to deflect significantly. Furthermore, the arm's acceleration and braking are used to generate considerable vibrations. In order to improve its positioning, two main approaches have been developed: passive and active. The passive mediation relies on structural modifications and usage of different materials, while the active ones include preshape input techniques and control systems based on "position, velocity or force feedback"~\cite{five}.\\
 Different criticalities and future improvements have been identified during the RMS's operational lifetime. In particular, the necessity of increasing the speed of manipulation and improving the positioning accuracy has emerged, a crucial factor in everyday operations. Moreover, "new manipulators should be designed to include passive vibration control capabilities"~\cite{five}. In contrast, the adoption of active control techniques would allow a reduction in the settling time and improve the accuracy. Finally, integrating a force control system could enhance the operational capabilities of the manipulator.\\
-A factor, however, comes to our aid when dealing with space maniuplators: the absence of gravity. Such a manipulator with huge flexible arms "is not powerful enough to lift even the weight of the arm itself when on Earth"~\cite{six}. On space, in fact, the arms do not have to deal with their own weight, which would be too much to withstand.\\
+A factor, however, comes to our aid when dealing with space manipulators: the absence of gravity. Such a manipulator with huge flexible arms "is not powerful enough to lift even the weight of the arm itself when on Earth"~\cite{six}. On space, in fact, the arms do not have to deal with their own weight, which would be too much to withstand.\\
 One of the first space missions to include a robotic arm "was the MIR space station"~\cite{six}. This modular space station, developed by the URSS and eventually managed by Russia, operated from 1986 to 2001. "MIR was a microgravity research laboratory which conducted research in biology, astronomy, meteorology, and physics"~\cite{six}.\\
 The first satellite equipped with a robotic arm was launched in 1997 by the Nastional Space Development Agency of Japan (NASDA), the ETS-VII, which "performed several succesful docking operations"~\cite{six}.\\
 Eventually, a Japanese manipulator was developed and mounted on the Japanese Experiment Module at the International Space Station (ISS), the JEMRMS, in March 2008. The Small Fine Arm (SFA) was added in July 2009 (see Section~\ref{state_of_art}).\\
@@ -560,8 +560,8 @@ Following the notation of Figure~\ref{DH}, the matrices are then given:
 \begin{equation}
   \begin{array}{c}
     \prescript{f}{b}{M}=\begin{bmatrix}
-      0&0&0&x_b\\
-    0&0&0&y_b\\
+      1&0&0&x_b\\
+    0&1&0&y_b\\
     0&0&1&0\\
     0&0&0&1
     \end{bmatrix}\quad
@@ -664,7 +664,7 @@ and the same holds for $\prescript{f}{}{W_{f1}}$ and $\prescript{f}{}{W_{f2}}$, 
         \theta_0+q_1&0&0\\
         0&0&0
       \end{bmatrix} \quad
-      \prescript{f}{}{W_{{f1}_{1:3,1:3}}}=\begin{bmatrix}
+      \prescript{f}{}{W_{{f2}_{1:3,1:3}}}=\begin{bmatrix}
         0&-\theta_0-q_1-q_2&0\\
         \theta_0+q_1+q_2&0&0\\
         0&0&0
@@ -1420,7 +1420,7 @@ Furthermore, given the higher mass of the base with respect to the payload and m
   {\includesvg[scale=0.37]{free_motion_q1.svg}}\\
   \subfloat
   {\includesvg[scale=0.37]{free_motion_q2.svg}}
-  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one.}
+  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, Simulation~1.}
   \label{free_motion_1}
 \end{figure}
 \begin{figure}[!htb]
@@ -1435,7 +1435,7 @@ Furthermore, given the higher mass of the base with respect to the payload and m
   {\includesvg[scale=0.37]{free_motion_q12.svg}}\\
   \subfloat
   {\includesvg[scale=0.37]{free_motion_q22.svg}}
-  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation two.}
+  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, Simulation~2.}
   \label{free_motion_2}
 \end{figure}
 \newpage
@@ -1553,7 +1553,7 @@ The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlle
   \label{q1_real}}\\
   \subfloat
   {\includesvg[scale=0.37]{controlled_motion_q2.svg}}
-  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation one. In yellow, an underdamped behaviour ($\xi=0.5$), in blue a critically damped behaviour ($\xi=1$), in green an overdamped behaviour ($\xi=1.5$).}
+  \caption{VMS generalized coordinates' displacement after the catching of the payload when control is performed, Simulation~1 In yellow, an underdamped behaviour ($\xi=0.5$), in blue a critically damped behaviour ($\xi=1$), in green an overdamped behaviour ($\xi=1.5$).}
   \label{controlled_motion_1}
 \end{figure}
 \begin{figure}
@@ -1568,7 +1568,7 @@ The final results are shown in Figures~\ref{controlled_motion_1}, \ref{controlle
   {\includesvg[scale=0.37]{controlled_motion_q12.svg}}\\
   \subfloat
   {\includesvg[scale=0.37]{controlled_motion_q22.svg}}
-  \caption{VMS generalized coordinates' displacement after the catching of the payload when no control is performed, simulation two.}
+  \caption{VMS generalized coordinates' displacement after the catching of the payload when control is performed, Simulation~2.}
   \label{controlled_motion_2}
 \end{figure}
 \newpage
@@ -1970,7 +1970,7 @@ Again, the rigid coordinates behave in a similar way as for the rigid case.
   \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ1.svg}}\quad
   \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ2.svg}}\\
   \caption{VMS generalized coordinates’ displacement after the catching of the payload
-  when no control is performed, Simulation 1. Arms modeled as Euler-Bernoulli beams.}
+  when control is performed, Simulation~1. Arms modeled as Euler-Bernoulli beams.}
   \label{contolled_elastic_1}
 \end{figure}
 \begin{figure}[h]
@@ -1983,7 +1983,7 @@ Again, the rigid coordinates behave in a similar way as for the rigid case.
   \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ12.svg}}\quad
   \subfloat{\includesvg[scale=0.35]{elastic_controlled_QQ22.svg}}\\
   \caption{VMS generalized coordinates’ displacement after the catching of the payload
-  when no control is performed, Simulation 2. Arms modeled as Euler-Bernoulli beams.}
+  when control is performed, Simulation~2. Arms modeled as Euler-Bernoulli beams.}
   \label{controlled_elastic_2}
 \end{figure}
 \begin{figure}
@@ -2209,13 +2209,7 @@ For this thesis, it has been found that $N_p=5$ gives better results than the Jo
 Once the mass is found, it would be interesting to ask what the satellite's velocity was before the impact.\\
 Equation (\ref{final_velocities}) sets an important relation between final and initial velocities of the VMS and the satellite as well. In particular, the initial velocity of the VMS is known (since it is supposed to be still), and the velocities after the impact of the VMS (i.e. $\dot{p}_f$) can be found by derivating $p_{data}$ in $t=0$.\\
 We can therefore isolate $\dot{\psi}_i$:
-\begin{equation}
-  \begin{array}{l}
-    H=G\dot{p}_f\\
-    \Rightarrow M\dot{p}_i+J^T(J_O^+)^TM_O\dot{\psi}_i=G\dot{p}_f\\
-    \Rightarrow \dot{\psi}_i=M_O^{-1}J_O^T(J^+)^T(G\dot{p}_f-M\dot{p}_i)
-  \end{array}
-\end{equation}
+ 
 but since the VMS is at rest before the impact:
 \begin{equation}
   \dot{\psi}_i=M_O^{-1}J_O^T(J^+)^TG\dot{p}_f
@@ -2387,12 +2381,12 @@ Figures~\ref{velocity_1} and \ref{velocity_2} show the error for two configurati
 \section{Results' Analysis}
 Different methods have been explored, each one with its strengths and weaknesses. Here, some considerations on the aforeshown results are made:
 \begin{itemize}
-  \item The joints' decoupling approach allows one to obtain a form equation and a simple time-dependent solution and can be used with different methods, such as the fitting ones or the position/derivative roots ones.\\
+  \item The joints' decoupling approach allows one to obtain a closed-form equation and a simple time-dependent solution and can be used with different methods, such as the fitting ones or the position/derivative roots ones.\\
     On the other hand, they depend significantly on the VMS configuration, and the more the configuration allows displacements, the less near the new mass is from the actual one.
   \item Among the decoupling methods, the damping coefficient and natural frequency fit seems to be the best one, as it gives the higher values when $\hat{m}<m$.\\
     When $\hat{m}>m$, all the methods give better results: since the initial guessed mass is higher, the control is more aggressive, and the displacement after the impact is smaller, reducing the linearization error.
-  \item The uncoupled methods give far more interesting results, as the final mass error is usually very small. The same consideration regarding the error linearization made above is valid. Hence, a higher initial mass is generally more preferable than a smaller one (i.e. an overestimation is preferable over an underestimation).
-    Furthermore, these methods are susceptible to the VMS configuration, allowing for more freedom in the satellite docking.
+  \item The coupled methods give far more interesting results, as the final mass error is usually very small. The same consideration regarding the error linearization made above is valid. Hence, a higher initial mass is generally more preferable than a smaller one (i.e. an overestimation is preferable over an underestimation).
+    Furthermore, these methods are less susceptible to the VMS configuration, allowing for more freedom in the satellite docking.
   \item The continuous method and the discrete one give similar results for a sufficiently high number of discretization points, even though we have already seen that less than ten points give already a better result than the other methods. Furthermore, the discrete method is faster: in Wolfram, on a MacBook Air M3 with 16 GB of RAM, the mean execution time of the continuous minimization of the cost function take approximately $\SI{1.5}{\second}$, while the minimization of the discrete cost function only $\SI{0.03}{\second}$, which is $\approx 50$ times faster.\\
     Hence, a discrete method is more suitable in an environment with no substantial computational power, as it could be in space.
   \item The velocity error is lower for mass overestimation too, and it is low for not too smaller initial guess as well.
