@@ -23,7 +23,7 @@ The thesis' chapters are:
 5. Inertial and Kinetics Properties Retrieval: assuming unknown payload mass and initial velocities, they are retrieved from theory and some approximation of the joints' dynamics
 ### Repository
 This reposotory is organized as follows:
-- Latex: contains all the file for the thesis pdf
+- Latex: contains all the file for the thesis pdf. There are also the slides used in the final thesis' discussion. They are a good summary of the work.
 - Mathematica: all the simulations and calculus have been done with Wolfram Mathematica 13.2
 - Presentations: the slides reporting the steps and questions during the develop of the thesis are listed
 - References: here all the papers used as knowledge background to develop equations and conclusion are present
