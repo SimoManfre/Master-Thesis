@@ -1,1 +1,2 @@
-.DS_Store
+.DS_StoreLatex/Presentation/*.fdb_latexmk
+Latex/Presentation/*.aux
