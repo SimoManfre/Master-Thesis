@@ -1,2 +1,3 @@
 .DS_StoreLatex/Presentation/*.fdb_latexmk
 Latex/Presentation/*.aux
+Latex/Presentation/main.log
