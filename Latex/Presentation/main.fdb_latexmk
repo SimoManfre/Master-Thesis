@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1741954548.86621 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Presentation/main.tex" "main.pdf" "main" 1741954549.43318 2
-  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Presentation/main.tex" 1741869826.80699 410 d4ec31e80ff4efc591e3085c012cd822 ""
+["pdflatex"] 1742288569.10203 "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Presentation/main.tex" "main.pdf" "main" 1742288569.64295 2
+  "/Users/simonemanfredi/Desktop/Uni/Magistrale/Tesi/Master-Thesis/Latex/Presentation/main.tex" 1741956462.76628 409 16d3a1394ffdddf3f9cf0c0f637edc79 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/map/fontname/texfonts.map" 1710106625 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1710106625 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1710106625 1316 b636689f1933f24d1294acdf6041daaa ""
@@ -8,6 +8,7 @@
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1710106625 40635 c40361e206be584d448876bba8a64a3b ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/bitset/bitset.sty" 1710106625 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty" 1710106625 8371 9d55b8bd010bc717624922fb3477d92e ""
+  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifpdf.sty" 1710106625 480 5778104efadad304ced77548ca2184b1 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/iftex.sty" 1710106625 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifvtex.sty" 1710106625 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty" 1710106625 8356 7bbb2c2373aa810be568c29e333da8ed ""
@@ -126,6 +127,7 @@
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty" 1710106625 13709 0e052fe8ffb31b5209bf090fbc06d6f4 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty" 1710106625 6950 3f8d95e7500b5961ee155a137efa8a6d ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/beamerthemedefault.sty" 1710106625 345 b9f1afd5eccd808064d49a802f119443 ""
+  "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/multimedia.sty" 1710106625 10533 24bb1501031e47e12d64f1097faa57b4 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1710106625 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/fontspec/fontspec.sty" 1710106625 3484 ff877041166391bc5ca8a1e45614784e ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/geometry/geometry.sty" 1710106625 41601 9cf6c5257b1bc7af01a58859749dd37a ""
@@ -178,9 +180,9 @@
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1710106625 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/web2c/texmf.cnf" 1710106625 41652 e14926ab86fde7902cad99d9eeaa5ca5 ""
   "/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1710106625 8221880 586024644079ee3bb0c221d6d52d1611 ""
-  "beamerthemecu.sty" 1741864804.57343 12798 037a3c9a0610938f82c4bb81e66c00d7 ""
-  "main.aux" 1741954548.86495 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "main.tex" 1741869826.80699 410 d4ec31e80ff4efc591e3085c012cd822 ""
+  "beamerthemecu.sty" 1741956462.76835 12825 1e7aa0efeb8dfa51610c5a6f02b78449 ""
+  "main.aux" 0 -1 0 "pdflatex"
+  "main.tex" 1741956462.76628 409 16d3a1394ffdddf3f9cf0c0f637edc79 ""
   (generated)
   "main.aux"
   "main.log"

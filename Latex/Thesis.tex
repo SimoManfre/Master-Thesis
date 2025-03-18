@@ -616,20 +616,20 @@ Following equation (\ref{velocity_matrix}), the Velocity Matrices can be found a
       0&0&0&0
     \end{bmatrix} \quad
     \prescript{b}{}{W_{b0}}=\prescript{b}{0}{\dot{M}}\prescript{0}{b}{M}=\begin{bmatrix}
-      0&-\theta_0&0&0\\
-      \theta_0&0&0&0\\
+      0&-\dot{\theta}_0&0&0\\
+     \dot{ \theta}_0&0&0&0\\
       0&0&0&0\\
       0&0&0&0
     \end{bmatrix}\\ \\
     \prescript{1}{}{W_{01}}=\begin{bmatrix}
-      0&-q_1&0&0\\
-      q_1&0&0&0\\
+      0&-\dot{q}_1&0&0\\
+      \dot{q}_1&0&0&0\\
       0&0&0&0\\
       0&0&0&0
     \end{bmatrix} \quad
     \prescript{2}{}{W_{12}}=\begin{bmatrix}
-      0&-q_2&0&0\\
-      q_2&0&0&0\\
+      0&-\dot{q}_2&0&0\\
+      \dot{q}_2&0&0&0\\
       0&0&0&0\\
       0&0&0&0
     \end{bmatrix}
@@ -639,8 +639,8 @@ where the notation is the same as equation (\ref{composition}).\\
 Since it is of our interest (see Chapter \ref{dynamics}) to write all the velocity matrices projected in the fixed frame, following equation (\ref{change_frame}), it is possible to write:
 \begin{equation}
     \prescript{f}{}{W_{b0}}=\prescript{f}{b}{M}\prescript{b}{}{W_{b0}}\prescript{b}{f}{M}=\begin{bmatrix}
-      0&-\theta_0&0&y_b \dot{\theta_0}\\
-      \theta_0&0&0&-x_b \dot{\theta_0}\\
+      0&-\dot{\theta}_0&0&y_b \dot{\theta_0}\\
+      \dot{\theta}_0&0&0&-x_b \dot{\theta_0}\\
       0&0&0&0\\
       0&0&0&0
     \end{bmatrix}
@@ -649,8 +649,8 @@ Since it is of our interest (see Chapter \ref{dynamics}) to write all the veloci
 Finally, now that both $\prescript{f}{}{W_{fb}}$ and $\prescript{f}{}{W_{b0}}$ are projected in the same frame, following equation (\ref{concatenate}):
 \begin{equation}
     \prescript{f}{}{W_{f0}}=\prescript{f}{}{W_{fb}}+\prescript{f}{}{W_{b0}}=\begin{bmatrix}
-      0&-\theta_0&0&\dot{x_b}+y_b \dot{\theta_0}\\
-      \theta_0&0&0&\dot{y_b}-x_b \dot{\theta_0}\\
+      0&-\dot{\theta}_0&0&\dot{x_b}+y_b \dot{\theta_0}\\
+      \dot{\theta}_0&0&0&\dot{y_b}-x_b \dot{\theta_0}\\
       0&0&0&0\\
       0&0&0&0
     \end{bmatrix}
@@ -660,13 +660,13 @@ and the same holds for $\prescript{f}{}{W_{f1}}$ and $\prescript{f}{}{W_{f2}}$, 
   \begin{equation}
     \begin{array}{c}
       \prescript{f}{}{W_{{f1}_{1:3,1:3}}}=\begin{bmatrix}
-        0&-\theta_0-q_1&0\\
-        \theta_0+q_1&0&0\\
+        0&-\dot{\theta}_0-\dot{q}_1&0\\
+        \dot{\theta}_0+\dot{q}_1&0&0\\
         0&0&0
       \end{bmatrix} \quad
       \prescript{f}{}{W_{{f2}_{1:3,1:3}}}=\begin{bmatrix}
-        0&-\theta_0-q_1-q_2&0\\
-        \theta_0+q_1+q_2&0&0\\
+        0&-\dot{\theta}_0-\dot{q}_1-\dot{q}_2&0\\
+        \dot{\theta}_0+\dot{q}_1+\dot{q}_2&0&0\\
         0&0&0
       \end{bmatrix}
     \end{array}
@@ -760,11 +760,11 @@ By deriving the position of the contact point with respect to the object coordin
 \end{equation}
 which is still not squared ($J_O \in \mathbb{R}^{2 \times 3}$), thus not invertible.\\
 
-Regarding the velocity matrix, we are not intersted in $\prescript{f}{}{W_{fO_2}}$, since we can find the velocity of the contact point by just derivation with respect of time. Instead, it will be useful in the next chapter to have $\prescript{f}{}{W_{O_0O_1}}$, which is the velocity of frame one with respect to frame zero, projected in the fixed frame:
+Regarding the velocity matrix, we are not intersted in $\prescript{f}{}{W_{fO_2}}$, since we can find the velocity of the contact point by just derivation with respect of time. Instead, it will be useful in the next chapter to have $\prescript{f}{}{W_{O_0O_1}}$, which is the velocity of frame one with respect to frame zero, projected in the fixed frame: 
 \begin{equation}
   \prescript{f}{}{W_{O_0O_1}}=\begin{bmatrix}
-    0&-\theta_O&0&y_O \dot{\theta_O}\\
-    \theta_O&0&0&-x_O \dot{\theta_O}\\
+    0&-\dot{\theta}_O&0&y_O \dot{\theta_O}\\
+    \dot{\theta}_O&0&0&-x_O \dot{\theta_O}\\
     0&0&0&0\\
     0&0&0&0
   \end{bmatrix}
@@ -1776,7 +1776,7 @@ and the dynamics of the system is given by:
 since no torque is applied to control the vibrations at the arm's end.\\
 We can directly find the stiffness matrix of the system without calculating from scratch the equations of motion through the following considerations:
 \begin{equation}
-  \frac{d}{dt}\frac{\partial U}{\partial \dot{Q}_i}-\frac{\partial U}{\partial Q_i}=0+\int_{0}^{l_i}ES\frac{\partial^2 W(x)}{\partial x^2}\,dx
+  \frac{d}{dt}\frac{\partial U}{\partial \dot{Q}_i}-\frac{\partial U}{\partial Q_i}=0-Q(t)\int_{0}^{l_i}ES\frac{\partial^2 W(x)}{\partial x^2}\,dx
 \end{equation}
 Hence, as reported in \cite{sixteen}, the new set of dynamical equation is obtained in the form:
 \begin{equation}

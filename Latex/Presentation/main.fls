@@ -279,6 +279,10 @@ INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty
 INPUT ./beamerthemecu.sty
 INPUT beamerthemecu.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/multimedia.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/multimedia.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifpdf.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/siunitx/siunitx.sty

@@ -13,9 +13,9 @@
   \coordinate (A) at ({4+\lone*cos(\thetaone+\thetazero)},{2+\lone*sin(\thetaone+\thetazero)});
   \coordinate (B) at ({4+\lone*cos(\thetaone+\thetazero) + \ltwo*cos(\thetaone + \thetatwo+\thetazero)}, 
                       {2+\lone*sin(\thetaone+\thetazero) + \ltwo*sin(\thetaone + \thetatwo+\thetazero)});
-  \coordinate (Obp) at (3.99,2);
-  \coordinate (Ap) at (4.88,7.52);
-  \coordinate (Bp) at (-0.71,7.59);
+  \coordinate (Obp) at (4.00068, 2.00333);
+  \coordinate (Ap) at (9.56548, 2.53356);
+  \coordinate (Bp) at (7.34235, 7.66248);
 
   \draw[dashed,fill=green!25] (Obp) circle (1);
   \draw[thick,fill=green!50] (Ob) circle (1);

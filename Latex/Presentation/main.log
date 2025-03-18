@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  14 MAR 2025 13:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Homebrew) (preloaded format=pdflatex 2024.10.29)  18 MAR 2025 10:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -536,28 +536,34 @@ Package: amsthm 2020/05/29 v2.20.6
 \beamer@dimb=\dimen293
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (./beamerthemecu.sty
 Package: beamerthemecu 
- (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/multirow/multirow.sty
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/beamer/multimedia.sty
+Package: multimedia 2012/05/02 ver 0.02
+ (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+\mm@movie=\count337
+) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip65
-\multirow@cntb=\count337
+\multirow@cntb=\count338
 \multirow@dima=\skip66
 \bigstrutjot=\dimen294
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2024-02-15 v3.3.12 A comprehensive (SI) units package
-\l__siunitx_number_uncert_offset_int=\count338
-\l__siunitx_number_exponent_fixed_int=\count339
-\l__siunitx_number_min_decimal_int=\count340
-\l__siunitx_number_min_integer_int=\count341
-\l__siunitx_number_round_precision_int=\count342
-\l__siunitx_number_lower_threshold_int=\count343
-\l__siunitx_number_upper_threshold_int=\count344
-\l__siunitx_number_group_first_int=\count345
-\l__siunitx_number_group_size_int=\count346
-\l__siunitx_number_group_minimum_int=\count347
+\l__siunitx_number_uncert_offset_int=\count339
+\l__siunitx_number_exponent_fixed_int=\count340
+\l__siunitx_number_min_decimal_int=\count341
+\l__siunitx_number_min_integer_int=\count342
+\l__siunitx_number_round_precision_int=\count343
+\l__siunitx_number_lower_threshold_int=\count344
+\l__siunitx_number_upper_threshold_int=\count345
+\l__siunitx_number_group_first_int=\count346
+\l__siunitx_number_group_size_int=\count347
+\l__siunitx_number_group_minimum_int=\count348
 \l__siunitx_angle_tmp_dim=\dimen295
 \l__siunitx_angle_marker_box=\box76
 \l__siunitx_angle_unit_box=\box77
-\l__siunitx_compound_count_int=\count348
+\l__siunitx_compound_count_int=\count349
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/translations/translations.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
 )
@@ -571,9 +577,9 @@ Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages 
 \l__siunitx_table_after_box=\box83
 \l__siunitx_table_before_dim=\dimen298
 \l__siunitx_table_carry_dim=\dimen299
-\l__siunitx_unit_tmp_int=\count349
-\l__siunitx_unit_position_int=\count350
-\l__siunitx_unit_total_int=\count351
+\l__siunitx_unit_tmp_int=\count350
+\l__siunitx_unit_position_int=\count351
+\l__siunitx_unit_total_int=\count352
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen300
@@ -606,7 +612,7 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count352
+\pgf@plot@mark@count=\count353
 \pgfplotmarksize=\dimen306
 )
 \tikz@lastx=\dimen307
@@ -621,37 +627,37 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box88
 \tikz@tempbox=\box89
 \tikz@tempbox@bg=\box90
-\tikztreelevel=\count353
-\tikznumberofchildren=\count354
-\tikznumberofcurrentchild=\count355
-\tikz@fig@count=\count356
+\tikztreelevel=\count354
+\tikznumberofchildren=\count355
+\tikznumberofcurrentchild=\count356
+\tikz@fig@count=\count357
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count357
-\pgfmatrixcurrentcolumn=\count358
-\pgf@matrix@numberofcolumns=\count359
+\pgfmatrixcurrentrow=\count358
+\pgfmatrixcurrentcolumn=\count359
+\pgf@matrix@numberofcolumns=\count360
 )
-\tikz@expandcount=\count360
+\tikz@expandcount=\count361
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count361
-\calc@Bcount=\count362
+\calc@Acount=\count362
+\calc@Bcount=\count363
 \calc@Adimen=\dimen315
 \calc@Bdimen=\dimen316
 \calc@Askip=\skip69
 \calc@Bskip=\skip70
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count363
+\calc@Ccount=\count364
 \calc@Cskip=\skip71
 ) (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count364
+\g_MT_multlinerow_int=\count365
 \l_MT_multwidth_dim=\dimen317
 \origjot=\skip72
 \l_MT_shortvdotswithinadjustabove_dim=\dimen318
@@ -668,7 +674,7 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \pgfdecoratedinputsegmentcompleteddistance=\dimen327
 \pgfdecoratedinputsegmentremainingdistance=\dimen328
 \pgf@decorate@distancetomove=\dimen329
-\pgf@decorate@repeatstate=\count365
+\pgf@decorate@repeatstate=\count366
 \pgfdecorationsegmentamplitude=\dimen330
 \pgfdecorationsegmentlength=\dimen331
 )
@@ -687,7 +693,7 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Package: expl3 2024-02-20 L3 programming layer (loader) 
  (/opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count366
+\l__color_backend_stack_int=\count367
 \l__pdf_internal_box=\box95
 ))
 Package: xparse 2024-02-18 L3 Experimental document command parser
@@ -726,11 +732,11 @@ l.95 \msg_fatal:nn {fontspec} {cannot-use-pdftex}
 
  
 Here is how much of TeX's memory you used:
- 28479 strings out of 474116
- 619545 string characters out of 5732612
+ 28609 strings out of 474116
+ 622339 string characters out of 5732612
  1926187 words of memory out of 5000000
- 50382 multiletter control sequences out of 15000+600000
+ 50507 multiletter control sequences out of 15000+600000
  558674 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,0n,123p,462b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,0n,123p,488b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
 /opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/tex/latex/fontspec/fontspec.sty:95:  ==> Fatal error occurred, no output PDF file produced!
